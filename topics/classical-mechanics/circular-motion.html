@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Circular Motion & Rotation — Classical Mechanics | QuantumAtlas</title>
+  <meta name="description" content="Complete treatment of circular motion — angular quantities, centripetal acceleration and force, uniform and non-uniform circular motion, and applications including banked curves and satellites."/>
+  <meta name="keywords" content="circular motion, centripetal acceleration, angular velocity, angular acceleration, uniform circular motion, centripetal force, radians, period"/>
+  <link rel="canonical" href="https://yourdomain.com/topics/classical-mechanics/circular-motion.html"/>
+  <meta property="og:title" content="Circular Motion & Rotation | QuantumAtlas"/>
+  <meta property="og:description" content="Complete treatment of circular motion — angular quantities, centripetal acceleration and force, uniform and non-uniform circular motion, and applications including banked curves and satellites."/>
+  <meta property="og:image" content="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=75&auto=format"/>
+  <script type="application/ld+json">{
+    "@context":"https://schema.org","@type":"Article",
+    "headline":"Circular Motion & Rotation","description":"Complete treatment of circular motion — angular quantities, centripetal acceleration and force, uniform and non-uniform circular motion, and applications including banked curves and satellites.",
+    "image":"https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=75&auto=format",
+    "author":{"@type":"Organization","name":"QuantumAtlas"},
+    "publisher":{"@type":"Organization","name":"QuantumAtlas","url":"https://yourdomain.com"},
+    "breadcrumb":{"@type":"BreadcrumbList","itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://yourdomain.com/"},
+      {"@type":"ListItem","position":2,"name":"Branches","item":"https://yourdomain.com/theory.html"},
+      {"@type":"ListItem","position":3,"name":"Classical Mechanics","item":"https://yourdomain.com/branches/classical-mechanics.html"},
+      {"@type":"ListItem","position":4,"name":"Circular Motion & Rotation"}
+    ]}
+  }</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4X0M6RM0F6"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4X0M6RM0F6',{page_title:document.title,page_location:window.location.href});</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2633513915753897" crossorigin="anonymous"></script>
+  <meta name="google-adsense-account" content="ca-pub-2633513915753897">
+  <link rel="stylesheet" href="../../css/global.css"/>
+  <link rel="stylesheet" href="../../css/nav.css"/>
+  <link rel="stylesheet" href="../../css/topic.css"/>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+<main>
+  <section class="topic-hero">
+    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=75&auto=format" alt="Circular motion and rotational mechanics" class="topic-hero-bg-img" loading="eager"/>
+    <div class="topic-hero-overlay"></div>
+    <div class="container topic-hero-content">
+      <nav class="breadcrumb">
+        <a href="../../index.html">Home</a><span class="sep">›</span>
+        <a href="../../theory.html">Branches</a><span class="sep">›</span>
+        <a href="../../branches/classical-mechanics.html">Classical Mechanics</a><span class="sep">›</span>
+        <span class="current">Circular Motion & Rotation</span>
+      </nav>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px">
+        <span class="badge badge-plasma">Classical Mechanics</span>
+        
+        <span class="badge badge-nova">Topic 05</span>
+      </div>
+      <h1 class="topic-hero-title">🔄 Circular Motion & Rotation</h1>
+      <p class="topic-hero-sub">Angular Kinematics and Centripetal Dynamics</p>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:20px"><span class="tc-tag" style="padding:5px 12px;font-size:0.75rem">Rotation</span> <span class="tc-tag" style="padding:5px 12px;font-size:0.75rem">Circular Motion</span> <span class="tc-tag" style="padding:5px 12px;font-size:0.75rem">Angular Velocity</span></div>
+    </div>
+  </section>
+  <div class="container topic-layout">
+    <article class="topic-article">
+      <div class="ad-container" style="margin-bottom:36px">
+        <div style="text-align:center;width:100%">
+          <span class="ad-label">Advertisement</span>
+          <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+          <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+        </div>
+      </div>
+      <div class="topic-body">
+<p>Circular motion is one of the most common and important types of motion in nature. Planets orbit the Sun, electrons (in classical models) orbit nuclei, wheels rotate, and the Earth itself spins. Understanding circular motion requires a shift from linear to angular quantities — a conceptual step that opens up the full richness of rotational mechanics.</p>
+
+<h2>Angular Quantities</h2>
+<div class="formula-block"><span class="formula-label">Key Angular Quantities</span>
+θ = arc length / radius = s/r (radians)<br/>
+ω = dθ/dt (angular velocity, rad/s)<br/>
+α = dω/dt (angular acceleration, rad/s²)
+</div>
+<div class="table-wrap"><table>
+<thead><tr><th>Linear</th><th>Angular</th><th>Relationship</th></tr></thead>
+<tbody>
+<tr><td>s (displacement)</td><td>θ (angle)</td><td>s = rθ</td></tr>
+<tr><td>v (velocity)</td><td>ω (angular velocity)</td><td>v = rω</td></tr>
+<tr><td>a (acceleration)</td><td>α (angular acceleration)</td><td>a<sub>t</sub> = rα</td></tr>
+</tbody></table></div>
+
+<h2>Centripetal Acceleration</h2>
+<p>For uniform circular motion (constant speed), the direction of velocity continuously changes, meaning there is an acceleration even though the speed is constant. This centripetal acceleration always points toward the centre:</p>
+<div class="formula-block"><span class="formula-label">Centripetal Acceleration</span>a<sub>c</sub> = v²/r = ω²r</div>
+<p>By Newton's second law, a net centripetal force must provide this acceleration:</p>
+<div class="formula-block"><span class="formula-label">Centripetal Force</span>F<sub>c</sub> = mv²/r = mω²r</div>
+<p>The centripetal force is not a new type of force — it is whatever force (gravity, tension, friction, normal force) provides the inward acceleration. For the Moon in orbit, it is gravity. For a car turning a corner, it is friction. For a ball on a string, it is tension.</p>
+
+<h2>Banked Curves</h2>
+<p>A road banked at angle θ allows vehicles to turn without relying on friction. The banking provides the horizontal component of the normal force as centripetal force. The ideal banking angle for speed v and radius r is:</p>
+<div class="formula-block"><span class="formula-label">Banking Angle</span>tan θ = v²/(rg)</div>
+
+<h2>Vertical Circles</h2>
+<p>For an object moving in a vertical circle (e.g., a roller coaster loop), the minimum speed at the top is found by setting the centripetal force equal to gravity alone (N = 0 at minimum):</p>
+<div class="formula-block"><span class="formula-label">Minimum Speed at Top of Loop</span>v<sub>min</sub> = √(rg)</div>
+
+<h2>Period and Frequency</h2>
+<div class="formula-block"><span class="formula-label">Period and Frequency Relations</span>
+T = 2π/ω = 2πr/v<br/>
+f = 1/T = ω/(2π)
+</div>
+<p>For circular orbits, combining Newton's law of gravitation with the centripetal force equation gives Kepler's third law as a direct consequence — a beautiful connection between circular motion and gravity.</p>
+
+<div class="info-box info-box--note">
+<div class="info-box-title" style="color:var(--accent-plasma)">💡 Non-Uniform Circular Motion</div>
+<p style="margin:0">When speed changes along a circular path, there is a tangential acceleration a<sub>t</sub> = rα in addition to the centripetal acceleration. The total acceleration is a⃗ = a⃗<sub>c</sub> + a⃗<sub>t</sub>, with magnitude a = √(a<sub>c</sub>² + a<sub>t</sub>²).</p>
+</div>
+</div>
+      <div class="ad-container" style="margin-top:40px">
+        <div style="text-align:center;width:100%">
+          <span class="ad-label">Advertisement</span>
+          <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+          <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+        </div>
+      </div>
+    </article>
+    <aside class="topic-sidebar">
+      <div class="sidebar-card">
+        <h4 style="font-family:var(--font-mono);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent-plasma);margin-bottom:14px">// Topic Info</h4>
+        <div class="sidebar-stat"><span>Branch</span><span>Classical Mechanics</span></div>
+        <div class="sidebar-stat"><span>Topic</span><span>05 / 22</span></div>
+        <div class="sidebar-stat"><span>Level</span><span>Advanced</span></div>
+      </div>
+      <div class="sidebar-card">
+        <h4 style="font-family:var(--font-mono);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent-plasma);margin-bottom:14px">// All Topics</h4>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:6px">
+          <li><a href="newtons-laws.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">01. Newton's Laws</a></li>
+          <li><a href="projectile-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">02. Projectile Motion</a></li>
+          <li><a href="conservation-of-energy.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">03. Conservation of Energy</a></li>
+          <li><a href="linear-momentum.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">04. Linear Momentum</a></li>
+          <li><a href="circular-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">05. Circular Motion</a></li>
+          <li><a href="gravitational-force.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">06. Gravitational Force</a></li>
+          <li><a href="simple-harmonic-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">07. Simple Harmonic Motion</a></li>
+          <li><a href="rotational-dynamics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">08. Rotational Dynamics</a></li>
+          <li><a href="work-and-power.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">09. Work & Power</a></li>
+          <li><a href="friction-and-drag.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">10. Friction & Drag</a></li>
+          <li><a href="keplers-laws.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">11. Kepler's Laws</a></li>
+          <li><a href="waves-and-oscillations.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">12. Waves & Oscillations</a></li>
+          <li><a href="centre-of-mass.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">13. Centre of Mass</a></li>
+          <li><a href="statics-and-equilibrium.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">14. Statics & Equilibrium</a></li>
+          <li><a href="fluid-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">15. Fluid Mechanics</a></li>
+          <li><a href="elasticity-and-stress.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">16. Elasticity & Stress</a></li>
+          <li><a href="kinematics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">17. Kinematics</a></li>
+          <li><a href="damped-oscillations.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">18. Damped Oscillations</a></li>
+          <li><a href="lagrangian-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">19. Lagrangian Mechanics</a></li>
+          <li><a href="hamiltonian-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">20. Hamiltonian Mechanics</a></li>
+          <li><a href="rigid-body-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">21. Rigid Body Motion</a></li>
+          <li><a href="non-inertial-frames.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">22. Non-Inertial Frames</a></li>
+        </ul>
+      </div>
+      <div class="ad-container" style="min-height:250px;flex-direction:column">
+        <span class="ad-label">Advertisement</span>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+      </div>
+    </aside>
+  </div>
+</main>
+<div id="footer-placeholder"></div>
+<script src="../../js/components.js"></script>
+</body>
+</html>

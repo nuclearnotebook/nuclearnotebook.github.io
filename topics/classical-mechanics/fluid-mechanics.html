@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fluid Mechanics — Classical Mechanics | QuantumAtlas</title>
+  <meta name="description" content="Comprehensive fluid mechanics — hydrostatics, Archimedes' principle, continuity equation, Bernoulli's principle, viscosity, and the Reynolds number."/>
+  <meta name="keywords" content="fluid mechanics, Bernoulli's equation, continuity equation, pressure, buoyancy, Archimedes, viscosity, laminar flow, turbulent flow, Reynolds number"/>
+  <link rel="canonical" href="https://yourdomain.com/topics/classical-mechanics/fluid-mechanics.html"/>
+  <meta property="og:title" content="Fluid Mechanics | QuantumAtlas"/>
+  <meta property="og:description" content="Comprehensive fluid mechanics — hydrostatics, Archimedes' principle, continuity equation, Bernoulli's principle, viscosity, and the Reynolds number."/>
+  <meta property="og:image" content="https://images.unsplash.com/photo-1559827291-72ee739d0d9a?w=1200&q=75&auto=format"/>
+  <script type="application/ld+json">{
+    "@context":"https://schema.org","@type":"Article",
+    "headline":"Fluid Mechanics","description":"Comprehensive fluid mechanics — hydrostatics, Archimedes' principle, continuity equation, Bernoulli's principle, viscosity, and the Reynolds number.",
+    "image":"https://images.unsplash.com/photo-1559827291-72ee739d0d9a?w=1200&q=75&auto=format",
+    "author":{"@type":"Organization","name":"QuantumAtlas"},
+    "publisher":{"@type":"Organization","name":"QuantumAtlas","url":"https://yourdomain.com"},
+    "breadcrumb":{"@type":"BreadcrumbList","itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://yourdomain.com/"},
+      {"@type":"ListItem","position":2,"name":"Branches","item":"https://yourdomain.com/theory.html"},
+      {"@type":"ListItem","position":3,"name":"Classical Mechanics","item":"https://yourdomain.com/branches/classical-mechanics.html"},
+      {"@type":"ListItem","position":4,"name":"Fluid Mechanics"}
+    ]}
+  }</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4X0M6RM0F6"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4X0M6RM0F6',{page_title:document.title,page_location:window.location.href});</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2633513915753897" crossorigin="anonymous"></script>
+  <meta name="google-adsense-account" content="ca-pub-2633513915753897">
+  <link rel="stylesheet" href="../../css/global.css"/>
+  <link rel="stylesheet" href="../../css/nav.css"/>
+  <link rel="stylesheet" href="../../css/topic.css"/>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+<main>
+  <section class="topic-hero">
+    <img src="https://images.unsplash.com/photo-1559827291-72ee739d0d9a?w=1200&q=75&auto=format" alt="Fluid flow and water dynamics in physics" class="topic-hero-bg-img" loading="eager"/>
+    <div class="topic-hero-overlay"></div>
+    <div class="container topic-hero-content">
+      <nav class="breadcrumb">
+        <a href="../../index.html">Home</a><span class="sep">›</span>
+        <a href="../../theory.html">Branches</a><span class="sep">›</span>
+        <a href="../../branches/classical-mechanics.html">Classical Mechanics</a><span class="sep">›</span>
+        <span class="current">Fluid Mechanics</span>
+      </nav>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px">
+        <span class="badge badge-plasma">Classical Mechanics</span>
+        
+        <span class="badge badge-nova">Topic 15</span>
+      </div>
+      <h1 class="topic-hero-title">💧 Fluid Mechanics</h1>
+      <p class="topic-hero-sub">Pressure, Flow, Bernoulli, and Viscosity</p>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:20px"><span class="tc-tag" style="padding:5px 12px;font-size:0.75rem">Fluids</span> <span class="tc-tag" style="padding:5px 12px;font-size:0.75rem">Bernoulli</span> <span class="tc-tag" style="padding:5px 12px;font-size:0.75rem">Viscosity</span></div>
+    </div>
+  </section>
+  <div class="container topic-layout">
+    <article class="topic-article">
+      <div class="ad-container" style="margin-bottom:36px">
+        <div style="text-align:center;width:100%">
+          <span class="ad-label">Advertisement</span>
+          <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+          <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+        </div>
+      </div>
+      <div class="topic-body">
+<p>Fluid mechanics describes the behaviour of liquids and gases at rest and in motion. It underpins aeronautical engineering (how wings generate lift), civil engineering (water supply and hydraulics), meteorology (atmospheric dynamics), and medicine (blood flow through vessels). The governing equations — Bernoulli's principle and the Navier-Stokes equations — are among the most important in all of applied physics.</p>
+
+<h2>Hydrostatics — Pressure in Fluids</h2>
+<div class="formula-block"><span class="formula-label">Fluid Pressure at Depth h</span>P = P₀ + ρgh</div>
+<p>Pressure in a static fluid increases linearly with depth. It acts equally in all directions (Pascal's law). This is why submarine hulls must withstand enormous pressures, and why hydraulic systems can amplify forces.</p>
+
+<h2>Archimedes' Principle</h2>
+<div class="formula-block"><span class="formula-label">Buoyant Force</span>F<sub>b</sub> = ρ<sub>fluid</sub> · V<sub>displaced</sub> · g</div>
+<p>Any object partially or fully submerged in a fluid experiences an upward buoyant force equal to the weight of fluid displaced. An object floats if F<sub>b</sub> ≥ mg, i.e., if its average density ≤ fluid density.</p>
+
+<h2>Continuity Equation</h2>
+<div class="formula-block"><span class="formula-label">Continuity (incompressible)</span>A₁v₁ = A₂v₂</div>
+<p>For an incompressible fluid in a pipe, the volume flow rate is constant. Where the pipe narrows (A decreases), velocity increases.</p>
+
+<h2>Bernoulli's Equation</h2>
+<div class="formula-block"><span class="formula-label">Bernoulli's Principle</span>P + ½ρv² + ρgh = constant</div>
+<p>Along a streamline in ideal (inviscid, incompressible) flow, the sum of pressure, kinetic energy density, and potential energy density is constant. Where velocity is high, pressure is low (venturi effect). This explains aerofoil lift: air moves faster over the curved upper surface, creating lower pressure above the wing.</p>
+
+<h2>Viscosity and Real Fluids</h2>
+<p>Real fluids have internal friction (viscosity η). Laminar flow: smooth layers, v<sub>max</sub> = R²ΔP/(4ηL) (Poiseuille's law). Turbulent flow occurs above a critical Reynolds number:</p>
+<div class="formula-block"><span class="formula-label">Reynolds Number</span>Re = ρvL/η</div>
+<p>Re < 2300: laminar; Re > 4000: turbulent. Blood flow in major arteries is typically laminar (Re ≈ 1000), but can become turbulent at stenoses — which is why turbulent flow creates detectable heart murmurs.</p>
+
+<div class="info-box info-box--note">
+<div class="info-box-title" style="color:var(--accent-plasma)">✈ Aerofoil and Lift</div>
+<p style="margin:0">Wing lift is more complex than the naive Bernoulli story. Both the Bernoulli effect and the deflection of air downward (Newton's third law reaction) contribute to lift. The Kutta-Joukowski theorem unifies these with circulation theory — the complete description requires both pressure and momentum considerations.</p>
+</div>
+</div>
+      <div class="ad-container" style="margin-top:40px">
+        <div style="text-align:center;width:100%">
+          <span class="ad-label">Advertisement</span>
+          <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+          <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+        </div>
+      </div>
+    </article>
+    <aside class="topic-sidebar">
+      <div class="sidebar-card">
+        <h4 style="font-family:var(--font-mono);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent-plasma);margin-bottom:14px">// Topic Info</h4>
+        <div class="sidebar-stat"><span>Branch</span><span>Classical Mechanics</span></div>
+        <div class="sidebar-stat"><span>Topic</span><span>15 / 22</span></div>
+        <div class="sidebar-stat"><span>Level</span><span>Advanced</span></div>
+      </div>
+      <div class="sidebar-card">
+        <h4 style="font-family:var(--font-mono);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent-plasma);margin-bottom:14px">// All Topics</h4>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:6px">
+          <li><a href="newtons-laws.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">01. Newton's Laws</a></li>
+          <li><a href="projectile-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">02. Projectile Motion</a></li>
+          <li><a href="conservation-of-energy.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">03. Conservation of Energy</a></li>
+          <li><a href="linear-momentum.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">04. Linear Momentum</a></li>
+          <li><a href="circular-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">05. Circular Motion</a></li>
+          <li><a href="gravitational-force.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">06. Gravitational Force</a></li>
+          <li><a href="simple-harmonic-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">07. Simple Harmonic Motion</a></li>
+          <li><a href="rotational-dynamics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">08. Rotational Dynamics</a></li>
+          <li><a href="work-and-power.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">09. Work & Power</a></li>
+          <li><a href="friction-and-drag.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">10. Friction & Drag</a></li>
+          <li><a href="keplers-laws.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">11. Kepler's Laws</a></li>
+          <li><a href="waves-and-oscillations.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">12. Waves & Oscillations</a></li>
+          <li><a href="centre-of-mass.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">13. Centre of Mass</a></li>
+          <li><a href="statics-and-equilibrium.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">14. Statics & Equilibrium</a></li>
+          <li><a href="fluid-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">15. Fluid Mechanics</a></li>
+          <li><a href="elasticity-and-stress.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">16. Elasticity & Stress</a></li>
+          <li><a href="kinematics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">17. Kinematics</a></li>
+          <li><a href="damped-oscillations.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">18. Damped Oscillations</a></li>
+          <li><a href="lagrangian-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">19. Lagrangian Mechanics</a></li>
+          <li><a href="hamiltonian-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">20. Hamiltonian Mechanics</a></li>
+          <li><a href="rigid-body-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">21. Rigid Body Motion</a></li>
+          <li><a href="non-inertial-frames.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">22. Non-Inertial Frames</a></li>
+        </ul>
+      </div>
+      <div class="ad-container" style="min-height:250px;flex-direction:column">
+        <span class="ad-label">Advertisement</span>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+      </div>
+    </aside>
+  </div>
+</main>
+<div id="footer-placeholder"></div>
+<script src="../../js/components.js"></script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hamiltonian Mechanics — Classical Mechanics | QuantumAtlas</title>
+  <meta name="description" content="Hamiltonian mechanics — Hamilton's equations of motion, phase space trajectories, Poisson brackets, canonical transformations, and the connection to quantum mechanics."/>
+  <meta name="keywords" content="Hamiltonian mechanics, Hamilton's equations, phase space, canonical coordinates, Poisson brackets, canonical transformation, classical mechanics"/>
+  <link rel="canonical" href="https://yourdomain.com/topics/classical-mechanics/hamiltonian-mechanics.html"/>
+  <meta property="og:title" content="Hamiltonian Mechanics | QuantumAtlas"/>
+  <meta property="og:description" content="Hamiltonian mechanics — Hamilton's equations of motion, phase space trajectories, Poisson brackets, canonical transformations, and the connection to quantum mechanics."/>
+  <meta property="og:image" content="https://images.unsplash.com/photo-1509228468518-180dd4864904?w=1200&q=75&auto=format"/>
+  <script type="application/ld+json">{
+    "@context":"https://schema.org","@type":"Article",
+    "headline":"Hamiltonian Mechanics","description":"Hamiltonian mechanics — Hamilton's equations of motion, phase space trajectories, Poisson brackets, canonical transformations, and the connection to quantum mechanics.",
+    "image":"https://images.unsplash.com/photo-1509228468518-180dd4864904?w=1200&q=75&auto=format",
+    "author":{"@type":"Organization","name":"QuantumAtlas"},
+    "publisher":{"@type":"Organization","name":"QuantumAtlas","url":"https://yourdomain.com"},
+    "breadcrumb":{"@type":"BreadcrumbList","itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://yourdomain.com/"},
+      {"@type":"ListItem","position":2,"name":"Branches","item":"https://yourdomain.com/theory.html"},
+      {"@type":"ListItem","position":3,"name":"Classical Mechanics","item":"https://yourdomain.com/branches/classical-mechanics.html"},
+      {"@type":"ListItem","position":4,"name":"Hamiltonian Mechanics"}
+    ]}
+  }</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4X0M6RM0F6"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4X0M6RM0F6',{page_title:document.title,page_location:window.location.href});</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2633513915753897" crossorigin="anonymous"></script>
+  <meta name="google-adsense-account" content="ca-pub-2633513915753897">
+  <link rel="stylesheet" href="../../css/global.css"/>
+  <link rel="stylesheet" href="../../css/nav.css"/>
+  <link rel="stylesheet" href="../../css/topic.css"/>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+<main>
+  <section class="topic-hero">
+    <img src="https://images.unsplash.com/photo-1509228468518-180dd4864904?w=1200&q=75&auto=format" alt="Phase space and Hamiltonian dynamics" class="topic-hero-bg-img" loading="eager"/>
+    <div class="topic-hero-overlay"></div>
+    <div class="container topic-hero-content">
+      <nav class="breadcrumb">
+        <a href="../../index.html">Home</a><span class="sep">›</span>
+        <a href="../../theory.html">Branches</a><span class="sep">›</span>
+        <a href="../../branches/classical-mechanics.html">Classical Mechanics</a><span class="sep">›</span>
+        <span class="current">Hamiltonian Mechanics</span>
+      </nav>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px">
+        <span class="badge badge-plasma">Classical Mechanics</span>
+        
+        <span class="badge badge-nova">Topic 20</span>
+      </div>
+      <h1 class="topic-hero-title">ℋ Hamiltonian Mechanics</h1>
+      <p class="topic-hero-sub">Phase Space, Canonical Equations, and Classical-Quantum Bridge</p>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:20px"><span class="tc-tag" style="padding:5px 12px;font-size:0.75rem">Advanced</span> <span class="tc-tag" style="padding:5px 12px;font-size:0.75rem">Hamiltonian</span> <span class="tc-tag" style="padding:5px 12px;font-size:0.75rem">Phase Space</span></div>
+    </div>
+  </section>
+  <div class="container topic-layout">
+    <article class="topic-article">
+      <div class="ad-container" style="margin-bottom:36px">
+        <div style="text-align:center;width:100%">
+          <span class="ad-label">Advertisement</span>
+          <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+          <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+        </div>
+      </div>
+      <div class="topic-body">
+<p>Hamiltonian mechanics, formulated by William Rowan Hamilton in the 1830s, reformulates classical mechanics in terms of coordinates and momenta — the 'phase space' description. It is equivalent to both Newtonian and Lagrangian mechanics but provides a framework that is geometrically elegant, directly related to quantum mechanics, and essential for statistical mechanics and chaos theory.</p>
+
+<h2>The Hamiltonian</h2>
+<div class="formula-block"><span class="formula-label">The Hamiltonian</span>H = T + V = Σp<sub>i</sub>q̇<sub>i</sub> − L</div>
+<p>Where p<sub>i</sub> = ∂L/∂q̇<sub>i</sub> are the generalised (canonical) momenta. For most systems (time-independent potentials), H equals the total mechanical energy.</p>
+
+<h2>Hamilton's Equations of Motion</h2>
+<div class="formula-block"><span class="formula-label">Hamilton's Equations</span>
+dq<sub>i</sub>/dt = ∂H/∂p<sub>i</sub><br/>
+dp<sub>i</sub>/dt = −∂H/∂q<sub>i</sub>
+</div>
+<p>These are 2n first-order equations (for n degrees of freedom), replacing n second-order Lagrange equations. They treat position and momentum on equal footing — a symmetry that becomes the correspondence principle in quantum mechanics.</p>
+
+<h2>Phase Space</h2>
+<p>Phase space is the 2n-dimensional space spanned by (q₁...qₙ, p₁...pₙ). Each point in phase space represents a complete state of the system. The system's evolution traces out a trajectory in phase space. Key theorem: <strong>Liouville's theorem</strong> — the phase space volume occupied by an ensemble of systems is conserved in time (the flow is incompressible). This underpins statistical mechanics.</p>
+
+<h2>Poisson Brackets</h2>
+<div class="formula-block"><span class="formula-label">Poisson Bracket</span>{f, g} = Σ(∂f/∂q<sub>i</sub> ∂g/∂p<sub>i</sub> − ∂f/∂p<sub>i</sub> ∂g/∂q<sub>i</sub>)</div>
+<p>The time evolution of any function f(q,p,t) is df/dt = {f, H} + ∂f/∂t. A quantity is conserved if {f, H} = 0. This directly maps to the quantum commutator [f̂, Ĥ]/(iℏ).</p>
+
+<div class="info-box info-box--note">
+<div class="info-box-title" style="color:var(--accent-plasma)">🔗 The Quantum Connection</div>
+<p style="margin:0">The translation from classical Hamiltonian mechanics to quantum mechanics is remarkably direct: replace canonical variables with operators (q → q̂, p → p̂) and Poisson brackets with commutators ({A,B} → [Â,B̂]/iℏ). The Hamiltonian becomes the energy operator, and Hamilton's equations become Heisenberg's equations of motion. This 'canonical quantisation' is the most common method for constructing quantum theories.</p>
+</div>
+</div>
+      <div class="ad-container" style="margin-top:40px">
+        <div style="text-align:center;width:100%">
+          <span class="ad-label">Advertisement</span>
+          <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+          <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+        </div>
+      </div>
+    </article>
+    <aside class="topic-sidebar">
+      <div class="sidebar-card">
+        <h4 style="font-family:var(--font-mono);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent-plasma);margin-bottom:14px">// Topic Info</h4>
+        <div class="sidebar-stat"><span>Branch</span><span>Classical Mechanics</span></div>
+        <div class="sidebar-stat"><span>Topic</span><span>20 / 22</span></div>
+        <div class="sidebar-stat"><span>Level</span><span>Advanced</span></div>
+      </div>
+      <div class="sidebar-card">
+        <h4 style="font-family:var(--font-mono);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent-plasma);margin-bottom:14px">// All Topics</h4>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:6px">
+          <li><a href="newtons-laws.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">01. Newton's Laws</a></li>
+          <li><a href="projectile-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">02. Projectile Motion</a></li>
+          <li><a href="conservation-of-energy.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">03. Conservation of Energy</a></li>
+          <li><a href="linear-momentum.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">04. Linear Momentum</a></li>
+          <li><a href="circular-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">05. Circular Motion</a></li>
+          <li><a href="gravitational-force.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">06. Gravitational Force</a></li>
+          <li><a href="simple-harmonic-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">07. Simple Harmonic Motion</a></li>
+          <li><a href="rotational-dynamics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">08. Rotational Dynamics</a></li>
+          <li><a href="work-and-power.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">09. Work & Power</a></li>
+          <li><a href="friction-and-drag.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">10. Friction & Drag</a></li>
+          <li><a href="keplers-laws.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">11. Kepler's Laws</a></li>
+          <li><a href="waves-and-oscillations.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">12. Waves & Oscillations</a></li>
+          <li><a href="centre-of-mass.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">13. Centre of Mass</a></li>
+          <li><a href="statics-and-equilibrium.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">14. Statics & Equilibrium</a></li>
+          <li><a href="fluid-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">15. Fluid Mechanics</a></li>
+          <li><a href="elasticity-and-stress.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">16. Elasticity & Stress</a></li>
+          <li><a href="kinematics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">17. Kinematics</a></li>
+          <li><a href="damped-oscillations.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">18. Damped Oscillations</a></li>
+          <li><a href="lagrangian-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">19. Lagrangian Mechanics</a></li>
+          <li><a href="hamiltonian-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">20. Hamiltonian Mechanics</a></li>
+          <li><a href="rigid-body-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">21. Rigid Body Motion</a></li>
+          <li><a href="non-inertial-frames.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">22. Non-Inertial Frames</a></li>
+        </ul>
+      </div>
+      <div class="ad-container" style="min-height:250px;flex-direction:column">
+        <span class="ad-label">Advertisement</span>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+      </div>
+    </aside>
+  </div>
+</main>
+<div id="footer-placeholder"></div>
+<script src="../../js/components.js"></script>
+</body>
+</html>

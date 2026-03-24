@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Non-Inertial Reference Frames — Classical Mechanics | QuantumAtlas</title>
+  <meta name="description" content="Physics in non-inertial reference frames — fictitious forces, the Coriolis effect, centrifugal force, Foucault pendulum, and applications in meteorology and engineering."/>
+  <meta name="keywords" content="non-inertial frames, fictitious forces, Coriolis effect, centrifugal force, rotating reference frame, accelerating frame, Foucault pendulum"/>
+  <link rel="canonical" href="https://yourdomain.com/topics/classical-mechanics/non-inertial-frames.html"/>
+  <meta property="og:title" content="Non-Inertial Reference Frames | QuantumAtlas"/>
+  <meta property="og:description" content="Physics in non-inertial reference frames — fictitious forces, the Coriolis effect, centrifugal force, Foucault pendulum, and applications in meteorology and engineering."/>
+  <meta property="og:image" content="https://images.unsplash.com/photo-1465101162946-4377e57745c3?w=1200&q=75&auto=format"/>
+  <script type="application/ld+json">{
+    "@context":"https://schema.org","@type":"Article",
+    "headline":"Non-Inertial Reference Frames","description":"Physics in non-inertial reference frames — fictitious forces, the Coriolis effect, centrifugal force, Foucault pendulum, and applications in meteorology and engineering.",
+    "image":"https://images.unsplash.com/photo-1465101162946-4377e57745c3?w=1200&q=75&auto=format",
+    "author":{"@type":"Organization","name":"QuantumAtlas"},
+    "publisher":{"@type":"Organization","name":"QuantumAtlas","url":"https://yourdomain.com"},
+    "breadcrumb":{"@type":"BreadcrumbList","itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://yourdomain.com/"},
+      {"@type":"ListItem","position":2,"name":"Branches","item":"https://yourdomain.com/theory.html"},
+      {"@type":"ListItem","position":3,"name":"Classical Mechanics","item":"https://yourdomain.com/branches/classical-mechanics.html"},
+      {"@type":"ListItem","position":4,"name":"Non-Inertial Reference Frames"}
+    ]}
+  }</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4X0M6RM0F6"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4X0M6RM0F6',{page_title:document.title,page_location:window.location.href});</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2633513915753897" crossorigin="anonymous"></script>
+  <meta name="google-adsense-account" content="ca-pub-2633513915753897">
+  <link rel="stylesheet" href="../../css/global.css"/>
+  <link rel="stylesheet" href="../../css/nav.css"/>
+  <link rel="stylesheet" href="../../css/topic.css"/>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+<main>
+  <section class="topic-hero">
+    <img src="https://images.unsplash.com/photo-1465101162946-4377e57745c3?w=1200&q=75&auto=format" alt="Earth rotation and non-inertial reference frames" class="topic-hero-bg-img" loading="eager"/>
+    <div class="topic-hero-overlay"></div>
+    <div class="container topic-hero-content">
+      <nav class="breadcrumb">
+        <a href="../../index.html">Home</a><span class="sep">›</span>
+        <a href="../../theory.html">Branches</a><span class="sep">›</span>
+        <a href="../../branches/classical-mechanics.html">Classical Mechanics</a><span class="sep">›</span>
+        <span class="current">Non-Inertial Reference Frames</span>
+      </nav>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px">
+        <span class="badge badge-plasma">Classical Mechanics</span>
+        
+        <span class="badge badge-nova">Topic 22</span>
+      </div>
+      <h1 class="topic-hero-title">🔁 Non-Inertial Reference Frames</h1>
+      <p class="topic-hero-sub">Fictitious Forces, Coriolis Effect, and Rotating Frames</p>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:20px"><span class="tc-tag" style="padding:5px 12px;font-size:0.75rem">Reference Frames</span> <span class="tc-tag" style="padding:5px 12px;font-size:0.75rem">Coriolis</span> <span class="tc-tag" style="padding:5px 12px;font-size:0.75rem">Centrifugal</span></div>
+    </div>
+  </section>
+  <div class="container topic-layout">
+    <article class="topic-article">
+      <div class="ad-container" style="margin-bottom:36px">
+        <div style="text-align:center;width:100%">
+          <span class="ad-label">Advertisement</span>
+          <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+          <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+        </div>
+      </div>
+      <div class="topic-body">
+<p>Newton's laws hold exactly in inertial (non-accelerating) frames. But observers in accelerating or rotating frames observe apparent forces that have no third-law partner — fictitious forces. These are not 'real' forces in the Newtonian sense, but they are real observable effects for observers in the non-inertial frame. Understanding them is essential for meteorology, engineering on Earth, and spacecraft dynamics.</p>
+
+<h2>Fictitious Forces in Accelerating Frames</h2>
+<p>An observer in a frame with acceleration a⃗<sub>0</sub> must add a fictitious force −ma⃗<sub>0</sub> to each object to apply Newton's second law. Example: in an accelerating elevator, objects appear heavier (upward acceleration) or lighter (downward acceleration). In free fall, the fictitious force exactly cancels gravity — weightlessness.</p>
+
+<h2>Rotating Frames — Additional Forces</h2>
+<p>In a frame rotating with angular velocity Ω⃗, two fictitious forces appear for a particle with velocity v⃗' (as measured in the rotating frame):</p>
+<div class="formula-block"><span class="formula-label">Coriolis Force</span>F⃗<sub>Cor</sub> = −2m(Ω⃗ × v⃗')</div>
+<div class="formula-block"><span class="formula-label">Centrifugal Force</span>F⃗<sub>cf</sub> = −mΩ⃗ × (Ω⃗ × r⃗)</div>
+
+<h2>The Coriolis Effect on Earth</h2>
+<p>Earth is a rotating frame (Ω = 7.27 × 10⁻⁵ rad/s). The Coriolis force deflects moving objects: to the right in the Northern Hemisphere, to the left in the Southern Hemisphere. Consequences:</p>
+<ul style="margin:0 0 16px 20px;color:var(--text-secondary)">
+  <li style="margin-bottom:8px">Cyclones rotate anticlockwise in the North, clockwise in the South</li>
+  <li style="margin-bottom:8px">Long-range artillery must account for Coriolis deflection</li>
+  <li style="margin-bottom:8px">Prevailing wind patterns and ocean currents are shaped by the Coriolis effect</li>
+  <li style="margin-bottom:8px">The Foucault pendulum demonstrates Earth's rotation by the slow precession of its swing plane</li>
+</ul>
+
+<h2>Centrifugal Force</h2>
+<p>The centrifugal force pushes outward from the rotation axis. On Earth, it slightly reduces effective gravity (most at the equator where v = rΩ is maximum) and causes Earth to be slightly oblate (flattened at poles). Earth's equatorial radius exceeds its polar radius by about 21 km.</p>
+
+<h2>Foucault Pendulum</h2>
+<p>Foucault's pendulum (1851) demonstrates Earth's rotation directly. The swing plane remains fixed in space while Earth rotates beneath it. At the North Pole, the plane rotates 360° in 24 hours. At latitude λ, the period is 24h/sin λ. At the equator, the Foucault pendulum shows no precession (horizontal component of Ω is perpendicular to the swing).</p>
+
+<div class="info-box info-box--tip">
+<div class="info-box-title" style="color:var(--accent-green)">🌍 Equivalence Principle Preview</div>
+<p style="margin:0">The observation that a uniform gravitational field is indistinguishable from a uniformly accelerating frame led Einstein to his <strong>equivalence principle</strong> — the cornerstone of General Relativity. In GR, gravity is not a force but the curvature of spacetime, and 'free fall' is the natural inertial motion. The fictitious force perspective thus contains the seed of the deepest theory of gravity we have.</p>
+</div>
+</div>
+      <div class="ad-container" style="margin-top:40px">
+        <div style="text-align:center;width:100%">
+          <span class="ad-label">Advertisement</span>
+          <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+          <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+        </div>
+      </div>
+    </article>
+    <aside class="topic-sidebar">
+      <div class="sidebar-card">
+        <h4 style="font-family:var(--font-mono);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent-plasma);margin-bottom:14px">// Topic Info</h4>
+        <div class="sidebar-stat"><span>Branch</span><span>Classical Mechanics</span></div>
+        <div class="sidebar-stat"><span>Topic</span><span>22 / 22</span></div>
+        <div class="sidebar-stat"><span>Level</span><span>Advanced</span></div>
+      </div>
+      <div class="sidebar-card">
+        <h4 style="font-family:var(--font-mono);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent-plasma);margin-bottom:14px">// All Topics</h4>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:6px">
+          <li><a href="newtons-laws.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">01. Newton's Laws</a></li>
+          <li><a href="projectile-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">02. Projectile Motion</a></li>
+          <li><a href="conservation-of-energy.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">03. Conservation of Energy</a></li>
+          <li><a href="linear-momentum.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">04. Linear Momentum</a></li>
+          <li><a href="circular-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">05. Circular Motion</a></li>
+          <li><a href="gravitational-force.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">06. Gravitational Force</a></li>
+          <li><a href="simple-harmonic-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">07. Simple Harmonic Motion</a></li>
+          <li><a href="rotational-dynamics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">08. Rotational Dynamics</a></li>
+          <li><a href="work-and-power.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">09. Work & Power</a></li>
+          <li><a href="friction-and-drag.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">10. Friction & Drag</a></li>
+          <li><a href="keplers-laws.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">11. Kepler's Laws</a></li>
+          <li><a href="waves-and-oscillations.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">12. Waves & Oscillations</a></li>
+          <li><a href="centre-of-mass.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">13. Centre of Mass</a></li>
+          <li><a href="statics-and-equilibrium.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">14. Statics & Equilibrium</a></li>
+          <li><a href="fluid-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">15. Fluid Mechanics</a></li>
+          <li><a href="elasticity-and-stress.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">16. Elasticity & Stress</a></li>
+          <li><a href="kinematics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">17. Kinematics</a></li>
+          <li><a href="damped-oscillations.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">18. Damped Oscillations</a></li>
+          <li><a href="lagrangian-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">19. Lagrangian Mechanics</a></li>
+          <li><a href="hamiltonian-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">20. Hamiltonian Mechanics</a></li>
+          <li><a href="rigid-body-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">21. Rigid Body Motion</a></li>
+          <li><a href="non-inertial-frames.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">22. Non-Inertial Frames</a></li>
+        </ul>
+      </div>
+      <div class="ad-container" style="min-height:250px;flex-direction:column">
+        <span class="ad-label">Advertisement</span>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+      </div>
+    </aside>
+  </div>
+</main>
+<div id="footer-placeholder"></div>
+<script src="../../js/components.js"></script>
+</body>
+</html>

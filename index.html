@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>QuantumAtlas — Explore the Physics Universe</title>
+  <meta name="description" content="QuantumAtlas is your definitive guide to physics — from classical mechanics to quantum fields, relativity, astrophysics, and beyond. Deep theory, simulations, and real science."/>
+  <meta name="keywords" content="physics, quantum mechanics, classical mechanics, relativity, thermodynamics, astrophysics, particle physics, physics education, science"/>
+  <meta name="author" content="QuantumAtlas"/>
+  <link rel="canonical" href="https://yourdomain.com/"/>
+  <!-- Open Graph -->
+  <meta property="og:title" content="QuantumAtlas — Explore the Physics Universe"/>
+  <meta property="og:description" content="Comprehensive physics education covering all major branches — quantum, classical, astrophysics, relativity and more."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://yourdomain.com/"/>
+  <meta property="og:image" content="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=1200&q=80"/>
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="QuantumAtlas — Physics Universe"/>
+  <meta name="twitter:description" content="Deep physics education, simulations, and scientific theory for every level."/>
+  <!-- Schema -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"QuantumAtlas","url":"https://yourdomain.com","description":"Comprehensive physics education covering all major branches of physics","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://yourdomain.com/theory.html?q={search_term_string}"},"query-input":"required name=search_term_string"}}</script>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4X0M6RM0F6"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4X0M6RM0F6',{page_title:document.title,page_location:window.location.href});</script>
+  <!-- AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2633513915753897" crossorigin="anonymous"></script>
+  <meta name="google-adsense-account" content="ca-pub-2633513915753897">
+
+  <link rel="stylesheet" href="css/global.css"/>
+  <link rel="stylesheet" href="css/nav.css"/>
+  <link rel="stylesheet" href="css/home.css"/>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+
+<main>
+  <!-- ══ HERO ══ -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <canvas class="stars-canvas" id="hero-stars"></canvas>
+      <div class="hero-orb hero-orb--1"></div>
+      <div class="hero-orb hero-orb--2"></div>
+      <img
+        src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=1600&q=75&auto=format"
+        alt="Deep space nebula representing the physics universe"
+        class="hero-bg-img"
+        loading="eager"
+      />
+    </div>
+    <div class="container hero-content">
+      <div class="hero-badge animate-fade-up">
+        <span class="badge badge-plasma">✦ Open-Access Physics Education</span>
+      </div>
+      <h1 class="hero-title animate-fade-up delay-1">
+        The Universe<br/>
+        <span class="gradient-text">Runs on Physics.</span>
+      </h1>
+      <p class="hero-subtitle animate-fade-up delay-2">
+        From the quantum realm to cosmic scales — explore 400+ topics across 18 branches of physics.
+        Deep theory, interactive simulations, and real science for curious minds.
+      </p>
+      <div class="hero-actions animate-fade-up delay-3">
+        <a href="theory.html" class="btn btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          Explore All Branches
+        </a>
+        <a href="branches/classical-mechanics.html" class="btn btn-outline">Start with Mechanics →</a>
+      </div>
+      <div class="hero-stats animate-fade-up delay-4">
+        <div class="stat">
+          <span class="stat-num">18</span>
+          <span class="stat-label">Branches</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num">400+</span>
+          <span class="stat-label">Topics</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num">50+</span>
+          <span class="stat-label">Simulations</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num">2M+</span>
+          <span class="stat-label">Words of Theory</span>
+        </div>
+      </div>
+    </div>
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator">
+      <span></span>
+    </div>
+  </section>
+
+  <!-- ══ AD BANNER ══ -->
+  <div class="container">
+    <div class="ad-container" style="margin-top:0">
+      <div style="text-align:center;width:100%">
+        <span class="ad-label">Advertisement</span>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ FEATURED BRANCHES ══ -->
+  <section class="section">
+    <div class="container">
+      <span class="section-label">// disciplines</span>
+      <h2 class="section-title">18 Branches of Physics</h2>
+      <p class="section-subtitle">Every domain of physical science, explored in depth — with historical context, mathematical foundations, and modern applications.</p>
+
+      <div class="branches-grid reveal">
+        <!-- Row 1 -->
+        <a href="branches/classical-mechanics.html" class="branch-card branch-card--large">
+          <div class="branch-card-img">
+            <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=700&q=70&auto=format" alt="Classical Mechanics — pendulums and trajectories" loading="lazy"/>
+          </div>
+          <div class="branch-card-body">
+            <span class="badge badge-plasma">20 Topics</span>
+            <h3>Classical Mechanics</h3>
+            <p>Newton's laws, Lagrangian dynamics, rigid body motion, oscillations, and fluid mechanics.</p>
+            <span class="branch-arrow">Explore →</span>
+          </div>
+        </a>
+
+        <a href="branches/quantum-mechanics.html" class="branch-card branch-card--large">
+          <div class="branch-card-img">
+            <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=700&q=70&auto=format" alt="Quantum Mechanics" loading="lazy" style="filter:hue-rotate(200deg)"/>
+          </div>
+          <div class="branch-card-body">
+            <span class="badge badge-nova">22 Topics</span>
+            <h3>Quantum Mechanics</h3>
+            <p>Wave functions, Schrödinger equation, uncertainty principle, entanglement, and quantum fields.</p>
+            <span class="branch-arrow">Explore →</span>
+          </div>
+        </a>
+
+        <a href="branches/relativity.html" class="branch-card">
+          <div class="branch-card-icon">⏱</div>
+          <span class="badge badge-solar">20 Topics</span>
+          <h3>Relativity</h3>
+          <p>Special & general relativity, spacetime curvature, and black holes.</p>
+          <span class="branch-arrow">→</span>
+        </a>
+
+        <a href="branches/electromagnetism.html" class="branch-card">
+          <div class="branch-card-icon">⚡</div>
+          <span class="badge badge-plasma">22 Topics</span>
+          <h3>Electromagnetism</h3>
+          <p>Maxwell's equations, fields, circuits, and electromagnetic waves.</p>
+          <span class="branch-arrow">→</span>
+        </a>
+
+        <a href="branches/thermodynamics.html" class="branch-card">
+          <div class="branch-card-icon">🔥</div>
+          <span class="badge badge-solar">20 Topics</span>
+          <h3>Thermodynamics</h3>
+          <p>Laws of thermodynamics, entropy, heat engines, and phase transitions.</p>
+          <span class="branch-arrow">→</span>
+        </a>
+
+        <a href="branches/astrophysics.html" class="branch-card branch-card--wide">
+          <div class="branch-card-img">
+            <img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=900&q=70&auto=format" alt="Astrophysics and Cosmology" loading="lazy"/>
+          </div>
+          <div class="branch-card-body">
+            <span class="badge badge-nova">25 Topics</span>
+            <h3>Astrophysics & Cosmology</h3>
+            <p>Stars, galaxies, dark matter, the Big Bang, cosmic expansion, and the fate of the universe.</p>
+            <span class="branch-arrow">Explore →</span>
+          </div>
+        </a>
+
+        <a href="branches/particle-physics.html" class="branch-card">
+          <div class="branch-card-icon">⚛</div>
+          <span class="badge badge-green">20 Topics</span>
+          <h3>Particle Physics</h3>
+          <p>Standard model, quarks, leptons, bosons, and the Higgs field.</p>
+          <span class="branch-arrow">→</span>
+        </a>
+
+        <a href="branches/nuclear-physics.html" class="branch-card">
+          <div class="branch-card-icon">☢</div>
+          <span class="badge badge-solar">18 Topics</span>
+          <h3>Nuclear Physics</h3>
+          <p>Radioactivity, fission, fusion, nuclear forces, and reactors.</p>
+          <span class="branch-arrow">→</span>
+        </a>
+
+        <a href="branches/optics.html" class="branch-card">
+          <div class="branch-card-icon">🔭</div>
+          <span class="badge badge-plasma">20 Topics</span>
+          <h3>Optics</h3>
+          <p>Reflection, refraction, diffraction, lasers, and fiber optics.</p>
+          <span class="branch-arrow">→</span>
+        </a>
+
+        <a href="branches/statistical-mechanics.html" class="branch-card">
+          <div class="branch-card-icon">📊</div>
+          <span class="badge badge-nova">18 Topics</span>
+          <h3>Statistical Mechanics</h3>
+          <p>Boltzmann distributions, partition functions, and phase transitions.</p>
+          <span class="branch-arrow">→</span>
+        </a>
+
+        <a href="branches/condensed-matter.html" class="branch-card">
+          <div class="branch-card-icon">💎</div>
+          <span class="badge badge-plasma">20 Topics</span>
+          <h3>Condensed Matter</h3>
+          <p>Crystals, semiconductors, superconductivity, and quantum Hall effect.</p>
+          <span class="branch-arrow">→</span>
+        </a>
+
+        <a href="branches/atomic-physics.html" class="branch-card">
+          <div class="branch-card-icon">🔬</div>
+          <span class="badge badge-green">18 Topics</span>
+          <h3>Atomic Physics</h3>
+          <p>Atomic structure, spectroscopy, lasers, and atomic clocks.</p>
+          <span class="branch-arrow">→</span>
+        </a>
+
+        <a href="branches/molecular-physics.html" class="branch-card">
+          <div class="branch-card-icon">🧬</div>
+          <span class="badge badge-nova">16 Topics</span>
+          <h3>Molecular Physics</h3>
+          <p>Molecular bonds, vibrational modes, and chemical physics.</p>
+          <span class="branch-arrow">→</span>
+        </a>
+
+        <a href="branches/acoustics.html" class="branch-card">
+          <div class="branch-card-icon">🎵</div>
+          <span class="badge badge-solar">16 Topics</span>
+          <h3>Acoustics</h3>
+          <p>Sound waves, resonance, Doppler effect, and ultrasound physics.</p>
+          <span class="branch-arrow">→</span>
+        </a>
+
+        <a href="branches/plasma-physics.html" class="branch-card">
+          <div class="branch-card-icon">🌟</div>
+          <span class="badge badge-plasma">16 Topics</span>
+          <h3>Plasma Physics</h3>
+          <p>Ionized gases, magnetic confinement, fusion energy, and solar wind.</p>
+          <span class="branch-arrow">→</span>
+        </a>
+
+        <a href="branches/geophysics.html" class="branch-card">
+          <div class="branch-card-icon">🌍</div>
+          <span class="badge badge-solar">16 Topics</span>
+          <h3>Geophysics</h3>
+          <p>Earth's structure, seismology, geomagnetism, and plate tectonics.</p>
+          <span class="branch-arrow">→</span>
+        </a>
+
+        <a href="branches/biophysics.html" class="branch-card">
+          <div class="branch-card-icon">🧠</div>
+          <span class="badge badge-green">16 Topics</span>
+          <h3>Biophysics</h3>
+          <p>Physics of living systems — membranes, neural signals, and molecular motors.</p>
+          <span class="branch-arrow">→</span>
+        </a>
+
+        <a href="branches/chaos-theory.html" class="branch-card">
+          <div class="branch-card-icon">🌀</div>
+          <span class="badge badge-nova">16 Topics</span>
+          <h3>Chaos Theory</h3>
+          <p>Nonlinear dynamics, fractals, strange attractors, and butterfly effects.</p>
+          <span class="branch-arrow">→</span>
+        </a>
+      </div>
+
+      <div style="text-align:center;margin-top:48px">
+        <a href="theory.html" class="btn btn-outline">View All 18 Branches →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ WHY PHYSICS ══ -->
+  <section class="section section--dark">
+    <div class="container">
+      <div class="why-grid">
+        <div class="why-content reveal">
+          <span class="section-label">// why physics matters</span>
+          <h2>Understanding Reality<br/><span class="gradient-text">at Its Deepest Level</span></h2>
+          <p>Physics is the foundation of all natural sciences. It describes the laws that govern everything — from subatomic particles to the structure of the cosmos. Every technology, every discovery, every wonder of the modern world traces back to physical principles.</p>
+          <p>QuantumAtlas brings you authoritative, in-depth content written at a genuine scientific level — not dumbed down, but thoughtfully explained with context, mathematics, and real-world applications.</p>
+          <a href="about.html" class="btn btn-outline" style="margin-top:12px">Learn About Our Mission →</a>
+        </div>
+        <div class="why-visual reveal delay-2">
+          <img src="https://images.unsplash.com/photo-1507413245164-6160d8298b31?w=700&q=75&auto=format" alt="Physics laboratory with scientific equipment" class="img-frame" loading="lazy"/>
+          <div class="why-floater">
+            <span class="mono" style="color:var(--accent-green)">E = mc²</span>
+            <span style="color:var(--text-muted);font-size:0.75rem;font-family:var(--font-mono)">Mass-Energy Equivalence</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FEATURED TOPICS ══ -->
+  <section class="section">
+    <div class="container">
+      <span class="section-label">// featured topics</span>
+      <h2 class="section-title">Popular Physics Topics</h2>
+      <p class="section-subtitle">Dive into the most-explored concepts across all branches of physics.</p>
+      <div class="topics-grid reveal">
+        <a href="topics/classical-mechanics/projectile-motion.html" class="topic-card">
+          <div class="topic-icon">🎯</div>
+          <div class="topic-info">
+            <span class="topic-branch">Classical Mechanics</span>
+            <h4>Projectile Motion</h4>
+            <p>Trajectories, range equations, and real-world ballistics under gravity.</p>
+          </div>
+          <div class="topic-sim-badge">SIM</div>
+        </a>
+        <a href="topics/classical-mechanics/simple-harmonic-motion.html" class="topic-card">
+          <div class="topic-icon">〜</div>
+          <div class="topic-info">
+            <span class="topic-branch">Classical Mechanics</span>
+            <h4>Simple Harmonic Motion</h4>
+            <p>Springs, pendulums, and the mathematics of oscillation.</p>
+          </div>
+          <div class="topic-sim-badge">SIM</div>
+        </a>
+        <a href="topics/classical-mechanics/newtons-laws.html" class="topic-card">
+          <div class="topic-icon">⚙</div>
+          <div class="topic-info">
+            <span class="topic-branch">Classical Mechanics</span>
+            <h4>Newton's Laws of Motion</h4>
+            <p>The three fundamental laws that define classical dynamics.</p>
+          </div>
+        </a>
+        <a href="topics/classical-mechanics/conservation-of-energy.html" class="topic-card">
+          <div class="topic-icon">⚡</div>
+          <div class="topic-info">
+            <span class="topic-branch">Classical Mechanics</span>
+            <h4>Conservation of Energy</h4>
+            <p>Work, kinetic and potential energy, and the principle of conservation.</p>
+          </div>
+          <div class="topic-sim-badge">SIM</div>
+        </a>
+        <a href="topics/classical-mechanics/circular-motion.html" class="topic-card">
+          <div class="topic-icon">🔄</div>
+          <div class="topic-info">
+            <span class="topic-branch">Classical Mechanics</span>
+            <h4>Circular Motion</h4>
+            <p>Centripetal acceleration, orbital mechanics, and angular velocity.</p>
+          </div>
+        </a>
+        <a href="topics/classical-mechanics/gravitational-force.html" class="topic-card">
+          <div class="topic-icon">🌐</div>
+          <div class="topic-info">
+            <span class="topic-branch">Classical Mechanics</span>
+            <h4>Gravitational Force</h4>
+            <p>Newton's law of gravitation and the concept of gravitational fields.</p>
+          </div>
+          <div class="topic-sim-badge">SIM</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ AD ══ -->
+  <div class="container">
+    <div class="ad-container">
+      <div style="text-align:center;width:100%">
+        <span class="ad-label">Advertisement</span>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ CTA STRIP ══ -->
+  <section class="cta-strip">
+    <div class="container">
+      <div class="cta-strip-inner reveal">
+        <div>
+          <h2>Ready to Explore the Universe?</h2>
+          <p>Start with any branch — every topic is crafted for depth, clarity, and genuine scientific insight.</p>
+        </div>
+        <div class="cta-strip-actions">
+          <a href="theory.html" class="btn btn-primary">Browse All Branches</a>
+          <a href="branches/classical-mechanics.html" class="btn btn-outline">Start with Mechanics</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="footer-placeholder"></div>
+<script src="js/components.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    initStars('hero-stars', 200);
+  });
+</script>
+</body>
+</html>

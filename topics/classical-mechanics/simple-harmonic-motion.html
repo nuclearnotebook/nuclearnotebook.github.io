@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Simple Harmonic Motion — Classical Mechanics | QuantumAtlas</title>
+  <meta name="description" content="Complete treatment of simple harmonic motion — spring-mass systems, pendulums, the equation of SHM, phase, amplitude, energy in SHM, and applications in physics and engineering."/>
+  <meta name="keywords" content="simple harmonic motion, SHM, pendulum, spring mass system, oscillation, period, frequency, amplitude, phase, angular frequency"/>
+  <link rel="canonical" href="https://yourdomain.com/topics/classical-mechanics/simple-harmonic-motion.html"/>
+  <meta property="og:title" content="Simple Harmonic Motion | QuantumAtlas"/>
+  <meta property="og:description" content="Complete treatment of simple harmonic motion — spring-mass systems, pendulums, the equation of SHM, phase, amplitude, energy in SHM, and applications in physics and engineering."/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:image" content="https://images.unsplash.com/photo-1606761568499-6d2451b23c66?w=1200&q=75&auto=format"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <script type="application/ld+json">{
+    "@context":"https://schema.org","@type":"Article",
+    "headline":"Simple Harmonic Motion",
+    "description":"Complete treatment of simple harmonic motion — spring-mass systems, pendulums, the equation of SHM, phase, amplitude, energy in SHM, and applications in physics and engineering.",
+    "image":"https://images.unsplash.com/photo-1606761568499-6d2451b23c66?w=1200&q=75&auto=format",
+    "author":{"@type":"Organization","name":"QuantumAtlas"},
+    "publisher":{"@type":"Organization","name":"QuantumAtlas","url":"https://yourdomain.com"},
+    "breadcrumb":{"@type":"BreadcrumbList","itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://yourdomain.com/"},
+      {"@type":"ListItem","position":2,"name":"Branches","item":"https://yourdomain.com/theory.html"},
+      {"@type":"ListItem","position":3,"name":"Classical Mechanics","item":"https://yourdomain.com/branches/classical-mechanics.html"},
+      {"@type":"ListItem","position":4,"name":"Simple Harmonic Motion"}
+    ]}
+  }</script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4X0M6RM0F6"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4X0M6RM0F6',{page_title:document.title,page_location:window.location.href});</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2633513915753897" crossorigin="anonymous"></script>
+  <meta name="google-adsense-account" content="ca-pub-2633513915753897">
+
+  <link rel="stylesheet" href="../../css/global.css"/>
+  <link rel="stylesheet" href="../../css/nav.css"/>
+  <link rel="stylesheet" href="../../css/topic.css"/>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+
+<main>
+  <!-- Hero -->
+  <section class="topic-hero">
+    <img src="https://images.unsplash.com/photo-1606761568499-6d2451b23c66?w=1200&q=75&auto=format" alt="Pendulum clock and oscillation physics" class="topic-hero-bg-img" loading="eager"/>
+    <div class="topic-hero-overlay"></div>
+    <div class="container topic-hero-content">
+      <nav class="breadcrumb">
+        <a href="../../index.html">Home</a><span class="sep">›</span>
+        <a href="../../theory.html">Branches</a><span class="sep">›</span>
+        <a href="../../branches/classical-mechanics.html">Classical Mechanics</a><span class="sep">›</span>
+        <span class="current">Simple Harmonic Motion</span>
+      </nav>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px">
+        <span class="badge badge-plasma">Classical Mechanics</span>
+        <span class='badge badge-green'>Interactive Simulation</span>
+        <span class="badge badge-nova">Topic 07</span>
+      </div>
+      <h1 class="topic-hero-title">〜 Simple Harmonic Motion</h1>
+      <p class="topic-hero-sub">The Mathematics of Periodic Oscillation</p>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:20px">
+        <span class="tc-tag" style="padding:5px 12px;font-size:0.75rem">Oscillations</span> <span class="tc-tag" style="padding:5px 12px;font-size:0.75rem">SHM</span> <span class="tc-tag" style="padding:5px 12px;font-size:0.75rem">Waves</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="container topic-layout">
+    <!-- Article -->
+    <article class="topic-article">
+      <!-- AdSense top -->
+      <div class="ad-container" style="margin-bottom:36px">
+        <div style="text-align:center;width:100%">
+          <span class="ad-label">Advertisement</span>
+          <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+          <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+        </div>
+      </div>
+
+      
+      <h2 id="simulation">Interactive Simulation</h2>
+      
+<div class="simulation-wrapper">
+  <div class="simulation-toolbar">
+    <span class="simulation-title">〜 Spring-Mass + Pendulum Simulator</span>
+    <div class="sim-control">
+      <label>Mode</label>
+      <select id="shm-mode" style="background:var(--bg-deep);color:var(--text-primary);border:1px solid var(--border-dim);padding:4px 8px;border-radius:6px;font-size:0.78rem">
+        <option value="spring">Spring-Mass</option>
+        <option value="pendulum">Pendulum</option>
+      </select>
+    </div>
+    <div class="sim-control">
+      <label>Amplitude</label>
+      <input type="range" id="shm-amp" min="20" max="120" value="80" step="5"/>
+      <span id="shm-amp-val">80px</span>
+    </div>
+    <div class="sim-control">
+      <label>Period (T)</label>
+      <input type="range" id="shm-period" min="1" max="6" value="2" step="0.5"/>
+      <span id="shm-period-val">2 s</span>
+    </div>
+    <button id="shm-toggle" class="btn btn-primary" style="padding:7px 18px;font-size:0.78rem">Start</button>
+  </div>
+  <div class="sim-canvas-wrap"><canvas id="shm-canvas" height="360"></canvas></div>
+  <div style="padding:14px 20px;display:flex;gap:24px;flex-wrap:wrap;font-family:var(--font-mono);font-size:0.78rem;color:var(--text-muted);background:rgba(0,0,0,0.2);border-top:1px solid var(--border-dim)">
+    <span>x(t): <strong id="shm-x" style="color:var(--accent-plasma)">—</strong></span>
+    <span>v(t): <strong id="shm-v" style="color:var(--accent-green)">—</strong></span>
+    <span>KE: <strong id="shm-ke" style="color:var(--accent-gold)">—</strong></span>
+    <span>PE: <strong id="shm-pe" style="color:#a078ff">—</strong></span>
+    <span>Phase: <strong id="shm-phase" style="color:var(--text-secondary)">—</strong></span>
+  </div>
+</div>
+<script>
+(function(){
+  const cv=document.getElementById('shm-canvas'), cx=cv.getContext('2d');
+  const ampSl=document.getElementById('shm-amp'), perSl=document.getElementById('shm-period');
+  const modeSel=document.getElementById('shm-mode'), btn=document.getElementById('shm-toggle');
+  let running=false, raf=null, t=0;
+  function W(){return cv.width=cv.offsetWidth||700;}
+  function H(){return cv.height=360;}
+  W();H();window.addEventListener('resize',()=>{W();if(!running)draw(0);});
+  ampSl.oninput=()=>document.getElementById('shm-amp-val').textContent=ampSl.value+'px';
+  perSl.oninput=()=>document.getElementById('shm-period-val').textContent=perSl.value+' s';
+  const A=()=>parseInt(ampSl.value), T=()=>parseFloat(perSl.value);
+  const omega=()=>2*Math.PI/T();
+  function draw(time){
+    const w=cv.width,h=cv.height,mode=modeSel.value;
+    const amp=A(), T2=T(), om=omega();
+    const x0=w*0.28, y0=h/2;
+    const x=amp*Math.cos(om*time);
+    const v=-amp*om*Math.sin(om*time);
+    const phase=((om*time)%(2*Math.PI)).toFixed(2);
+    const ke=0.5*v*v/(amp*amp); const pe=0.5*x*x/(amp*amp);
+    document.getElementById('shm-x').textContent=(x/10).toFixed(2)+' cm';
+    document.getElementById('shm-v').textContent=(v/10).toFixed(2)+' cm/s';
+    document.getElementById('shm-ke').textContent=(ke*100).toFixed(1)+'%';
+    document.getElementById('shm-pe').textContent=(pe*100).toFixed(1)+'%';
+    document.getElementById('shm-phase').textContent=phase+' rad';
+    cx.clearRect(0,0,w,h);
+    const bg=cx.createLinearGradient(0,0,0,h);
+    bg.addColorStop(0,'#050810');bg.addColorStop(1,'#0a0e20');
+    cx.fillStyle=bg;cx.fillRect(0,0,w,h);
+    // Draw trace
+    const traceW=w*0.55, traceX=w*0.42, pts=200;
+    cx.beginPath(); cx.strokeStyle='rgba(0,212,255,0.2)'; cx.lineWidth=1;
+    cx.moveTo(traceX,y0);cx.lineTo(traceX+traceW,y0);cx.stroke();
+    cx.beginPath(); cx.strokeStyle='#00d4ff'; cx.lineWidth=2;
+    cx.shadowColor='#00d4ff'; cx.shadowBlur=6;
+    for(let i=0;i<=pts;i++){
+      const tt=time-(i/pts)*T2*2;
+      const xx=amp*Math.cos(om*tt);
+      const px=traceX+traceW*(1-i/pts);
+      const py=y0-xx;
+      i===0?cx.moveTo(px,py):cx.lineTo(px,py);
+    }
+    cx.stroke(); cx.shadowBlur=0;
+    if(mode==='spring'){
+      // Wall
+      cx.fillStyle='rgba(0,212,255,0.1)'; cx.fillRect(30,y0-70,16,140);
+      cx.fillStyle='rgba(0,212,255,0.3)'; cx.fillRect(44,y0-70,4,140);
+      // Spring zigzag
+      const sx=48, ex=x0+x-20, zig=12, segs=14;
+      cx.beginPath(); cx.strokeStyle='#7b2fff'; cx.lineWidth=2.5;
+      cx.moveTo(sx,y0);
+      for(let i=1;i<=segs;i++){
+        const px=sx+((ex-sx)*i/segs);
+        const py=y0+(i%2===0?zig:-zig);
+        cx.lineTo(px,py);
+      }
+      cx.lineTo(ex,y0); cx.stroke();
+      // Mass
+      cx.beginPath(); cx.arc(x0+x,y0,22,0,Math.PI*2);
+      cx.fillStyle='#ff6b1a'; cx.shadowColor='#ff6b1a'; cx.shadowBlur=14; cx.fill(); cx.shadowBlur=0;
+    } else {
+      // Pivot
+      cx.beginPath(); cx.arc(x0,60,8,0,Math.PI*2); cx.fillStyle='rgba(0,212,255,0.5)'; cx.fill();
+      // String
+      const len=amp+80;
+      const angle=Math.asin(x/len);
+      const bx=x0+len*Math.sin(angle), by=60+len*Math.cos(angle);
+      cx.beginPath(); cx.strokeStyle='rgba(200,200,255,0.5)'; cx.lineWidth=1.5;
+      cx.moveTo(x0,60); cx.lineTo(bx,by); cx.stroke();
+      // Bob
+      cx.beginPath(); cx.arc(bx,by,18,0,Math.PI*2);
+      cx.fillStyle='#7b2fff'; cx.shadowColor='#7b2fff'; cx.shadowBlur=14; cx.fill(); cx.shadowBlur=0;
+    }
+    // Equilibrium marker
+    cx.setLineDash([4,4]); cx.strokeStyle='rgba(255,255,255,0.12)'; cx.lineWidth=1;
+    cx.beginPath(); cx.moveTo(x0,30); cx.lineTo(x0,h-30); cx.stroke(); cx.setLineDash([]);
+  }
+  function loop(ts){
+    t=ts/1000; draw(t); raf=requestAnimationFrame(loop);
+  }
+  btn.onclick=()=>{
+    if(running){ cancelAnimationFrame(raf); running=false; btn.textContent='Start'; }
+    else { running=true; btn.textContent='Pause'; raf=requestAnimationFrame(loop); }
+  };
+  draw(0);
+})();
+</script>
+
+
+
+      <div class="topic-body">
+        
+<p>Simple harmonic motion (SHM) is the most fundamental type of periodic motion in physics. It describes the oscillation of any system in which the restoring force is proportional to displacement from equilibrium. From the vibration of atoms in a crystal lattice to the oscillation of a child's swing, from the alternating current in an electrical circuit to the quantum ground state of a harmonic oscillator, SHM appears throughout the physical world as the simplest and most natural form of periodic behaviour.</p>
+
+<h2>Defining Simple Harmonic Motion</h2>
+<p>A system undergoes simple harmonic motion when it satisfies the equation:</p>
+
+<div class="formula-block">
+  <span class="formula-label">Equation of SHM</span>
+  d²x/dt² = −ω²x &nbsp;&nbsp; or equivalently &nbsp;&nbsp; F = −kx
+</div>
+
+<p>Where x is the displacement from equilibrium, ω (omega) is the angular frequency, and k is the spring constant or equivalent restoring force constant. The negative sign ensures the force is always directed back toward equilibrium — this is what makes it oscillatory. Crucially, the force is proportional to displacement: double the displacement, double the restoring force.</p>
+
+<h2>The General Solution</h2>
+<p>Solving the differential equation d²x/dt² = −ω²x gives the general solution:</p>
+
+<div class="formula-block">
+  <span class="formula-label">Position in SHM</span>
+  x(t) = A cos(ωt + φ)
+</div>
+
+<p>Where A is the amplitude (maximum displacement), ω is the angular frequency, t is time, and φ (phi) is the initial phase — which determines where in the cycle the oscillation begins.</p>
+
+<h2>Key Parameters</h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Parameter</th><th>Symbol</th><th>Unit</th><th>Relationship</th></tr></thead>
+<tbody>
+<tr><td>Amplitude</td><td>A</td><td>metres (m)</td><td>Maximum displacement from equilibrium</td></tr>
+<tr><td>Period</td><td>T</td><td>seconds (s)</td><td>T = 2π/ω = 1/f</td></tr>
+<tr><td>Frequency</td><td>f</td><td>Hertz (Hz)</td><td>f = ω/(2π) = 1/T</td></tr>
+<tr><td>Angular frequency</td><td>ω</td><td>rad/s</td><td>ω = 2πf = √(k/m)</td></tr>
+<tr><td>Phase</td><td>φ</td><td>radians</td><td>Determined by initial conditions</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2>Velocity and Acceleration in SHM</h2>
+<p>Differentiating the displacement equation gives velocity and acceleration:</p>
+
+<div class="formula-block">
+  <span class="formula-label">Velocity</span>
+  v(t) = −Aω sin(ωt + φ) &nbsp;&nbsp;→&nbsp;&nbsp; v<sub>max</sub> = Aω (at equilibrium)
+</div>
+
+<div class="formula-block">
+  <span class="formula-label">Acceleration</span>
+  a(t) = −Aω² cos(ωt + φ) &nbsp;&nbsp;→&nbsp;&nbsp; a<sub>max</sub> = Aω² (at extremes)
+</div>
+
+<p>Velocity is maximum at the equilibrium position and zero at the extremes. Acceleration is maximum at the extremes and zero at equilibrium. Notice that acceleration is always opposite in direction to displacement — this is the very definition of SHM.</p>
+
+<h2>The Spring-Mass System</h2>
+<p>The archetypal SHM system is a mass m attached to a spring of spring constant k. By Hooke's law, the spring force is F = −kx. Applying Newton's second law:</p>
+
+<div class="formula-block">
+  <span class="formula-label">Spring-Mass Period</span>
+  T = 2π√(m/k) &nbsp;&nbsp;⟹&nbsp;&nbsp; ω = √(k/m)
+</div>
+
+<p>This reveals a profound result: the period depends on mass and spring constant, but <strong>not on amplitude</strong>. A spring oscillating with large amplitude takes exactly the same time per cycle as one with tiny amplitude. This amplitude independence is the hallmark of SHM and was crucial to the development of accurate clocks.</p>
+
+<h2>The Simple Pendulum</h2>
+<p>For small angles (θ ≪ 1 radian ≈ 15°), a pendulum of length L oscillates with SHM. The restoring force is the component of gravity along the arc, giving:</p>
+
+<div class="formula-block">
+  <span class="formula-label">Simple Pendulum Period</span>
+  T = 2π√(L/g)
+</div>
+
+<p>Remarkably, the period is independent of both mass and amplitude (for small angles). This was the basis of Galileo's discovery while watching a chandelier swing in Pisa Cathedral. The dependence on √(L/g) was used historically to measure g by timing pendulum oscillations.</p>
+
+<h2>Energy in SHM</h2>
+<p>The total mechanical energy in SHM is constant and proportional to the square of the amplitude:</p>
+
+<div class="formula-block">
+  <span class="formula-label">Total Energy in SHM</span>
+  E = ½kA² = ½mω²A²
+</div>
+
+<p>Energy oscillates back and forth between kinetic and potential forms:</p>
+<ul style="margin:0 0 16px 20px;color:var(--text-secondary)">
+  <li style="margin-bottom:8px"><strong>At equilibrium (x=0):</strong> All energy is kinetic. KE = ½mω²A², PE = 0</li>
+  <li style="margin-bottom:8px"><strong>At extremes (x=±A):</strong> All energy is potential. KE = 0, PE = ½kA²</li>
+  <li style="margin-bottom:8px"><strong>At intermediate x:</strong> KE = ½mω²(A²−x²), PE = ½kx²</li>
+</ul>
+
+<div class="info-box info-box--note">
+  <div class="info-box-title" style="color:var(--accent-plasma)">💡 Velocity from Energy</div>
+  <p style="margin:0">From energy conservation, the velocity at position x is: v = ω√(A² − x²). This gives v<sub>max</sub> = ωA at x = 0, and v = 0 at x = ±A, consistent with the differential approach.</p>
+</div>
+
+<h2>Universal Importance of SHM</h2>
+<p>SHM is ubiquitous in physics because near any stable equilibrium, the potential energy looks like a parabola, and parabolic potential energy means a linear restoring force — which is precisely SHM. This is why atoms in crystals vibrate as harmonic oscillators, why quantum mechanics uses the harmonic oscillator as its most fundamental solvable system, and why AC electrical circuits exhibit oscillation analogous to mechanical SHM.</p>
+
+      </div>
+
+      <!-- AdSense bottom -->
+      <div class="ad-container" style="margin-top:40px">
+        <div style="text-align:center;width:100%">
+          <span class="ad-label">Advertisement</span>
+          <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+          <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+        </div>
+      </div>
+    </article>
+
+    <!-- Sidebar -->
+    <aside class="topic-sidebar">
+      <div class="sidebar-card">
+        <h4 style="font-family:var(--font-mono);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent-plasma);margin-bottom:14px">// Topic Info</h4>
+        <div class="sidebar-stat"><span>Branch</span><span>Classical Mechanics</span></div>
+        <div class="sidebar-stat"><span>Topic</span><span>07 / 22</span></div>
+        <div class="sidebar-stat"><span>Level</span><span>Advanced</span></div>
+        <div class="sidebar-stat"><span>Simulation</span><span>Yes ✓</span></div>
+      </div>
+
+      <div class="sidebar-card">
+        <h4 style="font-family:var(--font-mono);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent-plasma);margin-bottom:14px">// All Topics</h4>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:6px">
+          <li><a href="newtons-laws.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none" class="">01. Newton's Laws</a></li>
+          <li><a href="projectile-motion.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">02. Projectile Motion</a></li>
+          <li><a href="conservation-of-energy.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">03. Conservation of Energy</a></li>
+          <li><a href="linear-momentum.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">04. Linear Momentum</a></li>
+          <li><a href="circular-motion.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">05. Circular Motion</a></li>
+          <li><a href="gravitational-force.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">06. Gravitational Force</a></li>
+          <li><a href="simple-harmonic-motion.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">07. Simple Harmonic Motion</a></li>
+          <li><a href="rotational-dynamics.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">08. Rotational Dynamics</a></li>
+          <li><a href="work-and-power.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">09. Work & Power</a></li>
+          <li><a href="friction-and-drag.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">10. Friction & Drag</a></li>
+          <li><a href="keplers-laws.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">11. Kepler's Laws</a></li>
+          <li><a href="waves-and-oscillations.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">12. Waves & Oscillations</a></li>
+          <li><a href="centre-of-mass.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">13. Centre of Mass</a></li>
+          <li><a href="statics-and-equilibrium.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">14. Statics & Equilibrium</a></li>
+          <li><a href="fluid-mechanics.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">15. Fluid Mechanics</a></li>
+          <li><a href="elasticity-and-stress.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">16. Elasticity & Stress</a></li>
+          <li><a href="kinematics.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">17. Kinematics</a></li>
+          <li><a href="damped-oscillations.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">18. Damped Oscillations</a></li>
+          <li><a href="lagrangian-mechanics.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">19. Lagrangian Mechanics</a></li>
+          <li><a href="hamiltonian-mechanics.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">20. Hamiltonian Mechanics</a></li>
+          <li><a href="rigid-body-motion.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">21. Rigid Body Motion</a></li>
+          <li><a href="non-inertial-frames.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">22. Non-Inertial Frames</a></li>
+        </ul>
+      </div>
+
+      <!-- Sidebar AdSense -->
+      <div class="ad-container" style="min-height:250px;flex-direction:column">
+        <span class="ad-label">Advertisement</span>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<div id="footer-placeholder"></div>
+<script src="../../js/components.js"></script>
+</body>
+</html>

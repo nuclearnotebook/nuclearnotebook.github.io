@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Physics Branches — All 18 Disciplines | QuantumAtlas</title>
+  <meta name="description" content="Explore all 18 branches of physics on QuantumAtlas — Classical Mechanics, Quantum Mechanics, Relativity, Thermodynamics, Astrophysics, and more. Deep theory with 400+ topics."/>
+  <meta name="keywords" content="branches of physics, physics disciplines, classical mechanics, quantum mechanics, thermodynamics, astrophysics, electromagnetism, relativity, nuclear physics, particle physics"/>
+  <link rel="canonical" href="https://yourdomain.com/theory.html"/>
+  <meta property="og:title" content="Physics Branches — All 18 Disciplines | QuantumAtlas"/>
+  <meta property="og:description" content="Explore all 18 branches of physics — 400+ topics, deep theory, and interactive simulations."/>
+  <meta property="og:type" content="website"/>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Physics Branches","description":"All 18 branches of physics explored in depth","url":"https://yourdomain.com/theory.html","isPartOf":{"@type":"WebSite","name":"QuantumAtlas","url":"https://yourdomain.com"}}</script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4X0M6RM0F6"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4X0M6RM0F6',{page_title:document.title,page_location:window.location.href});</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2633513915753897" crossorigin="anonymous"></script>
+  <meta name="google-adsense-account" content="ca-pub-2633513915753897">
+
+  <link rel="stylesheet" href="css/global.css"/>
+  <link rel="stylesheet" href="css/nav.css"/>
+  <style>
+    /* Theory page specific */
+    .theory-hero {
+      padding: 140px 0 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .theory-hero::before {
+      content:'';position:absolute;inset:0;
+      background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(0,212,255,0.08) 0%, transparent 70%);
+      pointer-events:none;
+    }
+    .theory-hero h1 { margin-bottom: 16px; }
+    .theory-hero p { max-width: 600px; margin: 0 auto 40px; font-size:1.05rem; }
+
+    .filter-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 48px;
+    }
+
+    .filter-btn {
+      padding: 8px 18px;
+      background: transparent;
+      border: 1px solid var(--border-dim);
+      border-radius: 100px;
+      color: var(--text-muted);
+      font-family: var(--font-display);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .filter-btn:hover, .filter-btn.active {
+      background: rgba(0,212,255,0.1);
+      border-color: var(--accent-plasma);
+      color: var(--accent-plasma);
+    }
+
+    /* Branch cards grid */
+    .branches-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .bl-card {
+      background: var(--gradient-card);
+      border: 1px solid var(--border-dim);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      transition: var(--transition);
+      box-shadow: var(--shadow-card);
+    }
+
+    .bl-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--border-glow);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .bl-card-img {
+      height: 180px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .bl-card-img img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.5s ease;
+      filter: saturate(0.9) brightness(0.85);
+    }
+
+    .bl-card:hover .bl-card-img img { transform: scale(1.06); }
+
+    .bl-card-img-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(5,8,16,0.85) 0%, transparent 60%);
+    }
+
+    .bl-card-img-num {
+      position: absolute;
+      top: 12px; left: 16px;
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--accent-plasma);
+      letter-spacing: 0.15em;
+      opacity: 0.7;
+    }
+
+    .bl-card-body {
+      padding: 22px 24px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .bl-card-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .bl-card-body h2 {
+      font-size: 1.2rem;
+      color: var(--text-primary);
+    }
+
+    .bl-card-body p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin: 0 0 16px;
+      flex: 1;
+      line-height: 1.6;
+    }
+
+    .bl-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--border-dim);
+      padding-top: 14px;
+      margin-top: auto;
+    }
+
+    .bl-card-meta {
+      display: flex;
+      gap: 12px;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--text-muted);
+    }
+
+    .bl-card-meta span { display: flex; align-items: center; gap: 4px; }
+
+    .bl-card-cta {
+      font-family: var(--font-display);
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--accent-plasma);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 1000px) { .branches-list { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 600px)  { .branches-list { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+
+<main>
+  <section class="theory-hero">
+    <canvas class="stars-canvas" id="stars" style="position:absolute;inset:0;pointer-events:none;"></canvas>
+    <div class="container" style="position:relative;z-index:2">
+      <span class="section-label">// physics universe</span>
+      <h1>All <span class="gradient-text">18 Branches</span><br/>of Physics</h1>
+      <p>From the motion of planets to the behaviour of quarks — every major discipline of physics, explored in depth with 400+ topics and interactive simulations.</p>
+      <div class="filter-row">
+        <button class="filter-btn active" data-filter="all">All Branches</button>
+        <button class="filter-btn" data-filter="classical">Classical</button>
+        <button class="filter-btn" data-filter="modern">Modern</button>
+        <button class="filter-btn" data-filter="applied">Applied</button>
+        <button class="filter-btn" data-filter="interdisciplinary">Interdisciplinary</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section--sm">
+    <div class="container">
+      <!-- AdSense -->
+      <div class="ad-container" style="margin-bottom:40px">
+        <div style="text-align:center;width:100%">
+          <span class="ad-label">Advertisement</span>
+          <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+          <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+        </div>
+      </div>
+
+      <div class="branches-list" id="branches-list">
+
+        <a href="branches/classical-mechanics.html" class="bl-card reveal" data-category="classical">
+          <div class="bl-card-img">
+            <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=600&q=70&auto=format" alt="Classical Mechanics" loading="lazy"/>
+            <div class="bl-card-img-overlay"></div>
+            <span class="bl-card-img-num">01 / 18</span>
+          </div>
+          <div class="bl-card-body">
+            <div class="bl-card-header">
+              <h2>Classical Mechanics</h2>
+              <span class="badge badge-plasma">Classical</span>
+            </div>
+            <p>The foundation of physics. Newton's laws, Lagrangian and Hamiltonian mechanics, rigid body dynamics, oscillations, waves, and fluid mechanics.</p>
+            <div class="bl-card-footer">
+              <div class="bl-card-meta">
+                <span>📄 22 Topics</span>
+                <span>🎮 8 Simulations</span>
+              </div>
+              <span class="bl-card-cta">Explore →</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="branches/quantum-mechanics.html" class="bl-card reveal delay-1" data-category="modern">
+          <div class="bl-card-img">
+            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=70&auto=format" alt="Quantum Mechanics" loading="lazy"/>
+            <div class="bl-card-img-overlay"></div>
+            <span class="bl-card-img-num">02 / 18</span>
+          </div>
+          <div class="bl-card-body">
+            <div class="bl-card-header">
+              <h2>Quantum Mechanics</h2>
+              <span class="badge badge-nova">Modern</span>
+            </div>
+            <p>Wave-particle duality, Schrödinger equation, uncertainty principle, quantum entanglement, and the foundations of quantum field theory.</p>
+            <div class="bl-card-footer">
+              <div class="bl-card-meta">
+                <span>📄 24 Topics</span>
+                <span>🎮 6 Simulations</span>
+              </div>
+              <span class="bl-card-cta">Explore →</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="branches/thermodynamics.html" class="bl-card reveal delay-2" data-category="classical">
+          <div class="bl-card-img">
+            <img src="https://images.unsplash.com/photo-1580863822022-ee0af1be97b3?w=600&q=70&auto=format" alt="Thermodynamics" loading="lazy"/>
+            <div class="bl-card-img-overlay"></div>
+            <span class="bl-card-img-num">03 / 18</span>
+          </div>
+          <div class="bl-card-body">
+            <div class="bl-card-header">
+              <h2>Thermodynamics</h2>
+              <span class="badge badge-solar">Classical</span>
+            </div>
+            <p>The four laws of thermodynamics, heat and work, entropy, Carnot cycle, phase transitions, and thermodynamic potentials.</p>
+            <div class="bl-card-footer">
+              <div class="bl-card-meta">
+                <span>📄 20 Topics</span>
+                <span>🎮 4 Simulations</span>
+              </div>
+              <span class="bl-card-cta">Explore →</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="branches/statistical-mechanics.html" class="bl-card reveal" data-category="modern">
+          <div class="bl-card-img">
+            <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&q=70&auto=format" alt="Statistical Mechanics" loading="lazy"/>
+            <div class="bl-card-img-overlay"></div>
+            <span class="bl-card-img-num">04 / 18</span>
+          </div>
+          <div class="bl-card-body">
+            <div class="bl-card-header">
+              <h2>Statistical Mechanics</h2>
+              <span class="badge badge-nova">Modern</span>
+            </div>
+            <p>Microstates, macrostates, Boltzmann distribution, partition functions, Fermi-Dirac and Bose-Einstein statistics.</p>
+            <div class="bl-card-footer">
+              <div class="bl-card-meta">
+                <span>📄 18 Topics</span>
+                <span>🎮 3 Simulations</span>
+              </div>
+              <span class="bl-card-cta">Explore →</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="branches/electromagnetism.html" class="bl-card reveal delay-1" data-category="classical">
+          <div class="bl-card-img">
+            <img src="https://images.unsplash.com/photo-1511871893393-82e9c16b81e3?w=600&q=70&auto=format" alt="Electromagnetism" loading="lazy"/>
+            <div class="bl-card-img-overlay"></div>
+            <span class="bl-card-img-num">05 / 18</span>
+          </div>
+          <div class="bl-card-body">
+            <div class="bl-card-header">
+              <h2>Electromagnetism</h2>
+              <span class="badge badge-plasma">Classical</span>
+            </div>
+            <p>Maxwell's equations, electric and magnetic fields, electromagnetic induction, circuits, electromagnetic waves, and radiation.</p>
+            <div class="bl-card-footer">
+              <div class="bl-card-meta">
+                <span>📄 22 Topics</span>
+                <span>🎮 7 Simulations</span>
+              </div>
+              <span class="bl-card-cta">Explore →</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="branches/relativity.html" class="bl-card reveal delay-2" data-category="modern">
+          <div class="bl-card-img">
+            <img src="https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=600&q=70&auto=format" alt="Relativity" loading="lazy"/>
+            <div class="bl-card-img-overlay"></div>
+            <span class="bl-card-img-num">06 / 18</span>
+          </div>
+          <div class="bl-card-body">
+            <div class="bl-card-header">
+              <h2>Relativity</h2>
+              <span class="badge badge-nova">Modern</span>
+            </div>
+            <p>Special and general relativity, Lorentz transformations, spacetime curvature, gravitational waves, and black hole physics.</p>
+            <div class="bl-card-footer">
+              <div class="bl-card-meta">
+                <span>📄 20 Topics</span>
+                <span>🎮 5 Simulations</span>
+              </div>
+              <span class="bl-card-cta">Explore →</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="branches/optics.html" class="bl-card reveal" data-category="classical">
+          <div class="bl-card-img">
+            <img src="https://images.unsplash.com/photo-1507413245164-6160d8298b31?w=600&q=70&auto=format" alt="Optics" loading="lazy"/>
+            <div class="bl-card-img-overlay"></div>
+            <span class="bl-card-img-num">07 / 18</span>
+          </div>
+          <div class="bl-card-body">
+            <div class="bl-card-header">
+              <h2>Optics</h2>
+              <span class="badge badge-plasma">Classical</span>
+            </div>
+            <p>Geometric and wave optics, reflection, refraction, diffraction, interference, polarization, lasers, and optical instruments.</p>
+            <div class="bl-card-footer">
+              <div class="bl-card-meta">
+                <span>📄 20 Topics</span>
+                <span>🎮 5 Simulations</span>
+              </div>
+              <span class="bl-card-cta">Explore →</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="branches/acoustics.html" class="bl-card reveal delay-1" data-category="applied">
+          <div class="bl-card-img">
+            <img src="https://images.unsplash.com/photo-1445375011782-2384686778a0?w=600&q=70&auto=format" alt="Acoustics" loading="lazy"/>
+            <div class="bl-card-img-overlay"></div>
+            <span class="bl-card-img-num">08 / 18</span>
+          </div>
+          <div class="bl-card-body">
+            <div class="bl-card-header">
+              <h2>Acoustics</h2>
+              <span class="badge badge-solar">Applied</span>
+            </div>
+            <p>Sound waves, resonance, standing waves, Doppler effect, ultrasound, architectural acoustics, and musical physics.</p>
+            <div class="bl-card-footer">
+              <div class="bl-card-meta">
+                <span>📄 16 Topics</span>
+                <span>🎮 4 Simulations</span>
+              </div>
+              <span class="bl-card-cta">Explore →</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="branches/nuclear-physics.html" class="bl-card reveal delay-2" data-category="modern">
+          <div class="bl-card-img">
+            <img src="https://images.unsplash.com/photo-1564327767484-ea27b4b7add7?w=600&q=70&auto=format" alt="Nuclear Physics" loading="lazy"/>
+            <div class="bl-card-img-overlay"></div>
+            <span class="bl-card-img-num">09 / 18</span>
+          </div>
+          <div class="bl-card-body">
+            <div class="bl-card-header">
+              <h2>Nuclear Physics</h2>
+              <span class="badge badge-nova">Modern</span>
+            </div>
+            <p>Nuclear structure, radioactive decay, nuclear fission and fusion, nuclear binding energy, and applications in medicine and energy.</p>
+            <div class="bl-card-footer">
+              <div class="bl-card-meta">
+                <span>📄 18 Topics</span>
+                <span>🎮 3 Simulations</span>
+              </div>
+              <span class="bl-card-cta">Explore →</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="branches/atomic-physics.html" class="bl-card reveal" data-category="modern">
+          <div class="bl-card-img">
+            <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&q=70&auto=format" alt="Atomic Physics" loading="lazy"/>
+            <div class="bl-card-img-overlay"></div>
+            <span class="bl-card-img-num">10 / 18</span>
+          </div>
+          <div class="bl-card-body">
+            <div class="bl-card-header">
+              <h2>Atomic Physics</h2>
+              <span class="badge badge-green">Modern</span>
+            </div>
+            <p>Bohr model, quantum atomic structure, emission spectra, the hydrogen atom, multi-electron atoms, lasers, and atomic clocks.</p>
+            <div class="bl-card-footer">
+              <div class="bl-card-meta">
+                <span>📄 18 Topics</span>
+                <span>🎮 3 Simulations</span>
+              </div>
+              <span class="bl-card-cta">Explore →</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="branches/molecular-physics.html" class="bl-card reveal delay-1" data-category="modern">
+          <div class="bl-card-img">
+            <img src="https://images.unsplash.com/photo-1628595351029-c2bf17511435?w=600&q=70&auto=format" alt="Molecular Physics" loading="lazy"/>
+            <div class="bl-card-img-overlay"></div>
+            <span class="bl-card-img-num">11 / 18</span>
+          </div>
+          <div class="bl-card-body">
+            <div class="bl-card-header">
+              <h2>Molecular Physics</h2>
+              <span class="badge badge-nova">Modern</span>
+            </div>
+            <p>Molecular bonding, vibrational and rotational states, molecular spectroscopy, van der Waals forces, and chemical bonding theory.</p>
+            <div class="bl-card-footer">
+              <div class="bl-card-meta">
+                <span>📄 16 Topics</span>
+                <span>🎮 2 Simulations</span>
+              </div>
+              <span class="bl-card-cta">Explore →</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="branches/condensed-matter.html" class="bl-card reveal delay-2" data-category="applied">
+          <div class="bl-card-img">
+            <img src="https://images.unsplash.com/photo-1532187643603-ba119ca4109e?w=600&q=70&auto=format" alt="Condensed Matter" loading="lazy"/>
+            <div class="bl-card-img-overlay"></div>
+            <span class="bl-card-img-num">12 / 18</span>
+          </div>
+          <div class="bl-card-body">
+            <div class="bl-card-header">
+              <h2>Condensed Matter</h2>
+              <span class="badge badge-solar">Applied</span>
+            </div>
+            <p>Crystal structures, band theory, semiconductors, superconductivity, magnetism, and the quantum Hall effect.</p>
+            <div class="bl-card-footer">
+              <div class="bl-card-meta">
+                <span>📄 20 Topics</span>
+                <span>🎮 4 Simulations</span>
+              </div>
+              <span class="bl-card-cta">Explore →</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="branches/astrophysics.html" class="bl-card reveal" data-category="modern">
+          <div class="bl-card-img">
+            <img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=600&q=70&auto=format" alt="Astrophysics and Cosmology" loading="lazy"/>
+            <div class="bl-card-img-overlay"></div>
+            <span class="bl-card-img-num">13 / 18</span>
+          </div>
+          <div class="bl-card-body">
+            <div class="bl-card-header">
+              <h2>Astrophysics / Cosmology</h2>
+              <span class="badge badge-nova">Modern</span>
+            </div>
+            <p>Stellar evolution, black holes, neutron stars, dark matter, dark energy, cosmic inflation, and the large-scale structure of the universe.</p>
+            <div class="bl-card-footer">
+              <div class="bl-card-meta">
+                <span>📄 25 Topics</span>
+                <span>🎮 5 Simulations</span>
+              </div>
+              <span class="bl-card-cta">Explore →</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="branches/particle-physics.html" class="bl-card reveal delay-1" data-category="modern">
+          <div class="bl-card-img">
+            <img src="https://images.unsplash.com/photo-1579389083078-4e7018379f7e?w=600&q=70&auto=format" alt="Particle Physics" loading="lazy"/>
+            <div class="bl-card-img-overlay"></div>
+            <span class="bl-card-img-num">14 / 18</span>
+          </div>
+          <div class="bl-card-body">
+            <div class="bl-card-header">
+              <h2>Particle Physics</h2>
+              <span class="badge badge-nova">Modern</span>
+            </div>
+            <p>The Standard Model, quarks, leptons, bosons, the Higgs mechanism, particle accelerators, and beyond-Standard-Model theories.</p>
+            <div class="bl-card-footer">
+              <div class="bl-card-meta">
+                <span>📄 20 Topics</span>
+                <span>🎮 3 Simulations</span>
+              </div>
+              <span class="bl-card-cta">Explore →</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="branches/geophysics.html" class="bl-card reveal delay-2" data-category="applied">
+          <div class="bl-card-img">
+            <img src="https://images.unsplash.com/photo-1523821741446-edb2b68bb7a0?w=600&q=70&auto=format" alt="Geophysics" loading="lazy"/>
+            <div class="bl-card-img-overlay"></div>
+            <span class="bl-card-img-num">15 / 18</span>
+          </div>
+          <div class="bl-card-body">
+            <div class="bl-card-header">
+              <h2>Geophysics</h2>
+              <span class="badge badge-solar">Applied</span>
+            </div>
+            <p>Seismology, Earth's interior structure, geomagnetism, plate tectonics, gravity anomalies, and earthquake physics.</p>
+            <div class="bl-card-footer">
+              <div class="bl-card-meta">
+                <span>📄 16 Topics</span>
+                <span>🎮 2 Simulations</span>
+              </div>
+              <span class="bl-card-cta">Explore →</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="branches/biophysics.html" class="bl-card reveal" data-category="interdisciplinary">
+          <div class="bl-card-img">
+            <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=600&q=70&auto=format" alt="Biophysics" loading="lazy"/>
+            <div class="bl-card-img-overlay"></div>
+            <span class="bl-card-img-num">16 / 18</span>
+          </div>
+          <div class="bl-card-body">
+            <div class="bl-card-header">
+              <h2>Biophysics</h2>
+              <span class="badge badge-green">Interdisciplinary</span>
+            </div>
+            <p>Physics of living systems: membrane biophysics, ion channels, motor proteins, DNA mechanics, neural signal propagation, and medical imaging.</p>
+            <div class="bl-card-footer">
+              <div class="bl-card-meta">
+                <span>📄 16 Topics</span>
+                <span>🎮 2 Simulations</span>
+              </div>
+              <span class="bl-card-cta">Explore →</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="branches/plasma-physics.html" class="bl-card reveal delay-1" data-category="applied">
+          <div class="bl-card-img">
+            <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=600&q=70&auto=format" alt="Plasma Physics" loading="lazy"/>
+            <div class="bl-card-img-overlay"></div>
+            <span class="bl-card-img-num">17 / 18</span>
+          </div>
+          <div class="bl-card-body">
+            <div class="bl-card-header">
+              <h2>Plasma Physics</h2>
+              <span class="badge badge-solar">Applied</span>
+            </div>
+            <p>Ionized gas dynamics, magnetic confinement, plasma waves, tokamaks, nuclear fusion, and solar plasma phenomena.</p>
+            <div class="bl-card-footer">
+              <div class="bl-card-meta">
+                <span>📄 16 Topics</span>
+                <span>🎮 3 Simulations</span>
+              </div>
+              <span class="bl-card-cta">Explore →</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="branches/chaos-theory.html" class="bl-card reveal delay-2" data-category="interdisciplinary">
+          <div class="bl-card-img">
+            <img src="https://images.unsplash.com/photo-1465101162946-4377e57745c3?w=600&q=70&auto=format" alt="Chaos Theory" loading="lazy"/>
+            <div class="bl-card-img-overlay"></div>
+            <span class="bl-card-img-num">18 / 18</span>
+          </div>
+          <div class="bl-card-body">
+            <div class="bl-card-header">
+              <h2>Chaos Theory</h2>
+              <span class="badge badge-nova">Interdisciplinary</span>
+            </div>
+            <p>Nonlinear dynamics, deterministic chaos, Lyapunov exponents, strange attractors, fractals, and the butterfly effect.</p>
+            <div class="bl-card-footer">
+              <div class="bl-card-meta">
+                <span>📄 16 Topics</span>
+                <span>🎮 4 Simulations</span>
+              </div>
+              <span class="bl-card-cta">Explore →</span>
+            </div>
+          </div>
+        </a>
+
+      </div><!-- /branches-list -->
+
+      <!-- AdSense bottom -->
+      <div class="ad-container" style="margin-top:56px">
+        <div style="text-align:center;width:100%">
+          <span class="ad-label">Advertisement</span>
+          <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+          <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="footer-placeholder"></div>
+<script src="js/components.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    initStars('stars', 150);
+
+    // Filter functionality
+    const btns  = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.bl-card');
+
+    btns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        btns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        cards.forEach(card => {
+          card.style.display = (filter === 'all' || card.dataset.category === filter) ? '' : 'none';
+        });
+      });
+    });
+  });
+</script>
+</body>
+</html>

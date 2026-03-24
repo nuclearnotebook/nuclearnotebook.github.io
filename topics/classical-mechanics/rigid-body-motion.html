@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rigid Body Motion — Classical Mechanics | QuantumAtlas</title>
+  <meta name="description" content="Rigid body dynamics — the inertia tensor, principal axes, Euler angles, precession and nutation of gyroscopes, and the Euler equations of rigid body motion."/>
+  <meta name="keywords" content="rigid body motion, inertia tensor, Euler angles, principal axes, precession, nutation, gyroscope, Euler equations of motion, angular momentum"/>
+  <link rel="canonical" href="https://yourdomain.com/topics/classical-mechanics/rigid-body-motion.html"/>
+  <meta property="og:title" content="Rigid Body Motion | QuantumAtlas"/>
+  <meta property="og:description" content="Rigid body dynamics — the inertia tensor, principal axes, Euler angles, precession and nutation of gyroscopes, and the Euler equations of rigid body motion."/>
+  <meta property="og:image" content="https://images.unsplash.com/photo-1630839437035-dac17da580d0?w=1200&q=75&auto=format"/>
+  <script type="application/ld+json">{
+    "@context":"https://schema.org","@type":"Article",
+    "headline":"Rigid Body Motion","description":"Rigid body dynamics — the inertia tensor, principal axes, Euler angles, precession and nutation of gyroscopes, and the Euler equations of rigid body motion.",
+    "image":"https://images.unsplash.com/photo-1630839437035-dac17da580d0?w=1200&q=75&auto=format",
+    "author":{"@type":"Organization","name":"QuantumAtlas"},
+    "publisher":{"@type":"Organization","name":"QuantumAtlas","url":"https://yourdomain.com"},
+    "breadcrumb":{"@type":"BreadcrumbList","itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://yourdomain.com/"},
+      {"@type":"ListItem","position":2,"name":"Branches","item":"https://yourdomain.com/theory.html"},
+      {"@type":"ListItem","position":3,"name":"Classical Mechanics","item":"https://yourdomain.com/branches/classical-mechanics.html"},
+      {"@type":"ListItem","position":4,"name":"Rigid Body Motion"}
+    ]}
+  }</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4X0M6RM0F6"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4X0M6RM0F6',{page_title:document.title,page_location:window.location.href});</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2633513915753897" crossorigin="anonymous"></script>
+  <meta name="google-adsense-account" content="ca-pub-2633513915753897">
+  <link rel="stylesheet" href="../../css/global.css"/>
+  <link rel="stylesheet" href="../../css/nav.css"/>
+  <link rel="stylesheet" href="../../css/topic.css"/>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+<main>
+  <section class="topic-hero">
+    <img src="https://images.unsplash.com/photo-1630839437035-dac17da580d0?w=1200&q=75&auto=format" alt="Spinning top and gyroscopic rigid body motion" class="topic-hero-bg-img" loading="eager"/>
+    <div class="topic-hero-overlay"></div>
+    <div class="container topic-hero-content">
+      <nav class="breadcrumb">
+        <a href="../../index.html">Home</a><span class="sep">›</span>
+        <a href="../../theory.html">Branches</a><span class="sep">›</span>
+        <a href="../../branches/classical-mechanics.html">Classical Mechanics</a><span class="sep">›</span>
+        <span class="current">Rigid Body Motion</span>
+      </nav>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px">
+        <span class="badge badge-plasma">Classical Mechanics</span>
+        
+        <span class="badge badge-nova">Topic 21</span>
+      </div>
+      <h1 class="topic-hero-title">🎳 Rigid Body Motion</h1>
+      <p class="topic-hero-sub">Inertia Tensors, Euler Angles, and Gyroscopes</p>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:20px"><span class="tc-tag" style="padding:5px 12px;font-size:0.75rem">Rigid Bodies</span> <span class="tc-tag" style="padding:5px 12px;font-size:0.75rem">Gyroscope</span> <span class="tc-tag" style="padding:5px 12px;font-size:0.75rem">Euler Angles</span></div>
+    </div>
+  </section>
+  <div class="container topic-layout">
+    <article class="topic-article">
+      <div class="ad-container" style="margin-bottom:36px">
+        <div style="text-align:center;width:100%">
+          <span class="ad-label">Advertisement</span>
+          <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+          <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+        </div>
+      </div>
+      <div class="topic-body">
+<p>The motion of rigid bodies — solid objects that maintain their shape — is considerably more complex than point particle motion. A rigid body has six degrees of freedom (three translational, three rotational), and the rotational dynamics are described by the inertia tensor rather than a simple scalar moment of inertia. The resulting equations govern everything from spinning tops and gyroscopes to the rotation of planets and spacecraft attitude control.</p>
+
+<h2>The Inertia Tensor</h2>
+<p>For rotation about an arbitrary axis, the relationship L = Iω generalises to:</p>
+<div class="formula-block"><span class="formula-label">Angular Momentum (tensor form)</span>L⃗ = I·ω⃗ (matrix multiplication)</div>
+<p>The inertia tensor I is a 3×3 symmetric matrix. Its components are I<sub>ij</sub> = ∫(r²δ<sub>ij</sub> − r<sub>i</sub>r<sub>j</sub>)dm. L and ω are generally not parallel — this explains the wobbling of an asymmetric rotating body.</p>
+
+<h2>Principal Axes</h2>
+<p>Every rigid body has three principal axes about which the inertia tensor is diagonal. These are the eigenvectors of the inertia tensor. For rotation about a principal axis, L is parallel to ω and the motion is simple. Euler's equations describe the rotation in the principal axis frame:</p>
+<div class="formula-block"><span class="formula-label">Euler's Equations</span>
+I₁(dω₁/dt) + (I₃−I₂)ω₂ω₃ = τ₁<br/>
+I₂(dω₂/dt) + (I₁−I₃)ω₃ω₁ = τ₂<br/>
+I₃(dω₃/dt) + (I₂−I₁)ω₁ω₂ = τ₃
+</div>
+
+<h2>Precession and Nutation</h2>
+<p>A spinning gyroscope subject to gravity undergoes precession — the spin axis slowly rotates about the vertical. The precession rate is:</p>
+<div class="formula-block"><span class="formula-label">Precession Rate</span>Ω = τ/L = Mgd/(Iω)</div>
+<p>Superimposed on precession is nutation — a bobbing of the spin axis. The Earth itself precesses with a period of 26,000 years (due to the Moon and Sun's torque on Earth's equatorial bulge) and nutates with a period of 18.6 years.</p>
+
+<h2>Applications</h2>
+<p>Gyroscopes are used in navigation systems (inertial navigation for aircraft, ships, and spacecraft), stabilisation systems (camera stabilisers, ship stabilisers), and attitude control (satellite reaction wheels). Understanding rigid body motion is also essential for robotics, biomechanics, and the analysis of athletic spinning motions.</p>
+
+<div class="info-box info-box--fact">
+<div class="info-box-title" style="color:#a078ff">🪃 The Dzhanibekov Effect</div>
+<p style="margin:0">Euler's equations predict that rotation about an intermediate principal axis is unstable — the body will flip periodically in free space. This was dramatically demonstrated by Russian cosmonaut Vladimir Dzhanibekov who observed a wing nut spontaneously flipping in microgravity (1985). It is also called the tennis racket theorem and is a consequence of the instability of the intermediate axis of the inertia tensor.</p>
+</div>
+</div>
+      <div class="ad-container" style="margin-top:40px">
+        <div style="text-align:center;width:100%">
+          <span class="ad-label">Advertisement</span>
+          <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+          <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+        </div>
+      </div>
+    </article>
+    <aside class="topic-sidebar">
+      <div class="sidebar-card">
+        <h4 style="font-family:var(--font-mono);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent-plasma);margin-bottom:14px">// Topic Info</h4>
+        <div class="sidebar-stat"><span>Branch</span><span>Classical Mechanics</span></div>
+        <div class="sidebar-stat"><span>Topic</span><span>21 / 22</span></div>
+        <div class="sidebar-stat"><span>Level</span><span>Advanced</span></div>
+      </div>
+      <div class="sidebar-card">
+        <h4 style="font-family:var(--font-mono);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent-plasma);margin-bottom:14px">// All Topics</h4>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:6px">
+          <li><a href="newtons-laws.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">01. Newton's Laws</a></li>
+          <li><a href="projectile-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">02. Projectile Motion</a></li>
+          <li><a href="conservation-of-energy.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">03. Conservation of Energy</a></li>
+          <li><a href="linear-momentum.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">04. Linear Momentum</a></li>
+          <li><a href="circular-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">05. Circular Motion</a></li>
+          <li><a href="gravitational-force.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">06. Gravitational Force</a></li>
+          <li><a href="simple-harmonic-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">07. Simple Harmonic Motion</a></li>
+          <li><a href="rotational-dynamics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">08. Rotational Dynamics</a></li>
+          <li><a href="work-and-power.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">09. Work & Power</a></li>
+          <li><a href="friction-and-drag.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">10. Friction & Drag</a></li>
+          <li><a href="keplers-laws.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">11. Kepler's Laws</a></li>
+          <li><a href="waves-and-oscillations.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">12. Waves & Oscillations</a></li>
+          <li><a href="centre-of-mass.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">13. Centre of Mass</a></li>
+          <li><a href="statics-and-equilibrium.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">14. Statics & Equilibrium</a></li>
+          <li><a href="fluid-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">15. Fluid Mechanics</a></li>
+          <li><a href="elasticity-and-stress.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">16. Elasticity & Stress</a></li>
+          <li><a href="kinematics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">17. Kinematics</a></li>
+          <li><a href="damped-oscillations.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">18. Damped Oscillations</a></li>
+          <li><a href="lagrangian-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">19. Lagrangian Mechanics</a></li>
+          <li><a href="hamiltonian-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">20. Hamiltonian Mechanics</a></li>
+          <li><a href="rigid-body-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">21. Rigid Body Motion</a></li>
+          <li><a href="non-inertial-frames.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">22. Non-Inertial Frames</a></li>
+        </ul>
+      </div>
+      <div class="ad-container" style="min-height:250px;flex-direction:column">
+        <span class="ad-label">Advertisement</span>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+      </div>
+    </aside>
+  </div>
+</main>
+<div id="footer-placeholder"></div>
+<script src="../../js/components.js"></script>
+</body>
+</html>

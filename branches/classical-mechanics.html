@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Classical Mechanics — All Topics | QuantumAtlas</title>
+  <meta name="description" content="Explore all Classical Mechanics topics on QuantumAtlas — Newton's laws, projectile motion, rotational dynamics, oscillations, Lagrangian mechanics, and more. Deep theory with simulations."/>
+  <meta name="keywords" content="classical mechanics, Newton's laws, projectile motion, simple harmonic motion, rotational dynamics, Lagrangian mechanics, conservation of energy, momentum, gravity, oscillations, waves"/>
+  <link rel="canonical" href="https://yourdomain.com/branches/classical-mechanics.html"/>
+  <meta property="og:title" content="Classical Mechanics — All Topics | QuantumAtlas"/>
+  <meta property="og:description" content="22 in-depth topics covering the full scope of classical mechanics — with interactive simulations."/>
+  <meta property="og:image" content="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=1200&q=80"/>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Classical Mechanics Topics","description":"22 in-depth classical mechanics topics with theory, equations, and simulations","url":"https://yourdomain.com/branches/classical-mechanics.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://yourdomain.com/"},{"@type":"ListItem","position":2,"name":"Branches","item":"https://yourdomain.com/theory.html"},{"@type":"ListItem","position":3,"name":"Classical Mechanics"}]}}</script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4X0M6RM0F6"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4X0M6RM0F6',{page_title:document.title,page_location:window.location.href});</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2633513915753897" crossorigin="anonymous"></script>
+  <meta name="google-adsense-account" content="ca-pub-2633513915753897">
+
+  <link rel="stylesheet" href="../css/global.css"/>
+  <link rel="stylesheet" href="../css/nav.css"/>
+  <style>
+    /* Branch hero */
+    .branch-hero {
+      padding: 130px 0 70px;
+      position: relative;
+      overflow: hidden;
+    }
+    .branch-hero-bg {
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(0,212,255,0.05) 0%, rgba(5,8,16,0) 60%);
+    }
+    .branch-hero-img {
+      position: absolute; inset: 0;
+      object-fit: cover; width: 100%; height: 100%;
+      opacity: 0.08;
+    }
+    .branch-hero-content { position: relative; z-index: 2; }
+    .branch-meta {
+      display: flex; gap: 24px; flex-wrap: wrap;
+      margin: 24px 0 32px;
+    }
+    .branch-meta-item {
+      display: flex; align-items: center; gap: 8px;
+      font-family: var(--font-mono); font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+    .branch-meta-item strong { color: var(--text-primary); }
+
+    /* Topics grid */
+    .topics-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .tc {
+      background: var(--gradient-card);
+      border: 1px solid var(--border-dim);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: var(--transition);
+      box-shadow: var(--shadow-card);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tc::after {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 3px;
+      background: var(--gradient-plasma);
+      transform: scaleY(0);
+      transform-origin: bottom;
+      transition: transform 0.3s ease;
+    }
+
+    .tc:hover {
+      transform: translateY(-4px);
+      border-color: var(--border-glow);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .tc:hover::after { transform: scaleY(1); }
+
+    .tc-number {
+      font-family: var(--font-mono); font-size: 0.65rem;
+      color: var(--text-muted); letter-spacing: 0.1em;
+    }
+
+    .tc-icon { font-size: 2rem; line-height: 1; }
+
+    .tc h3 { font-size: 1rem; color: var(--text-primary); margin-bottom: 0; }
+
+    .tc p {
+      font-size: 0.82rem; color: var(--text-muted);
+      margin: 0; line-height: 1.55; flex: 1;
+    }
+
+    .tc-footer {
+      display: flex; align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--border-dim);
+      padding-top: 10px;
+      margin-top: auto;
+    }
+
+    .tc-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+
+    .tc-tag {
+      font-family: var(--font-mono); font-size: 0.62rem;
+      color: var(--text-muted); letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: rgba(255,255,255,0.04);
+      padding: 2px 7px; border-radius: 4px;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .tc-arrow {
+      font-size: 0.8rem; color: var(--accent-plasma);
+      font-family: var(--font-display); font-weight: 600;
+      transition: var(--transition);
+    }
+    .tc:hover .tc-arrow { letter-spacing: 0.05em; }
+
+    .sim-dot {
+      width: 7px; height: 7px;
+      background: var(--accent-green);
+      border-radius: 50%;
+      box-shadow: 0 0 6px var(--accent-green);
+      animation: pulse-glow 2s ease-in-out infinite;
+      flex-shrink: 0;
+    }
+
+    /* Sidebar overview */
+    .branch-layout { display: grid; grid-template-columns: 1fr 320px; gap: 48px; align-items: start; }
+    .branch-sidebar { position: sticky; top: 100px; }
+
+    .sidebar-card {
+      background: var(--gradient-card);
+      border: 1px solid var(--border-dim);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+
+    .sidebar-card h4 {
+      font-size: 0.8rem;
+      font-family: var(--font-mono);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent-plasma);
+      margin-bottom: 16px;
+    }
+
+    .sidebar-stat { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--border-dim); font-size: 0.85rem; }
+    .sidebar-stat:last-child { border-bottom: none; }
+    .sidebar-stat span:first-child { color: var(--text-muted); }
+    .sidebar-stat span:last-child  { color: var(--text-primary); font-weight: 600; font-family: var(--font-display); }
+
+    @media (max-width: 1100px) { .branch-layout { grid-template-columns: 1fr; } .branch-sidebar { position: static; } }
+    @media (max-width: 900px)  { .topics-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 560px)  { .topics-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+
+<main>
+  <!-- Hero -->
+  <section class="branch-hero">
+    <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=1400&q=70&auto=format" alt="" class="branch-hero-img" loading="eager"/>
+    <div class="branch-hero-bg"></div>
+    <div class="container branch-hero-content">
+      <nav class="breadcrumb">
+        <a href="../index.html">Home</a><span class="sep">›</span>
+        <a href="../theory.html">Branches</a><span class="sep">›</span>
+        <span class="current">Classical Mechanics</span>
+      </nav>
+      <span class="badge badge-plasma" style="margin-bottom:16px">Classical Physics</span>
+      <h1>Classical<br/><span class="gradient-text">Mechanics</span></h1>
+      <p style="max-width:640px;font-size:1.05rem;margin-top:16px">
+        The bedrock of physics. Classical mechanics describes the motion of macroscopic objects using Newton's laws, energy methods, and the elegant formalisms of Lagrange and Hamilton. From projectiles to planetary orbits, this is where physics begins.
+      </p>
+      <div class="branch-meta">
+        <div class="branch-meta-item"><span>📄</span><strong>22 Topics</strong></div>
+        <div class="branch-meta-item"><span>🎮</span><strong>8 Simulations</strong></div>
+        <div class="branch-meta-item"><span>⏱</span><strong>~44,000 words</strong></div>
+        <div class="branch-meta-item"><span>📐</span><strong>Advanced Level</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AdSense -->
+  <div class="container">
+    <div class="ad-container" style="margin-bottom:0">
+      <div style="text-align:center;width:100%">
+        <span class="ad-label">Advertisement</span>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+      </div>
+    </div>
+  </div>
+
+  <section class="section--sm">
+    <div class="container">
+      <div class="branch-layout">
+        <!-- Main topics -->
+        <div>
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:32px">
+            <span class="section-label" style="margin:0">// 22 topics</span>
+            <div style="display:flex;align-items:center;gap:6px">
+              <div class="sim-dot"></div>
+              <span style="font-family:var(--font-mono);font-size:0.7rem;color:var(--accent-green)">= has simulation</span>
+            </div>
+          </div>
+          <div class="topics-grid">
+
+            <a href="../topics/classical-mechanics/newtons-laws.html" class="tc reveal">
+              <span class="tc-number">01 / 22</span>
+              <div class="tc-icon">⚙</div>
+              <h3>Newton's Laws of Motion</h3>
+              <p>The three fundamental laws — inertia, F=ma, and action-reaction — that define classical dynamics.</p>
+              <div class="tc-footer">
+                <div class="tc-tags">
+                  <span class="tc-tag">Dynamics</span>
+                  <span class="tc-tag">Forces</span>
+                </div>
+                <span class="tc-arrow">→</span>
+              </div>
+            </a>
+
+            <a href="../topics/classical-mechanics/projectile-motion.html" class="tc reveal delay-1">
+              <span class="tc-number">02 / 22</span>
+              <div style="display:flex;gap:8px;align-items:center">
+                <div class="tc-icon">🎯</div>
+                <div class="sim-dot"></div>
+              </div>
+              <h3>Projectile Motion</h3>
+              <p>Two-dimensional motion under gravity — range, maximum height, trajectory equations, and angle optimization.</p>
+              <div class="tc-footer">
+                <div class="tc-tags">
+                  <span class="tc-tag">Kinematics</span>
+                  <span class="tc-tag">Sim</span>
+                </div>
+                <span class="tc-arrow">→</span>
+              </div>
+            </a>
+
+            <a href="../topics/classical-mechanics/conservation-of-energy.html" class="tc reveal delay-2">
+              <span class="tc-number">03 / 22</span>
+              <div style="display:flex;gap:8px;align-items:center">
+                <div class="tc-icon">⚡</div>
+                <div class="sim-dot"></div>
+              </div>
+              <h3>Conservation of Energy</h3>
+              <p>Work-energy theorem, kinetic and potential energy, conservative forces, and energy conservation in systems.</p>
+              <div class="tc-footer">
+                <div class="tc-tags">
+                  <span class="tc-tag">Energy</span>
+                  <span class="tc-tag">Sim</span>
+                </div>
+                <span class="tc-arrow">→</span>
+              </div>
+            </a>
+
+            <a href="../topics/classical-mechanics/linear-momentum.html" class="tc reveal">
+              <span class="tc-number">04 / 22</span>
+              <div style="display:flex;gap:8px;align-items:center">
+                <div class="tc-icon">💥</div>
+                <div class="sim-dot"></div>
+              </div>
+              <h3>Linear Momentum & Collisions</h3>
+              <p>Impulse, conservation of momentum, elastic and inelastic collisions, centre of mass dynamics.</p>
+              <div class="tc-footer">
+                <div class="tc-tags">
+                  <span class="tc-tag">Momentum</span>
+                  <span class="tc-tag">Sim</span>
+                </div>
+                <span class="tc-arrow">→</span>
+              </div>
+            </a>
+
+            <a href="../topics/classical-mechanics/circular-motion.html" class="tc reveal delay-1">
+              <span class="tc-number">05 / 22</span>
+              <div class="tc-icon">🔄</div>
+              <h3>Circular Motion & Rotation</h3>
+              <p>Angular velocity, centripetal acceleration, uniform and non-uniform circular motion, banked curves.</p>
+              <div class="tc-footer">
+                <div class="tc-tags">
+                  <span class="tc-tag">Rotation</span>
+                  <span class="tc-tag">Kinematics</span>
+                </div>
+                <span class="tc-arrow">→</span>
+              </div>
+            </a>
+
+            <a href="../topics/classical-mechanics/gravitational-force.html" class="tc reveal delay-2">
+              <span class="tc-number">06 / 22</span>
+              <div style="display:flex;gap:8px;align-items:center">
+                <div class="tc-icon">🌐</div>
+                <div class="sim-dot"></div>
+              </div>
+              <h3>Gravitational Force & Fields</h3>
+              <p>Newton's law of universal gravitation, gravitational fields, potential, and escape velocity.</p>
+              <div class="tc-footer">
+                <div class="tc-tags">
+                  <span class="tc-tag">Gravity</span>
+                  <span class="tc-tag">Sim</span>
+                </div>
+                <span class="tc-arrow">→</span>
+              </div>
+            </a>
+
+            <a href="../topics/classical-mechanics/simple-harmonic-motion.html" class="tc reveal">
+              <span class="tc-number">07 / 22</span>
+              <div style="display:flex;gap:8px;align-items:center">
+                <div class="tc-icon">〜</div>
+                <div class="sim-dot"></div>
+              </div>
+              <h3>Simple Harmonic Motion</h3>
+              <p>Spring-mass systems, pendulums, phase, amplitude, frequency, and the equation of SHM.</p>
+              <div class="tc-footer">
+                <div class="tc-tags">
+                  <span class="tc-tag">Oscillations</span>
+                  <span class="tc-tag">Sim</span>
+                </div>
+                <span class="tc-arrow">→</span>
+              </div>
+            </a>
+
+            <a href="../topics/classical-mechanics/rotational-dynamics.html" class="tc reveal delay-1">
+              <span class="tc-number">08 / 22</span>
+              <div class="tc-icon">🌀</div>
+              <h3>Rotational Dynamics</h3>
+              <p>Torque, angular momentum, moment of inertia, rotational kinetic energy, and rolling motion.</p>
+              <div class="tc-footer">
+                <div class="tc-tags">
+                  <span class="tc-tag">Torque</span>
+                  <span class="tc-tag">Angular Momentum</span>
+                </div>
+                <span class="tc-arrow">→</span>
+              </div>
+            </a>
+
+            <a href="../topics/classical-mechanics/work-and-power.html" class="tc reveal delay-2">
+              <span class="tc-number">09 / 22</span>
+              <div class="tc-icon">🔧</div>
+              <h3>Work, Power & Machines</h3>
+              <p>Definitions of work and power, variable force integration, mechanical advantage, and efficiency.</p>
+              <div class="tc-footer">
+                <div class="tc-tags">
+                  <span class="tc-tag">Energy</span>
+                  <span class="tc-tag">Machines</span>
+                </div>
+                <span class="tc-arrow">→</span>
+              </div>
+            </a>
+
+            <a href="../topics/classical-mechanics/friction-and-drag.html" class="tc reveal">
+              <span class="tc-number">10 / 22</span>
+              <div class="tc-icon">🛞</div>
+              <h3>Friction & Air Drag</h3>
+              <p>Static and kinetic friction, coefficients, fluid drag, terminal velocity, and viscous drag.</p>
+              <div class="tc-footer">
+                <div class="tc-tags">
+                  <span class="tc-tag">Friction</span>
+                  <span class="tc-tag">Drag</span>
+                </div>
+                <span class="tc-arrow">→</span>
+              </div>
+            </a>
+
+            <a href="../topics/classical-mechanics/keplers-laws.html" class="tc reveal delay-1">
+              <span class="tc-number">11 / 22</span>
+              <div style="display:flex;gap:8px;align-items:center">
+                <div class="tc-icon">🪐</div>
+                <div class="sim-dot"></div>
+              </div>
+              <h3>Kepler's Laws & Orbital Mechanics</h3>
+              <p>Three laws of planetary motion, orbital periods, elliptical orbits, and vis-viva equation.</p>
+              <div class="tc-footer">
+                <div class="tc-tags">
+                  <span class="tc-tag">Orbits</span>
+                  <span class="tc-tag">Sim</span>
+                </div>
+                <span class="tc-arrow">→</span>
+              </div>
+            </a>
+
+            <a href="../topics/classical-mechanics/waves-and-oscillations.html" class="tc reveal delay-2">
+              <span class="tc-number">12 / 22</span>
+              <div class="tc-icon">🌊</div>
+              <h3>Waves & Oscillations</h3>
+              <p>Wave properties, superposition, standing waves, resonance, and the wave equation.</p>
+              <div class="tc-footer">
+                <div class="tc-tags">
+                  <span class="tc-tag">Waves</span>
+                  <span class="tc-tag">Resonance</span>
+                </div>
+                <span class="tc-arrow">→</span>
+              </div>
+            </a>
+
+            <a href="../topics/classical-mechanics/centre-of-mass.html" class="tc reveal">
+              <span class="tc-number">13 / 22</span>
+              <div class="tc-icon">⊕</div>
+              <h3>Centre of Mass & Systems</h3>
+              <p>Finding the centre of mass of extended bodies and systems of particles; CM motion.</p>
+              <div class="tc-footer">
+                <div class="tc-tags">
+                  <span class="tc-tag">Systems</span>
+                  <span class="tc-tag">CM Frame</span>
+                </div>
+                <span class="tc-arrow">→</span>
+              </div>
+            </a>
+
+            <a href="../topics/classical-mechanics/statics-and-equilibrium.html" class="tc reveal delay-1">
+              <span class="tc-number">14 / 22</span>
+              <div class="tc-icon">⚖</div>
+              <h3>Statics & Equilibrium</h3>
+              <p>Conditions for translational and rotational equilibrium, levers, trusses, and tension.</p>
+              <div class="tc-footer">
+                <div class="tc-tags">
+                  <span class="tc-tag">Statics</span>
+                  <span class="tc-tag">Torque</span>
+                </div>
+                <span class="tc-arrow">→</span>
+              </div>
+            </a>
+
+            <a href="../topics/classical-mechanics/fluid-mechanics.html" class="tc reveal delay-2">
+              <span class="tc-number">15 / 22</span>
+              <div class="tc-icon">💧</div>
+              <h3>Fluid Mechanics</h3>
+              <p>Pressure, buoyancy, Bernoulli's equation, continuity, viscosity, and turbulent flow.</p>
+              <div class="tc-footer">
+                <div class="tc-tags">
+                  <span class="tc-tag">Fluids</span>
+                  <span class="tc-tag">Bernoulli</span>
+                </div>
+                <span class="tc-arrow">→</span>
+              </div>
+            </a>
+
+            <a href="../topics/classical-mechanics/elasticity-and-stress.html" class="tc reveal">
+              <span class="tc-number">16 / 22</span>
+              <div class="tc-icon">🔩</div>
+              <h3>Elasticity & Stress-Strain</h3>
+              <p>Hooke's law, Young's modulus, bulk and shear modulus, elastic potential energy, and material failure.</p>
+              <div class="tc-footer">
+                <div class="tc-tags">
+                  <span class="tc-tag">Elasticity</span>
+                  <span class="tc-tag">Materials</span>
+                </div>
+                <span class="tc-arrow">→</span>
+              </div>
+            </a>
+
+            <a href="../topics/classical-mechanics/kinematics.html" class="tc reveal delay-1">
+              <span class="tc-number">17 / 22</span>
+              <div class="tc-icon">📐</div>
+              <h3>Kinematics in 1D & 2D</h3>
+              <p>Displacement, velocity, acceleration, equations of motion, and vector decomposition.</p>
+              <div class="tc-footer">
+                <div class="tc-tags">
+                  <span class="tc-tag">Kinematics</span>
+                  <span class="tc-tag">Vectors</span>
+                </div>
+                <span class="tc-arrow">→</span>
+              </div>
+            </a>
+
+            <a href="../topics/classical-mechanics/damped-oscillations.html" class="tc reveal delay-2">
+              <span class="tc-number">18 / 22</span>
+              <div class="tc-icon">📉</div>
+              <h3>Damped & Forced Oscillations</h3>
+              <p>Damping types, driven oscillators, resonance curves, and the Q-factor in mechanical systems.</p>
+              <div class="tc-footer">
+                <div class="tc-tags">
+                  <span class="tc-tag">Damping</span>
+                  <span class="tc-tag">Resonance</span>
+                </div>
+                <span class="tc-arrow">→</span>
+              </div>
+            </a>
+
+            <a href="../topics/classical-mechanics/lagrangian-mechanics.html" class="tc reveal">
+              <span class="tc-number">19 / 22</span>
+              <div class="tc-icon">∫</div>
+              <h3>Lagrangian Mechanics</h3>
+              <p>Generalized coordinates, the Lagrangian, Euler-Lagrange equations, and constraints.</p>
+              <div class="tc-footer">
+                <div class="tc-tags">
+                  <span class="tc-tag">Advanced</span>
+                  <span class="tc-tag">Variational</span>
+                </div>
+                <span class="tc-arrow">→</span>
+              </div>
+            </a>
+
+            <a href="../topics/classical-mechanics/hamiltonian-mechanics.html" class="tc reveal delay-1">
+              <span class="tc-number">20 / 22</span>
+              <div class="tc-icon">ℋ</div>
+              <h3>Hamiltonian Mechanics</h3>
+              <p>The Hamiltonian, Hamilton's equations, phase space, and canonical transformations.</p>
+              <div class="tc-footer">
+                <div class="tc-tags">
+                  <span class="tc-tag">Advanced</span>
+                  <span class="tc-tag">Phase Space</span>
+                </div>
+                <span class="tc-arrow">→</span>
+              </div>
+            </a>
+
+            <a href="../topics/classical-mechanics/rigid-body-motion.html" class="tc reveal delay-2">
+              <span class="tc-number">21 / 22</span>
+              <div class="tc-icon">🎳</div>
+              <h3>Rigid Body Motion</h3>
+              <p>Inertia tensors, Euler angles, precession, nutation, gyroscopes, and the Euler equations.</p>
+              <div class="tc-footer">
+                <div class="tc-tags">
+                  <span class="tc-tag">Rigid Bodies</span>
+                  <span class="tc-tag">Gyroscope</span>
+                </div>
+                <span class="tc-arrow">→</span>
+              </div>
+            </a>
+
+            <a href="../topics/classical-mechanics/non-inertial-frames.html" class="tc reveal">
+              <span class="tc-number">22 / 22</span>
+              <div class="tc-icon">🔁</div>
+              <h3>Non-Inertial Reference Frames</h3>
+              <p>Fictitious forces, Coriolis effect, centrifugal force, and rotating frame dynamics.</p>
+              <div class="tc-footer">
+                <div class="tc-tags">
+                  <span class="tc-tag">Frames</span>
+                  <span class="tc-tag">Coriolis</span>
+                </div>
+                <span class="tc-arrow">→</span>
+              </div>
+            </a>
+
+          </div><!-- /topics-grid -->
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="branch-sidebar">
+          <div class="sidebar-card">
+            <h4>// Branch Overview</h4>
+            <div class="sidebar-stat"><span>Topics</span><span>22</span></div>
+            <div class="sidebar-stat"><span>Simulations</span><span>8</span></div>
+            <div class="sidebar-stat"><span>Content</span><span>~44,000 words</span></div>
+            <div class="sidebar-stat"><span>Level</span><span>Introductory → Advanced</span></div>
+            <div class="sidebar-stat"><span>Prerequisites</span><span>Basic Algebra</span></div>
+          </div>
+
+          <div class="sidebar-card">
+            <h4>// Key Equations</h4>
+            <div class="formula-block" style="margin:0 0 10px;font-size:0.9rem;">F = ma</div>
+            <div class="formula-block" style="margin:0 0 10px;font-size:0.9rem;">KE = ½mv²</div>
+            <div class="formula-block" style="margin:0 0 10px;font-size:0.9rem;">F = Gm₁m₂/r²</div>
+            <div class="formula-block" style="margin:0;font-size:0.9rem;">τ = Iα</div>
+          </div>
+
+          <div class="sidebar-card">
+            <h4>// Related Branches</h4>
+            <ul class="footer-links">
+              <li><a href="quantum-mechanics.html" style="font-size:0.85rem">Quantum Mechanics →</a></li>
+              <li><a href="thermodynamics.html" style="font-size:0.85rem">Thermodynamics →</a></li>
+              <li><a href="relativity.html" style="font-size:0.85rem">Relativity →</a></li>
+              <li><a href="electromagnetism.html" style="font-size:0.85rem">Electromagnetism →</a></li>
+            </ul>
+          </div>
+
+          <!-- AdSense sidebar -->
+          <div class="ad-container" style="min-height:250px">
+            <div style="text-align:center;width:100%">
+              <span class="ad-label">Advertisement</span>
+              <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+              <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="footer-placeholder"></div>
+<script src="../js/components.js"></script>
+</body>
+</html>

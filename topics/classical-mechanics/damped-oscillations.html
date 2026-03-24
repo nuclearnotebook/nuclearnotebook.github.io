@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Damped & Forced Oscillations — Classical Mechanics | QuantumAtlas</title>
+  <meta name="description" content="Damped and forced oscillations — types of damping, driven oscillators, resonance phenomena, the quality factor Q, and mechanical resonance in engineering."/>
+  <meta name="keywords" content="damped oscillations, forced oscillations, resonance, Q factor, underdamped, overdamped, critically damped, driving frequency, amplitude resonance"/>
+  <link rel="canonical" href="https://yourdomain.com/topics/classical-mechanics/damped-oscillations.html"/>
+  <meta property="og:title" content="Damped & Forced Oscillations | QuantumAtlas"/>
+  <meta property="og:description" content="Damped and forced oscillations — types of damping, driven oscillators, resonance phenomena, the quality factor Q, and mechanical resonance in engineering."/>
+  <meta property="og:image" content="https://images.unsplash.com/photo-1509228627152-72ae9ae6848d?w=1200&q=75&auto=format"/>
+  <script type="application/ld+json">{
+    "@context":"https://schema.org","@type":"Article",
+    "headline":"Damped & Forced Oscillations","description":"Damped and forced oscillations — types of damping, driven oscillators, resonance phenomena, the quality factor Q, and mechanical resonance in engineering.",
+    "image":"https://images.unsplash.com/photo-1509228627152-72ae9ae6848d?w=1200&q=75&auto=format",
+    "author":{"@type":"Organization","name":"QuantumAtlas"},
+    "publisher":{"@type":"Organization","name":"QuantumAtlas","url":"https://yourdomain.com"},
+    "breadcrumb":{"@type":"BreadcrumbList","itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://yourdomain.com/"},
+      {"@type":"ListItem","position":2,"name":"Branches","item":"https://yourdomain.com/theory.html"},
+      {"@type":"ListItem","position":3,"name":"Classical Mechanics","item":"https://yourdomain.com/branches/classical-mechanics.html"},
+      {"@type":"ListItem","position":4,"name":"Damped & Forced Oscillations"}
+    ]}
+  }</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4X0M6RM0F6"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4X0M6RM0F6',{page_title:document.title,page_location:window.location.href});</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2633513915753897" crossorigin="anonymous"></script>
+  <meta name="google-adsense-account" content="ca-pub-2633513915753897">
+  <link rel="stylesheet" href="../../css/global.css"/>
+  <link rel="stylesheet" href="../../css/nav.css"/>
+  <link rel="stylesheet" href="../../css/topic.css"/>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+<main>
+  <section class="topic-hero">
+    <img src="https://images.unsplash.com/photo-1509228627152-72ae9ae6848d?w=1200&q=75&auto=format" alt="Oscillation dampening and vibration mechanics" class="topic-hero-bg-img" loading="eager"/>
+    <div class="topic-hero-overlay"></div>
+    <div class="container topic-hero-content">
+      <nav class="breadcrumb">
+        <a href="../../index.html">Home</a><span class="sep">›</span>
+        <a href="../../theory.html">Branches</a><span class="sep">›</span>
+        <a href="../../branches/classical-mechanics.html">Classical Mechanics</a><span class="sep">›</span>
+        <span class="current">Damped & Forced Oscillations</span>
+      </nav>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px">
+        <span class="badge badge-plasma">Classical Mechanics</span>
+        
+        <span class="badge badge-nova">Topic 18</span>
+      </div>
+      <h1 class="topic-hero-title">📉 Damped & Forced Oscillations</h1>
+      <p class="topic-hero-sub">Resonance, Damping, and the Q-Factor</p>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:20px"><span class="tc-tag" style="padding:5px 12px;font-size:0.75rem">Damping</span> <span class="tc-tag" style="padding:5px 12px;font-size:0.75rem">Resonance</span> <span class="tc-tag" style="padding:5px 12px;font-size:0.75rem">Q-Factor</span></div>
+    </div>
+  </section>
+  <div class="container topic-layout">
+    <article class="topic-article">
+      <div class="ad-container" style="margin-bottom:36px">
+        <div style="text-align:center;width:100%">
+          <span class="ad-label">Advertisement</span>
+          <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+          <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+        </div>
+      </div>
+      <div class="topic-body">
+<p>Real oscillators always lose energy to their environment — springs have friction, pendulums have air resistance, electrical circuits have resistance. Damping modifies the behaviour of oscillators in profound ways. When we add a periodic driving force, the interplay between driving, damping, and natural frequency produces resonance — one of the most important phenomena in physics and engineering.</p>
+
+<h2>The Damped Oscillator Equation</h2>
+<div class="formula-block"><span class="formula-label">Damped SHM</span>m(d²x/dt²) + b(dx/dt) + kx = 0</div>
+<p>Where b is the damping coefficient. The solution depends on the discriminant b² − 4mk:</p>
+
+<h2>Three Regimes of Damping</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Condition</th><th>Regime</th><th>Behaviour</th></tr></thead>
+<tbody>
+<tr><td>b² < 4mk</td><td>Underdamped</td><td>Oscillates with exponentially decaying amplitude</td></tr>
+<tr><td>b² = 4mk</td><td>Critically damped</td><td>Returns to equilibrium fastest without oscillating</td></tr>
+<tr><td>b² > 4mk</td><td>Overdamped</td><td>Returns to equilibrium slowly without oscillating</td></tr>
+</tbody></table></div>
+<div class="formula-block"><span class="formula-label">Underdamped Solution</span>x(t) = Ae<sup>−γt</sup> cos(ω<sub>d</sub>t + φ) &nbsp;&nbsp;where γ = b/2m, ω<sub>d</sub> = √(ω₀² − γ²)</div>
+
+<h2>Quality Factor Q</h2>
+<div class="formula-block"><span class="formula-label">Q-Factor</span>Q = ω₀/2γ = ω₀m/b</div>
+<p>Q measures how many oscillation cycles occur before energy decays to 1/e² of its initial value. High Q = lightly damped (many oscillations). Examples: pendulum clock Q ≈ 10⁴, quartz crystal resonator Q ≈ 10⁶, atomic transition (laser) Q ≈ 10¹⁴.</p>
+
+<h2>Forced Oscillations and Resonance</h2>
+<p>When a damped oscillator is driven by a periodic force F₀cos(ωt):</p>
+<div class="formula-block"><span class="formula-label">Steady-State Amplitude</span>A = (F₀/m) / √((ω₀²−ω²)² + (bω/m)²)</div>
+<p>Resonance (maximum amplitude) occurs near ω = ω₀. At exact resonance, amplitude is limited only by damping: A<sub>res</sub> = F₀/(bω₀) = QF₀/(mω₀²). A high-Q oscillator has very sharp, high resonance peaks.</p>
+
+<div class="info-box info-box--warn">
+<div class="info-box-title" style="color:var(--accent-solar)">⚠ Resonance Disasters</div>
+<p style="margin:0">The Tacoma Narrows Bridge (1940), Millennium Bridge London (2000), and the Angers Bridge (1850) all failed due to resonance. The Millennium Bridge was stiffened after pedestrians found their natural walking pace synchronised with the bridge's sway frequency — a feedback resonance. Modern bridge design includes tuned mass dampers to suppress resonance.</p>
+</div>
+</div>
+      <div class="ad-container" style="margin-top:40px">
+        <div style="text-align:center;width:100%">
+          <span class="ad-label">Advertisement</span>
+          <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+          <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+        </div>
+      </div>
+    </article>
+    <aside class="topic-sidebar">
+      <div class="sidebar-card">
+        <h4 style="font-family:var(--font-mono);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent-plasma);margin-bottom:14px">// Topic Info</h4>
+        <div class="sidebar-stat"><span>Branch</span><span>Classical Mechanics</span></div>
+        <div class="sidebar-stat"><span>Topic</span><span>18 / 22</span></div>
+        <div class="sidebar-stat"><span>Level</span><span>Advanced</span></div>
+      </div>
+      <div class="sidebar-card">
+        <h4 style="font-family:var(--font-mono);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent-plasma);margin-bottom:14px">// All Topics</h4>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:6px">
+          <li><a href="newtons-laws.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">01. Newton's Laws</a></li>
+          <li><a href="projectile-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">02. Projectile Motion</a></li>
+          <li><a href="conservation-of-energy.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">03. Conservation of Energy</a></li>
+          <li><a href="linear-momentum.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">04. Linear Momentum</a></li>
+          <li><a href="circular-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">05. Circular Motion</a></li>
+          <li><a href="gravitational-force.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">06. Gravitational Force</a></li>
+          <li><a href="simple-harmonic-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">07. Simple Harmonic Motion</a></li>
+          <li><a href="rotational-dynamics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">08. Rotational Dynamics</a></li>
+          <li><a href="work-and-power.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">09. Work & Power</a></li>
+          <li><a href="friction-and-drag.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">10. Friction & Drag</a></li>
+          <li><a href="keplers-laws.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">11. Kepler's Laws</a></li>
+          <li><a href="waves-and-oscillations.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">12. Waves & Oscillations</a></li>
+          <li><a href="centre-of-mass.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">13. Centre of Mass</a></li>
+          <li><a href="statics-and-equilibrium.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">14. Statics & Equilibrium</a></li>
+          <li><a href="fluid-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">15. Fluid Mechanics</a></li>
+          <li><a href="elasticity-and-stress.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">16. Elasticity & Stress</a></li>
+          <li><a href="kinematics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">17. Kinematics</a></li>
+          <li><a href="damped-oscillations.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">18. Damped Oscillations</a></li>
+          <li><a href="lagrangian-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">19. Lagrangian Mechanics</a></li>
+          <li><a href="hamiltonian-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">20. Hamiltonian Mechanics</a></li>
+          <li><a href="rigid-body-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">21. Rigid Body Motion</a></li>
+          <li><a href="non-inertial-frames.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">22. Non-Inertial Frames</a></li>
+        </ul>
+      </div>
+      <div class="ad-container" style="min-height:250px;flex-direction:column">
+        <span class="ad-label">Advertisement</span>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+      </div>
+    </aside>
+  </div>
+</main>
+<div id="footer-placeholder"></div>
+<script src="../../js/components.js"></script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lagrangian Mechanics — Classical Mechanics | QuantumAtlas</title>
+  <meta name="description" content="Lagrangian mechanics — the principle of least action, generalised coordinates, Euler-Lagrange equations, constraints, and Noether's theorem."/>
+  <meta name="keywords" content="Lagrangian mechanics, Euler-Lagrange equation, generalised coordinates, variational principle, principle of least action, constraints, holonomic"/>
+  <link rel="canonical" href="https://yourdomain.com/topics/classical-mechanics/lagrangian-mechanics.html"/>
+  <meta property="og:title" content="Lagrangian Mechanics | QuantumAtlas"/>
+  <meta property="og:description" content="Lagrangian mechanics — the principle of least action, generalised coordinates, Euler-Lagrange equations, constraints, and Noether's theorem."/>
+  <meta property="og:image" content="https://images.unsplash.com/photo-1509228468518-180dd4864904?w=1200&q=75&auto=format"/>
+  <script type="application/ld+json">{
+    "@context":"https://schema.org","@type":"Article",
+    "headline":"Lagrangian Mechanics","description":"Lagrangian mechanics — the principle of least action, generalised coordinates, Euler-Lagrange equations, constraints, and Noether's theorem.",
+    "image":"https://images.unsplash.com/photo-1509228468518-180dd4864904?w=1200&q=75&auto=format",
+    "author":{"@type":"Organization","name":"QuantumAtlas"},
+    "publisher":{"@type":"Organization","name":"QuantumAtlas","url":"https://yourdomain.com"},
+    "breadcrumb":{"@type":"BreadcrumbList","itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://yourdomain.com/"},
+      {"@type":"ListItem","position":2,"name":"Branches","item":"https://yourdomain.com/theory.html"},
+      {"@type":"ListItem","position":3,"name":"Classical Mechanics","item":"https://yourdomain.com/branches/classical-mechanics.html"},
+      {"@type":"ListItem","position":4,"name":"Lagrangian Mechanics"}
+    ]}
+  }</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4X0M6RM0F6"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4X0M6RM0F6',{page_title:document.title,page_location:window.location.href});</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2633513915753897" crossorigin="anonymous"></script>
+  <meta name="google-adsense-account" content="ca-pub-2633513915753897">
+  <link rel="stylesheet" href="../../css/global.css"/>
+  <link rel="stylesheet" href="../../css/nav.css"/>
+  <link rel="stylesheet" href="../../css/topic.css"/>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+<main>
+  <section class="topic-hero">
+    <img src="https://images.unsplash.com/photo-1509228468518-180dd4864904?w=1200&q=75&auto=format" alt="Advanced theoretical mechanics equations" class="topic-hero-bg-img" loading="eager"/>
+    <div class="topic-hero-overlay"></div>
+    <div class="container topic-hero-content">
+      <nav class="breadcrumb">
+        <a href="../../index.html">Home</a><span class="sep">›</span>
+        <a href="../../theory.html">Branches</a><span class="sep">›</span>
+        <a href="../../branches/classical-mechanics.html">Classical Mechanics</a><span class="sep">›</span>
+        <span class="current">Lagrangian Mechanics</span>
+      </nav>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px">
+        <span class="badge badge-plasma">Classical Mechanics</span>
+        
+        <span class="badge badge-nova">Topic 19</span>
+      </div>
+      <h1 class="topic-hero-title">∫ Lagrangian Mechanics</h1>
+      <p class="topic-hero-sub">Variational Principles and Generalised Coordinates</p>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:20px"><span class="tc-tag" style="padding:5px 12px;font-size:0.75rem">Advanced</span> <span class="tc-tag" style="padding:5px 12px;font-size:0.75rem">Lagrangian</span> <span class="tc-tag" style="padding:5px 12px;font-size:0.75rem">Variational</span></div>
+    </div>
+  </section>
+  <div class="container topic-layout">
+    <article class="topic-article">
+      <div class="ad-container" style="margin-bottom:36px">
+        <div style="text-align:center;width:100%">
+          <span class="ad-label">Advertisement</span>
+          <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+          <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+        </div>
+      </div>
+      <div class="topic-body">
+<p>Lagrangian mechanics, developed by Joseph-Louis Lagrange in 1788, reformulates classical mechanics using a single scalar function — the Lagrangian — rather than vector forces. This approach elegantly handles constraints, greatly simplifies complex problems, and reveals the deep connection between symmetries and conservation laws through Noether's theorem. It also forms the conceptual bridge to quantum mechanics and quantum field theory.</p>
+
+<h2>The Lagrangian</h2>
+<div class="formula-block"><span class="formula-label">The Lagrangian</span>L = T − V &nbsp;&nbsp;(kinetic energy minus potential energy)</div>
+<p>Unlike the Hamiltonian (T + V = total energy), the Lagrangian is the difference of KE and PE. It encodes all the dynamics of a system.</p>
+
+<h2>Generalised Coordinates</h2>
+<p>Instead of Cartesian coordinates, Lagrangian mechanics uses generalised coordinates q<sub>i</sub> — any set of independent parameters that completely describe the system's configuration. For a pendulum, one generalised coordinate (the angle θ) suffices. For an N-particle system in 3D with k constraints, 3N−k generalised coordinates are needed.</p>
+
+<h2>Euler-Lagrange Equations</h2>
+<div class="formula-block"><span class="formula-label">Euler-Lagrange Equation</span>d/dt (∂L/∂q̇<sub>i</sub>) − ∂L/∂q<sub>i</sub> = 0</div>
+<p>One equation per generalised coordinate. These are second-order differential equations of motion equivalent to Newton's laws but often far simpler to derive for complex systems.</p>
+
+<h2>The Principle of Least Action</h2>
+<p>The equations of motion follow from a variational principle: the actual path taken by a system between two configurations is the one that makes the action S stationary:</p>
+<div class="formula-block"><span class="formula-label">Action</span>S = ∫L dt &nbsp;&nbsp;→&nbsp;&nbsp; δS = 0</div>
+<p>This variational principle is arguably the most profound formulation of classical mechanics — and it extends directly to quantum mechanics (Feynman's path integral) and field theory.</p>
+
+<h2>Example: Double Pendulum</h2>
+<p>The double pendulum is notoriously complex using Newton's laws (coupled differential equations with constraint forces). With Lagrangian mechanics, write T and V in terms of angles θ₁, θ₂ and their time derivatives, form L, and apply Euler-Lagrange. The constraint forces never appear — a major simplification.</p>
+
+<h2>Noether's Theorem</h2>
+<p>Every continuous symmetry of the Lagrangian corresponds to a conserved quantity. Time translation symmetry → conservation of energy. Spatial translation symmetry → conservation of momentum. Rotational symmetry → conservation of angular momentum. This is one of the deepest and most beautiful results in all of physics.</p>
+
+<div class="info-box info-box--fact">
+<div class="info-box-title" style="color:#a078ff">🔭 From Classical to Quantum</div>
+<p style="margin:0">Feynman's formulation of quantum mechanics uses the action S directly: a quantum particle takes all possible paths simultaneously, each weighted by e<sup>iS/ℏ</sup>. In the limit ℏ → 0, the phases cancel everywhere except near the path of stationary action — recovering classical mechanics. The Lagrangian is thus the conceptual bridge between classical and quantum physics.</p>
+</div>
+</div>
+      <div class="ad-container" style="margin-top:40px">
+        <div style="text-align:center;width:100%">
+          <span class="ad-label">Advertisement</span>
+          <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+          <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+        </div>
+      </div>
+    </article>
+    <aside class="topic-sidebar">
+      <div class="sidebar-card">
+        <h4 style="font-family:var(--font-mono);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent-plasma);margin-bottom:14px">// Topic Info</h4>
+        <div class="sidebar-stat"><span>Branch</span><span>Classical Mechanics</span></div>
+        <div class="sidebar-stat"><span>Topic</span><span>19 / 22</span></div>
+        <div class="sidebar-stat"><span>Level</span><span>Advanced</span></div>
+      </div>
+      <div class="sidebar-card">
+        <h4 style="font-family:var(--font-mono);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent-plasma);margin-bottom:14px">// All Topics</h4>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:6px">
+          <li><a href="newtons-laws.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">01. Newton's Laws</a></li>
+          <li><a href="projectile-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">02. Projectile Motion</a></li>
+          <li><a href="conservation-of-energy.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">03. Conservation of Energy</a></li>
+          <li><a href="linear-momentum.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">04. Linear Momentum</a></li>
+          <li><a href="circular-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">05. Circular Motion</a></li>
+          <li><a href="gravitational-force.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">06. Gravitational Force</a></li>
+          <li><a href="simple-harmonic-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">07. Simple Harmonic Motion</a></li>
+          <li><a href="rotational-dynamics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">08. Rotational Dynamics</a></li>
+          <li><a href="work-and-power.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">09. Work & Power</a></li>
+          <li><a href="friction-and-drag.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">10. Friction & Drag</a></li>
+          <li><a href="keplers-laws.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">11. Kepler's Laws</a></li>
+          <li><a href="waves-and-oscillations.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">12. Waves & Oscillations</a></li>
+          <li><a href="centre-of-mass.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">13. Centre of Mass</a></li>
+          <li><a href="statics-and-equilibrium.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">14. Statics & Equilibrium</a></li>
+          <li><a href="fluid-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">15. Fluid Mechanics</a></li>
+          <li><a href="elasticity-and-stress.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">16. Elasticity & Stress</a></li>
+          <li><a href="kinematics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">17. Kinematics</a></li>
+          <li><a href="damped-oscillations.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">18. Damped Oscillations</a></li>
+          <li><a href="lagrangian-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">19. Lagrangian Mechanics</a></li>
+          <li><a href="hamiltonian-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">20. Hamiltonian Mechanics</a></li>
+          <li><a href="rigid-body-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">21. Rigid Body Motion</a></li>
+          <li><a href="non-inertial-frames.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">22. Non-Inertial Frames</a></li>
+        </ul>
+      </div>
+      <div class="ad-container" style="min-height:250px;flex-direction:column">
+        <span class="ad-label">Advertisement</span>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+      </div>
+    </aside>
+  </div>
+</main>
+<div id="footer-placeholder"></div>
+<script src="../../js/components.js"></script>
+</body>
+</html>

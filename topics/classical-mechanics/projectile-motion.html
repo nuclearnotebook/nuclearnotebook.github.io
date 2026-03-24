@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projectile Motion — Classical Mechanics | QuantumAtlas</title>
+  <meta name="description" content="Complete guide to projectile motion — trajectory equations, range, maximum height, optimal angles, air resistance effects, and real-world applications including ballistics and sports physics."/>
+  <meta name="keywords" content="projectile motion, range equation, trajectory, ballistics, maximum height, angle of projection, horizontal range, physics"/>
+  <link rel="canonical" href="https://yourdomain.com/topics/classical-mechanics/projectile-motion.html"/>
+  <meta property="og:title" content="Projectile Motion | QuantumAtlas"/>
+  <meta property="og:description" content="Complete guide to projectile motion — trajectory equations, range, maximum height, optimal angles, air resistance effects, and real-world applications including ballistics and sports physics."/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:image" content="https://images.unsplash.com/photo-1604881989793-466aca8dd319?w=1200&q=75&auto=format"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <script type="application/ld+json">{
+    "@context":"https://schema.org","@type":"Article",
+    "headline":"Projectile Motion",
+    "description":"Complete guide to projectile motion — trajectory equations, range, maximum height, optimal angles, air resistance effects, and real-world applications including ballistics and sports physics.",
+    "image":"https://images.unsplash.com/photo-1604881989793-466aca8dd319?w=1200&q=75&auto=format",
+    "author":{"@type":"Organization","name":"QuantumAtlas"},
+    "publisher":{"@type":"Organization","name":"QuantumAtlas","url":"https://yourdomain.com"},
+    "breadcrumb":{"@type":"BreadcrumbList","itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://yourdomain.com/"},
+      {"@type":"ListItem","position":2,"name":"Branches","item":"https://yourdomain.com/theory.html"},
+      {"@type":"ListItem","position":3,"name":"Classical Mechanics","item":"https://yourdomain.com/branches/classical-mechanics.html"},
+      {"@type":"ListItem","position":4,"name":"Projectile Motion"}
+    ]}
+  }</script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4X0M6RM0F6"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4X0M6RM0F6',{page_title:document.title,page_location:window.location.href});</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2633513915753897" crossorigin="anonymous"></script>
+  <meta name="google-adsense-account" content="ca-pub-2633513915753897">
+
+  <link rel="stylesheet" href="../../css/global.css"/>
+  <link rel="stylesheet" href="../../css/nav.css"/>
+  <link rel="stylesheet" href="../../css/topic.css"/>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+
+<main>
+  <!-- Hero -->
+  <section class="topic-hero">
+    <img src="https://images.unsplash.com/photo-1604881989793-466aca8dd319?w=1200&q=75&auto=format" alt="Projectile trajectory arc over landscape" class="topic-hero-bg-img" loading="eager"/>
+    <div class="topic-hero-overlay"></div>
+    <div class="container topic-hero-content">
+      <nav class="breadcrumb">
+        <a href="../../index.html">Home</a><span class="sep">›</span>
+        <a href="../../theory.html">Branches</a><span class="sep">›</span>
+        <a href="../../branches/classical-mechanics.html">Classical Mechanics</a><span class="sep">›</span>
+        <span class="current">Projectile Motion</span>
+      </nav>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px">
+        <span class="badge badge-plasma">Classical Mechanics</span>
+        <span class='badge badge-green'>Interactive Simulation</span>
+        <span class="badge badge-nova">Topic 02</span>
+      </div>
+      <h1 class="topic-hero-title">🎯 Projectile Motion</h1>
+      <p class="topic-hero-sub">Two-Dimensional Kinematics Under Gravity</p>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:20px">
+        <span class="tc-tag" style="padding:5px 12px;font-size:0.75rem">Kinematics</span> <span class="tc-tag" style="padding:5px 12px;font-size:0.75rem">2D Motion</span> <span class="tc-tag" style="padding:5px 12px;font-size:0.75rem">Gravity</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="container topic-layout">
+    <!-- Article -->
+    <article class="topic-article">
+      <!-- AdSense top -->
+      <div class="ad-container" style="margin-bottom:36px">
+        <div style="text-align:center;width:100%">
+          <span class="ad-label">Advertisement</span>
+          <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+          <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+        </div>
+      </div>
+
+      
+      <h2 id="simulation">Interactive Simulation</h2>
+      
+<!-- ═══════════════ PROJECTILE MOTION SIMULATION ═══════════════ -->
+<div class="simulation-wrapper">
+  <div class="simulation-toolbar">
+    <span class="simulation-title">🎯 Projectile Motion Simulator</span>
+    <div class="sim-control">
+      <label>Angle (°)</label>
+      <input type="range" id="sim-angle" min="5" max="85" value="45" step="1"/>
+      <span id="val-angle">45°</span>
+    </div>
+    <div class="sim-control">
+      <label>Speed (m/s)</label>
+      <input type="range" id="sim-speed" min="10" max="100" value="50" step="5"/>
+      <span id="val-speed">50 m/s</span>
+    </div>
+    <div class="sim-control">
+      <label>Gravity (m/s²)</label>
+      <input type="range" id="sim-gravity" min="1.6" max="24.8" value="9.8" step="0.2"/>
+      <span id="val-gravity">9.8</span>
+    </div>
+    <button id="sim-launch" class="btn btn-primary" style="padding:7px 18px;font-size:0.78rem">Launch</button>
+    <button id="sim-reset"  class="btn btn-outline" style="padding:7px 14px;font-size:0.78rem">Reset</button>
+  </div>
+  <div class="sim-canvas-wrap">
+    <canvas id="proj-canvas" height="380"></canvas>
+  </div>
+  <div style="padding:14px 20px;display:flex;gap:24px;flex-wrap:wrap;font-family:var(--font-mono);font-size:0.78rem;color:var(--text-muted);background:rgba(0,0,0,0.2);border-top:1px solid var(--border-dim)">
+    <span>Range: <strong id="out-range" style="color:var(--accent-plasma)">—</strong></span>
+    <span>Max Height: <strong id="out-height" style="color:var(--accent-green)">—</strong></span>
+    <span>Time of Flight: <strong id="out-time" style="color:var(--accent-gold)">—</strong></span>
+    <span>Vx: <strong id="out-vx" style="color:var(--text-secondary)">—</strong></span>
+    <span>Vy₀: <strong id="out-vy" style="color:var(--text-secondary)">—</strong></span>
+  </div>
+</div>
+<script>
+(function(){
+  const canvas  = document.getElementById('proj-canvas');
+  const ctx     = canvas.getContext('2d');
+  const slAngle = document.getElementById('sim-angle');
+  const slSpeed = document.getElementById('sim-speed');
+  const slGrav  = document.getElementById('sim-gravity');
+  const btnL    = document.getElementById('sim-launch');
+  const btnR    = document.getElementById('sim-reset');
+  const vAngle  = document.getElementById('val-angle');
+  const vSpeed  = document.getElementById('val-speed');
+  const vGrav   = document.getElementById('val-gravity');
+  const oRange  = document.getElementById('out-range');
+  const oHeight = document.getElementById('out-height');
+  const oTime   = document.getElementById('out-time');
+  const oVx     = document.getElementById('out-vx');
+  const oVy     = document.getElementById('out-vy');
+
+  let anim = null, points = [], animIdx = 0;
+  const PAD = 50;
+
+  function resize(){
+    canvas.width  = canvas.offsetWidth || canvas.parentElement.offsetWidth;
+    canvas.height = 380;
+  }
+  resize();
+  window.addEventListener('resize', ()=>{ resize(); drawEmpty(); });
+
+  slAngle.oninput = ()=>{ vAngle.textContent  = slAngle.value+'°'; };
+  slSpeed.oninput = ()=>{ vSpeed.textContent  = slSpeed.value+' m/s'; };
+  slGrav.oninput  = ()=>{ vGrav.textContent   = parseFloat(slGrav.value).toFixed(1); };
+
+  function calcPoints(v0, angleDeg, g){
+    const theta = angleDeg * Math.PI / 180;
+    const vx = v0 * Math.cos(theta);
+    const vy = v0 * Math.sin(theta);
+    const tFlight = 2 * vy / g;
+    const range   = vx * tFlight;
+    const hMax    = (vy * vy) / (2 * g);
+    const pts = [];
+    const steps = 300;
+    for(let i = 0; i <= steps; i++){
+      const t = (i / steps) * tFlight;
+      pts.push({ x: vx * t, y: vy * t - 0.5 * g * t * t });
+    }
+    return { pts, range, hMax, tFlight, vx, vy };
+  }
+
+  function toCanvas(px, py, range, hMax){
+    const W = canvas.width  - 2*PAD;
+    const H = canvas.height - 2*PAD;
+    const sx = PAD + (px / (range * 1.1)) * W;
+    const sy = (canvas.height - PAD) - (py / (hMax * 1.3)) * H;
+    return [sx, sy];
+  }
+
+  function drawEmpty(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    // Ground
+    ctx.beginPath();
+    ctx.strokeStyle = 'rgba(0,212,255,0.2)';
+    ctx.lineWidth = 1;
+    ctx.moveTo(PAD, canvas.height - PAD);
+    ctx.lineTo(canvas.width - PAD, canvas.height - PAD);
+    ctx.stroke();
+    // Axes labels
+    ctx.fillStyle = 'rgba(100,150,200,0.4)';
+    ctx.font = '11px JetBrains Mono, monospace';
+    ctx.fillText('x (m) →', canvas.width - 80, canvas.height - PAD + 18);
+    ctx.save();
+    ctx.translate(PAD - 18, canvas.height/2);
+    ctx.rotate(-Math.PI/2);
+    ctx.fillText('y (m) ↑', 0, 0);
+    ctx.restore();
+  }
+
+  function drawPath(allPts, upTo, range, hMax, vx, vy){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    drawEmpty();
+
+    if(allPts.length < 2) return;
+
+    // Full ghost path
+    ctx.beginPath();
+    ctx.strokeStyle = 'rgba(0,212,255,0.12)';
+    ctx.lineWidth = 1.5;
+    ctx.setLineDash([4,4]);
+    const [x0,y0] = toCanvas(allPts[0].x, allPts[0].y, range, hMax);
+    ctx.moveTo(x0,y0);
+    allPts.forEach(p => { const [cx,cy] = toCanvas(p.x,p.y,range,hMax); ctx.lineTo(cx,cy); });
+    ctx.stroke();
+    ctx.setLineDash([]);
+
+    // Drawn path so far
+    ctx.beginPath();
+    ctx.strokeStyle = '#00d4ff';
+    ctx.lineWidth = 2.5;
+    ctx.shadowColor = '#00d4ff';
+    ctx.shadowBlur = 8;
+    const s0 = toCanvas(allPts[0].x, allPts[0].y, range, hMax);
+    ctx.moveTo(s0[0], s0[1]);
+    for(let i=1;i<=upTo && i<allPts.length;i++){
+      const [cx,cy] = toCanvas(allPts[i].x,allPts[i].y,range,hMax);
+      ctx.lineTo(cx,cy);
+    }
+    ctx.stroke();
+    ctx.shadowBlur = 0;
+
+    // Projectile dot
+    if(upTo < allPts.length){
+      const [bx,by] = toCanvas(allPts[upTo].x, allPts[upTo].y, range, hMax);
+      ctx.beginPath();
+      ctx.arc(bx, by, 7, 0, Math.PI*2);
+      ctx.fillStyle = '#ff6b1a';
+      ctx.shadowColor = '#ff6b1a';
+      ctx.shadowBlur = 12;
+      ctx.fill();
+      ctx.shadowBlur = 0;
+    }
+
+    // Max height marker
+    const peakIdx = allPts.reduce((mi,p,i,arr)=> p.y > arr[mi].y ? i : mi, 0);
+    if(upTo >= peakIdx){
+      const [px2,py2] = toCanvas(allPts[peakIdx].x, allPts[peakIdx].y, range, hMax);
+      ctx.beginPath();
+      ctx.arc(px2, py2, 4, 0, Math.PI*2);
+      ctx.fillStyle = '#00ff88';
+      ctx.fill();
+      ctx.fillStyle = '#00ff88';
+      ctx.font = '10px JetBrains Mono, monospace';
+      ctx.fillText(`H=${hMax.toFixed(1)}m`, px2+8, py2-6);
+    }
+  }
+
+  function launch(){
+    cancelAnimationFrame(anim);
+    const v0 = parseFloat(slSpeed.value);
+    const ang = parseFloat(slAngle.value);
+    const g   = parseFloat(slGrav.value);
+    const { pts, range, hMax, tFlight, vx, vy } = calcPoints(v0, ang, g);
+    points = pts;
+    animIdx = 0;
+
+    oRange.textContent  = range.toFixed(1) + ' m';
+    oHeight.textContent = hMax.toFixed(1) + ' m';
+    oTime.textContent   = tFlight.toFixed(2) + ' s';
+    oVx.textContent     = vx.toFixed(1) + ' m/s';
+    oVy.textContent     = vy.toFixed(1) + ' m/s';
+
+    function step(){
+      drawPath(pts, animIdx, range, hMax, vx, vy);
+      if(animIdx < pts.length - 1){ animIdx+=2; anim = requestAnimationFrame(step); }
+      else drawPath(pts, pts.length-1, range, hMax, vx, vy);
+    }
+    step();
+  }
+
+  function reset(){
+    cancelAnimationFrame(anim);
+    points = [];
+    drawEmpty();
+    [oRange,oHeight,oTime,oVx,oVy].forEach(el=>el.textContent='—');
+  }
+
+  btnL.addEventListener('click', launch);
+  btnR.addEventListener('click', reset);
+  drawEmpty();
+})();
+</script>
+
+
+
+      <div class="topic-body">
+        
+<p>Projectile motion describes the two-dimensional motion of an object launched with an initial velocity and subsequently subject only to the constant downward acceleration due to gravity. It is perhaps the most classical problem in physics — Galileo studied it in the early 17th century — and it underpins ballistics, sports science, and the design of any object that travels through the air.</p>
+
+<h2>The Key Principle: Independence of Motion</h2>
+<p>Galileo's greatest insight was that <strong>horizontal and vertical motion are completely independent of one another</strong>. The horizontal motion of a projectile is uniform (constant velocity, since there is no horizontal force, ignoring air resistance). The vertical motion is uniformly accelerated downward at g = 9.81 m/s².</p>
+<p>This means we can decompose any projectile problem into two separate 1D kinematics problems and solve them independently.</p>
+
+<div class="formula-block">
+  <span class="formula-label">Decomposed Initial Velocity</span>
+  v<sub>x</sub> = v₀ cos θ &nbsp;&nbsp;&nbsp; v<sub>y0</sub> = v₀ sin θ
+</div>
+
+<h2>Equations of Motion for a Projectile</h2>
+<p>Let the launch point be the origin, launch speed v₀, angle θ above horizontal, and gravitational acceleration g downward:</p>
+
+<div class="formula-block">
+  <span class="formula-label">Position Components</span>
+  x(t) = v₀ cos θ · t<br/>
+  y(t) = v₀ sin θ · t − ½g t²
+</div>
+
+<div class="formula-block">
+  <span class="formula-label">Velocity Components</span>
+  v<sub>x</sub>(t) = v₀ cos θ &nbsp; (constant)<br/>
+  v<sub>y</sub>(t) = v₀ sin θ − g·t
+</div>
+
+<h2>Key Derived Quantities</h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Quantity</th><th>Formula</th><th>Derivation</th></tr></thead>
+<tbody>
+<tr><td>Time to peak</td><td>t<sub>peak</sub> = v₀ sin θ / g</td><td>Set v_y = 0</td></tr>
+<tr><td>Maximum height</td><td>H = v₀² sin²θ / (2g)</td><td>y at t = t_peak</td></tr>
+<tr><td>Total flight time</td><td>T = 2v₀ sin θ / g</td><td>y(T) = 0</td></tr>
+<tr><td>Horizontal range</td><td>R = v₀² sin 2θ / g</td><td>x at t = T</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2>The Trajectory Equation (Parabolic Path)</h2>
+<p>Eliminating t from the x and y equations gives the trajectory — the shape of the path in space. The result is always a parabola (for constant g, no air resistance):</p>
+
+<div class="formula-block">
+  <span class="formula-label">Trajectory Equation</span>
+  y = x tan θ − gx² / (2v₀² cos²θ)
+</div>
+
+<p>This is the equation of an inverted parabola opening downward, with the vertex at the maximum height point.</p>
+
+<h2>Optimal Angle for Maximum Range</h2>
+<p>The range R = v₀² sin 2θ / g is maximised when sin 2θ = 1, i.e., when 2θ = 90°, giving <strong>θ = 45°</strong>. This result assumes flat terrain, no air resistance, and launch at ground level.</p>
+
+<div class="info-box info-box--note">
+  <div class="info-box-title" style="color:var(--accent-plasma)">💡 Complementary Angles</div>
+  <p style="margin:0">Two launch angles that are supplementary to 45° — such as 30° and 60° — give the <strong>same horizontal range</strong> but different trajectories. The 30° shot is flatter and faster; the 60° shot is higher and slower.</p>
+</div>
+
+<h2>Effect of Air Resistance</h2>
+<p>In reality, air drag significantly alters projectile motion. The drag force is approximately proportional to v² (for fast objects) or v (for slow ones), directed opposite to velocity. This makes the equations nonlinear and non-separable. Key consequences of air resistance are:</p>
+<ul style="margin:0 0 16px 20px;color:var(--text-secondary)">
+  <li style="margin-bottom:8px">The optimal angle for maximum range decreases below 45° (typically to 30°–40° for sports balls)</li>
+  <li style="margin-bottom:8px">The trajectory is no longer symmetric — the descent is steeper than the ascent</li>
+  <li style="margin-bottom:8px">The projectile asymptotically approaches terminal velocity if it falls far enough</li>
+  <li style="margin-bottom:8px">The maximum height and range are both reduced</li>
+</ul>
+
+<h2>Applications: Sports, Ballistics, and Space</h2>
+<p>Projectile motion has profound practical applications. In sports science, understanding the optimal launch angle helps athletes in shot put (around 41°–42°), long jump, and basketball free throws. Ballistics engineers apply projectile equations to artillery shells, though at long ranges the Earth's curvature, Coriolis effect, and aerodynamics must all be considered.</p>
+<p>In space exploration, the launch and re-entry of spacecraft involves projectile-like arcs at the boundary where atmospheric drag becomes important. The design of orbital insertion manoeuvres builds on the same fundamental kinematics.</p>
+
+<h2>Projectile Motion on Other Worlds</h2>
+<p>The same equations apply on any celestial body with different gravitational acceleration. On the Moon (g = 1.62 m/s²), a ball thrown at 45° with v₀ = 20 m/s would travel <strong>6 times further</strong> than on Earth. On Jupiter (g = 24.8 m/s²), it would travel only about 40% as far. The simulation above lets you explore these scenarios.</p>
+
+      </div>
+
+      <!-- AdSense bottom -->
+      <div class="ad-container" style="margin-top:40px">
+        <div style="text-align:center;width:100%">
+          <span class="ad-label">Advertisement</span>
+          <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+          <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+        </div>
+      </div>
+    </article>
+
+    <!-- Sidebar -->
+    <aside class="topic-sidebar">
+      <div class="sidebar-card">
+        <h4 style="font-family:var(--font-mono);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent-plasma);margin-bottom:14px">// Topic Info</h4>
+        <div class="sidebar-stat"><span>Branch</span><span>Classical Mechanics</span></div>
+        <div class="sidebar-stat"><span>Topic</span><span>02 / 22</span></div>
+        <div class="sidebar-stat"><span>Level</span><span>Advanced</span></div>
+        <div class="sidebar-stat"><span>Simulation</span><span>Yes ✓</span></div>
+      </div>
+
+      <div class="sidebar-card">
+        <h4 style="font-family:var(--font-mono);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent-plasma);margin-bottom:14px">// All Topics</h4>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:6px">
+          <li><a href="newtons-laws.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none" class="">01. Newton's Laws</a></li>
+          <li><a href="projectile-motion.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">02. Projectile Motion</a></li>
+          <li><a href="conservation-of-energy.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">03. Conservation of Energy</a></li>
+          <li><a href="linear-momentum.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">04. Linear Momentum</a></li>
+          <li><a href="circular-motion.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">05. Circular Motion</a></li>
+          <li><a href="gravitational-force.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">06. Gravitational Force</a></li>
+          <li><a href="simple-harmonic-motion.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">07. Simple Harmonic Motion</a></li>
+          <li><a href="rotational-dynamics.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">08. Rotational Dynamics</a></li>
+          <li><a href="work-and-power.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">09. Work & Power</a></li>
+          <li><a href="friction-and-drag.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">10. Friction & Drag</a></li>
+          <li><a href="keplers-laws.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">11. Kepler's Laws</a></li>
+          <li><a href="waves-and-oscillations.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">12. Waves & Oscillations</a></li>
+          <li><a href="centre-of-mass.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">13. Centre of Mass</a></li>
+          <li><a href="statics-and-equilibrium.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">14. Statics & Equilibrium</a></li>
+          <li><a href="fluid-mechanics.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">15. Fluid Mechanics</a></li>
+          <li><a href="elasticity-and-stress.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">16. Elasticity & Stress</a></li>
+          <li><a href="kinematics.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">17. Kinematics</a></li>
+          <li><a href="damped-oscillations.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">18. Damped Oscillations</a></li>
+          <li><a href="lagrangian-mechanics.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">19. Lagrangian Mechanics</a></li>
+          <li><a href="hamiltonian-mechanics.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">20. Hamiltonian Mechanics</a></li>
+          <li><a href="rigid-body-motion.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">21. Rigid Body Motion</a></li>
+          <li><a href="non-inertial-frames.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">22. Non-Inertial Frames</a></li>
+        </ul>
+      </div>
+
+      <!-- Sidebar AdSense -->
+      <div class="ad-container" style="min-height:250px;flex-direction:column">
+        <span class="ad-label">Advertisement</span>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<div id="footer-placeholder"></div>
+<script src="../../js/components.js"></script>
+</body>
+</html>
