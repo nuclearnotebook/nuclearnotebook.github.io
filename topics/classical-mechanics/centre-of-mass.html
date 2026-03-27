@@ -1,140 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Centre of Mass & Systems of Particles — Classical Mechanics | QuantumAtlas</title>
-  <meta name="description" content="Finding and using the centre of mass of discrete and continuous systems — CM motion, the two-body problem, and CM frame transformations."/>
-  <meta name="keywords" content="centre of mass, systems of particles, CM frame, centre of gravity, extended bodies, mass distribution, two-body problem"/>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>⊕ — Classical Mechanics | QuantumAtlas</title>
+  <meta name="description" content="Locating the CM, System Dynamics, and the Two-Body Problem. Comprehensive physics treatment with equations, diagrams, and real-world applications."/>
+  <meta name="keywords" content="centre of mass, centre of gravity, system of particles, CM frame, two body problem, reduced mass, CM velocity, extended body CM, moment, mass distribution"/>
   <link rel="canonical" href="https://yourdomain.com/topics/classical-mechanics/centre-of-mass.html"/>
-  <meta property="og:title" content="Centre of Mass & Systems of Particles | QuantumAtlas"/>
-  <meta property="og:description" content="Finding and using the centre of mass of discrete and continuous systems — CM motion, the two-body problem, and CM frame transformations."/>
-  <meta property="og:image" content="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=1200&q=75&auto=format"/>
-  <script type="application/ld+json">{
-    "@context":"https://schema.org","@type":"Article",
-    "headline":"Centre of Mass & Systems of Particles","description":"Finding and using the centre of mass of discrete and continuous systems — CM motion, the two-body problem, and CM frame transformations.",
-    "image":"https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=1200&q=75&auto=format",
-    "author":{"@type":"Organization","name":"QuantumAtlas"},
-    "publisher":{"@type":"Organization","name":"QuantumAtlas","url":"https://yourdomain.com"},
-    "breadcrumb":{"@type":"BreadcrumbList","itemListElement":[
-      {"@type":"ListItem","position":1,"name":"Home","item":"https://yourdomain.com/"},
-      {"@type":"ListItem","position":2,"name":"Branches","item":"https://yourdomain.com/theory.html"},
-      {"@type":"ListItem","position":3,"name":"Classical Mechanics","item":"https://yourdomain.com/branches/classical-mechanics.html"},
-      {"@type":"ListItem","position":4,"name":"Centre of Mass & Systems of Particles"}
-    ]}
-  }</script>
+  <meta property="og:title" content="⊕ | QuantumAtlas"/><meta property="og:image" content="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=1400&q=80&auto=format"/>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-4X0M6RM0F6"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4X0M6RM0F6',{page_title:document.title,page_location:window.location.href});</script>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2633513915753897" crossorigin="anonymous"></script>
   <meta name="google-adsense-account" content="ca-pub-2633513915753897">
-  <link rel="stylesheet" href="../../css/global.css"/>
-  <link rel="stylesheet" href="../../css/nav.css"/>
-  <link rel="stylesheet" href="../../css/topic.css"/>
+  <link rel="stylesheet" href="../../css/global.css"/><link rel="stylesheet" href="../../css/nav.css"/><link rel="stylesheet" href="../../css/topic.css"/>
 </head>
 <body>
 <div id="nav-placeholder"></div>
 <main>
-  <section class="topic-hero">
-    <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=1200&q=75&auto=format" alt="Balance and centre of mass concept" class="topic-hero-bg-img" loading="eager"/>
-    <div class="topic-hero-overlay"></div>
-    <div class="container topic-hero-content">
-      <nav class="breadcrumb">
-        <a href="../../index.html">Home</a><span class="sep">›</span>
-        <a href="../../theory.html">Branches</a><span class="sep">›</span>
-        <a href="../../branches/classical-mechanics.html">Classical Mechanics</a><span class="sep">›</span>
-        <span class="current">Centre of Mass & Systems of Particles</span>
-      </nav>
-      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px">
-        <span class="badge badge-plasma">Classical Mechanics</span>
-        
-        <span class="badge badge-nova">Topic 13</span>
-      </div>
-      <h1 class="topic-hero-title">⊕ Centre of Mass & Systems of Particles</h1>
-      <p class="topic-hero-sub">From Distributed Bodies to System Dynamics</p>
-      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:20px"><span class="tc-tag" style="padding:5px 12px;font-size:0.75rem">Centre of Mass</span> <span class="tc-tag" style="padding:5px 12px;font-size:0.75rem">Systems</span> <span class="tc-tag" style="padding:5px 12px;font-size:0.75rem">CM Frame</span></div>
+<section class="topic-hero">
+  <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=1400&q=80&auto=format" alt="Balancing and centre of mass in physics" class="topic-hero-bg-img" loading="eager"/>
+  <div class="topic-hero-overlay"></div>
+  <div class="container topic-hero-content">
+    <nav class="breadcrumb"><a href="../../index.html">Home</a><span class="sep">›</span><a href="../../branches/classical-mechanics.html">Classical Mechanics</a><span class="sep">›</span><span class="current">⊕</span></nav>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px">
+      <span class="badge badge-plasma">Classical Mechanics</span>
+      <span class="badge badge-nova">Topic 13 / 22</span>
     </div>
-  </section>
-  <div class="container topic-layout">
-    <article class="topic-article">
-      <div class="ad-container" style="margin-bottom:36px">
-        <div style="text-align:center;width:100%">
-          <span class="ad-label">Advertisement</span>
-          <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
-          <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
-        </div>
-      </div>
-      <div class="topic-body">
-<p>The centre of mass (CM) is the unique point at which a body's mass can be considered concentrated for the purposes of translational dynamics. For any system of particles or any extended body, Newton's laws apply to the motion of the CM as if all external forces acted on a single particle of the system's total mass located there.</p>
+    <h1 class="topic-hero-title">Centre of Mass & Systems of Particles ⊕</h1>
+    <p class="topic-hero-sub">Locating the CM, System Dynamics, and the Two-Body Problem</p>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:20px"><span class="tc-tag" style="padding:5px 14px;font-size:0.78rem">Centre of Mass</span> <span class="tc-tag" style="padding:5px 14px;font-size:0.78rem">System Dynamics</span> <span class="tc-tag" style="padding:5px 14px;font-size:0.78rem">Two-Body Problem</span></div>
+  </div>
+</section>
+<div class="container topic-layout">
+<article class="topic-article">
+<div class="ad-container"><div style="text-align:center;width:100%"><span class="ad-label">Advertisement</span><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div>
+
+<div class="topic-body"><figure style="margin:0 0 32px"><img src="https://images.unsplash.com/photo-1473091534298-04dcbce3278c?w=900&q=80&auto=format" alt="Acrobats balancing showing centre of mass principles" class="img-frame"/><figcaption>Acrobats and gymnasts instinctively manage their centre of mass. In flight (projectile), the CM follows a perfect parabolic arc regardless of how complex the body's rotation and contortion — a direct application of the CM theorem. High jumpers use the Fosbury Flop to arch their body so the CM passes under the bar even while every part of the body passes over it — clearing the bar with less height required for the CM.</figcaption></figure>
+
+<h2>The Centre of Mass — A Point That Behaves Simply</h2>
+<p>The centre of mass (CM) is the unique point at which the entire mass of an extended body or system of particles can be considered concentrated for the purpose of analysing translational motion. For any system subject to external forces, Newton's Second Law applied to the CM gives a remarkably simple result: the CM accelerates as if all external forces acted on a single particle of mass M at that point.</p>
 
 <h2>Locating the Centre of Mass</h2>
-<div class="formula-block"><span class="formula-label">CM of Discrete System</span>r⃗<sub>CM</sub> = (Σm<sub>i</sub>r⃗<sub>i</sub>) / M</div>
-<div class="formula-block"><span class="formula-label">CM of Continuous Body</span>r⃗<sub>CM</sub> = (∫r⃗ dm) / M</div>
-<p>For a uniform body, the CM coincides with the geometric centroid. For a uniform rod: CM at midpoint. For a uniform triangle: CM at the intersection of medians (one-third from each side). For a uniform semicircle of radius R: CM at 4R/3π from the straight edge.</p>
+<div class="formula-block"><span class="formula-label">CM of Discrete System</span>r⃗_CM = (Σmᵢr⃗ᵢ) / M &nbsp;&nbsp;&nbsp; M = Σmᵢ</div>
+<div class="formula-block"><span class="formula-label">CM of Continuous Body</span>r⃗_CM = ∫r⃗ dm / M = ∫r⃗ ρ(r⃗) dV / M</div>
+<p>For uniform bodies (constant density ρ), the CM coincides with the geometric centroid. For non-uniform bodies, the CM shifts toward the denser regions. The CM of a uniform rod is at its midpoint, uniform triangle at the centroid (intersection of medians, 1/3 from each side), uniform semicircle at 4R/(3π) from the diameter.</p>
 
-<h2>CM Motion Theorem</h2>
-<div class="formula-block"><span class="formula-label">Newton's Second Law for the CM</span>F⃗<sub>ext</sub> = M·a⃗<sub>CM</sub></div>
-<p>Only external forces affect the CM motion. Internal forces (forces between parts of the system) cancel in pairs (Newton's third law). This is why a rocket can accelerate in empty space — the exhaust gas is part of the system until expelled.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Uniform Shape</th><th>CM Location</th></tr></thead>
+<tbody>
+<tr><td>Rod, length L</td><td>L/2 from either end</td></tr>
+<tr><td>Rectangular plate</td><td>Geometric centre</td></tr>
+<tr><td>Triangle, base b, height h</td><td>h/3 above base</td></tr>
+<tr><td>Solid semicylinder, radius R</td><td>4R/(3π) from flat face</td></tr>
+<tr><td>Solid hemisphere, radius R</td><td>3R/8 from flat face</td></tr>
+<tr><td>Circular arc (angle 2α), radius R</td><td>R sinα/α from centre</td></tr>
+</tbody></table></div>
+
+<h2>The CM Theorem — System Dynamics</h2>
+<div class="formula-block"><span class="formula-label">Newton's Second Law for the CM</span>F⃗_ext = M·a⃗_CM</div>
+<p>Only external forces affect the CM motion. Internal forces (forces between parts of the system) always come in Newton's Third Law pairs: they sum to zero and cannot change the total momentum or CM motion. This has profound implications:</p>
+<ul style="color:var(--text-secondary)">
+<li>An exploding shell: the CM continues on the original parabolic trajectory (ignoring air resistance), even as fragments fly in all directions.</li>
+<li>A rocket in deep space: the CM of (rocket + exhaust) moves at constant velocity (no external forces). The rocket accelerates because exhaust moves backward.</li>
+<li>A diver: however complex the rotation, the CM traces a perfect parabola from board to water.</li>
+</ul>
 
 <h2>The Two-Body Problem</h2>
-<p>For two gravitationally interacting bodies, the CM moves at constant velocity (or stays at rest). In the CM frame, the two-body problem reduces to an effective one-body problem with reduced mass μ = m₁m₂/(m₁+m₂). Both bodies orbit the common CM; the more massive body has the smaller orbit.</p>
+<p>Two masses m₁ and m₂ interacting gravitationally — the exact problem of a planet orbiting a star. The CM moves at constant velocity (no external forces). Transforming to the CM frame and introducing the relative coordinate r = r₁ − r₂, the two-body problem reduces exactly to a one-body problem with reduced mass μ:</p>
+<div class="formula-block"><span class="formula-label">Reduced Mass</span>μ = m₁m₂ / (m₁+m₂) &nbsp;&nbsp;&nbsp; [satisfies: 1/μ = 1/m₁ + 1/m₂]</div>
+<p>The relative motion obeys: μ·(d²r/dt²) = −Gm₁m₂/r². This is equivalent to a single particle of mass μ orbiting a fixed mass (m₁+m₂). Kepler's laws apply to the relative orbit, but with M replaced by (m₁+m₂) in the period formula. For the Earth-Moon system, the CM is located ~4,671 km from Earth's centre (inside Earth's volume), and both bodies orbit this CM with the same period (27.3 days).</p>
 
-<h2>Worked Example: Exploding Projectile</h2>
-<p>A shell fired as a projectile explodes at the top of its trajectory into two fragments. Since gravity is the only external force, the CM of the two fragments continues on the original parabolic trajectory — even though the fragments fly in different directions. This beautifully illustrates the CM theorem.</p>
-
-<div class="info-box info-box--note">
-<div class="info-box-title" style="color:var(--accent-plasma)">💡 Centre of Mass vs Centre of Gravity</div>
-<p style="margin:0">The centre of gravity (where effective gravitational force acts) coincides with the CM only when the gravitational field is uniform. In a non-uniform field (e.g., on a very large body or near a black hole), they differ — the distinction is important in tidal force analysis.</p>
+<div class="info-box info-box--note"><div class="info-box-title" style="color:var(--accent-plasma)">💡 The Fosbury Flop</div><p style="margin:0">In the high jump Fosbury Flop technique, the athlete arches their back as they pass over the bar. At the moment of clearance, every part of the athlete's body may be below the bar height — yet the CM passes over the bar. Since the CM must clear the bar height for the jump to succeed, arching the body so the CM is close to (or even below) the bar reduces the actual height the CM must reach, improving efficiency. Dick Fosbury used this to win the 1968 Olympic gold medal, and the technique is now universal.</p></div></div>
+<div class="ad-container"><div style="text-align:center;width:100%"><span class="ad-label">Advertisement</span><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div>
+<div style="display:flex;justify-content:space-between;margin-top:40px;gap:16px;flex-wrap:wrap">
+  <a href="waves-and-oscillations.html" class="btn btn-outline">← Waves & Oscillations</a>
+  <a href="statics-and-equilibrium.html" class="btn btn-primary">Next: Statics & Equilibrium →</a>
 </div>
-</div>
-      <div class="ad-container" style="margin-top:40px">
-        <div style="text-align:center;width:100%">
-          <span class="ad-label">Advertisement</span>
-          <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
-          <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
-        </div>
-      </div>
-    </article>
-    <aside class="topic-sidebar">
-      <div class="sidebar-card">
-        <h4 style="font-family:var(--font-mono);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent-plasma);margin-bottom:14px">// Topic Info</h4>
-        <div class="sidebar-stat"><span>Branch</span><span>Classical Mechanics</span></div>
-        <div class="sidebar-stat"><span>Topic</span><span>13 / 22</span></div>
-        <div class="sidebar-stat"><span>Level</span><span>Advanced</span></div>
-      </div>
-      <div class="sidebar-card">
-        <h4 style="font-family:var(--font-mono);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent-plasma);margin-bottom:14px">// All Topics</h4>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:6px">
-          <li><a href="newtons-laws.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">01. Newton's Laws</a></li>
-          <li><a href="projectile-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">02. Projectile Motion</a></li>
-          <li><a href="conservation-of-energy.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">03. Conservation of Energy</a></li>
-          <li><a href="linear-momentum.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">04. Linear Momentum</a></li>
-          <li><a href="circular-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">05. Circular Motion</a></li>
-          <li><a href="gravitational-force.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">06. Gravitational Force</a></li>
-          <li><a href="simple-harmonic-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">07. Simple Harmonic Motion</a></li>
-          <li><a href="rotational-dynamics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">08. Rotational Dynamics</a></li>
-          <li><a href="work-and-power.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">09. Work & Power</a></li>
-          <li><a href="friction-and-drag.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">10. Friction & Drag</a></li>
-          <li><a href="keplers-laws.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">11. Kepler's Laws</a></li>
-          <li><a href="waves-and-oscillations.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">12. Waves & Oscillations</a></li>
-          <li><a href="centre-of-mass.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">13. Centre of Mass</a></li>
-          <li><a href="statics-and-equilibrium.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">14. Statics & Equilibrium</a></li>
-          <li><a href="fluid-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">15. Fluid Mechanics</a></li>
-          <li><a href="elasticity-and-stress.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">16. Elasticity & Stress</a></li>
-          <li><a href="kinematics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">17. Kinematics</a></li>
-          <li><a href="damped-oscillations.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">18. Damped Oscillations</a></li>
-          <li><a href="lagrangian-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">19. Lagrangian Mechanics</a></li>
-          <li><a href="hamiltonian-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">20. Hamiltonian Mechanics</a></li>
-          <li><a href="rigid-body-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">21. Rigid Body Motion</a></li>
-          <li><a href="non-inertial-frames.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">22. Non-Inertial Frames</a></li>
-        </ul>
-      </div>
-      <div class="ad-container" style="min-height:250px;flex-direction:column">
-        <span class="ad-label">Advertisement</span>
-        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
-        <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
-      </div>
-    </aside>
+</article>
+<aside class="topic-sidebar">
+  <div class="sidebar-card">
+    <h4 style="font-family:var(--font-mono);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent-plasma);margin-bottom:14px">// Key Equations</h4>
+    <div class="formula-block" style="margin:0 0 8px;font-size:0.82rem">r_CM = Σmᵢrᵢ / M</div><div class="formula-block" style="margin:0 0 8px;font-size:0.82rem">r_CM = ∫r dm / M</div><div class="formula-block" style="margin:0 0 8px;font-size:0.82rem">F_ext = M·a_CM</div><div class="formula-block" style="margin:0 0 8px;font-size:0.82rem">μ = m₁m₂/(m₁+m₂)</div>
   </div>
+  <div class="sidebar-card">
+    <h4 style="font-family:var(--font-mono);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent-plasma);margin-bottom:14px">// Topic Info</h4>
+    <div class="sidebar-stat"><span>Branch</span><span>Classical Mechanics</span></div>
+    <div class="sidebar-stat"><span>Topic</span><span>13 / 22</span></div>
+    <div class="sidebar-stat"><span>Simulation</span><span>No</span></div>
+  </div>
+  <div class="sidebar-card">
+    <h4 style="font-family:var(--font-mono);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent-plasma);margin-bottom:14px">// All 22 Topics</h4>
+    <ul style="list-style:none;display:flex;flex-direction:column;gap:5px">
+<li><a href="newtons-laws.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">01. Newton's Laws</a></li>
+<li><a href="projectile-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">02. Projectile Motion</a></li>
+<li><a href="conservation-of-energy.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">03. Conservation of Energy</a></li>
+<li><a href="linear-momentum.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">04. Linear Momentum</a></li>
+<li><a href="circular-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">05. Circular Motion</a></li>
+<li><a href="gravitational-force.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">06. Gravitational Force</a></li>
+<li><a href="simple-harmonic-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">07. Simple Harmonic Motion</a></li>
+<li><a href="rotational-dynamics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">08. Rotational Dynamics</a></li>
+<li><a href="work-and-power.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">09. Work &amp; Power</a></li>
+<li><a href="friction-and-drag.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">10. Friction &amp; Drag</a></li>
+<li><a href="keplers-laws.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">11. Kepler's Laws</a></li>
+<li><a href="waves-and-oscillations.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">12. Waves &amp; Oscillations</a></li>
+<li><a href="centre-of-mass.html" style="font-size:0.8rem;color:var(--accent-plasma);font-weight:600;text-decoration:none">13. Centre of Mass</a></li>
+<li><a href="statics-and-equilibrium.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">14. Statics &amp; Equilibrium</a></li>
+<li><a href="fluid-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">15. Fluid Mechanics</a></li>
+<li><a href="elasticity-and-stress.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">16. Elasticity &amp; Stress</a></li>
+<li><a href="kinematics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">17. Kinematics</a></li>
+<li><a href="damped-oscillations.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">18. Damped Oscillations</a></li>
+<li><a href="lagrangian-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">19. Lagrangian Mechanics</a></li>
+<li><a href="hamiltonian-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">20. Hamiltonian Mechanics</a></li>
+<li><a href="rigid-body-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">21. Rigid Body Motion</a></li>
+<li><a href="non-inertial-frames.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">22. Non-Inertial Frames</a></li>
+</ul>
+  </div>
+  <div class="ad-container" style="min-height:250px;flex-direction:column"><span class="ad-label">Advertisement</span><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div>
+</aside>
+</div>
 </main>
 <div id="footer-placeholder"></div>
 <script src="../../js/components.js"></script>

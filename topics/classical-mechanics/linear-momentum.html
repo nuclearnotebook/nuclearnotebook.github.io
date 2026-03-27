@@ -1,162 +1,257 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Linear Momentum & Collisions — Classical Mechanics | QuantumAtlas</title>
-  <meta name="description" content="Deep dive into linear momentum — impulse-momentum theorem, conservation of momentum, elastic and inelastic collisions, and the centre of mass frame."/>
-  <meta name="keywords" content="linear momentum, conservation of momentum, impulse, elastic collision, inelastic collision, centre of mass, Newton's cradle, physics"/>
+  <meta name="description" content="Impulse, Conservation Laws, and the Physics of Impacts. linear momentum, conservation of momentum, impulse, elastic collision, inelastic collision, perfectly inelastic, centre "/>
+  <meta name="keywords" content="linear momentum, conservation of momentum, impulse, elastic collision, inelastic collision, perfectly inelastic, centre of mass, Newton's cradle, Tsiolkovsky rocket equation, physics"/>
   <link rel="canonical" href="https://yourdomain.com/topics/classical-mechanics/linear-momentum.html"/>
   <meta property="og:title" content="Linear Momentum & Collisions | QuantumAtlas"/>
-  <meta property="og:description" content="Deep dive into linear momentum — impulse-momentum theorem, conservation of momentum, elastic and inelastic collisions, and the centre of mass frame."/>
-  <meta property="og:image" content="https://images.unsplash.com/photo-1630839437035-dac17da580d0?w=1200&q=75&auto=format"/>
-  <script type="application/ld+json">{
-    "@context":"https://schema.org","@type":"Article",
-    "headline":"Linear Momentum & Collisions","description":"Deep dive into linear momentum — impulse-momentum theorem, conservation of momentum, elastic and inelastic collisions, and the centre of mass frame.",
-    "image":"https://images.unsplash.com/photo-1630839437035-dac17da580d0?w=1200&q=75&auto=format",
-    "author":{"@type":"Organization","name":"QuantumAtlas"},
-    "publisher":{"@type":"Organization","name":"QuantumAtlas","url":"https://yourdomain.com"},
-    "breadcrumb":{"@type":"BreadcrumbList","itemListElement":[
-      {"@type":"ListItem","position":1,"name":"Home","item":"https://yourdomain.com/"},
-      {"@type":"ListItem","position":2,"name":"Branches","item":"https://yourdomain.com/theory.html"},
-      {"@type":"ListItem","position":3,"name":"Classical Mechanics","item":"https://yourdomain.com/branches/classical-mechanics.html"},
-      {"@type":"ListItem","position":4,"name":"Linear Momentum & Collisions"}
-    ]}
-  }</script>
+  <meta property="og:image" content="https://images.unsplash.com/photo-1630839437035-dac17da580d0?w=1400&q=80&auto=format"/>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Linear Momentum & Collisions","author":{"@type":"Organization","name":"QuantumAtlas"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://yourdomain.com/"},{"@type":"ListItem","position":2,"name":"Classical Mechanics","item":"https://yourdomain.com/branches/classical-mechanics.html"},{"@type":"ListItem","position":3,"name":"Linear Momentum & Collisions"}]}}</script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-4X0M6RM0F6"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4X0M6RM0F6',{page_title:document.title,page_location:window.location.href});</script>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2633513915753897" crossorigin="anonymous"></script>
   <meta name="google-adsense-account" content="ca-pub-2633513915753897">
-  <link rel="stylesheet" href="../../css/global.css"/>
-  <link rel="stylesheet" href="../../css/nav.css"/>
-  <link rel="stylesheet" href="../../css/topic.css"/>
+  <link rel="stylesheet" href="../../css/global.css"/><link rel="stylesheet" href="../../css/nav.css"/><link rel="stylesheet" href="../../css/topic.css"/>
 </head>
 <body>
 <div id="nav-placeholder"></div>
 <main>
-  <section class="topic-hero">
-    <img src="https://images.unsplash.com/photo-1630839437035-dac17da580d0?w=1200&q=75&auto=format" alt="Collision physics and momentum — billiard balls impact" class="topic-hero-bg-img" loading="eager"/>
-    <div class="topic-hero-overlay"></div>
-    <div class="container topic-hero-content">
-      <nav class="breadcrumb">
-        <a href="../../index.html">Home</a><span class="sep">›</span>
-        <a href="../../theory.html">Branches</a><span class="sep">›</span>
-        <a href="../../branches/classical-mechanics.html">Classical Mechanics</a><span class="sep">›</span>
-        <span class="current">Linear Momentum & Collisions</span>
-      </nav>
-      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px">
-        <span class="badge badge-plasma">Classical Mechanics</span>
-        
-        <span class="badge badge-nova">Topic 04</span>
-      </div>
-      <h1 class="topic-hero-title">💥 Linear Momentum & Collisions</h1>
-      <p class="topic-hero-sub">Impulse, Conservation, and the Physics of Impacts</p>
-      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:20px"><span class="tc-tag" style="padding:5px 12px;font-size:0.75rem">Momentum</span> <span class="tc-tag" style="padding:5px 12px;font-size:0.75rem">Collisions</span> <span class="tc-tag" style="padding:5px 12px;font-size:0.75rem">Impulse</span></div>
+<section class="topic-hero">
+  <img src="https://images.unsplash.com/photo-1630839437035-dac17da580d0?w=1400&q=80&auto=format" alt="High-speed collision photography demonstrating momentum transfer" class="topic-hero-bg-img" loading="eager"/>
+  <div class="topic-hero-overlay"></div>
+  <div class="container topic-hero-content">
+    <nav class="breadcrumb"><a href="../../index.html">Home</a><span class="sep">›</span><a href="../../branches/classical-mechanics.html">Classical Mechanics</a><span class="sep">›</span><span class="current">Linear Momentum & Collisions</span></nav>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px">
+      <span class="badge badge-plasma">Classical Mechanics</span>
+      <span class='badge badge-green'>Interactive Simulation</span>
+      <span class="badge badge-nova">Topic 04 / 22</span>
     </div>
-  </section>
-  <div class="container topic-layout">
-    <article class="topic-article">
-      <div class="ad-container" style="margin-bottom:36px">
-        <div style="text-align:center;width:100%">
-          <span class="ad-label">Advertisement</span>
-          <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
-          <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
-        </div>
-      </div>
-      <div class="topic-body">
-<p>Linear momentum is one of the most fundamental conserved quantities in physics. The principle of conservation of linear momentum — that the total momentum of an isolated system never changes — is one of the most powerful tools in all of mechanics. It applies equally to collisions between billiard balls, the recoil of a rifle, the propulsion of rockets, and the evolution of galaxies.</p>
+    <h1 class="topic-hero-title">💥 Linear Momentum & Collisions</h1>
+    <p class="topic-hero-sub">Impulse, Conservation Laws, and the Physics of Impacts</p>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:20px"><span class="tc-tag" style="padding:5px 14px;font-size:0.78rem">Momentum</span><span class="tc-tag" style="padding:5px 14px;font-size:0.78rem">Collisions</span><span class="tc-tag" style="padding:5px 14px;font-size:0.78rem">Impulse</span><span class="tc-tag" style="padding:5px 14px;font-size:0.78rem">Rocket Propulsion</span></div>
+  </div>
+</section>
+<div class="container topic-layout">
+<article class="topic-article">
+<div class="ad-container"><div style="text-align:center;width:100%"><span class="ad-label">Advertisement</span><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div>
+<h2 id="simulation" style="margin-top:0;border-top:none;padding-top:0">Interactive Simulation</h2><div class="simulation-wrapper">
+  <div class="simulation-toolbar">
+    <span class="simulation-title">💥 1D Collision Simulator</span>
+    <div class="sim-control"><label>m₁ (kg)</label><input type="range" id="col-m1" min="1" max="20" value="5" step="1"/><span id="col-m1v">5</span></div>
+    <div class="sim-control"><label>v₁ (m/s)</label><input type="range" id="col-u1" min="1" max="20" value="8" step="1"/><span id="col-u1v">8</span></div>
+    <div class="sim-control"><label>m₂ (kg)</label><input type="range" id="col-m2" min="1" max="20" value="5" step="1"/><span id="col-m2v">5</span></div>
+    <div class="sim-control"><label>Type</label>
+      <select id="col-type" style="background:var(--bg-deep);color:var(--text-primary);border:1px solid var(--border-dim);padding:4px 8px;border-radius:6px;font-size:0.78rem">
+        <option value="elastic">Elastic</option>
+        <option value="inelastic">Inelastic (e=0.5)</option>
+        <option value="perfect">Perfectly Inelastic</option>
+      </select>
+    </div>
+    <button id="col-start" class="btn btn-primary" style="padding:7px 18px;font-size:0.78rem">Launch</button>
+    <button id="col-reset" class="btn btn-outline" style="padding:7px 14px;font-size:0.78rem">Reset</button>
+  </div>
+  <div class="sim-canvas-wrap"><canvas id="col-canvas" height="260"></canvas></div>
+  <div style="padding:12px 20px;display:flex;gap:20px;flex-wrap:wrap;font-family:var(--font-mono);font-size:0.78rem;color:var(--text-muted);background:rgba(0,0,0,0.25);border-top:1px solid var(--border-dim)">
+    <span>p before: <strong id="col-pb" style="color:var(--accent-plasma)">—</strong></span>
+    <span>p after: <strong id="col-pa" style="color:var(--accent-green)">—</strong></span>
+    <span>KE before: <strong id="col-keb" style="color:var(--accent-gold)">—</strong></span>
+    <span>KE after: <strong id="col-kea" style="color:#a078ff">—</strong></span>
+    <span>ΔKE lost: <strong id="col-dke" style="color:var(--accent-solar)">—</strong></span>
+  </div>
+</div>
+<script>
+(function(){
+  const cv=document.getElementById('col-canvas'),cx=cv.getContext('2d');
+  const m1Sl=document.getElementById('col-m1'),u1Sl=document.getElementById('col-u1'),m2Sl=document.getElementById('col-m2'),typeSel=document.getElementById('col-type');
+  m1Sl.oninput=()=>document.getElementById('col-m1v').textContent=m1Sl.value;
+  u1Sl.oninput=()=>document.getElementById('col-u1v').textContent=u1Sl.value;
+  m2Sl.oninput=()=>document.getElementById('col-m2v').textContent=m2Sl.value;
+  let raf=null,running=false,x1=0,x2=0,v1=0,v2=0,collided=false,phase=0;
+  function W(){cv.width=cv.offsetWidth||800;}W();window.addEventListener('resize',()=>{W();if(!running)draw();});
+  function draw(){
+    const W2=cv.width,H=260,m1=parseFloat(m1Sl.value),m2=parseFloat(m2Sl.value);
+    cx.clearRect(0,0,W2,H);
+    const bg=cx.createLinearGradient(0,0,0,H);bg.addColorStop(0,'#050810');bg.addColorStop(1,'#0a0e22');
+    cx.fillStyle=bg;cx.fillRect(0,0,W2,H);
+    cx.fillStyle='rgba(0,212,255,0.06)';cx.fillRect(0,H-50,W2,50);
+    cx.strokeStyle='rgba(0,212,255,0.3)';cx.lineWidth=2;cx.beginPath();cx.moveTo(0,H-50);cx.lineTo(W2,H-50);cx.stroke();
+    // Ball 1
+    const r1=Math.min(20,8+m1*0.8);
+    cx.beginPath();cx.arc(x1,H-50-r1,r1,0,Math.PI*2);
+    cx.fillStyle='#00d4ff';cx.shadowColor='#00d4ff';cx.shadowBlur=14;cx.fill();cx.shadowBlur=0;
+    cx.fillStyle='rgba(0,212,255,0.9)';cx.font='bold 10px JetBrains Mono,monospace';cx.textAlign='center';cx.fillText(m1+'kg',x1,H-50-r1+4);
+    cx.fillText('v='+v1.toFixed(1),x1,H-50-r1-r1-4);
+    // Ball 2
+    const r2=Math.min(20,8+m2*0.8);
+    cx.beginPath();cx.arc(x2,H-50-r2,r2,0,Math.PI*2);
+    cx.fillStyle='#ff6b1a';cx.shadowColor='#ff6b1a';cx.shadowBlur=14;cx.fill();cx.shadowBlur=0;
+    cx.fillStyle='rgba(255,107,26,0.9)';cx.textAlign='center';cx.fillText(m2+'kg',x2,H-50-r2+4);
+    cx.fillText('v='+v2.toFixed(1),x2,H-50-r2-r2-4);cx.textAlign='left';
+    // Collision flash
+    if(collided&&phase<8){cx.fillStyle=`rgba(255,255,200,${0.4-phase*0.05})`;cx.beginPath();cx.arc((x1+x2)/2,H-70,40,0,Math.PI*2);cx.fill();}
+  }
+  function start(){
+    if(running)return;running=true;collided=false;phase=0;
+    const m1=parseFloat(m1Sl.value),u1=parseFloat(u1Sl.value),m2=parseFloat(m2Sl.value),type=typeSel.value;
+    x1=80;x2=cv.width*0.65;v1=u1*60;v2=0;
+    const pb=m1*u1+m2*0;const keb=0.5*m1*u1*u1;
+    document.getElementById('col-pb').textContent=pb.toFixed(1)+' kg·m/s';
+    document.getElementById('col-keb').textContent=keb.toFixed(1)+' J';
+    let last=null;
+    function step(ts){
+      if(!last)last=ts;const dt=Math.min((ts-last)/1000,0.025);last=ts;
+      const r1=Math.min(20,8+m1*0.8),r2=Math.min(20,8+m2*0.8);
+      if(!collided&&x1+r1>=x2-r2){
+        collided=true;
+        let vf1,vf2;
+        if(type==='elastic'){
+          vf1=((m1-m2)*v1+2*m2*v2)/(m1+m2);
+          vf2=((m2-m1)*v2+2*m1*v1)/(m1+m2);
+        } else if(type==='inelastic'){
+          const e=0.5;
+          vf1=(m1*v1+m2*v2+m2*e*(v2-v1))/(m1+m2);
+          vf2=(m1*v1+m2*v2+m1*e*(v1-v2))/(m1+m2);
+        } else {
+          vf1=vf2=(m1*v1+m2*v2)/(m1+m2);
+        }
+        v1=vf1;v2=vf2;
+        const pa=m1*(vf1/60)+m2*(vf2/60);
+        const kea=0.5*m1*(vf1/60)**2+0.5*m2*(vf2/60)**2;
+        document.getElementById('col-pa').textContent=pa.toFixed(1)+' kg·m/s';
+        document.getElementById('col-kea').textContent=kea.toFixed(1)+' J';
+        document.getElementById('col-dke').textContent=(keb-kea).toFixed(1)+' J';
+      }
+      if(collided)phase++;
+      x1+=v1*dt;x2+=v2*dt;
+      draw();
+      if(x1>-100&&x1<cv.width+100&&running)raf=requestAnimationFrame(step);else running=false;
+    }
+    raf=requestAnimationFrame(step);
+  }
+  function reset(){cancelAnimationFrame(raf);running=false;x1=80;x2=cv.width*0.65;v1=0;v2=0;collided=false;draw();['col-pb','col-pa','col-keb','col-kea','col-dke'].forEach(id=>document.getElementById(id).textContent='—');}
+  document.getElementById('col-start').onclick=start;document.getElementById('col-reset').onclick=reset;draw();
+})();
+</script>
+<div class="topic-body">
 
-<h2>Definition of Linear Momentum</h2>
-<p>The linear momentum of a particle is defined as the product of its mass and velocity:</p>
-<div class="formula-block"><span class="formula-label">Linear Momentum</span>p⃗ = m·v⃗</div>
-<p>Momentum is a vector — it has both magnitude and direction. The SI unit is kg·m/s. Newton's second law in its most general form is actually stated in terms of momentum:</p>
-<div class="formula-block"><span class="formula-label">Newton's Second Law (general form)</span>F⃗<sub>net</sub> = dp⃗/dt</div>
-<p>For constant mass, this reduces to F = ma. But the momentum form is more general and remains valid even when mass changes, as in rocket propulsion.</p>
+<figure style="margin:0 0 32px"><img src="https://images.unsplash.com/photo-1630839437035-dac17da580d0?w=900&q=80&auto=format" alt="Pool balls scattering — demonstrating momentum conservation in elastic collisions" class="img-frame"/><figcaption>Pool/snooker balls undergo near-perfectly elastic collisions. The cue ball transfers nearly all its momentum to the rack in a complex 2D momentum exchange — each ball's final trajectory determined entirely by conservation of momentum and kinetic energy, the geometry of impact, and the spin imparted.</figcaption></figure>
+
+<h2>Momentum — The Fundamental Quantity of Motion</h2>
+<p>Linear momentum is one of the most fundamental conserved quantities in physics. Defined as the product of mass and velocity, momentum is a vector quantity that encodes both the "amount" and direction of motion. The conservation of linear momentum — that the total momentum of an isolated system is unchanged — follows directly from Newton's Third Law and is one of the most powerful principles in all of mechanics.</p>
+
+<div class="formula-block"><span class="formula-label">Linear Momentum</span>p⃗ = m·v⃗ &nbsp;&nbsp;&nbsp; [kg·m/s]</div>
+
+<p>Newton's Second Law is more naturally expressed in terms of momentum. Newton himself wrote F = dp/dt, not F = ma. The more general form remains valid even when mass changes (rocket propulsion) or when relativistic effects are important (where p = γmv with γ the Lorentz factor):</p>
+
+<div class="formula-block"><span class="formula-label">Newton's 2nd Law — General Form</span>F⃗<sub>net</sub> = dp⃗/dt</div>
 
 <h2>Impulse and the Impulse-Momentum Theorem</h2>
-<p>The impulse J⃗ of a force is its time integral — the area under the force-time curve:</p>
-<div class="formula-block"><span class="formula-label">Impulse</span>J⃗ = ∫F⃗ dt = Δp⃗</div>
-<p>The impulse-momentum theorem states that the impulse acting on a body equals the change in its momentum. This is extremely useful in collision analysis, where forces are large but act for very short times. The average force during a collision is F<sub>avg</sub> = Δp/Δt. A shorter collision time means a larger average force — which is why airbags (which increase collision time) reduce injuries.</p>
+<p>The impulse J⃗ of a force is the integral of force over the time it acts — the "area under the F-t curve":</p>
+
+<div class="formula-block"><span class="formula-label">Impulse</span>J⃗ = ∫F⃗ dt = Δp⃗ = m·v⃗<sub>f</sub> − m·v⃗<sub>i</sub></div>
+
+<p>The Impulse-Momentum Theorem is the statement that impulse equals the change in momentum. It is enormously useful in collision problems where the force varies during impact but the duration Δt is known. The average force is F<sub>avg</sub> = Δp/Δt. For a given momentum change Δp:</p>
+<ul style="color:var(--text-secondary)">
+  <li><strong>Short collision time Δt → Very large average force</strong> (hard surface: car hitting concrete wall)</li>
+  <li><strong>Long collision time Δt → Smaller average force</strong> (crumple zones, airbags, padding: same Δp spread over longer time)</li>
+</ul>
+
+<p>This is the physics behind automotive safety: crumple zones increase the collision time from ~50 ms to ~150 ms — tripling the collision time, reducing average force by one-third, reducing injury severity dramatically.</p>
 
 <h2>Conservation of Linear Momentum</h2>
-<p>For an isolated system (no external forces), the total momentum is conserved:</p>
-<div class="formula-block"><span class="formula-label">Conservation of Momentum</span>p⃗<sub>total</sub> = constant &nbsp;&nbsp;⟹&nbsp;&nbsp; Σm<sub>i</sub>v⃗<sub>i</sub> = constant</div>
-<p>This follows directly from Newton's third law. In a two-body collision, the forces between the bodies are equal and opposite, so their momentum changes are equal and opposite, and the total momentum is unchanged.</p>
+<p>For an isolated system (no net external force), the total momentum is conserved — at all times, for all internal interactions, however violent:</p>
+
+<div class="formula-block"><span class="formula-label">Conservation Law</span>Σp⃗<sub>initial</sub> = Σp⃗<sub>final</sub> &nbsp;&nbsp;&nbsp; (no external forces)</div>
+
+<p>This follows from Newton's Third Law: every internal force F⃗<sub>A on B</sub> is matched by −F⃗<sub>B on A</sub>. Their contributions to dp⃗<sub>total</sub>/dt cancel exactly, leaving the total momentum unchanged. Explosions, collisions, fragmentation — the total momentum vector is conserved regardless.</p>
+
+<figure style="margin:32px 0"><img src="https://images.unsplash.com/photo-1614728423169-3f65fd722b7e?w=900&q=80&auto=format" alt="Newton's cradle demonstrating conservation of momentum" class="img-frame"/><figcaption>Newton's cradle: each impact conserves both momentum and kinetic energy (elastic collision). With equal masses, the only solution satisfying both conservation laws simultaneously is that the incoming ball stops and the outgoing ball acquires all the velocity. With 2 balls in, 2 balls must exit — any other distribution would violate energy conservation even while satisfying momentum conservation.</figcaption></figure>
 
 <h2>Types of Collisions</h2>
 <div class="table-wrap"><table>
-<thead><tr><th>Type</th><th>Momentum</th><th>Kinetic Energy</th><th>Example</th></tr></thead>
+<thead><tr><th>Type</th><th>Momentum</th><th>Kinetic Energy</th><th>Real Examples</th></tr></thead>
 <tbody>
-<tr><td>Elastic</td><td>Conserved ✓</td><td>Conserved ✓</td><td>Newton's cradle, gas molecules</td></tr>
-<tr><td>Inelastic</td><td>Conserved ✓</td><td>Not conserved ✗</td><td>Car crash, clay hitting wall</td></tr>
-<tr><td>Perfectly inelastic</td><td>Conserved ✓</td><td>Maximum KE lost</td><td>Objects stick together after collision</td></tr>
+<tr><td><strong>Elastic</strong></td><td>✓ Conserved</td><td>✓ Conserved</td><td>Billiard balls, atomic/molecular collisions, steel ball bearings</td></tr>
+<tr><td><strong>Inelastic</strong></td><td>✓ Conserved</td><td>✗ Some lost to heat, sound, deformation</td><td>Car crash, football tackle, most macroscopic collisions</td></tr>
+<tr><td><strong>Perfectly Inelastic</strong></td><td>✓ Conserved</td><td>Maximum KE lost (objects stick together)</td><td>Railway carriage coupling, clay catching bullet, car rear-end with lock</td></tr>
 </tbody></table></div>
 
-<h2>1D Elastic Collision — Velocity Equations</h2>
-<p>For a 1D elastic collision between masses m₁ (velocity u₁) and m₂ (velocity u₂):</p>
-<div class="formula-block"><span class="formula-label">Final Velocities — Elastic</span>
-v₁ = ((m₁−m₂)u₁ + 2m₂u₂) / (m₁+m₂)<br/>
-v₂ = ((m₂−m₁)u₂ + 2m₁u₁) / (m₁+m₂)
-</div>
-<p>Special case: equal masses (m₁ = m₂) — the velocities are simply exchanged. This explains Newton's cradle.</p>
+<h2>Elastic Collision Equations — 1D</h2>
+<p>For a 1D elastic collision between m₁ (initial velocity u₁) and m₂ (initial velocity u₂), solving the simultaneous conservation equations for momentum and KE:</p>
 
-<h2>Centre of Mass Frame</h2>
-<p>The centre of mass (CM) of a system moves at constant velocity if no external forces act. In the CM frame, the total momentum is always zero, simplifying collision analysis. Transforming to and from the CM frame is a powerful technique in particle physics and classical mechanics.</p>
+<div class="formula-block"><span class="formula-label">Final Velocities — 1D Elastic Collision</span>v₁ = [(m₁−m₂)u₁ + 2m₂u₂] / (m₁+m₂)<br/>v₂ = [(m₂−m₁)u₂ + 2m₁u₁] / (m₁+m₂)</div>
 
-<div class="info-box info-box--fact">
-  <div class="info-box-title" style="color:#a078ff">🚀 Rocket Propulsion</div>
-  <p style="margin:0">A rocket accelerates by expelling mass at high velocity. By conservation of momentum, as exhaust goes backward, the rocket goes forward. The Tsiolkovsky rocket equation Δv = v<sub>e</sub> ln(m₀/m<sub>f</sub>) gives the velocity change achievable from a given mass ratio.</p>
+<p>Special cases illuminate the physics:</p>
+<ul style="color:var(--text-secondary)">
+  <li><strong>Equal masses (m₁ = m₂):</strong> v₁ = u₂, v₂ = u₁ — velocities are simply exchanged. This explains Newton's cradle exactly.</li>
+  <li><strong>Very heavy hits very light (m₁ ≫ m₂):</strong> v₁ ≈ u₁ (heavy barely slows), v₂ ≈ 2u₁ − u₂ (light bounces off at ~twice the heavy's speed). A bowling ball barely slows when hitting a ping-pong ball.</li>
+  <li><strong>Very light hits very heavy at rest (m₁ ≪ m₂, u₂=0):</strong> v₁ ≈ −u₁ (light bounces back), v₂ ≈ 0 (heavy barely moves). A ping-pong ball bouncing off a concrete wall.</li>
+</ul>
+
+<h2>Perfectly Inelastic Collision</h2>
+<div class="formula-block"><span class="formula-label">Combined Velocity After Perfectly Inelastic Collision</span>v<sub>f</sub> = (m₁u₁ + m₂u₂) / (m₁ + m₂)</div>
+
+<p>The KE lost = ½m₁u₁² + ½m₂u₂² − ½(m₁+m₂)v<sub>f</sub>². This is always positive (≥ 0), confirming that KE can only be lost, never gained, in an inelastic collision. Maximum KE loss occurs when the objects stick together (perfectly inelastic). In the CM frame, all kinetic energy is lost in a perfectly inelastic collision.</p>
+
+<h2>Rocket Propulsion and Variable Mass</h2>
+<p>A rocket accelerates by expelling mass (exhaust) at high velocity. The Tsiolkovsky rocket equation follows from momentum conservation for a variable-mass system:</p>
+
+<div class="formula-block"><span class="formula-label">Tsiolkovsky Rocket Equation</span>Δv = v<sub>e</sub> · ln(m₀/m<sub>f</sub>) &nbsp;&nbsp;&nbsp; [v<sub>e</sub> = exhaust velocity]</div>
+
+<p>Where m₀ is initial mass and m<sub>f</sub> is final (dry) mass. The logarithmic dependence means diminishing returns: to double Δv, you must square the mass ratio. The Saturn V moon rocket started at 2,970 tonnes and arrived in orbit with ~130 tonnes — a mass ratio of ~22.8, giving Δv ≈ v<sub>e</sub>·ln(22.8) ≈ 9.7 km/s with v<sub>e</sub> ≈ 3.1 km/s.</p>
+
+<div class="info-box info-box--fact"><div class="info-box-title" style="color:#a078ff">🚀 Two-Stage Rockets</div><p style="margin:0">Staging (discarding empty fuel tanks) dramatically improves performance by reducing m<sub>f</sub>. A two-stage rocket achieves Δv = v<sub>e</sub>·ln(m₀₁/m<sub>f1</sub>) + v<sub>e</sub>·ln(m₀₂/m<sub>f2</sub>), which for typical staging ratios gives ~40% more Δv than a single-stage vehicle with the same total mass. This is why no single-stage rocket has ever achieved orbital velocity.</p></div>
+
 </div>
+<div class="ad-container"><div style="text-align:center;width:100%"><span class="ad-label">Advertisement</span><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div>
+<div style="display:flex;justify-content:space-between;margin-top:40px;gap:16px;flex-wrap:wrap">
+  <a href="conservation-of-energy.html" class="btn btn-outline">← Conservation of Energy</a>
+  <a href="circular-motion.html" class="btn btn-primary">Next: Circular Motion →</a>
 </div>
-      <div class="ad-container" style="margin-top:40px">
-        <div style="text-align:center;width:100%">
-          <span class="ad-label">Advertisement</span>
-          <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
-          <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
-        </div>
-      </div>
-    </article>
-    <aside class="topic-sidebar">
-      <div class="sidebar-card">
-        <h4 style="font-family:var(--font-mono);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent-plasma);margin-bottom:14px">// Topic Info</h4>
-        <div class="sidebar-stat"><span>Branch</span><span>Classical Mechanics</span></div>
-        <div class="sidebar-stat"><span>Topic</span><span>04 / 22</span></div>
-        <div class="sidebar-stat"><span>Level</span><span>Advanced</span></div>
-      </div>
-      <div class="sidebar-card">
-        <h4 style="font-family:var(--font-mono);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent-plasma);margin-bottom:14px">// All Topics</h4>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:6px">
-          <li><a href="newtons-laws.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">01. Newton's Laws</a></li>
-          <li><a href="projectile-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">02. Projectile Motion</a></li>
-          <li><a href="conservation-of-energy.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">03. Conservation of Energy</a></li>
-          <li><a href="linear-momentum.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">04. Linear Momentum</a></li>
-          <li><a href="circular-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">05. Circular Motion</a></li>
-          <li><a href="gravitational-force.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">06. Gravitational Force</a></li>
-          <li><a href="simple-harmonic-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">07. Simple Harmonic Motion</a></li>
-          <li><a href="rotational-dynamics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">08. Rotational Dynamics</a></li>
-          <li><a href="work-and-power.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">09. Work & Power</a></li>
-          <li><a href="friction-and-drag.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">10. Friction & Drag</a></li>
-          <li><a href="keplers-laws.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">11. Kepler's Laws</a></li>
-          <li><a href="waves-and-oscillations.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">12. Waves & Oscillations</a></li>
-          <li><a href="centre-of-mass.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">13. Centre of Mass</a></li>
-          <li><a href="statics-and-equilibrium.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">14. Statics & Equilibrium</a></li>
-          <li><a href="fluid-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">15. Fluid Mechanics</a></li>
-          <li><a href="elasticity-and-stress.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">16. Elasticity & Stress</a></li>
-          <li><a href="kinematics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">17. Kinematics</a></li>
-          <li><a href="damped-oscillations.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">18. Damped Oscillations</a></li>
-          <li><a href="lagrangian-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">19. Lagrangian Mechanics</a></li>
-          <li><a href="hamiltonian-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">20. Hamiltonian Mechanics</a></li>
-          <li><a href="rigid-body-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">21. Rigid Body Motion</a></li>
-          <li><a href="non-inertial-frames.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">22. Non-Inertial Frames</a></li>
-        </ul>
-      </div>
-      <div class="ad-container" style="min-height:250px;flex-direction:column">
-        <span class="ad-label">Advertisement</span>
-        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
-        <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
-      </div>
-    </aside>
+</article>
+<aside class="topic-sidebar">
+  <div class="sidebar-card">
+    <h4 style="font-family:var(--font-mono);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent-plasma);margin-bottom:14px">// Key Equations</h4>
+    <div class="formula-block" style="margin:0 0 8px;font-size:0.82rem"><span class="formula-label">Momentum</span>p⃗ = m·v⃗</div><div class="formula-block" style="margin:0 0 8px;font-size:0.82rem"><span class="formula-label">Impulse</span>J⃗ = Δp⃗ = F·Δt</div><div class="formula-block" style="margin:0 0 8px;font-size:0.82rem"><span class="formula-label">Conservation</span>Σp⃗ = constant</div><div class="formula-block" style="margin:0 0 8px;font-size:0.82rem"><span class="formula-label">Elastic collision v₁'</span>v₁' = (m₁−m₂)u₁+2m₂u₂ / (m₁+m₂)</div>
   </div>
+  <div class="sidebar-card">
+    <h4 style="font-family:var(--font-mono);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent-plasma);margin-bottom:14px">// Topic Info</h4>
+    <div class="sidebar-stat"><span>Branch</span><span>Classical Mechanics</span></div>
+    <div class="sidebar-stat"><span>Topic</span><span>04 / 22</span></div>
+    <div class="sidebar-stat"><span>Simulation</span><span>Yes ✓</span></div>
+  </div>
+  <div class="sidebar-card">
+    <h4 style="font-family:var(--font-mono);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent-plasma);margin-bottom:14px">// All 22 Topics</h4>
+    <ul style="list-style:none;display:flex;flex-direction:column;gap:5px">
+<li><a href="newtons-laws.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">01. Newton's Laws</a></li>
+<li><a href="projectile-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">02. Projectile Motion</a></li>
+<li><a href="conservation-of-energy.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">03. Conservation of Energy</a></li>
+<li><a href="linear-momentum.html" style="font-size:0.8rem;color:var(--accent-plasma);font-weight:600;text-decoration:none">04. Linear Momentum</a></li>
+<li><a href="circular-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">05. Circular Motion</a></li>
+<li><a href="gravitational-force.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">06. Gravitational Force</a></li>
+<li><a href="simple-harmonic-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">07. Simple Harmonic Motion</a></li>
+<li><a href="rotational-dynamics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">08. Rotational Dynamics</a></li>
+<li><a href="work-and-power.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">09. Work & Power</a></li>
+<li><a href="friction-and-drag.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">10. Friction & Drag</a></li>
+<li><a href="keplers-laws.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">11. Kepler's Laws</a></li>
+<li><a href="waves-and-oscillations.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">12. Waves & Oscillations</a></li>
+<li><a href="centre-of-mass.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">13. Centre of Mass</a></li>
+<li><a href="statics-and-equilibrium.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">14. Statics & Equilibrium</a></li>
+<li><a href="fluid-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">15. Fluid Mechanics</a></li>
+<li><a href="elasticity-and-stress.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">16. Elasticity & Stress</a></li>
+<li><a href="kinematics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">17. Kinematics</a></li>
+<li><a href="damped-oscillations.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">18. Damped Oscillations</a></li>
+<li><a href="lagrangian-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">19. Lagrangian Mechanics</a></li>
+<li><a href="hamiltonian-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">20. Hamiltonian Mechanics</a></li>
+<li><a href="rigid-body-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">21. Rigid Body Motion</a></li>
+<li><a href="non-inertial-frames.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">22. Non-Inertial Frames</a></li>
+</ul>
+  </div>
+  <div class="ad-container" style="min-height:250px;flex-direction:column"><span class="ad-label">Advertisement</span><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div>
+</aside>
+</div>
 </main>
 <div id="footer-placeholder"></div>
 <script src="../../js/components.js"></script>

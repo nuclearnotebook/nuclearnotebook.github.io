@@ -4,238 +4,376 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Newton's Laws of Motion — Classical Mechanics | QuantumAtlas</title>
-  <meta name="description" content="A comprehensive study of Newton's three laws of motion — the foundation of classical mechanics. Covers inertia, the second law F=ma, action-reaction pairs, applications, and historical context."/>
-  <meta name="keywords" content="Newton's laws of motion, inertia, F=ma, action reaction, classical mechanics, force, acceleration, mass"/>
+  <meta name="description" content="Complete scientific treatment of Newton's Three Laws of Motion — inertia, F=ma, action-reaction, free body diagrams, applications in engineering. With interactive force simulator."/>
+  <meta name="keywords" content="Newton's laws of motion, first law inertia, second law F=ma, third law action reaction, classical mechanics, free body diagram, net force, physics"/>
   <link rel="canonical" href="https://yourdomain.com/topics/classical-mechanics/newtons-laws.html"/>
   <meta property="og:title" content="Newton's Laws of Motion | QuantumAtlas"/>
-  <meta property="og:description" content="A comprehensive study of Newton's three laws of motion — the foundation of classical mechanics. Covers inertia, the second law F=ma, action-reaction pairs, applications, and historical context."/>
-  <meta property="og:type" content="article"/>
-  <meta property="og:image" content="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=1200&q=75&auto=format"/>
-  <meta name="twitter:card" content="summary_large_image"/>
-  <script type="application/ld+json">{
-    "@context":"https://schema.org","@type":"Article",
-    "headline":"Newton's Laws of Motion",
-    "description":"A comprehensive study of Newton's three laws of motion — the foundation of classical mechanics. Covers inertia, the second law F=ma, action-reaction pairs, applications, and historical context.",
-    "image":"https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=1200&q=75&auto=format",
-    "author":{"@type":"Organization","name":"QuantumAtlas"},
-    "publisher":{"@type":"Organization","name":"QuantumAtlas","url":"https://yourdomain.com"},
-    "breadcrumb":{"@type":"BreadcrumbList","itemListElement":[
-      {"@type":"ListItem","position":1,"name":"Home","item":"https://yourdomain.com/"},
-      {"@type":"ListItem","position":2,"name":"Branches","item":"https://yourdomain.com/theory.html"},
-      {"@type":"ListItem","position":3,"name":"Classical Mechanics","item":"https://yourdomain.com/branches/classical-mechanics.html"},
-      {"@type":"ListItem","position":4,"name":"Newton's Laws of Motion"}
-    ]}
-  }</script>
-
+  <meta property="og:image" content="https://images.unsplash.com/photo-1636466497217-26a8cbeaf0aa?w=1200&q=80"/>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Newton's Laws of Motion","author":{"@type":"Organization","name":"QuantumAtlas"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://yourdomain.com/"},{"@type":"ListItem","position":2,"name":"Classical Mechanics","item":"https://yourdomain.com/branches/classical-mechanics.html"},{"@type":"ListItem","position":3,"name":"Newton's Laws"}]}}</script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-4X0M6RM0F6"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4X0M6RM0F6',{page_title:document.title,page_location:window.location.href});</script>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2633513915753897" crossorigin="anonymous"></script>
   <meta name="google-adsense-account" content="ca-pub-2633513915753897">
-
   <link rel="stylesheet" href="../../css/global.css"/>
   <link rel="stylesheet" href="../../css/nav.css"/>
   <link rel="stylesheet" href="../../css/topic.css"/>
 </head>
 <body>
 <div id="nav-placeholder"></div>
-
 <main>
-  <!-- Hero -->
-  <section class="topic-hero">
-    <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=1200&q=75&auto=format" alt="Newton's laws physics concept — gears and mechanical forces" class="topic-hero-bg-img" loading="eager"/>
-    <div class="topic-hero-overlay"></div>
-    <div class="container topic-hero-content">
-      <nav class="breadcrumb">
-        <a href="../../index.html">Home</a><span class="sep">›</span>
-        <a href="../../theory.html">Branches</a><span class="sep">›</span>
-        <a href="../../branches/classical-mechanics.html">Classical Mechanics</a><span class="sep">›</span>
-        <span class="current">Newton's Laws of Motion</span>
-      </nav>
-      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px">
-        <span class="badge badge-plasma">Classical Mechanics</span>
-        
-        <span class="badge badge-nova">Topic 01</span>
-      </div>
-      <h1 class="topic-hero-title">⚙ Newton's Laws of Motion</h1>
-      <p class="topic-hero-sub">The Three Fundamental Principles of Classical Dynamics</p>
-      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:20px">
-        <span class="tc-tag" style="padding:5px 12px;font-size:0.75rem">Dynamics</span> <span class="tc-tag" style="padding:5px 12px;font-size:0.75rem">Forces</span> <span class="tc-tag" style="padding:5px 12px;font-size:0.75rem">Inertia</span>
-      </div>
+<section class="topic-hero">
+  <img src="https://images.unsplash.com/photo-1636466497217-26a8cbeaf0aa?w=1400&q=80&auto=format" alt="Mechanical gears representing Newton's Laws" class="topic-hero-bg-img" loading="eager"/>
+  <div class="topic-hero-overlay"></div>
+  <div class="container topic-hero-content">
+    <nav class="breadcrumb">
+      <a href="../../index.html">Home</a><span class="sep">›</span>
+      <a href="../../branches/classical-mechanics.html">Classical Mechanics</a><span class="sep">›</span>
+      <span class="current">Newton's Laws</span>
+    </nav>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px">
+      <span class="badge badge-plasma">Classical Mechanics</span>
+      <span class="badge badge-green">Interactive Simulation</span>
+      <span class="badge badge-nova">Topic 01 / 22</span>
     </div>
-  </section>
+    <h1 class="topic-hero-title">⚙ Newton's Laws of Motion</h1>
+    <p class="topic-hero-sub">The Three Fundamental Principles That Define Classical Dynamics</p>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:20px">
+      <span class="tc-tag" style="padding:5px 14px;font-size:0.78rem">Dynamics</span>
+      <span class="tc-tag" style="padding:5px 14px;font-size:0.78rem">Forces</span>
+      <span class="tc-tag" style="padding:5px 14px;font-size:0.78rem">Inertia</span>
+      <span class="tc-tag" style="padding:5px 14px;font-size:0.78rem">Momentum</span>
+    </div>
+  </div>
+</section>
 
-  <div class="container topic-layout">
-    <!-- Article -->
-    <article class="topic-article">
-      <!-- AdSense top -->
-      <div class="ad-container" style="margin-bottom:36px">
-        <div style="text-align:center;width:100%">
-          <span class="ad-label">Advertisement</span>
-          <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
-          <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
-        </div>
-      </div>
+<div class="container topic-layout">
+<article class="topic-article">
 
-      
+<div class="ad-container"><div style="text-align:center;width:100%"><span class="ad-label">Advertisement</span><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div>
 
-      <div class="topic-body">
-        
-<p>Isaac Newton's three laws of motion, published in the <em>Principia Mathematica</em> in 1687, represent one of the greatest intellectual achievements in human history. These laws unified terrestrial and celestial mechanics under a single framework, transforming natural philosophy into quantitative science. They remain the cornerstone of classical mechanics and continue to govern the design of everything from bridges to spacecraft.</p>
+<h2 id="simulation" style="margin-top:0;border-top:none;padding-top:0">Interactive Force & Motion Simulator</h2>
+<div class="simulation-wrapper">
+  <div class="simulation-toolbar">
+    <span class="simulation-title">⚙ Newton's 2nd Law — F = ma Visualiser</span>
+    <div class="sim-control"><label>Mass (kg)</label><input type="range" id="nl-mass" min="1" max="30" value="10" step="1"/><span id="nl-mass-v">10 kg</span></div>
+    <div class="sim-control"><label>Force (N)</label><input type="range" id="nl-force" min="10" max="300" value="80" step="10"/><span id="nl-force-v">80 N</span></div>
+    <div class="sim-control"><label>Friction μ</label><input type="range" id="nl-mu" min="0" max="0.8" value="0.2" step="0.05"/><span id="nl-mu-v">0.20</span></div>
+    <button id="nl-start" class="btn btn-primary" style="padding:7px 18px;font-size:0.78rem">Launch</button>
+    <button id="nl-reset" class="btn btn-outline" style="padding:7px 14px;font-size:0.78rem">Reset</button>
+  </div>
+  <div class="sim-canvas-wrap"><canvas id="nl-canvas" height="300"></canvas></div>
+  <div style="padding:12px 20px;display:flex;gap:24px;flex-wrap:wrap;font-family:var(--font-mono);font-size:0.78rem;color:var(--text-muted);background:rgba(0,0,0,0.25);border-top:1px solid var(--border-dim)">
+    <span>Net Force: <strong id="nl-fnet" style="color:var(--accent-plasma)">—</strong></span>
+    <span>Acceleration: <strong id="nl-acc" style="color:var(--accent-green)">—</strong></span>
+    <span>Velocity: <strong id="nl-vel" style="color:var(--accent-gold)">—</strong></span>
+    <span>Friction: <strong id="nl-fr" style="color:#a078ff">—</strong></span>
+  </div>
+</div>
+<script>
+(function(){
+  const cv=document.getElementById('nl-canvas'),cx=cv.getContext('2d');
+  const mSl=document.getElementById('nl-mass'),fSl=document.getElementById('nl-force'),muSl=document.getElementById('nl-mu');
+  mSl.oninput=()=>document.getElementById('nl-mass-v').textContent=mSl.value+' kg';
+  fSl.oninput=()=>document.getElementById('nl-force-v').textContent=fSl.value+' N';
+  muSl.oninput=()=>document.getElementById('nl-mu-v').textContent=parseFloat(muSl.value).toFixed(2);
+  let raf=null,running=false,bx=80,v=0,trail=[];
+  const g=9.81;
+  function W(){cv.width=cv.offsetWidth||800;}W();window.addEventListener('resize',()=>{W();if(!running)draw(80,0);});
+  function draw(px,pv){
+    const W2=cv.width,H=300,m=parseFloat(mSl.value),F=parseFloat(fSl.value),mu=parseFloat(muSl.value);
+    const fr=mu*m*g,fnet=Math.max(0,F-fr),acc=fnet/m;
+    cx.clearRect(0,0,W2,H);
+    const bg=cx.createLinearGradient(0,0,0,H);bg.addColorStop(0,'#050810');bg.addColorStop(1,'#0a0e22');
+    cx.fillStyle=bg;cx.fillRect(0,0,W2,H);
+    // Ground
+    cx.fillStyle='rgba(0,212,255,0.06)';cx.fillRect(0,H-55,W2,55);
+    cx.strokeStyle='rgba(0,212,255,0.3)';cx.lineWidth=2;cx.beginPath();cx.moveTo(0,H-55);cx.lineTo(W2,H-55);cx.stroke();
+    for(let i=0;i<W2;i+=35){cx.strokeStyle='rgba(0,212,255,0.07)';cx.lineWidth=1;cx.beginPath();cx.moveTo(i,H-55);cx.lineTo(i-20,H);cx.stroke();}
+    // Trail
+    if(trail.length>1){cx.beginPath();cx.strokeStyle='rgba(0,212,255,0.2)';cx.lineWidth=2;cx.moveTo(trail[0],H-55-25);trail.forEach(tx=>cx.lineTo(tx,H-55-25));cx.stroke();}
+    // Box
+    const bw=65,bh=50,by=H-55-bh;
+    const grd=cx.createLinearGradient(px-bw/2,0,px+bw/2,0);grd.addColorStop(0,'#1a2a60');grd.addColorStop(1,'#0d1a3a');
+    cx.fillStyle=grd;cx.strokeStyle=running?'rgba(0,212,255,0.8)':'rgba(0,212,255,0.3)';cx.lineWidth=2;
+    cx.beginPath();cx.roundRect(px-bw/2,by,bw,bh,6);cx.fill();cx.stroke();
+    cx.fillStyle='rgba(0,212,255,0.9)';cx.font='bold 11px JetBrains Mono,monospace';cx.textAlign='center';cx.fillText(m+'kg',px,by+bh/2+4);cx.textAlign='left';
+    // Applied force arrow (from left)
+    if(F>0){
+      const al=Math.min(F*0.4,110);
+      cx.beginPath();cx.strokeStyle='#00d4ff';cx.lineWidth=3;cx.shadowColor='#00d4ff';cx.shadowBlur=8;cx.moveTo(px-bw/2-5,by+bh/2);cx.lineTo(px-bw/2-5-al,by+bh/2);cx.stroke();cx.shadowBlur=0;
+      cx.beginPath();cx.fillStyle='#00d4ff';cx.moveTo(px-bw/2+2,by+bh/2);cx.lineTo(px-bw/2-10,by+bh/2-7);cx.lineTo(px-bw/2-10,by+bh/2+7);cx.closePath();cx.fill();
+      cx.fillStyle='rgba(0,212,255,0.75)';cx.font='10px JetBrains Mono,monospace';cx.fillText('F='+F+'N',px-bw/2-al-5,by+bh/2-10);
+    }
+    // Friction arrow (to the right, opposing)
+    if(fr>0){
+      const fl=Math.min(fr*0.4,80);
+      cx.beginPath();cx.strokeStyle='#a078ff';cx.lineWidth=2.5;cx.moveTo(px+bw/2+5,by+bh/2);cx.lineTo(px+bw/2+5+fl,by+bh/2);cx.stroke();
+      cx.fillStyle='#a078ff';cx.font='10px JetBrains Mono,monospace';cx.fillText('f='+fr.toFixed(0)+'N',px+bw/2+8,by+bh/2-8);
+    }
+    // Weight arrow
+    cx.beginPath();cx.strokeStyle='rgba(255,100,50,0.55)';cx.lineWidth=2;cx.moveTo(px,H-55);cx.lineTo(px,H-30);cx.stroke();
+    cx.fillStyle='rgba(255,100,50,0.6)';cx.font='9px JetBrains Mono,monospace';cx.fillText('W='+(m*g).toFixed(0)+'N',px+5,H-22);
+    // Normal arrow
+    cx.beginPath();cx.strokeStyle='rgba(255,200,0,0.55)';cx.lineWidth=2;cx.moveTo(px,by);cx.lineTo(px,by-38);cx.stroke();
+    cx.fillStyle='rgba(255,200,0,0.6)';cx.font='9px JetBrains Mono,monospace';cx.fillText('N='+(m*g).toFixed(0)+'N',px+5,by-40);
+    // Live readout
+    cx.fillStyle='rgba(0,212,255,0.1)';cx.strokeStyle='rgba(0,212,255,0.2)';cx.lineWidth=1;cx.beginPath();cx.roundRect(W2-195,16,178,78,8);cx.fill();cx.stroke();
+    cx.fillStyle='rgba(0,212,255,0.85)';cx.font='10px JetBrains Mono,monospace';
+    cx.fillText('Fnet = '+fnet.toFixed(1)+' N',W2-185,34);cx.fillText('a    = '+acc.toFixed(2)+' m/s²',W2-185,50);cx.fillText('v    = '+pv.toFixed(2)+' m/s',W2-185,66);cx.fillText('μk   = '+mu.toFixed(2),W2-185,82);
+  }
+  function start(){
+    if(running)return;running=true;bx=80;v=0;trail=[];
+    const m=parseFloat(mSl.value),F=parseFloat(fSl.value),mu=parseFloat(muSl.value);
+    const fr=mu*m*g,fnet=Math.max(0,F-fr),acc=fnet/m;
+    document.getElementById('nl-fnet').textContent=fnet.toFixed(1)+' N';
+    document.getElementById('nl-acc').textContent=acc.toFixed(2)+' m/s²';
+    document.getElementById('nl-fr').textContent=fr.toFixed(1)+' N';
+    let last=null;
+    function step(ts){if(!last)last=ts;const dt=Math.min((ts-last)/1000,0.02);last=ts;
+      if(fnet>0){v+=acc*dt;bx+=v*dt*80;}trail.push(bx);if(trail.length>120)trail.shift();
+      document.getElementById('nl-vel').textContent=v.toFixed(2)+' m/s';
+      draw(bx,v);if(bx<cv.width+60&&running)raf=requestAnimationFrame(step);else running=false;
+    }raf=requestAnimationFrame(step);
+  }
+  function reset(){cancelAnimationFrame(raf);running=false;bx=80;v=0;trail=[];draw(80,0);['nl-fnet','nl-acc','nl-vel','nl-fr'].forEach(id=>document.getElementById(id).textContent='—');}
+  document.getElementById('nl-start').onclick=start;document.getElementById('nl-reset').onclick=reset;draw(80,0);
+})();
+</script>
 
-<h2>The First Law — Law of Inertia</h2>
-<p><strong>Statement:</strong> <em>An object at rest stays at rest, and an object in uniform motion continues in a straight line at constant velocity, unless acted upon by a net external force.</em></p>
-<p>This law defines inertia — the resistance of any physical object to changes in its state of motion. A bowling ball rolling on a frictionless surface would continue forever in the same direction at the same speed. In reality, friction and air resistance are always present to slow objects down, which historically misled observers into believing that force was required to maintain motion. Newton's genius was recognising that undisturbed motion continues unchanged.</p>
+<div class="topic-body">
+
+<figure style="margin:32px 0">
+  <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1000&q=80&auto=format" alt="Mechanical gears symbolising Newton's mechanical universe" class="img-frame"/>
+  <figcaption>Newton's mechanical universe — every interaction governed by precise mathematical laws. The Enlightenment vision of nature as a "clockwork" was built entirely upon his three laws and the calculus he invented to describe them.</figcaption>
+</figure>
+
+<h2>Historical Context and Scientific Significance</h2>
+<p>Isaac Newton's <em>Philosophiæ Naturalis Principia Mathematica</em>, published on 5 July 1687, stands as perhaps the single greatest work in the history of science. In it, Newton synthesised decades of observational astronomy, mathematical innovation, and physical reasoning into three laws that would govern scientific thinking for over two centuries. The genius of the Principia was not merely in describing how objects move — it demonstrated that the <em>same</em> mathematical laws governing a stone dropped from a tower also dictate the orbit of the Moon, the path of a comet, and the elliptical trajectories of the planets. This unification of terrestrial and celestial mechanics was genuinely revolutionary — no prior thinker had imagined that the Earth and the heavens obeyed the same physics.</p>
+
+<p>Galileo Galilei had laid essential groundwork: he demonstrated experimentally that objects fall at the same rate regardless of mass, that horizontal and vertical motions are independent, and that objects in motion tend to remain in motion. But Galileo lacked the mathematical framework for a complete quantitative theory. Newton provided that framework — and invented calculus in the process to make his mechanics tractable. Edmund Halley, after reading an early manuscript, was so astonished that he funded the printing of the Principia himself. The book sold out immediately.</p>
+
+<h2>The First Law — Lex Prima: The Law of Inertia</h2>
 
 <div class="info-box info-box--note">
-  <div class="info-box-title" style="color:var(--accent-plasma)">💡 Key Insight</div>
-  <p style="margin:0">The First Law also defines what physicists mean by an <strong>inertial reference frame</strong> — a frame in which a body not subject to forces moves in a straight line at constant velocity. All of Newton's mechanics is formulated in inertial frames.</p>
+  <div class="info-box-title" style="color:var(--accent-plasma)">📜 Newton's Original Statement (1687)</div>
+  <p style="margin:0;font-style:italic;color:var(--text-secondary)">"Every body perseveres in its state of being at rest or of moving uniformly straight forward, except insofar as it is compelled to change its state by forces impressed upon it."</p>
 </div>
 
-<p>The quantitative measure of inertia is mass (m), measured in kilograms. A more massive object has more inertia — it is harder to accelerate and harder to stop. This is why a loaded truck takes much longer to brake than an empty bicycle.</p>
+<p>The First Law is frequently dismissed as a trivial special case of the Second Law (set F = 0, get a = 0, so v = constant). This interpretation misses its profound conceptual role. The First Law does not just describe what happens when no force acts — it <strong>defines the setting</strong> in which all of Newton's mechanics is valid. Specifically, it defines what physicists mean by an <strong>inertial reference frame</strong>: a frame in which a body subject to no forces moves in a straight line at constant velocity. Without this foundational definition, the Second Law F = ma is incomplete — it does not specify which observers can use it.</p>
 
-<h2>The Second Law — Law of Acceleration</h2>
-<p><strong>Statement:</strong> <em>The net force on an object equals the rate of change of its momentum. For constant mass, this reduces to F = ma.</em></p>
+<p>Aristotelian physics had claimed that a constant force was required to maintain constant velocity — that "natural" motion was rest, and all other motion required a sustaining cause. Galileo and Newton turned this completely around: <em>uniform straight-line motion requires no force to maintain it</em>. Forces are only required to <em>change</em> the state of motion. This shift in perspective is one of the most profound conceptual revolutions in intellectual history.</p>
+
+<p><strong>Inertia</strong> is the quantitative property that measures an object's resistance to changes in its motion. Its SI measure is mass (m), in kilograms. A 1000 kg granite boulder has 1000 times the inertia of a 1 kg ball — it requires 1000 times as much force to produce the same acceleration. Inertia is intrinsic to the object, independent of any interaction or measurement.</p>
+
+<figure style="margin:32px 0">
+  <img src="https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=900&q=80&auto=format" alt="Spacecraft in orbit illustrating Newton's first law of inertia" class="img-frame"/>
+  <figcaption>A spacecraft in orbit beyond the appreciable atmosphere moves at ~7.8 km/s. In the absence of any force, Newton's First Law dictates it would continue in a straight line forever. Gravity continuously deflects this straight-line motion into a curved orbit — an endless fall that never reaches the ground because Earth's surface curves away at the same rate. The ISS has been in this "perpetual fall" state since 1998.</figcaption>
+</figure>
+
+<h2>The Second Law — Lex Secunda: The Law of Acceleration</h2>
+<p>The Second Law is the most important equation in classical mechanics and arguably one of the most important in all of physics. In its most general form, valid even when mass changes (as in rocket propulsion):</p>
 
 <div class="formula-block">
-  <span class="formula-label">Newton's Second Law</span>
-  F⃗<sub>net</sub> = m · a⃗  &nbsp;|&nbsp;  F = dp/dt
+  <span class="formula-label">Newton's Second Law — General Form</span>
+  F⃗<sub>net</sub> = dp⃗/dt &nbsp;&nbsp; (rate of change of momentum)
 </div>
 
-<p>This is the most important equation in classical mechanics. It tells us that force (measured in Newtons, N) equals the product of mass (kg) and acceleration (m/s²). The relationship is:</p>
-<ul style="margin:0 0 16px 20px;color:var(--text-secondary)">
-  <li style="margin-bottom:8px"><strong>Proportional to force:</strong> Double the force → double the acceleration</li>
-  <li style="margin-bottom:8px"><strong>Inversely proportional to mass:</strong> Double the mass → halve the acceleration</li>
-  <li style="margin-bottom:8px"><strong>Vector relationship:</strong> Force and acceleration point in the same direction</li>
-</ul>
-<p>The more general form dp/dt (rate of change of momentum) applies even when mass changes — for example, in rocket propulsion where the rocket loses mass as it expels fuel.</p>
-
-<div class="info-box info-box--fact">
-  <div class="info-box-title" style="color:#a078ff">📊 Quantitative Example</div>
-  <p style="margin:0">A 1500 kg car accelerates from rest to 27.8 m/s (100 km/h) in 8 seconds. The required net force is: F = 1500 × (27.8/8) = 1500 × 3.47 = <strong>5,212 N</strong>, or about 5.2 kN.</p>
-</div>
-
-<h2>The Third Law — Law of Action-Reaction</h2>
-<p><strong>Statement:</strong> <em>For every action, there is an equal and opposite reaction. When object A exerts a force on object B, object B simultaneously exerts an equal and opposite force on object A.</em></p>
+<p>For the practically universal special case of constant mass:</p>
 
 <div class="formula-block">
-  <span class="formula-label">Third Law</span>
-  F⃗<sub>A on B</sub> = −F⃗<sub>B on A</sub>
+  <span class="formula-label">Newton's Second Law — Constant Mass</span>
+  F⃗<sub>net</sub> = m · a⃗ &nbsp;&nbsp;&nbsp; [N = kg · m/s²]
 </div>
 
-<p>This law is frequently misunderstood. The action and reaction forces:</p>
-<ul style="margin:0 0 16px 20px;color:var(--text-secondary)">
-  <li style="margin-bottom:8px">Always act on <strong>different objects</strong> — they never cancel each other out</li>
-  <li style="margin-bottom:8px">Are always equal in magnitude and opposite in direction</li>
-  <li style="margin-bottom:8px">Are always of the same type (both gravitational, both normal force, etc.)</li>
-  <li style="margin-bottom:8px">Act simultaneously — there is no time delay</li>
-</ul>
+<p>Several critical points demand careful attention when applying this law:</p>
 
-<p>Consider a horse pulling a cart. The horse pulls the cart forward with force F. The cart pulls the horse backward with the same force F. So why does the system accelerate? Because the horse's hooves push backward on the ground, and the ground pushes the horse forward (a third-law pair). It is this ground reaction that accelerates the horse-cart system.</p>
+<p><strong>It is a vector equation.</strong> Force, acceleration, and momentum are all vectors — they carry direction. The acceleration produced is parallel to the net force, but not necessarily parallel to the velocity. A ball moving horizontally, struck by a force directed downward, gains downward velocity while retaining its horizontal velocity — producing a curved trajectory. This is the essence of projectile motion.</p>
 
-<h2>Types of Forces in Classical Mechanics</h2>
-<p>Newton's laws apply to all forces. The most common forces encountered in mechanics are:</p>
+<p><strong>"Net" force is the vector sum of ALL forces.</strong> The F in F = ma is ΣF⃗ — the vector sum of every force acting on the object simultaneously. A 50 kg crate with 200 N applied rightward and 150 N friction leftward has net force 50 N rightward: a = 50/50 = 1 m/s² rightward. If applied force exactly equals friction, net force = 0 and acceleration = 0 — the crate moves at constant velocity.</p>
+
+<p><strong>Mass is the sole measure of inertia.</strong> The same object of mass m always requires force F = ma to achieve acceleration a, regardless of its current velocity, position, or history. Mass does not change with speed in classical mechanics (though it does in special relativity).</p>
 
 <div class="table-wrap">
 <table>
-<thead><tr><th>Force Type</th><th>Symbol</th><th>Direction</th><th>Formula</th></tr></thead>
+<thead><tr><th>Object</th><th>Mass</th><th>Applied Force</th><th>Opposing Force</th><th>Net Force</th><th>Acceleration</th></tr></thead>
 <tbody>
-<tr><td>Weight / Gravity</td><td>W or F<sub>g</sub></td><td>Downward (toward Earth's centre)</td><td>W = mg</td></tr>
-<tr><td>Normal Force</td><td>N or F<sub>N</sub></td><td>Perpendicular to surface</td><td>Varies (from constraint)</td></tr>
-<tr><td>Tension</td><td>T</td><td>Along rope / string (inward)</td><td>Varies</td></tr>
-<tr><td>Friction</td><td>f</td><td>Parallel to surface, opposing motion</td><td>f = μN</td></tr>
-<tr><td>Spring Force</td><td>F<sub>s</sub></td><td>Toward equilibrium position</td><td>F = −kx</td></tr>
-<tr><td>Air Drag</td><td>D or F<sub>D</sub></td><td>Opposing velocity</td><td>D = ½ρCdAv²</td></tr>
+<tr><td>Tennis ball (serve)</td><td>0.058 kg</td><td>5 N (racket)</td><td>≈0 N</td><td>5 N</td><td>86.2 m/s²</td></tr>
+<tr><td>Car (emergency brake)</td><td>1500 kg</td><td>0 N</td><td>−9000 N (friction)</td><td>−9000 N</td><td>−6.0 m/s²</td></tr>
+<tr><td>Elevator (ascending)</td><td>800 kg</td><td>9000 N (cable)</td><td>−7848 N (gravity)</td><td>1152 N</td><td>1.44 m/s²</td></tr>
+<tr><td>Saturn V at launch</td><td>2.97×10⁶ kg</td><td>33.4×10⁶ N</td><td>−29.1×10⁶ N (gravity)</td><td>4.3×10⁶ N</td><td>1.45 m/s²</td></tr>
+<tr><td>Electron in 1 kV/m field</td><td>9.11×10⁻³¹ kg</td><td>1.6×10⁻¹⁶ N</td><td>0</td><td>1.6×10⁻¹⁶ N</td><td>1.76×10¹⁴ m/s²</td></tr>
 </tbody>
 </table>
 </div>
 
-<h2>Free Body Diagrams</h2>
-<p>A free body diagram (FBD) is an essential tool for applying Newton's second law. It shows a single object with all forces acting on it drawn as arrows from the object's centre. The procedure is:</p>
-<ol style="margin:0 0 16px 20px;color:var(--text-secondary)">
-  <li style="margin-bottom:8px">Identify the object of interest</li>
-  <li style="margin-bottom:8px">Draw all forces acting on that object (not forces it exerts on others)</li>
-  <li style="margin-bottom:8px">Set up coordinate axes (often with one axis along the direction of motion)</li>
-  <li style="margin-bottom:8px">Resolve forces into components and apply ΣF = ma separately for each axis</li>
-  <li style="margin-bottom:8px">Solve the resulting system of equations</li>
-</ol>
+<figure style="margin:32px 0">
+  <img src="https://images.unsplash.com/photo-1457364887197-9150188c107b?w=900&q=80&auto=format" alt="Rocket launch demonstrating Newton's second law — massive force producing acceleration" class="img-frame"/>
+  <figcaption>Saturn V at launch. Five F-1 engines produce 33.4 MN of thrust. The rocket weighs approximately 29.1 MN at liftoff, giving a net upward force of ~4.3 MN and initial acceleration of ~1.45 m/s². As propellant burns and mass decreases, the same thrust produces ever-larger acceleration — a direct consequence of a = F/m with decreasing m.</figcaption>
+</figure>
 
-<h2>Applications Across Science and Engineering</h2>
-<p>Newton's laws are not mere abstractions — they underpin virtually every branch of engineering and applied science. Structural engineers use them to ensure buildings and bridges do not collapse. Aerospace engineers apply them to calculate the thrust needed to orbit a satellite. Every automobile is designed with F=ma in mind, from braking distance to suspension response.</p>
-<p>In biomechanics, Newton's laws explain how muscles generate locomotion, how bones withstand forces, and how sports techniques can be optimised. In robotics, they govern the equations of motion that controllers must solve in real time.</p>
+<h2>The Third Law — Lex Tertia: Action and Reaction</h2>
 
-<h2>Limitations of Newton's Laws</h2>
-<p>Despite their extraordinary success, Newton's laws break down in two regimes:</p>
-<ul style="margin:0 0 16px 20px;color:var(--text-secondary)">
-  <li style="margin-bottom:10px"><strong>Very high velocities (approaching c):</strong> Special relativity replaces classical mechanics. Mass becomes velocity-dependent and the simple F=ma must be replaced with relativistic equations.</li>
-  <li style="margin-bottom:10px"><strong>Very small scales (atomic/subatomic):</strong> Quantum mechanics governs. The deterministic trajectories of Newton give way to probabilistic wavefunctions governed by the Schrödinger equation.</li>
-</ul>
-<p>Nevertheless, for the vast majority of everyday phenomena — from cars and buildings to planets and galaxies — Newton's laws remain exact to extraordinary precision.</p>
-
-<div class="info-box info-box--tip">
-  <div class="info-box-title" style="color:var(--accent-green)">🎓 Historical Context</div>
-  <p style="margin:0">Newton built on the work of Galileo Galilei, who first identified inertia and the independence of horizontal and vertical motion. Newton's great synthesis was the recognition that the same force (gravity) that makes apples fall also keeps the Moon in orbit — unifying terrestrial and celestial mechanics for the first time.</p>
+<div class="info-box info-box--note">
+  <div class="info-box-title" style="color:var(--accent-plasma)">📜 Newton's Original Statement</div>
+  <p style="margin:0;font-style:italic;color:var(--text-secondary)">"To every action there is always opposed an equal reaction; or, the mutual actions of two bodies upon each other are always equal, and directed to contrary parts."</p>
 </div>
 
-      </div>
+<div class="formula-block">
+  <span class="formula-label">Newton's Third Law</span>
+  F⃗<sub>A exerts on B</sub> = −F⃗<sub>B exerts on A</sub>
+</div>
 
-      <!-- AdSense bottom -->
-      <div class="ad-container" style="margin-top:40px">
-        <div style="text-align:center;width:100%">
-          <span class="ad-label">Advertisement</span>
-          <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
-          <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
-        </div>
-      </div>
-    </article>
+<p>The Third Law is simultaneously the most intuitive and the most frequently misunderstood law in physics. The key properties of Newton's third law pairs that students must internalise:</p>
 
-    <!-- Sidebar -->
-    <aside class="topic-sidebar">
-      <div class="sidebar-card">
-        <h4 style="font-family:var(--font-mono);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent-plasma);margin-bottom:14px">// Topic Info</h4>
-        <div class="sidebar-stat"><span>Branch</span><span>Classical Mechanics</span></div>
-        <div class="sidebar-stat"><span>Topic</span><span>01 / 22</span></div>
-        <div class="sidebar-stat"><span>Level</span><span>Advanced</span></div>
-        <div class="sidebar-stat"><span>Simulation</span><span>No</span></div>
-      </div>
+<p><strong>They ALWAYS act on DIFFERENT objects.</strong> The action and reaction forces can never cancel each other out, because cancellation requires two forces on the same object summing to zero. The Earth pulls you downward with force W (your weight). You pull the Earth upward with force W (the reaction). But your weight acts on you; your pull on Earth acts on Earth. These forces cannot cancel — they are on different bodies. Your equilibrium with the floor involves a different force pair: the floor pushes you up with normal force N = W, and you push the floor down with N.</p>
 
-      <div class="sidebar-card">
-        <h4 style="font-family:var(--font-mono);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent-plasma);margin-bottom:14px">// All Topics</h4>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:6px">
-          <li><a href="newtons-laws.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none" class="active-topic">01. Newton's Laws</a></li>
-          <li><a href="projectile-motion.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">02. Projectile Motion</a></li>
-          <li><a href="conservation-of-energy.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">03. Conservation of Energy</a></li>
-          <li><a href="linear-momentum.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">04. Linear Momentum</a></li>
-          <li><a href="circular-motion.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">05. Circular Motion</a></li>
-          <li><a href="gravitational-force.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">06. Gravitational Force</a></li>
-          <li><a href="simple-harmonic-motion.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">07. Simple Harmonic Motion</a></li>
-          <li><a href="rotational-dynamics.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">08. Rotational Dynamics</a></li>
-          <li><a href="work-and-power.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">09. Work & Power</a></li>
-          <li><a href="friction-and-drag.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">10. Friction & Drag</a></li>
-          <li><a href="keplers-laws.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">11. Kepler's Laws</a></li>
-          <li><a href="waves-and-oscillations.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">12. Waves & Oscillations</a></li>
-          <li><a href="centre-of-mass.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">13. Centre of Mass</a></li>
-          <li><a href="statics-and-equilibrium.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">14. Statics & Equilibrium</a></li>
-          <li><a href="fluid-mechanics.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">15. Fluid Mechanics</a></li>
-          <li><a href="elasticity-and-stress.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">16. Elasticity & Stress</a></li>
-          <li><a href="kinematics.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">17. Kinematics</a></li>
-          <li><a href="damped-oscillations.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">18. Damped Oscillations</a></li>
-          <li><a href="lagrangian-mechanics.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">19. Lagrangian Mechanics</a></li>
-          <li><a href="hamiltonian-mechanics.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">20. Hamiltonian Mechanics</a></li>
-          <li><a href="rigid-body-motion.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">21. Rigid Body Motion</a></li>
-          <li><a href="non-inertial-frames.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">22. Non-Inertial Frames</a></li>
-        </ul>
-      </div>
+<p><strong>They are always equal in magnitude.</strong> No matter how large or small, the forces in a Newton's third law pair are always numerically identical. When a truck collides with a bicycle, the truck exerts exactly the same force on the bicycle as the bicycle exerts on the truck — but the accelerations produced (a = F/m) differ enormously due to their mass difference.</p>
 
-      <!-- Sidebar AdSense -->
-      <div class="ad-container" style="min-height:250px;flex-direction:column">
-        <span class="ad-label">Advertisement</span>
-        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
-        <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
-      </div>
-    </aside>
+<p><strong>They act simultaneously — with no time delay.</strong> The term "action-reaction" is linguistically misleading: it implies sequence. There is no sequence. The forces coexist at every instant. Neither is the "cause" of the other; both arise simultaneously from the same interaction.</p>
+
+<p><strong>They are always of the same fundamental type.</strong> If A exerts a gravitational force on B, then B exerts a gravitational force of equal magnitude on A. The gravitational attraction of the Moon on the Earth (which produces ocean tides) is equal in magnitude to the gravitational attraction of the Earth on the Moon (which keeps it in orbit).</p>
+
+<figure style="margin:32px 0">
+  <img src="https://images.unsplash.com/photo-1614728423169-3f65fd722b7e?w=900&q=80&auto=format" alt="Newton's cradle demonstrating action-reaction and momentum transfer" class="img-frame"/>
+  <figcaption>Newton's cradle: each collision involves equal and opposite forces between adjacent steel spheres. Combined with elastic collision conditions and conservation of both momentum and kinetic energy, one sphere in → one sphere out; two in → two out. The Third Law is visually embodied in every click.</figcaption>
+</figure>
+
+<h2>Free Body Diagrams — The Essential Tool</h2>
+<p>A free body diagram (FBD) isolates the object of interest and represents all forces acting upon it as labelled vector arrows. This systematic technique is the universal first step in applying Newton's second law to any real problem.</p>
+
+<div class="info-box info-box--tip">
+  <div class="info-box-title" style="color:var(--accent-green)">📐 Standard FBD Procedure</div>
+  <ol style="margin:0;padding-left:20px;color:var(--text-secondary);line-height:2">
+    <li>Identify the object of interest and draw it alone (isolated)</li>
+    <li>Identify every force acting ON that object (not forces it exerts on others)</li>
+    <li>Represent each force as an arrow from the object, labelled with type and magnitude</li>
+    <li>Choose coordinate axes — typically one axis along the direction of motion</li>
+    <li>Resolve each force into x- and y-components using trigonometry</li>
+    <li>Apply ΣF<sub>x</sub> = ma<sub>x</sub> and ΣF<sub>y</sub> = ma<sub>y</sub> independently</li>
+    <li>Solve the resulting system of equations for unknowns</li>
+  </ol>
+</div>
+
+<h2>Standard Forces Taxonomy</h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Force Type</th><th>Symbol</th><th>Direction</th><th>Formula</th><th>Present When</th></tr></thead>
+<tbody>
+<tr><td>Gravitational weight</td><td>W, F<sub>g</sub></td><td>Vertically downward</td><td>W = mg</td><td>Always (near Earth)</td></tr>
+<tr><td>Normal force</td><td>N, F<sub>N</sub></td><td>⊥ to contact surface</td><td>From constraint</td><td>Object on surface</td></tr>
+<tr><td>Tension</td><td>T</td><td>Along rope (inward)</td><td>From constraint</td><td>Connected by rope/cable</td></tr>
+<tr><td>Static friction</td><td>f<sub>s</sub></td><td>‖ surface, opposes tendency</td><td>0 ≤ f<sub>s</sub> ≤ μ<sub>s</sub>N</td><td>No sliding occurring</td></tr>
+<tr><td>Kinetic friction</td><td>f<sub>k</sub></td><td>‖ surface, opposes motion</td><td>f<sub>k</sub> = μ<sub>k</sub>N</td><td>Sliding occurring</td></tr>
+<tr><td>Spring / elastic</td><td>F<sub>s</sub></td><td>Toward equilibrium</td><td>F = −kx</td><td>Compressed/stretched spring</td></tr>
+<tr><td>Buoyancy</td><td>F<sub>b</sub></td><td>Vertically upward</td><td>F<sub>b</sub> = ρ<sub>f</sub>Vg</td><td>Object in fluid</td></tr>
+<tr><td>Drag / air resistance</td><td>F<sub>D</sub></td><td>Opposite to velocity</td><td>≈½ρC<sub>D</sub>Av²</td><td>Moving through fluid</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2>Component Form — 2D Problems</h2>
+<p>In two dimensions, Newton's second law separates into two completely independent scalar equations:</p>
+
+<div class="formula-block">
+  <span class="formula-label">Newton's 2nd Law — Component Form (2D)</span>
+  x-direction:  ΣF<sub>x</sub> = m·a<sub>x</sub><br/>
+  y-direction:  ΣF<sub>y</sub> = m·a<sub>y</sub>
+</div>
+
+<p>The power of this decomposition is that the x- and y-motions are completely decoupled. Forces in x produce only x-acceleration; forces in y produce only y-acceleration. This is why a ball fired horizontally from a cliff falls at the same rate as a ball dropped straight down — gravity acts identically in the y-direction regardless of what is happening in x.</p>
+
+<h2>Worked Example: Block on Inclined Plane with Friction</h2>
+<p>A 5 kg block sits on a 30° incline with μ<sub>k</sub> = 0.25. It is given a push and slides upward. Find the deceleration.</p>
+<p>Forces on the block: weight W = 5 × 9.81 = 49.05 N downward; normal N = W cos30° = 42.49 N (perpendicular to incline); kinetic friction f<sub>k</sub> = μ<sub>k</sub>N = 10.62 N (downward along incline, opposing upward motion); weight component along incline = W sin30° = 24.53 N (downward along incline).</p>
+
+<div class="formula-block">
+  <span class="formula-label">Deceleration While Sliding Upward</span>
+  ΣF<sub>∥</sub> = −W sin30° − f<sub>k</sub> = −24.53 − 10.62 = −35.15 N<br/>
+  a = F/m = −35.15/5 = −7.03 m/s²
+</div>
+
+<p>The block decelerates at 7.03 m/s². Note that when sliding back down, friction reverses direction (now opposes downward motion), giving a different acceleration of (W sin30° − f<sub>k</sub>)/m = (24.53−10.62)/5 = 2.78 m/s² downward.</p>
+
+<h2>Newton's Laws and Conservation of Momentum</h2>
+<p>The Third Law directly implies conservation of momentum for isolated systems. Consider two objects A and B interacting. By the Third Law: F⃗<sub>A on B</sub> = −F⃗<sub>B on A</sub>. By the Second Law: F⃗<sub>A on B</sub> = dp⃗<sub>B</sub>/dt and F⃗<sub>B on A</sub> = dp⃗<sub>A</sub>/dt. Therefore:</p>
+
+<div class="formula-block">
+  <span class="formula-label">Momentum Conservation from Newton's Laws</span>
+  dp⃗<sub>A</sub>/dt + dp⃗<sub>B</sub>/dt = 0 &nbsp;⟹&nbsp; d(p⃗<sub>A</sub> + p⃗<sub>B</sub>)/dt = 0 &nbsp;⟹&nbsp; p⃗<sub>total</sub> = constant
+</div>
+
+<p>This is one of the most powerful results in mechanics. The total momentum of an isolated system never changes, regardless of what internal interactions occur. Explosions, collisions, emission of radiation — the total momentum before equals total momentum after.</p>
+
+<h2>Limitations and Modern Extensions</h2>
+<p>Newton's laws are valid within a specific domain of applicability: objects much larger than atoms, moving much slower than light. They break down in two distinct regimes:</p>
+
+<p><strong>At velocities approaching c (Special Relativity):</strong> The Second Law must be generalised. The relativistic equation F = dp/dt still holds, but p = γmv where γ = 1/√(1−v²/c²). As v → c, γ → ∞: infinite force is required to reach the speed of light. The famous E = mc² emerges from the relativistic treatment of energy and momentum.</p>
+
+<p><strong>At atomic and subatomic scales (Quantum Mechanics):</strong> The deterministic Newtonian trajectory — precise position and velocity at every moment — is replaced by a probabilistic wavefunction ψ(x,t) governed by the Schrödinger equation. Heisenberg's uncertainty principle (ΔxΔp ≥ ℏ/2) prevents simultaneous precise knowledge of position and momentum. Yet for large quantum numbers, quantum mechanics converges to classical predictions — Bohr's correspondence principle.</p>
+
+<div class="info-box info-box--fact">
+  <div class="info-box-title" style="color:#a078ff">🔭 The Precision of Newton's Laws</div>
+  <p style="margin:0">In 1846, Urbain Le Verrier applied Newton's laws to discrepancies in Uranus's orbit and mathematically predicted the existence and position of an unknown eighth planet. Neptune was observed within 1° of his prediction on the first night of searching — arguably the greatest predictive triumph in the history of science before the 20th century. The same laws, applied to the Pioneer spacecraft launched in 1972, predicted their positions decades later to within meters — over distances of billions of kilometres.</p>
+</div>
+
+</div>
+
+<div class="ad-container"><div style="text-align:center;width:100%"><span class="ad-label">Advertisement</span><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div>
+
+<div style="display:flex;justify-content:space-between;margin-top:40px;gap:16px;flex-wrap:wrap">
+  <a href="../../branches/classical-mechanics.html" class="btn btn-outline">← All Topics</a>
+  <a href="projectile-motion.html" class="btn btn-primary">Next: Projectile Motion →</a>
+</div>
+
+</article>
+
+<aside class="topic-sidebar">
+  <div class="sidebar-card">
+    <h4 style="font-family:var(--font-mono);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent-plasma);margin-bottom:14px">// Key Equations</h4>
+    <div class="formula-block" style="margin:0 0 10px;font-size:0.88rem">F⃗<sub>net</sub> = m·a⃗</div>
+    <div class="formula-block" style="margin:0 0 10px;font-size:0.88rem">F⃗ = dp⃗/dt</div>
+    <div class="formula-block" style="margin:0 0 10px;font-size:0.88rem">p⃗ = m·v⃗</div>
+    <div class="formula-block" style="margin:0;font-size:0.88rem">F⃗<sub>AB</sub> = −F⃗<sub>BA</sub></div>
   </div>
+  <div class="sidebar-card">
+    <h4 style="font-family:var(--font-mono);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent-plasma);margin-bottom:14px">// Topic Info</h4>
+    <div class="sidebar-stat"><span>Branch</span><span>Classical Mechanics</span></div>
+    <div class="sidebar-stat"><span>Topic</span><span>01 / 22</span></div>
+    <div class="sidebar-stat"><span>Level</span><span>Foundational → Advanced</span></div>
+    <div class="sidebar-stat"><span>Simulation</span><span>Yes ✓</span></div>
+    <div class="sidebar-stat"><span>Prerequisites</span><span>Basic algebra, vectors</span></div>
+  </div>
+  <div class="sidebar-card">
+    <h4 style="font-family:var(--font-mono);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent-plasma);margin-bottom:14px">// All 22 Topics</h4>
+    <ul style="list-style:none;display:flex;flex-direction:column;gap:5px">
+      <li><a href="newtons-laws.html" style="font-size:0.8rem;color:var(--accent-plasma);font-weight:600;text-decoration:none">01. Newton's Laws ←</a></li>
+      <li><a href="projectile-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">02. Projectile Motion</a></li>
+      <li><a href="conservation-of-energy.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">03. Conservation of Energy</a></li>
+      <li><a href="linear-momentum.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">04. Linear Momentum</a></li>
+      <li><a href="circular-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">05. Circular Motion</a></li>
+      <li><a href="gravitational-force.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">06. Gravitational Force</a></li>
+      <li><a href="simple-harmonic-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">07. Simple Harmonic Motion</a></li>
+      <li><a href="rotational-dynamics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">08. Rotational Dynamics</a></li>
+      <li><a href="work-and-power.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">09. Work & Power</a></li>
+      <li><a href="friction-and-drag.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">10. Friction & Drag</a></li>
+      <li><a href="keplers-laws.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">11. Kepler's Laws</a></li>
+      <li><a href="waves-and-oscillations.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">12. Waves & Oscillations</a></li>
+      <li><a href="centre-of-mass.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">13. Centre of Mass</a></li>
+      <li><a href="statics-and-equilibrium.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">14. Statics & Equilibrium</a></li>
+      <li><a href="fluid-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">15. Fluid Mechanics</a></li>
+      <li><a href="elasticity-and-stress.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">16. Elasticity & Stress</a></li>
+      <li><a href="kinematics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">17. Kinematics</a></li>
+      <li><a href="damped-oscillations.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">18. Damped Oscillations</a></li>
+      <li><a href="lagrangian-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">19. Lagrangian Mechanics</a></li>
+      <li><a href="hamiltonian-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">20. Hamiltonian Mechanics</a></li>
+      <li><a href="rigid-body-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">21. Rigid Body Motion</a></li>
+      <li><a href="non-inertial-frames.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">22. Non-Inertial Frames</a></li>
+    </ul>
+  </div>
+  <div class="ad-container" style="min-height:250px;flex-direction:column"><span class="ad-label">Advertisement</span><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div>
+</aside>
+</div>
 </main>
-
 <div id="footer-placeholder"></div>
 <script src="../../js/components.js"></script>
 </body>

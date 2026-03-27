@@ -1,157 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Kinematics in 1D & 2D — Classical Mechanics | QuantumAtlas</title>
-  <meta name="description" content="Complete kinematics — equations of motion, velocity-time graphs, position-time graphs, vector decomposition, and 2D motion analysis."/>
-  <meta name="keywords" content="kinematics, equations of motion, displacement, velocity, acceleration, 1D motion, 2D motion, projectile, SUVAT equations, motion graphs"/>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>📐 — Classical Mechanics | QuantumAtlas</title>
+  <meta name="description" content="Equations of Motion, Graphs, and Vector Decomposition. Comprehensive physics treatment with equations, diagrams, and real-world applications."/>
+  <meta name="keywords" content="kinematics, equations of motion, SUVAT equations, displacement velocity acceleration, motion graphs, position time velocity time, 2D kinematics, vector decomposition, projectile kinematics"/>
   <link rel="canonical" href="https://yourdomain.com/topics/classical-mechanics/kinematics.html"/>
-  <meta property="og:title" content="Kinematics in 1D & 2D | QuantumAtlas"/>
-  <meta property="og:description" content="Complete kinematics — equations of motion, velocity-time graphs, position-time graphs, vector decomposition, and 2D motion analysis."/>
-  <meta property="og:image" content="https://images.unsplash.com/photo-1543286386-713bdd548da4?w=1200&q=75&auto=format"/>
-  <script type="application/ld+json">{
-    "@context":"https://schema.org","@type":"Article",
-    "headline":"Kinematics in 1D & 2D","description":"Complete kinematics — equations of motion, velocity-time graphs, position-time graphs, vector decomposition, and 2D motion analysis.",
-    "image":"https://images.unsplash.com/photo-1543286386-713bdd548da4?w=1200&q=75&auto=format",
-    "author":{"@type":"Organization","name":"QuantumAtlas"},
-    "publisher":{"@type":"Organization","name":"QuantumAtlas","url":"https://yourdomain.com"},
-    "breadcrumb":{"@type":"BreadcrumbList","itemListElement":[
-      {"@type":"ListItem","position":1,"name":"Home","item":"https://yourdomain.com/"},
-      {"@type":"ListItem","position":2,"name":"Branches","item":"https://yourdomain.com/theory.html"},
-      {"@type":"ListItem","position":3,"name":"Classical Mechanics","item":"https://yourdomain.com/branches/classical-mechanics.html"},
-      {"@type":"ListItem","position":4,"name":"Kinematics in 1D & 2D"}
-    ]}
-  }</script>
+  <meta property="og:title" content="📐 | QuantumAtlas"/><meta property="og:image" content="https://images.unsplash.com/photo-1543286386-713bdd548da4?w=1400&q=80&auto=format"/>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-4X0M6RM0F6"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4X0M6RM0F6',{page_title:document.title,page_location:window.location.href});</script>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2633513915753897" crossorigin="anonymous"></script>
   <meta name="google-adsense-account" content="ca-pub-2633513915753897">
-  <link rel="stylesheet" href="../../css/global.css"/>
-  <link rel="stylesheet" href="../../css/nav.css"/>
-  <link rel="stylesheet" href="../../css/topic.css"/>
+  <link rel="stylesheet" href="../../css/global.css"/><link rel="stylesheet" href="../../css/nav.css"/><link rel="stylesheet" href="../../css/topic.css"/>
 </head>
 <body>
 <div id="nav-placeholder"></div>
 <main>
-  <section class="topic-hero">
-    <img src="https://images.unsplash.com/photo-1543286386-713bdd548da4?w=1200&q=75&auto=format" alt="Motion analysis and velocity tracking" class="topic-hero-bg-img" loading="eager"/>
-    <div class="topic-hero-overlay"></div>
-    <div class="container topic-hero-content">
-      <nav class="breadcrumb">
-        <a href="../../index.html">Home</a><span class="sep">›</span>
-        <a href="../../theory.html">Branches</a><span class="sep">›</span>
-        <a href="../../branches/classical-mechanics.html">Classical Mechanics</a><span class="sep">›</span>
-        <span class="current">Kinematics in 1D & 2D</span>
-      </nav>
-      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px">
-        <span class="badge badge-plasma">Classical Mechanics</span>
-        
-        <span class="badge badge-nova">Topic 17</span>
-      </div>
-      <h1 class="topic-hero-title">📐 Kinematics in 1D & 2D</h1>
-      <p class="topic-hero-sub">Motion Without Forces — Equations of Motion</p>
-      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:20px"><span class="tc-tag" style="padding:5px 12px;font-size:0.75rem">Kinematics</span> <span class="tc-tag" style="padding:5px 12px;font-size:0.75rem">Vectors</span> <span class="tc-tag" style="padding:5px 12px;font-size:0.75rem">Equations of Motion</span></div>
+<section class="topic-hero">
+  <img src="https://images.unsplash.com/photo-1543286386-713bdd548da4?w=1400&q=80&auto=format" alt="Motion analysis and velocity measurement" class="topic-hero-bg-img" loading="eager"/>
+  <div class="topic-hero-overlay"></div>
+  <div class="container topic-hero-content">
+    <nav class="breadcrumb"><a href="../../index.html">Home</a><span class="sep">›</span><a href="../../branches/classical-mechanics.html">Classical Mechanics</a><span class="sep">›</span><span class="current">📐</span></nav>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px">
+      <span class="badge badge-plasma">Classical Mechanics</span>
+      <span class="badge badge-nova">Topic 17 / 22</span>
     </div>
-  </section>
-  <div class="container topic-layout">
-    <article class="topic-article">
-      <div class="ad-container" style="margin-bottom:36px">
-        <div style="text-align:center;width:100%">
-          <span class="ad-label">Advertisement</span>
-          <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
-          <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
-        </div>
-      </div>
-      <div class="topic-body">
-<p>Kinematics is the mathematical description of motion without reference to its causes (forces). It answers the questions: where is the object? How fast is it moving? How is its speed changing? Kinematics provides the language and tools — displacement, velocity, acceleration, and the equations relating them — that are used throughout all of classical mechanics.</p>
-
-<h2>Definitions</h2>
-<div class="formula-block"><span class="formula-label">Kinematic Quantities</span>
-Displacement: Δx = x<sub>f</sub> − x<sub>i</sub> (vector, m)<br/>
-Velocity: v = dx/dt (vector, m/s)<br/>
-Acceleration: a = dv/dt = d²x/dt² (vector, m/s²)
-</div>
-<p>Distinguish carefully: <em>distance</em> (scalar, path length) vs <em>displacement</em> (vector, net change); <em>speed</em> (scalar, |v|) vs <em>velocity</em> (vector).</p>
-
-<h2>SUVAT Equations (Constant Acceleration)</h2>
-<div class="table-wrap"><table>
-<thead><tr><th>Equation</th><th>Missing Variable</th></tr></thead>
-<tbody>
-<tr><td>v = u + at</td><td>x</td></tr>
-<tr><td>x = ut + ½at²</td><td>v</td></tr>
-<tr><td>v² = u² + 2ax</td><td>t</td></tr>
-<tr><td>x = ½(u+v)t</td><td>a</td></tr>
-<tr><td>x = vt − ½at²</td><td>u</td></tr>
-</tbody></table></div>
-<p>Where u = initial velocity, v = final velocity, a = acceleration (constant), x = displacement, t = time. Choose the equation that contains your unknowns and lacks the one you don't have.</p>
-
-<h2>Motion Graphs</h2>
-<p><strong>Position-time graph:</strong> gradient = velocity; horizontal line = rest; slope of tangent = instantaneous velocity.</p>
-<p><strong>Velocity-time graph:</strong> gradient = acceleration; area under graph = displacement; horizontal line = constant velocity (zero acceleration).</p>
-<p><strong>Acceleration-time graph:</strong> area under graph = change in velocity.</p>
-
-<h2>2D Kinematics — Vector Decomposition</h2>
-<p>Any 2D motion can be decomposed into independent x and y components. Apply SUVAT equations separately to each component. The classic example is projectile motion where a<sub>x</sub> = 0 and a<sub>y</sub> = −g.</p>
-<div class="formula-block"><span class="formula-label">2D Velocity Components</span>
-v<sub>x</sub>(t) = v<sub>x0</sub> + a<sub>x</sub>t<br/>
-v<sub>y</sub>(t) = v<sub>y0</sub> + a<sub>y</sub>t
-</div>
-
-<div class="info-box info-box--note">
-<div class="info-box-title" style="color:var(--accent-plasma)">💡 Non-Constant Acceleration</div>
-<p style="margin:0">SUVAT equations only apply for constant acceleration. For variable acceleration, integration is required: v(t) = ∫a(t)dt and x(t) = ∫v(t)dt. Many real systems have acceleration that varies with position or time (springs, drag forces), requiring calculus or numerical methods.</p>
-</div>
-</div>
-      <div class="ad-container" style="margin-top:40px">
-        <div style="text-align:center;width:100%">
-          <span class="ad-label">Advertisement</span>
-          <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
-          <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
-        </div>
-      </div>
-    </article>
-    <aside class="topic-sidebar">
-      <div class="sidebar-card">
-        <h4 style="font-family:var(--font-mono);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent-plasma);margin-bottom:14px">// Topic Info</h4>
-        <div class="sidebar-stat"><span>Branch</span><span>Classical Mechanics</span></div>
-        <div class="sidebar-stat"><span>Topic</span><span>17 / 22</span></div>
-        <div class="sidebar-stat"><span>Level</span><span>Advanced</span></div>
-      </div>
-      <div class="sidebar-card">
-        <h4 style="font-family:var(--font-mono);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent-plasma);margin-bottom:14px">// All Topics</h4>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:6px">
-          <li><a href="newtons-laws.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">01. Newton's Laws</a></li>
-          <li><a href="projectile-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">02. Projectile Motion</a></li>
-          <li><a href="conservation-of-energy.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">03. Conservation of Energy</a></li>
-          <li><a href="linear-momentum.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">04. Linear Momentum</a></li>
-          <li><a href="circular-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">05. Circular Motion</a></li>
-          <li><a href="gravitational-force.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">06. Gravitational Force</a></li>
-          <li><a href="simple-harmonic-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">07. Simple Harmonic Motion</a></li>
-          <li><a href="rotational-dynamics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">08. Rotational Dynamics</a></li>
-          <li><a href="work-and-power.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">09. Work & Power</a></li>
-          <li><a href="friction-and-drag.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">10. Friction & Drag</a></li>
-          <li><a href="keplers-laws.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">11. Kepler's Laws</a></li>
-          <li><a href="waves-and-oscillations.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">12. Waves & Oscillations</a></li>
-          <li><a href="centre-of-mass.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">13. Centre of Mass</a></li>
-          <li><a href="statics-and-equilibrium.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">14. Statics & Equilibrium</a></li>
-          <li><a href="fluid-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">15. Fluid Mechanics</a></li>
-          <li><a href="elasticity-and-stress.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">16. Elasticity & Stress</a></li>
-          <li><a href="kinematics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">17. Kinematics</a></li>
-          <li><a href="damped-oscillations.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">18. Damped Oscillations</a></li>
-          <li><a href="lagrangian-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">19. Lagrangian Mechanics</a></li>
-          <li><a href="hamiltonian-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">20. Hamiltonian Mechanics</a></li>
-          <li><a href="rigid-body-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">21. Rigid Body Motion</a></li>
-          <li><a href="non-inertial-frames.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">22. Non-Inertial Frames</a></li>
-        </ul>
-      </div>
-      <div class="ad-container" style="min-height:250px;flex-direction:column">
-        <span class="ad-label">Advertisement</span>
-        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
-        <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
-      </div>
-    </aside>
+    <h1 class="topic-hero-title">Kinematics in 1D & 2D 📐</h1>
+    <p class="topic-hero-sub">Equations of Motion, Graphs, and Vector Decomposition</p>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:20px"><span class="tc-tag" style="padding:5px 14px;font-size:0.78rem">Kinematics</span> <span class="tc-tag" style="padding:5px 14px;font-size:0.78rem">SUVAT</span> <span class="tc-tag" style="padding:5px 14px;font-size:0.78rem">Motion Graphs</span> <span class="tc-tag" style="padding:5px 14px;font-size:0.78rem">Vectors</span></div>
   </div>
+</section>
+<div class="container topic-layout">
+<article class="topic-article">
+<div class="ad-container"><div style="text-align:center;width:100%"><span class="ad-label">Advertisement</span><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div>
+
+<div class="topic-body"><figure style="margin:0 0 32px"><img src="https://images.unsplash.com/photo-1543286386-713bdd548da4?w=900&q=80&auto=format" alt="Motion capture and velocity analysis" class="img-frame"/><figcaption>High-speed motion capture — the modern embodiment of kinematics. From Galileo's ramp experiments measuring distance fallen versus time (establishing s ∝ t²) to modern motion-capture systems tracking reflective markers at 1000 Hz, kinematics has always been about measuring and describing motion quantitatively. Today's biomechanics laboratories analyse every aspect of athlete motion to optimise technique and prevent injury.</figcaption></figure>
+
+<h2>Kinematics — The Language of Motion</h2>
+<p>Kinematics is the mathematical description of motion without reference to its causes. It provides the vocabulary — displacement, velocity, acceleration — and the equations relating them, which are used throughout all of classical mechanics. Kinematics is always the first step in any mechanics problem: describe the motion precisely before asking why it occurs.</p>
+
+<h2>Fundamental Kinematic Quantities</h2>
+<div class="formula-block"><span class="formula-label">Definitions</span>Displacement: x⃗ = x_f − x_i &nbsp;&nbsp;&nbsp; [vector, m]<br/>Velocity: v⃗ = dx⃗/dt &nbsp;&nbsp;&nbsp; [vector, m/s]<br/>Acceleration: a⃗ = dv⃗/dt = d²x⃗/dt² &nbsp;&nbsp;&nbsp; [vector, m/s²]</div>
+<p>Critical distinctions:</p>
+<ul style="color:var(--text-secondary)">
+<li><strong>Distance</strong> (scalar) ≠ <strong>Displacement</strong> (vector). Running around a 400 m track: distance = 400 m, displacement = 0 m.</li>
+<li><strong>Speed</strong> (scalar) ≠ <strong>Velocity</strong> (vector). Constant speed in a circle: speed = const, velocity is continuously changing direction.</li>
+<li><strong>Average velocity</strong> = total displacement / total time ≠ <strong>instantaneous velocity</strong> = derivative of position.</li>
+</ul>
+
+<h2>SUVAT Equations — Constant Acceleration</h2>
+<p>For the special but common case of constant (uniform) acceleration, the five SUVAT equations relate the five kinematic variables: s (displacement), u (initial velocity), v (final velocity), a (acceleration), t (time).</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Equation</th><th>Variables used</th><th>Variable absent</th><th>Derivation</th></tr></thead>
+<tbody>
+<tr><td>v = u + at</td><td>v, u, a, t</td><td>s</td><td>Definition of constant acceleration</td></tr>
+<tr><td>s = ut + ½at²</td><td>s, u, a, t</td><td>v</td><td>Integrate v = u + at</td></tr>
+<tr><td>v² = u² + 2as</td><td>v, u, a, s</td><td>t</td><td>Eliminate t from first two equations</td></tr>
+<tr><td>s = ½(u+v)t</td><td>s, u, v, t</td><td>a</td><td>Average velocity × time (linear a)</td></tr>
+<tr><td>s = vt − ½at²</td><td>s, v, a, t</td><td>u</td><td>Substitute first into second</td></tr>
+</tbody></table></div>
+<p><strong>Strategy:</strong> Identify 3 known variables and 1 unknown. Choose the equation containing those 4 variables (and lacking the fifth you don't need). For two unknowns, you need two equations — usually from two different directions in 2D problems.</p>
+
+<h2>Motion Graphs — Visual Kinematics</h2>
+<p><strong>Position-time (x-t) graph:</strong> gradient = instantaneous velocity. Horizontal line = at rest. Upward slope = positive velocity. Curved line = changing velocity (acceleration present). The gradient of the tangent at any point = v at that instant.</p>
+<p><strong>Velocity-time (v-t) graph:</strong> gradient = instantaneous acceleration. Area under graph = displacement (signed area — area below the axis is negative displacement). Horizontal line = constant velocity (zero acceleration). Straight sloped line = constant acceleration.</p>
+<p><strong>Acceleration-time (a-t) graph:</strong> area under graph = change in velocity. Horizontal line at a = g = 9.81 m/s² for free fall.</p>
+
+<h2>2D Kinematics — Vector Component Method</h2>
+<p>For 2D motion, decompose all vectors into x and y components and apply kinematic equations independently to each direction. If the acceleration is constant:</p>
+<div class="formula-block"><span class="formula-label">2D Equations of Motion</span>x: &nbsp; vₓ = uₓ + aₓt &nbsp;&nbsp; xₓ = uₓt + ½aₓt²<br/>y: &nbsp; vᵧ = uᵧ + aᵧt &nbsp;&nbsp; y = uᵧt + ½aᵧt²</div>
+<p>The x and y motions are completely independent — solving 2D kinematics reduces to two simultaneous 1D problems. The only quantity shared between the x and y equations is time t.</p>
+
+<h2>Non-Uniform Acceleration — Calculus Methods</h2>
+<p>When acceleration varies with time (or position), SUVAT equations do not apply. Integration is required:</p>
+<div class="formula-block"><span class="formula-label">General Kinematics (variable acceleration)</span>v(t) = u + ∫a(t) dt &nbsp;&nbsp;&nbsp; x(t) = x₀ + ∫v(t) dt</div>
+<p>For acceleration as a function of position (common for spring forces, gravity at large distances): use the chain rule: a = dv/dt = (dv/dx)(dx/dt) = v(dv/dx), leading to ∫a dx = ∫v dv = ½v² − ½u². This is the derivation of the work-energy theorem from Newton's Second Law.</p>
+
+<div class="info-box info-box--tip"><div class="info-box-title" style="color:var(--accent-green)">🏎 Formula 1 Performance Data</div><p style="margin:0">Modern F1 cars carry over 300 sensors generating 3 GB of data per race. Kinematics data (position, velocity, acceleration in 3 axes sampled at 1 kHz) is combined with tyre temperature, fuel load, and aerodynamic maps to optimise every aspect of car performance. Maximum longitudinal deceleration under braking: ~5g = 49 m/s². Maximum lateral acceleration in cornering: ~6g. Maximum rate of velocity change (jerk = da/dt): up to 1000 m/s³ — strong enough to cause whiplash in a road car occupant.</p></div></div>
+<div class="ad-container"><div style="text-align:center;width:100%"><span class="ad-label">Advertisement</span><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div>
+<div style="display:flex;justify-content:space-between;margin-top:40px;gap:16px;flex-wrap:wrap">
+  <a href="elasticity-and-stress.html" class="btn btn-outline">← Elasticity & Stress</a>
+  <a href="damped-oscillations.html" class="btn btn-primary">Next: Damped Oscillations →</a>
+</div>
+</article>
+<aside class="topic-sidebar">
+  <div class="sidebar-card">
+    <h4 style="font-family:var(--font-mono);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent-plasma);margin-bottom:14px">// Key Equations</h4>
+    <div class="formula-block" style="margin:0 0 8px;font-size:0.82rem">v = u + at</div><div class="formula-block" style="margin:0 0 8px;font-size:0.82rem">s = ut + ½at²</div><div class="formula-block" style="margin:0 0 8px;font-size:0.82rem">v² = u² + 2as</div><div class="formula-block" style="margin:0 0 8px;font-size:0.82rem">s = (u+v)t/2</div>
+  </div>
+  <div class="sidebar-card">
+    <h4 style="font-family:var(--font-mono);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent-plasma);margin-bottom:14px">// Topic Info</h4>
+    <div class="sidebar-stat"><span>Branch</span><span>Classical Mechanics</span></div>
+    <div class="sidebar-stat"><span>Topic</span><span>17 / 22</span></div>
+    <div class="sidebar-stat"><span>Simulation</span><span>No</span></div>
+  </div>
+  <div class="sidebar-card">
+    <h4 style="font-family:var(--font-mono);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent-plasma);margin-bottom:14px">// All 22 Topics</h4>
+    <ul style="list-style:none;display:flex;flex-direction:column;gap:5px">
+<li><a href="newtons-laws.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">01. Newton's Laws</a></li>
+<li><a href="projectile-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">02. Projectile Motion</a></li>
+<li><a href="conservation-of-energy.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">03. Conservation of Energy</a></li>
+<li><a href="linear-momentum.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">04. Linear Momentum</a></li>
+<li><a href="circular-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">05. Circular Motion</a></li>
+<li><a href="gravitational-force.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">06. Gravitational Force</a></li>
+<li><a href="simple-harmonic-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">07. Simple Harmonic Motion</a></li>
+<li><a href="rotational-dynamics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">08. Rotational Dynamics</a></li>
+<li><a href="work-and-power.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">09. Work &amp; Power</a></li>
+<li><a href="friction-and-drag.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">10. Friction &amp; Drag</a></li>
+<li><a href="keplers-laws.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">11. Kepler's Laws</a></li>
+<li><a href="waves-and-oscillations.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">12. Waves &amp; Oscillations</a></li>
+<li><a href="centre-of-mass.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">13. Centre of Mass</a></li>
+<li><a href="statics-and-equilibrium.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">14. Statics &amp; Equilibrium</a></li>
+<li><a href="fluid-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">15. Fluid Mechanics</a></li>
+<li><a href="elasticity-and-stress.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">16. Elasticity &amp; Stress</a></li>
+<li><a href="kinematics.html" style="font-size:0.8rem;color:var(--accent-plasma);font-weight:600;text-decoration:none">17. Kinematics</a></li>
+<li><a href="damped-oscillations.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">18. Damped Oscillations</a></li>
+<li><a href="lagrangian-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">19. Lagrangian Mechanics</a></li>
+<li><a href="hamiltonian-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">20. Hamiltonian Mechanics</a></li>
+<li><a href="rigid-body-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">21. Rigid Body Motion</a></li>
+<li><a href="non-inertial-frames.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">22. Non-Inertial Frames</a></li>
+</ul>
+  </div>
+  <div class="ad-container" style="min-height:250px;flex-direction:column"><span class="ad-label">Advertisement</span><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div>
+</aside>
+</div>
 </main>
 <div id="footer-placeholder"></div>
 <script src="../../js/components.js"></script>

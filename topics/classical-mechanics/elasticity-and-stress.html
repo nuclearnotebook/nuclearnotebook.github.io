@@ -1,148 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Elasticity & Stress-Strain — Classical Mechanics | QuantumAtlas</title>
-  <meta name="description" content="Elasticity, stress, strain, and material properties — Young's modulus, bulk modulus, shear modulus, elastic limits, and energy stored in elastic deformation."/>
-  <meta name="keywords" content="elasticity, Hooke's law, Young's modulus, stress, strain, bulk modulus, shear modulus, elastic limit, yield strength, materials science"/>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🔩 — Classical Mechanics | QuantumAtlas</title>
+  <meta name="description" content="Material Response to Forces — From Hooke's Law to Fracture Mechanics. Comprehensive physics treatment with equations, diagrams, and real-world applications."/>
+  <meta name="keywords" content="elasticity, Hooke's law, Young's modulus, stress, strain, bulk modulus, shear modulus, elastic limit, yield strength, ultimate tensile strength, fracture, fatigue, Poisson's ratio"/>
   <link rel="canonical" href="https://yourdomain.com/topics/classical-mechanics/elasticity-and-stress.html"/>
-  <meta property="og:title" content="Elasticity & Stress-Strain | QuantumAtlas"/>
-  <meta property="og:description" content="Elasticity, stress, strain, and material properties — Young's modulus, bulk modulus, shear modulus, elastic limits, and energy stored in elastic deformation."/>
-  <meta property="og:image" content="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=1200&q=75&auto=format"/>
-  <script type="application/ld+json">{
-    "@context":"https://schema.org","@type":"Article",
-    "headline":"Elasticity & Stress-Strain","description":"Elasticity, stress, strain, and material properties — Young's modulus, bulk modulus, shear modulus, elastic limits, and energy stored in elastic deformation.",
-    "image":"https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=1200&q=75&auto=format",
-    "author":{"@type":"Organization","name":"QuantumAtlas"},
-    "publisher":{"@type":"Organization","name":"QuantumAtlas","url":"https://yourdomain.com"},
-    "breadcrumb":{"@type":"BreadcrumbList","itemListElement":[
-      {"@type":"ListItem","position":1,"name":"Home","item":"https://yourdomain.com/"},
-      {"@type":"ListItem","position":2,"name":"Branches","item":"https://yourdomain.com/theory.html"},
-      {"@type":"ListItem","position":3,"name":"Classical Mechanics","item":"https://yourdomain.com/branches/classical-mechanics.html"},
-      {"@type":"ListItem","position":4,"name":"Elasticity & Stress-Strain"}
-    ]}
-  }</script>
+  <meta property="og:title" content="🔩 | QuantumAtlas"/><meta property="og:image" content="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=1400&q=80&auto=format"/>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-4X0M6RM0F6"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4X0M6RM0F6',{page_title:document.title,page_location:window.location.href});</script>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2633513915753897" crossorigin="anonymous"></script>
   <meta name="google-adsense-account" content="ca-pub-2633513915753897">
-  <link rel="stylesheet" href="../../css/global.css"/>
-  <link rel="stylesheet" href="../../css/nav.css"/>
-  <link rel="stylesheet" href="../../css/topic.css"/>
+  <link rel="stylesheet" href="../../css/global.css"/><link rel="stylesheet" href="../../css/nav.css"/><link rel="stylesheet" href="../../css/topic.css"/>
 </head>
 <body>
 <div id="nav-placeholder"></div>
 <main>
-  <section class="topic-hero">
-    <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=1200&q=75&auto=format" alt="Material testing and elasticity in structural mechanics" class="topic-hero-bg-img" loading="eager"/>
-    <div class="topic-hero-overlay"></div>
-    <div class="container topic-hero-content">
-      <nav class="breadcrumb">
-        <a href="../../index.html">Home</a><span class="sep">›</span>
-        <a href="../../theory.html">Branches</a><span class="sep">›</span>
-        <a href="../../branches/classical-mechanics.html">Classical Mechanics</a><span class="sep">›</span>
-        <span class="current">Elasticity & Stress-Strain</span>
-      </nav>
-      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px">
-        <span class="badge badge-plasma">Classical Mechanics</span>
-        
-        <span class="badge badge-nova">Topic 16</span>
-      </div>
-      <h1 class="topic-hero-title">🔩 Elasticity & Stress-Strain</h1>
-      <p class="topic-hero-sub">Material Response to Forces — from Hooke's Law to Fracture</p>
-      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:20px"><span class="tc-tag" style="padding:5px 12px;font-size:0.75rem">Elasticity</span> <span class="tc-tag" style="padding:5px 12px;font-size:0.75rem">Materials</span> <span class="tc-tag" style="padding:5px 12px;font-size:0.75rem">Hooke's Law</span></div>
+<section class="topic-hero">
+  <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=1400&q=80&auto=format" alt="Material testing and stress-strain analysis in engineering" class="topic-hero-bg-img" loading="eager"/>
+  <div class="topic-hero-overlay"></div>
+  <div class="container topic-hero-content">
+    <nav class="breadcrumb"><a href="../../index.html">Home</a><span class="sep">›</span><a href="../../branches/classical-mechanics.html">Classical Mechanics</a><span class="sep">›</span><span class="current">🔩</span></nav>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px">
+      <span class="badge badge-plasma">Classical Mechanics</span>
+      <span class="badge badge-nova">Topic 16 / 22</span>
     </div>
-  </section>
-  <div class="container topic-layout">
-    <article class="topic-article">
-      <div class="ad-container" style="margin-bottom:36px">
-        <div style="text-align:center;width:100%">
-          <span class="ad-label">Advertisement</span>
-          <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
-          <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
-        </div>
-      </div>
-      <div class="topic-body">
-<p>Elasticity describes how solid materials deform under applied forces and return to their original shape when the force is removed. It bridges classical mechanics and materials science. Engineers rely on precise knowledge of elastic properties to design structures that withstand loads without permanent deformation or catastrophic failure.</p>
+    <h1 class="topic-hero-title">Elasticity & Stress-Strain 🔩</h1>
+    <p class="topic-hero-sub">Material Response to Forces — From Hooke's Law to Fracture Mechanics</p>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:20px"><span class="tc-tag" style="padding:5px 14px;font-size:0.78rem">Elasticity</span> <span class="tc-tag" style="padding:5px 14px;font-size:0.78rem">Young's Modulus</span> <span class="tc-tag" style="padding:5px 14px;font-size:0.78rem">Stress</span> <span class="tc-tag" style="padding:5px 14px;font-size:0.78rem">Strain</span> <span class="tc-tag" style="padding:5px 14px;font-size:0.78rem">Fracture</span></div>
+  </div>
+</section>
+<div class="container topic-layout">
+<article class="topic-article">
+<div class="ad-container"><div style="text-align:center;width:100%"><span class="ad-label">Advertisement</span><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div>
 
-<h2>Stress and Strain</h2>
-<div class="formula-block"><span class="formula-label">Stress and Strain</span>
-σ = F/A (stress, Pa = N/m²)<br/>
-ε = ΔL/L₀ (strain, dimensionless)
-</div>
-<p>Stress is force per unit area; strain is the fractional change in dimension. Both are intensive properties (independent of the amount of material).</p>
+<div class="topic-body"><figure style="margin:0 0 32px"><img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=900&q=80&auto=format" alt="Steel beam under stress testing in materials laboratory" class="img-frame"/><figcaption>Universal testing machine applying controlled tensile stress to a steel specimen. The resulting stress-strain curve (measured by extensometers) reveals Young's modulus (gradient of elastic region), yield strength (onset of plastic deformation), ultimate tensile strength (maximum stress), and fracture point. This data is the fundamental engineering input for structural design, finite element analysis, and safety factor calculations.</figcaption></figure>
 
-<h2>Hooke's Law and Young's Modulus</h2>
-<div class="formula-block"><span class="formula-label">Young's Modulus</span>E = σ/ε = (F/A) / (ΔL/L₀)</div>
-<p>Young's modulus E measures stiffness in tension or compression. Typical values: steel ≈ 200 GPa, aluminium ≈ 70 GPa, glass ≈ 70 GPa, rubber ≈ 0.01–0.1 GPa, bone ≈ 20 GPa.</p>
+<h2>Elasticity — Physics of Deformable Solids</h2>
+<p>When forces are applied to a solid body, it deforms. If the deformation disappears when the force is removed, the behaviour is elastic. If permanent deformation remains, it is plastic. Understanding elastic behaviour is fundamental to engineering design: every structural component must remain in the elastic regime under normal loading. The physics of elasticity was systematically developed by Robert Hooke (1678), Augustin-Louis Cauchy (1820s), and Leonhard Euler, forming the mathematical foundation of structural engineering.</p>
 
-<h2>Bulk and Shear Moduli</h2>
-<div class="formula-block"><span class="formula-label">Bulk Modulus (volume stress)</span>B = −P / (ΔV/V)</div>
-<div class="formula-block"><span class="formula-label">Shear Modulus (shear stress)</span>G = (F/A) / φ</div>
-<p>The bulk modulus B resists compression; the shear modulus G resists deformation by shearing forces. Liquids have B but G = 0 (they cannot resist shear).</p>
+<h2>Stress and Strain — Intensive Properties</h2>
+<div class="formula-block"><span class="formula-label">Engineering Stress and Strain</span>σ = F/A &nbsp;&nbsp;&nbsp; [Pa = N/m²] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ε = ΔL/L₀ &nbsp;&nbsp;&nbsp; [dimensionless]</div>
+<p>Stress σ is the force per unit area within a material — it is intensive (independent of amount of material) and measured in pascals. Strain ε is the fractional deformation — also intensive. Using intensive properties allows material properties to be tabulated independently of specimen size: a rod twice as long under the same stress has twice the absolute elongation but the same strain.</p>
+
+<h2>Young's Modulus — Tensile Stiffness</h2>
+<div class="formula-block"><span class="formula-label">Young's Modulus (Elastic Modulus)</span>E = σ/ε = (FL₀)/(AΔL) &nbsp;&nbsp;&nbsp; [Pa = N/m²]</div>
+<div class="table-wrap"><table>
+<thead><tr><th>Material</th><th>Young's Modulus E (GPa)</th><th>Yield Strength (MPa)</th></tr></thead>
+<tbody>
+<tr><td>Diamond</td><td>1,050</td><td>~10,000 (compressive)</td></tr>
+<tr><td>Tungsten carbide</td><td>600</td><td>4,000–6,000</td></tr>
+<tr><td>Steel (structural)</td><td>200</td><td>250–450</td></tr>
+<tr><td>Aluminium alloy</td><td>69</td><td>270–500</td></tr>
+<tr><td>Glass</td><td>65–90</td><td>~50 (tension; much higher in compression)</td></tr>
+<tr><td>Cortical bone</td><td>15–25</td><td>130–200</td></tr>
+<tr><td>Wood (parallel to grain)</td><td>9–13</td><td>30–60</td></tr>
+<tr><td>Rubber</td><td>0.01–0.1</td><td>7–20</td></tr>
+</tbody></table></div>
+
+<h2>Bulk Modulus and Shear Modulus</h2>
+<div class="formula-block"><span class="formula-label">Bulk Modulus (Volumetric Compression)</span>B = −P/(ΔV/V) &nbsp;&nbsp;&nbsp; [Pa] &nbsp;&nbsp;&nbsp; (all materials, including liquids)</div>
+<div class="formula-block"><span class="formula-label">Shear Modulus (Resistance to Shear)</span>G = (F/A)/φ = τ/γ &nbsp;&nbsp;&nbsp; [Pa] &nbsp;&nbsp;&nbsp; (solids only — liquids G = 0)</div>
+<p>The three moduli (E, B, G) are not independent: for isotropic materials, G = E/[2(1+ν)] and B = E/[3(1−2ν)], where ν is Poisson's ratio (lateral strain / axial strain when stretched axially; typically 0.25–0.35 for metals, ~0.5 for rubber — incompressible).</p>
+
+<h2>The Stress-Strain Curve</h2>
+<p>The stress-strain curve from a tensile test reveals the full material behaviour:</p>
+<ul style="color:var(--text-secondary)">
+<li><strong>Elastic region (OA):</strong> Linear σ-ε relationship, Hooke's law holds. Slope = E. Fully reversible deformation.</li>
+<li><strong>Proportional limit (A):</strong> Last point of linear behaviour.</li>
+<li><strong>Elastic limit (A'):</strong> Last point of fully recoverable deformation.</li>
+<li><strong>Yield point (B):</strong> Onset of plastic (permanent) deformation. Yield strength σ_y defined here (or at 0.2% offset).</li>
+<li><strong>Plastic region (B→C):</strong> Permanent deformation accumulates. Strain hardening occurs.</li>
+<li><strong>Ultimate tensile strength (C):</strong> Maximum stress the material withstands. Necking begins.</li>
+<li><strong>Fracture (D):</strong> Material fails. True fracture stress > UTS because cross-section has necked down.</li>
+</ul>
 
 <h2>Elastic Potential Energy</h2>
-<div class="formula-block"><span class="formula-label">Elastic PE stored in a deformed material</span>U = ½Eε²V = ½(F²/kA)</div>
-<p>The energy density (J/m³) = ½Eε² = σ²/(2E). For a spring: U = ½kx² (where k = AE/L).</p>
+<div class="formula-block"><span class="formula-label">Elastic Energy Stored in a Deformed Body</span>U = ½Eε²V = σ²V/(2E) = ½(F²/kA) &nbsp;&nbsp;&nbsp; [energy density = ½Eε² J/m³]</div>
+<p>Energy stored per unit volume = ½Eε² = ½σε. This is proportional to the area under the elastic portion of the σ-ε curve. For a spring: U = ½kx² where k = AE/L (spring constant derived from material and geometry).</p>
 
-<h2>Beyond the Elastic Limit</h2>
-<p>The stress-strain curve shows: elastic region (Hooke's law holds, recoverable deformation), yield point (permanent deformation begins), plastic region (material flows), ultimate tensile strength, and fracture. Understanding these regions is critical for safety factor calculations in engineering design.</p>
-
-<div class="info-box info-box--warn">
-<div class="info-box-title" style="color:var(--accent-solar)">⚠ Metal Fatigue</div>
-<p style="margin:0">Repeated cycling between stress values well below the yield strength can cause <strong>fatigue failure</strong> — cracks initiate at stress concentrations and grow with each cycle. The Comet aircraft disasters (1954) were caused by fatigue cracks propagating from square window corners. Modern design uses rounded corners to reduce stress concentration factors.</p>
+<div class="info-box info-box--warn"><div class="info-box-title" style="color:var(--accent-solar)">⚠ Stress Concentration and Metal Fatigue</div><p style="margin:0">Stress concentrations at geometric discontinuities (holes, notches, sharp corners) amplify local stress by a factor K_t = 1–3 or more. Repeated cyclic loading at stresses well below the yield strength causes fatigue — microscopic cracks initiate at stress concentrations, grow with each cycle, and eventually cause sudden brittle fracture. The de Havilland Comet jet airliner crashes (1954) were caused by fatigue cracks at square windows; the subsequent redesign with oval windows (smaller K_t) corrected this, establishing modern aircraft fatigue analysis protocols.</p></div></div>
+<div class="ad-container"><div style="text-align:center;width:100%"><span class="ad-label">Advertisement</span><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div>
+<div style="display:flex;justify-content:space-between;margin-top:40px;gap:16px;flex-wrap:wrap">
+  <a href="fluid-mechanics.html" class="btn btn-outline">← Fluid Mechanics</a>
+  <a href="kinematics.html" class="btn btn-primary">Next: Kinematics →</a>
 </div>
-</div>
-      <div class="ad-container" style="margin-top:40px">
-        <div style="text-align:center;width:100%">
-          <span class="ad-label">Advertisement</span>
-          <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
-          <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
-        </div>
-      </div>
-    </article>
-    <aside class="topic-sidebar">
-      <div class="sidebar-card">
-        <h4 style="font-family:var(--font-mono);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent-plasma);margin-bottom:14px">// Topic Info</h4>
-        <div class="sidebar-stat"><span>Branch</span><span>Classical Mechanics</span></div>
-        <div class="sidebar-stat"><span>Topic</span><span>16 / 22</span></div>
-        <div class="sidebar-stat"><span>Level</span><span>Advanced</span></div>
-      </div>
-      <div class="sidebar-card">
-        <h4 style="font-family:var(--font-mono);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent-plasma);margin-bottom:14px">// All Topics</h4>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:6px">
-          <li><a href="newtons-laws.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">01. Newton's Laws</a></li>
-          <li><a href="projectile-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">02. Projectile Motion</a></li>
-          <li><a href="conservation-of-energy.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">03. Conservation of Energy</a></li>
-          <li><a href="linear-momentum.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">04. Linear Momentum</a></li>
-          <li><a href="circular-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">05. Circular Motion</a></li>
-          <li><a href="gravitational-force.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">06. Gravitational Force</a></li>
-          <li><a href="simple-harmonic-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">07. Simple Harmonic Motion</a></li>
-          <li><a href="rotational-dynamics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">08. Rotational Dynamics</a></li>
-          <li><a href="work-and-power.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">09. Work & Power</a></li>
-          <li><a href="friction-and-drag.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">10. Friction & Drag</a></li>
-          <li><a href="keplers-laws.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">11. Kepler's Laws</a></li>
-          <li><a href="waves-and-oscillations.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">12. Waves & Oscillations</a></li>
-          <li><a href="centre-of-mass.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">13. Centre of Mass</a></li>
-          <li><a href="statics-and-equilibrium.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">14. Statics & Equilibrium</a></li>
-          <li><a href="fluid-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">15. Fluid Mechanics</a></li>
-          <li><a href="elasticity-and-stress.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">16. Elasticity & Stress</a></li>
-          <li><a href="kinematics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">17. Kinematics</a></li>
-          <li><a href="damped-oscillations.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">18. Damped Oscillations</a></li>
-          <li><a href="lagrangian-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">19. Lagrangian Mechanics</a></li>
-          <li><a href="hamiltonian-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">20. Hamiltonian Mechanics</a></li>
-          <li><a href="rigid-body-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">21. Rigid Body Motion</a></li>
-          <li><a href="non-inertial-frames.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">22. Non-Inertial Frames</a></li>
-        </ul>
-      </div>
-      <div class="ad-container" style="min-height:250px;flex-direction:column">
-        <span class="ad-label">Advertisement</span>
-        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
-        <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
-      </div>
-    </aside>
+</article>
+<aside class="topic-sidebar">
+  <div class="sidebar-card">
+    <h4 style="font-family:var(--font-mono);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent-plasma);margin-bottom:14px">// Key Equations</h4>
+    <div class="formula-block" style="margin:0 0 8px;font-size:0.82rem">σ = F/A (stress)</div><div class="formula-block" style="margin:0 0 8px;font-size:0.82rem">ε = ΔL/L₀ (strain)</div><div class="formula-block" style="margin:0 0 8px;font-size:0.82rem">E = σ/ε (Young's modulus)</div><div class="formula-block" style="margin:0 0 8px;font-size:0.82rem">U = ½Eε²V (elastic energy)</div>
   </div>
+  <div class="sidebar-card">
+    <h4 style="font-family:var(--font-mono);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent-plasma);margin-bottom:14px">// Topic Info</h4>
+    <div class="sidebar-stat"><span>Branch</span><span>Classical Mechanics</span></div>
+    <div class="sidebar-stat"><span>Topic</span><span>16 / 22</span></div>
+    <div class="sidebar-stat"><span>Simulation</span><span>No</span></div>
+  </div>
+  <div class="sidebar-card">
+    <h4 style="font-family:var(--font-mono);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent-plasma);margin-bottom:14px">// All 22 Topics</h4>
+    <ul style="list-style:none;display:flex;flex-direction:column;gap:5px">
+<li><a href="newtons-laws.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">01. Newton's Laws</a></li>
+<li><a href="projectile-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">02. Projectile Motion</a></li>
+<li><a href="conservation-of-energy.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">03. Conservation of Energy</a></li>
+<li><a href="linear-momentum.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">04. Linear Momentum</a></li>
+<li><a href="circular-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">05. Circular Motion</a></li>
+<li><a href="gravitational-force.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">06. Gravitational Force</a></li>
+<li><a href="simple-harmonic-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">07. Simple Harmonic Motion</a></li>
+<li><a href="rotational-dynamics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">08. Rotational Dynamics</a></li>
+<li><a href="work-and-power.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">09. Work &amp; Power</a></li>
+<li><a href="friction-and-drag.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">10. Friction &amp; Drag</a></li>
+<li><a href="keplers-laws.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">11. Kepler's Laws</a></li>
+<li><a href="waves-and-oscillations.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">12. Waves &amp; Oscillations</a></li>
+<li><a href="centre-of-mass.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">13. Centre of Mass</a></li>
+<li><a href="statics-and-equilibrium.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">14. Statics &amp; Equilibrium</a></li>
+<li><a href="fluid-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">15. Fluid Mechanics</a></li>
+<li><a href="elasticity-and-stress.html" style="font-size:0.8rem;color:var(--accent-plasma);font-weight:600;text-decoration:none">16. Elasticity &amp; Stress</a></li>
+<li><a href="kinematics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">17. Kinematics</a></li>
+<li><a href="damped-oscillations.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">18. Damped Oscillations</a></li>
+<li><a href="lagrangian-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">19. Lagrangian Mechanics</a></li>
+<li><a href="hamiltonian-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">20. Hamiltonian Mechanics</a></li>
+<li><a href="rigid-body-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">21. Rigid Body Motion</a></li>
+<li><a href="non-inertial-frames.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">22. Non-Inertial Frames</a></li>
+</ul>
+  </div>
+  <div class="ad-container" style="min-height:250px;flex-direction:column"><span class="ad-label">Advertisement</span><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div>
+</aside>
+</div>
 </main>
 <div id="footer-placeholder"></div>
 <script src="../../js/components.js"></script>

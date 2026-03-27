@@ -1,155 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Rotational Dynamics — Classical Mechanics | QuantumAtlas</title>
-  <meta name="description" content="Comprehensive treatment of rotational dynamics — torque, moment of inertia, angular momentum, rotational kinetic energy, and rolling motion."/>
-  <meta name="keywords" content="rotational dynamics, torque, angular momentum, moment of inertia, rotational kinetic energy, rolling motion, conservation of angular momentum"/>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🌀 — Classical Mechanics | QuantumAtlas</title>
+  <meta name="description" content="Torque, Moment of Inertia, and Angular Momentum. Comprehensive physics treatment with equations, diagrams, and real-world applications."/>
+  <meta name="keywords" content="rotational dynamics, torque, moment of inertia, angular momentum, angular velocity, rotational kinetic energy, rolling motion, parallel axis theorem, Euler equations"/>
   <link rel="canonical" href="https://yourdomain.com/topics/classical-mechanics/rotational-dynamics.html"/>
-  <meta property="og:title" content="Rotational Dynamics | QuantumAtlas"/>
-  <meta property="og:description" content="Comprehensive treatment of rotational dynamics — torque, moment of inertia, angular momentum, rotational kinetic energy, and rolling motion."/>
-  <meta property="og:image" content="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=1200&q=75&auto=format"/>
-  <script type="application/ld+json">{
-    "@context":"https://schema.org","@type":"Article",
-    "headline":"Rotational Dynamics","description":"Comprehensive treatment of rotational dynamics — torque, moment of inertia, angular momentum, rotational kinetic energy, and rolling motion.",
-    "image":"https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=1200&q=75&auto=format",
-    "author":{"@type":"Organization","name":"QuantumAtlas"},
-    "publisher":{"@type":"Organization","name":"QuantumAtlas","url":"https://yourdomain.com"},
-    "breadcrumb":{"@type":"BreadcrumbList","itemListElement":[
-      {"@type":"ListItem","position":1,"name":"Home","item":"https://yourdomain.com/"},
-      {"@type":"ListItem","position":2,"name":"Branches","item":"https://yourdomain.com/theory.html"},
-      {"@type":"ListItem","position":3,"name":"Classical Mechanics","item":"https://yourdomain.com/branches/classical-mechanics.html"},
-      {"@type":"ListItem","position":4,"name":"Rotational Dynamics"}
-    ]}
-  }</script>
+  <meta property="og:title" content="🌀 | QuantumAtlas"/><meta property="og:image" content="https://images.unsplash.com/photo-1586339949916-3e9457bef6d3?w=1400&q=80&auto=format"/>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-4X0M6RM0F6"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4X0M6RM0F6',{page_title:document.title,page_location:window.location.href});</script>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2633513915753897" crossorigin="anonymous"></script>
   <meta name="google-adsense-account" content="ca-pub-2633513915753897">
-  <link rel="stylesheet" href="../../css/global.css"/>
-  <link rel="stylesheet" href="../../css/nav.css"/>
-  <link rel="stylesheet" href="../../css/topic.css"/>
+  <link rel="stylesheet" href="../../css/global.css"/><link rel="stylesheet" href="../../css/nav.css"/><link rel="stylesheet" href="../../css/topic.css"/>
 </head>
 <body>
 <div id="nav-placeholder"></div>
 <main>
-  <section class="topic-hero">
-    <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=1200&q=75&auto=format" alt="Rotational mechanics and angular momentum" class="topic-hero-bg-img" loading="eager"/>
-    <div class="topic-hero-overlay"></div>
-    <div class="container topic-hero-content">
-      <nav class="breadcrumb">
-        <a href="../../index.html">Home</a><span class="sep">›</span>
-        <a href="../../theory.html">Branches</a><span class="sep">›</span>
-        <a href="../../branches/classical-mechanics.html">Classical Mechanics</a><span class="sep">›</span>
-        <span class="current">Rotational Dynamics</span>
-      </nav>
-      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px">
-        <span class="badge badge-plasma">Classical Mechanics</span>
-        
-        <span class="badge badge-nova">Topic 08</span>
-      </div>
-      <h1 class="topic-hero-title">🌀 Rotational Dynamics</h1>
-      <p class="topic-hero-sub">Torque, Angular Momentum, and Moment of Inertia</p>
-      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:20px"><span class="tc-tag" style="padding:5px 12px;font-size:0.75rem">Torque</span> <span class="tc-tag" style="padding:5px 12px;font-size:0.75rem">Angular Momentum</span> <span class="tc-tag" style="padding:5px 12px;font-size:0.75rem">Moment of Inertia</span></div>
+<section class="topic-hero">
+  <img src="https://images.unsplash.com/photo-1586339949916-3e9457bef6d3?w=1400&q=80&auto=format" alt="Spinning gyroscope demonstrating rotational dynamics" class="topic-hero-bg-img" loading="eager"/>
+  <div class="topic-hero-overlay"></div>
+  <div class="container topic-hero-content">
+    <nav class="breadcrumb"><a href="../../index.html">Home</a><span class="sep">›</span><a href="../../branches/classical-mechanics.html">Classical Mechanics</a><span class="sep">›</span><span class="current">🌀</span></nav>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px">
+      <span class="badge badge-plasma">Classical Mechanics</span>
+      <span class="badge badge-nova">Topic 08 / 22</span>
     </div>
-  </section>
-  <div class="container topic-layout">
-    <article class="topic-article">
-      <div class="ad-container" style="margin-bottom:36px">
-        <div style="text-align:center;width:100%">
-          <span class="ad-label">Advertisement</span>
-          <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
-          <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
-        </div>
-      </div>
-      <div class="topic-body">
-<p>Rotational dynamics is the angular counterpart of Newton's laws for linear motion. Every linear quantity and equation has a rotational analogue, and the parallels run deep. Mastering rotational dynamics is essential for understanding everything from spinning tops and gyroscopes to the moment of inertia in engineering design.</p>
+    <h1 class="topic-hero-title">Rotational Dynamics 🌀</h1>
+    <p class="topic-hero-sub">Torque, Moment of Inertia, and Angular Momentum</p>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:20px"><span class="tc-tag" style="padding:5px 14px;font-size:0.78rem">Torque</span> <span class="tc-tag" style="padding:5px 14px;font-size:0.78rem">Moment of Inertia</span> <span class="tc-tag" style="padding:5px 14px;font-size:0.78rem">Angular Momentum</span> <span class="tc-tag" style="padding:5px 14px;font-size:0.78rem">Rolling Motion</span></div>
+  </div>
+</section>
+<div class="container topic-layout">
+<article class="topic-article">
+<div class="ad-container"><div style="text-align:center;width:100%"><span class="ad-label">Advertisement</span><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div>
 
-<h2>Torque</h2>
-<p>Torque (τ) is the rotational analogue of force — the tendency of a force to cause rotation about an axis:</p>
-<div class="formula-block"><span class="formula-label">Torque</span>τ⃗ = r⃗ × F⃗ &nbsp;&nbsp;|&nbsp;&nbsp; |τ| = rF sin θ</div>
-<p>Where r is the lever arm (perpendicular distance from the axis to the line of action of the force). Torque is maximised when force is perpendicular to the lever arm (θ = 90°). The SI unit of torque is the newton-metre (N·m).</p>
+<div class="topic-body"><figure style="margin:0 0 32px"><img src="https://images.unsplash.com/photo-1586339949916-3e9457bef6d3?w=900&q=80&auto=format" alt="Spinning gyroscope demonstrating angular momentum conservation" class="img-frame"/><figcaption>A gyroscope in free rotation: its spin axis maintains its orientation in space (conservation of angular momentum) unless an external torque acts. This property — gyroscopic stability — is used in aircraft attitude indicators, naval compasses, Hubble Space Telescope pointing systems, and smartphone orientation sensors.</figcaption></figure>
 
-<h2>Moment of Inertia</h2>
-<p>The moment of inertia I is the rotational analogue of mass — it measures resistance to angular acceleration:</p>
-<div class="formula-block"><span class="formula-label">Moment of Inertia (discrete)</span>I = Σm<sub>i</sub>r<sub>i</sub>²</div>
-<div class="formula-block"><span class="formula-label">Moment of Inertia (continuous)</span>I = ∫r² dm</div>
+<h2>The Rotational Analogue of Newton's Laws</h2>
+<p>Every concept and equation in linear mechanics has a rotational counterpart. The systematic correspondence between linear and rotational quantities is one of the most elegant structures in classical mechanics. Rotational dynamics describes how objects spin, precess, and rotate under the influence of torques.</p>
+
+<h2>Torque — The Rotational Analogue of Force</h2>
+<p>Torque τ⃗ is the tendency of a force to cause rotation about an axis. It is the cross product of the position vector from the axis to the point of force application, and the force vector:</p>
+<div class="formula-block"><span class="formula-label">Torque</span>τ⃗ = r⃗ × F⃗ &nbsp;&nbsp;&nbsp; |τ| = rF sinφ = F·d<sub>⊥</sub></div>
+<p>Where φ is the angle between r⃗ and F⃗, and d<sub>⊥</sub> = r sinφ is the "lever arm" — the perpendicular distance from the axis to the line of action of the force. Torque is maximised when force is perpendicular to r (φ = 90°). The SI unit of torque is the newton-metre (N·m).</p>
+<p><strong>Physical intuition:</strong> A longer wrench handle increases torque for the same applied force (larger r). Pushing a door at the hinged edge produces no torque (d<sub>⊥</sub> = 0). A door is most easily opened by pushing far from the hinges and perpendicular to the door (maximising both r and sinφ).</p>
+
+<h2>Moment of Inertia — The Rotational Analogue of Mass</h2>
+<p>The moment of inertia I is the rotational inertia — the resistance to changes in angular velocity. It depends not just on mass, but on its <em>distribution relative to the rotation axis</em>:</p>
+<div class="formula-block"><span class="formula-label">Moment of Inertia</span>I = Σmᵢrᵢ² = ∫r² dm &nbsp;&nbsp;&nbsp; [kg·m²]</div>
 <div class="table-wrap"><table>
-<thead><tr><th>Object</th><th>Axis</th><th>I</th></tr></thead>
+<thead><tr><th>Object</th><th>Axis</th><th>Moment of Inertia</th></tr></thead>
 <tbody>
-<tr><td>Solid sphere</td><td>Through centre</td><td>2/5 MR²</td></tr>
-<tr><td>Hollow sphere</td><td>Through centre</td><td>2/3 MR²</td></tr>
-<tr><td>Solid cylinder/disk</td><td>Central axis</td><td>½MR²</td></tr>
-<tr><td>Thin ring</td><td>Central axis</td><td>MR²</td></tr>
-<tr><td>Thin rod</td><td>Through centre</td><td>1/12 ML²</td></tr>
+<tr><td>Point mass m at radius r</td><td>Through centre</td><td>I = mr²</td></tr>
+<tr><td>Thin ring, radius R</td><td>Central axis</td><td>I = MR²</td></tr>
+<tr><td>Solid disk/cylinder, radius R</td><td>Central axis</td><td>I = ½MR²</td></tr>
+<tr><td>Hollow cylinder, radii R₁, R₂</td><td>Central axis</td><td>I = ½M(R₁²+R₂²)</td></tr>
+<tr><td>Solid sphere, radius R</td><td>Through centre</td><td>I = ⅖MR²</td></tr>
+<tr><td>Hollow sphere, radius R</td><td>Through centre</td><td>I = ⅔MR²</td></tr>
+<tr><td>Thin rod, length L</td><td>Through centre</td><td>I = 1/12 ML²</td></tr>
+<tr><td>Thin rod, length L</td><td>Through end</td><td>I = ⅓ML²</td></tr>
 </tbody></table></div>
+<p>The <strong>Parallel Axis Theorem</strong> relates the moment of inertia about any parallel axis to the CM value: I = I<sub>CM</sub> + Md², where d is the distance between the axes.</p>
 
 <h2>Newton's Second Law for Rotation</h2>
-<div class="formula-block"><span class="formula-label">Rotational Second Law</span>τ<sub>net</sub> = I·α</div>
-
-<h2>Rotational Kinetic Energy</h2>
-<div class="formula-block"><span class="formula-label">Rotational KE</span>KE<sub>rot</sub> = ½Iω²</div>
-<p>A rolling object (without slipping) has both translational and rotational KE: KE<sub>total</sub> = ½mv² + ½Iω²</p>
+<div class="formula-block"><span class="formula-label">Rotational Newton's Second Law</span>τ<sub>net</sub> = Iα &nbsp;&nbsp;&nbsp; [exactly analogous to F<sub>net</sub> = ma]</div>
+<p>Angular acceleration α = dω/dt. If net torque is zero, angular velocity is constant (rotational equivalent of Newton's First Law). This is used in balancing rotating machinery — ensuring the net torque about the rotation axis is zero to prevent vibration.</p>
 
 <h2>Angular Momentum and Its Conservation</h2>
-<div class="formula-block"><span class="formula-label">Angular Momentum</span>L⃗ = I·ω⃗ &nbsp;&nbsp;|&nbsp;&nbsp; L⃗ = r⃗ × p⃗</div>
-<p>Angular momentum is conserved when no net external torque acts. This is why a spinning ice skater spins faster when pulling arms inward (I decreases, ω increases to keep L constant).</p>
+<div class="formula-block"><span class="formula-label">Angular Momentum</span>L⃗ = Iω⃗ = r⃗ × p⃗ &nbsp;&nbsp;&nbsp; [kg·m²/s]</div>
+<p>Angular momentum is conserved when no net external torque acts. This is one of the most important conservation laws in physics, with applications across all scales:</p>
+<ul style="color:var(--text-secondary)">
+<li><strong>Figure skater:</strong> Pulling arms inward reduces I, increases ω to conserve L. The spin accelerates dramatically.</li>
+<li><strong>Forming stars:</strong> As a gas cloud collapses under gravity, its rotation rate increases enormously (L conserved, I decreases), forming rapidly spinning neutron stars and black holes.</li>
+<li><strong>Atomic physics:</strong> Electron orbital angular momentum is quantised in units of ℏ = h/2π, directly following from L conservation in spherically symmetric potentials.</li>
+<li><strong>Quantum mechanics:</strong> Angular momentum is a fundamental quantum number. Spin angular momentum (ℏ/2 for electrons) has no classical counterpart.</li>
+</ul>
 
-<div class="info-box info-box--tip">
-<div class="info-box-title" style="color:var(--accent-green)">🌍 Earth's Angular Momentum</div>
-<p style="margin:0">Earth's rotation is slowly decelerating due to tidal friction with the Moon. As Earth's angular momentum decreases, the Moon's orbital angular momentum increases — the Moon gradually moves farther away at about 3.8 cm/year.</p>
+<h2>Rotational Kinetic Energy</h2>
+<div class="formula-block"><span class="formula-label">Rotational Kinetic Energy</span>KE<sub>rot</sub> = ½Iω²</div>
+<p>For a rolling object (rolling without slipping), both translational and rotational KE contribute: KE<sub>total</sub> = ½mv<sub>CM</sub>² + ½Iω² = ½mv²(1 + I/mR²). A solid sphere (I = ⅖mR²) reaches the bottom of an incline with v = √(10gh/7), while a ring (I = mR²) reaches with v = √(gh). The more mass concentrated at the rim, the slower it rolls — energy goes into spinning the rim rather than translating the CM.</p>
+
+<div class="info-box info-box--fact"><div class="info-box-title" style="color:#a078ff">🌟 Neutron Stars and Angular Momentum</div><p style="margin:0">When a massive star collapses to a neutron star, its radius shrinks from ~10⁶ km to ~10 km — a factor of 10⁵. By L = Iω ∝ R²ω = constant, ω increases by 10¹⁰. A star that previously rotated once per month now spins 1,000 times per second — consistent with observed millisecond pulsars. The fastest known pulsar (PSR J1748-2446ad) rotates at 716 Hz.</p></div></div>
+<div class="ad-container"><div style="text-align:center;width:100%"><span class="ad-label">Advertisement</span><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div>
+<div style="display:flex;justify-content:space-between;margin-top:40px;gap:16px;flex-wrap:wrap">
+  <a href="simple-harmonic-motion.html" class="btn btn-outline">← Simple Harmonic Motion</a>
+  <a href="work-and-power.html" class="btn btn-primary">Next: Work & Power →</a>
 </div>
-</div>
-      <div class="ad-container" style="margin-top:40px">
-        <div style="text-align:center;width:100%">
-          <span class="ad-label">Advertisement</span>
-          <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
-          <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
-        </div>
-      </div>
-    </article>
-    <aside class="topic-sidebar">
-      <div class="sidebar-card">
-        <h4 style="font-family:var(--font-mono);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent-plasma);margin-bottom:14px">// Topic Info</h4>
-        <div class="sidebar-stat"><span>Branch</span><span>Classical Mechanics</span></div>
-        <div class="sidebar-stat"><span>Topic</span><span>08 / 22</span></div>
-        <div class="sidebar-stat"><span>Level</span><span>Advanced</span></div>
-      </div>
-      <div class="sidebar-card">
-        <h4 style="font-family:var(--font-mono);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent-plasma);margin-bottom:14px">// All Topics</h4>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:6px">
-          <li><a href="newtons-laws.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">01. Newton's Laws</a></li>
-          <li><a href="projectile-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">02. Projectile Motion</a></li>
-          <li><a href="conservation-of-energy.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">03. Conservation of Energy</a></li>
-          <li><a href="linear-momentum.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">04. Linear Momentum</a></li>
-          <li><a href="circular-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">05. Circular Motion</a></li>
-          <li><a href="gravitational-force.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">06. Gravitational Force</a></li>
-          <li><a href="simple-harmonic-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">07. Simple Harmonic Motion</a></li>
-          <li><a href="rotational-dynamics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">08. Rotational Dynamics</a></li>
-          <li><a href="work-and-power.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">09. Work & Power</a></li>
-          <li><a href="friction-and-drag.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">10. Friction & Drag</a></li>
-          <li><a href="keplers-laws.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">11. Kepler's Laws</a></li>
-          <li><a href="waves-and-oscillations.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">12. Waves & Oscillations</a></li>
-          <li><a href="centre-of-mass.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">13. Centre of Mass</a></li>
-          <li><a href="statics-and-equilibrium.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">14. Statics & Equilibrium</a></li>
-          <li><a href="fluid-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">15. Fluid Mechanics</a></li>
-          <li><a href="elasticity-and-stress.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">16. Elasticity & Stress</a></li>
-          <li><a href="kinematics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">17. Kinematics</a></li>
-          <li><a href="damped-oscillations.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">18. Damped Oscillations</a></li>
-          <li><a href="lagrangian-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">19. Lagrangian Mechanics</a></li>
-          <li><a href="hamiltonian-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">20. Hamiltonian Mechanics</a></li>
-          <li><a href="rigid-body-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">21. Rigid Body Motion</a></li>
-          <li><a href="non-inertial-frames.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">22. Non-Inertial Frames</a></li>
-        </ul>
-      </div>
-      <div class="ad-container" style="min-height:250px;flex-direction:column">
-        <span class="ad-label">Advertisement</span>
-        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
-        <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
-      </div>
-    </aside>
+</article>
+<aside class="topic-sidebar">
+  <div class="sidebar-card">
+    <h4 style="font-family:var(--font-mono);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent-plasma);margin-bottom:14px">// Key Equations</h4>
+    <div class="formula-block" style="margin:0 0 8px;font-size:0.82rem">τ = r × F = Iα</div><div class="formula-block" style="margin:0 0 8px;font-size:0.82rem">I = Σmᵢrᵢ² = ∫r² dm</div><div class="formula-block" style="margin:0 0 8px;font-size:0.82rem">L = Iω (conserved if τ_net=0)</div><div class="formula-block" style="margin:0 0 8px;font-size:0.82rem">KE_rot = ½Iω²</div>
   </div>
+  <div class="sidebar-card">
+    <h4 style="font-family:var(--font-mono);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent-plasma);margin-bottom:14px">// Topic Info</h4>
+    <div class="sidebar-stat"><span>Branch</span><span>Classical Mechanics</span></div>
+    <div class="sidebar-stat"><span>Topic</span><span>08 / 22</span></div>
+    <div class="sidebar-stat"><span>Simulation</span><span>No</span></div>
+  </div>
+  <div class="sidebar-card">
+    <h4 style="font-family:var(--font-mono);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent-plasma);margin-bottom:14px">// All 22 Topics</h4>
+    <ul style="list-style:none;display:flex;flex-direction:column;gap:5px">
+<li><a href="newtons-laws.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">01. Newton's Laws</a></li>
+<li><a href="projectile-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">02. Projectile Motion</a></li>
+<li><a href="conservation-of-energy.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">03. Conservation of Energy</a></li>
+<li><a href="linear-momentum.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">04. Linear Momentum</a></li>
+<li><a href="circular-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">05. Circular Motion</a></li>
+<li><a href="gravitational-force.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">06. Gravitational Force</a></li>
+<li><a href="simple-harmonic-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">07. Simple Harmonic Motion</a></li>
+<li><a href="rotational-dynamics.html" style="font-size:0.8rem;color:var(--accent-plasma);font-weight:600;text-decoration:none">08. Rotational Dynamics</a></li>
+<li><a href="work-and-power.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">09. Work &amp; Power</a></li>
+<li><a href="friction-and-drag.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">10. Friction &amp; Drag</a></li>
+<li><a href="keplers-laws.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">11. Kepler's Laws</a></li>
+<li><a href="waves-and-oscillations.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">12. Waves &amp; Oscillations</a></li>
+<li><a href="centre-of-mass.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">13. Centre of Mass</a></li>
+<li><a href="statics-and-equilibrium.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">14. Statics &amp; Equilibrium</a></li>
+<li><a href="fluid-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">15. Fluid Mechanics</a></li>
+<li><a href="elasticity-and-stress.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">16. Elasticity &amp; Stress</a></li>
+<li><a href="kinematics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">17. Kinematics</a></li>
+<li><a href="damped-oscillations.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">18. Damped Oscillations</a></li>
+<li><a href="lagrangian-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">19. Lagrangian Mechanics</a></li>
+<li><a href="hamiltonian-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">20. Hamiltonian Mechanics</a></li>
+<li><a href="rigid-body-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">21. Rigid Body Motion</a></li>
+<li><a href="non-inertial-frames.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">22. Non-Inertial Frames</a></li>
+</ul>
+  </div>
+  <div class="ad-container" style="min-height:250px;flex-direction:column"><span class="ad-label">Advertisement</span><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div>
+</aside>
+</div>
 </main>
 <div id="footer-placeholder"></div>
 <script src="../../js/components.js"></script>

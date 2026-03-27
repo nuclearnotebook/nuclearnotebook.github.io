@@ -1,146 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Kepler's Laws & Orbital Mechanics — Classical Mechanics | QuantumAtlas</title>
-  <meta name="description" content="Kepler's three laws of planetary motion, orbital mechanics, elliptical orbits, vis-viva equation, and satellite orbital calculations."/>
-  <meta name="keywords" content="Kepler's laws, orbital mechanics, elliptical orbits, vis-viva equation, orbital period, aphelion, perihelion, orbital velocity, satellite orbit"/>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🪐 — Classical Mechanics | QuantumAtlas</title>
+  <meta name="description" content="Planetary Motion, Elliptical Orbits, and the Vis-viva Equation. Comprehensive physics treatment with equations, diagrams, and real-world applications."/>
+  <meta name="keywords" content="Kepler's laws, orbital mechanics, elliptical orbits, vis-viva equation, orbital period, aphelion perihelion, orbital energy, satellite orbit, planetary motion"/>
   <link rel="canonical" href="https://yourdomain.com/topics/classical-mechanics/keplers-laws.html"/>
-  <meta property="og:title" content="Kepler's Laws & Orbital Mechanics | QuantumAtlas"/>
-  <meta property="og:description" content="Kepler's three laws of planetary motion, orbital mechanics, elliptical orbits, vis-viva equation, and satellite orbital calculations."/>
-  <meta property="og:image" content="https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=1200&q=75&auto=format"/>
-  <script type="application/ld+json">{
-    "@context":"https://schema.org","@type":"Article",
-    "headline":"Kepler's Laws & Orbital Mechanics","description":"Kepler's three laws of planetary motion, orbital mechanics, elliptical orbits, vis-viva equation, and satellite orbital calculations.",
-    "image":"https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=1200&q=75&auto=format",
-    "author":{"@type":"Organization","name":"QuantumAtlas"},
-    "publisher":{"@type":"Organization","name":"QuantumAtlas","url":"https://yourdomain.com"},
-    "breadcrumb":{"@type":"BreadcrumbList","itemListElement":[
-      {"@type":"ListItem","position":1,"name":"Home","item":"https://yourdomain.com/"},
-      {"@type":"ListItem","position":2,"name":"Branches","item":"https://yourdomain.com/theory.html"},
-      {"@type":"ListItem","position":3,"name":"Classical Mechanics","item":"https://yourdomain.com/branches/classical-mechanics.html"},
-      {"@type":"ListItem","position":4,"name":"Kepler's Laws & Orbital Mechanics"}
-    ]}
-  }</script>
+  <meta property="og:title" content="🪐 | QuantumAtlas"/><meta property="og:image" content="https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=1400&q=80&auto=format"/>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-4X0M6RM0F6"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4X0M6RM0F6',{page_title:document.title,page_location:window.location.href});</script>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2633513915753897" crossorigin="anonymous"></script>
   <meta name="google-adsense-account" content="ca-pub-2633513915753897">
-  <link rel="stylesheet" href="../../css/global.css"/>
-  <link rel="stylesheet" href="../../css/nav.css"/>
-  <link rel="stylesheet" href="../../css/topic.css"/>
+  <link rel="stylesheet" href="../../css/global.css"/><link rel="stylesheet" href="../../css/nav.css"/><link rel="stylesheet" href="../../css/topic.css"/>
 </head>
 <body>
 <div id="nav-placeholder"></div>
 <main>
-  <section class="topic-hero">
-    <img src="https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=1200&q=75&auto=format" alt="Solar system orbital mechanics from space" class="topic-hero-bg-img" loading="eager"/>
-    <div class="topic-hero-overlay"></div>
-    <div class="container topic-hero-content">
-      <nav class="breadcrumb">
-        <a href="../../index.html">Home</a><span class="sep">›</span>
-        <a href="../../theory.html">Branches</a><span class="sep">›</span>
-        <a href="../../branches/classical-mechanics.html">Classical Mechanics</a><span class="sep">›</span>
-        <span class="current">Kepler's Laws & Orbital Mechanics</span>
-      </nav>
-      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px">
-        <span class="badge badge-plasma">Classical Mechanics</span>
-        
-        <span class="badge badge-nova">Topic 11</span>
-      </div>
-      <h1 class="topic-hero-title">🪐 Kepler's Laws & Orbital Mechanics</h1>
-      <p class="topic-hero-sub">Planetary Motion and the vis-viva Equation</p>
-      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:20px"><span class="tc-tag" style="padding:5px 12px;font-size:0.75rem">Orbits</span> <span class="tc-tag" style="padding:5px 12px;font-size:0.75rem">Kepler</span> <span class="tc-tag" style="padding:5px 12px;font-size:0.75rem">Planetary Motion</span></div>
+<section class="topic-hero">
+  <img src="https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=1400&q=80&auto=format" alt="Solar system planets orbital paths from space" class="topic-hero-bg-img" loading="eager"/>
+  <div class="topic-hero-overlay"></div>
+  <div class="container topic-hero-content">
+    <nav class="breadcrumb"><a href="../../index.html">Home</a><span class="sep">›</span><a href="../../branches/classical-mechanics.html">Classical Mechanics</a><span class="sep">›</span><span class="current">🪐</span></nav>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px">
+      <span class="badge badge-plasma">Classical Mechanics</span>
+      <span class="badge badge-nova">Topic 11 / 22</span>
     </div>
-  </section>
-  <div class="container topic-layout">
-    <article class="topic-article">
-      <div class="ad-container" style="margin-bottom:36px">
-        <div style="text-align:center;width:100%">
-          <span class="ad-label">Advertisement</span>
-          <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
-          <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
-        </div>
-      </div>
-      <div class="topic-body">
-<p>Johannes Kepler's three laws of planetary motion, published between 1609 and 1619, were the first precise mathematical description of planetary behaviour. Newton later showed that all three laws follow as necessary consequences of his law of universal gravitation — a stunning unification that validated both Kepler's empirical observations and Newton's theoretical framework.</p>
+    <h1 class="topic-hero-title">Kepler's Laws & Orbital Mechanics 🪐</h1>
+    <p class="topic-hero-sub">Planetary Motion, Elliptical Orbits, and the Vis-viva Equation</p>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:20px"><span class="tc-tag" style="padding:5px 14px;font-size:0.78rem">Orbital Mechanics</span> <span class="tc-tag" style="padding:5px 14px;font-size:0.78rem">Kepler</span> <span class="tc-tag" style="padding:5px 14px;font-size:0.78rem">Elliptical Orbits</span> <span class="tc-tag" style="padding:5px 14px;font-size:0.78rem">Vis-viva</span></div>
+  </div>
+</section>
+<div class="container topic-layout">
+<article class="topic-article">
+<div class="ad-container"><div style="text-align:center;width:100%"><span class="ad-label">Advertisement</span><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div>
+
+<div class="topic-body"><figure style="margin:0 0 32px"><img src="https://images.unsplash.com/photo-1614642264762-d0a3b8bf3700?w=900&q=80&auto=format" alt="Planetary orbits and solar system orbital mechanics" class="img-frame"/><figcaption>The Solar System — eight planets in elliptical orbits with the Sun at one focus (Kepler's First Law). Mercury's highly elliptical orbit (e = 0.206) makes it the most dramatic example of orbital eccentricity. Earth's orbit is nearly circular (e = 0.017) — the distance to the Sun varies only ±1.7% across the year, contributing negligibly to the seasons (which are caused by Earth's axial tilt, not orbital eccentricity).</figcaption></figure>
+
+<h2>From Observation to Law: Kepler's Achievement</h2>
+<p>Johannes Kepler spent years analysing Tycho Brahe's meticulous naked-eye observations of planetary positions — the finest pre-telescopic astronomical data ever assembled. Between 1609 and 1619, Kepler extracted three precise mathematical laws of planetary motion from this data. He had no theoretical explanation — the laws were purely empirical. Newton later showed they follow exactly as consequences of his law of universal gravitation, providing the theoretical foundation Kepler lacked.</p>
 
 <h2>Kepler's First Law — Law of Ellipses</h2>
-<p><strong>Each planet moves in an ellipse with the Sun at one focus.</strong></p>
-<p>An ellipse is characterized by its semi-major axis a and eccentricity e (0 ≤ e < 1). The perihelion (closest approach) is r<sub>p</sub> = a(1−e) and aphelion (farthest point) is r<sub>a</sub> = a(1+e). Earth's eccentricity is e ≈ 0.017, nearly circular.</p>
+<p><em>Each planet moves in an ellipse with the Sun at one focus.</em></p>
+<p>An ellipse is characterised by its semi-major axis a (half the longest diameter), semi-minor axis b, and eccentricity e = √(1−b²/a²). The Sun sits at one focus, located at distance ae from the centre. Key orbital positions:</p>
+<div class="formula-block"><span class="formula-label">Perihelion and Aphelion Distances</span>r<sub>perihelion</sub> = a(1−e) &nbsp;&nbsp;&nbsp; r<sub>aphelion</sub> = a(1+e)</div>
+
+<div class="table-wrap"><table>
+<thead><tr><th>Planet</th><th>Semi-major axis a (AU)</th><th>Eccentricity e</th><th>Period T (years)</th></tr></thead>
+<tbody>
+<tr><td>Mercury</td><td>0.387</td><td>0.206</td><td>0.241</td></tr>
+<tr><td>Venus</td><td>0.723</td><td>0.007</td><td>0.615</td></tr>
+<tr><td>Earth</td><td>1.000</td><td>0.017</td><td>1.000</td></tr>
+<tr><td>Mars</td><td>1.524</td><td>0.093</td><td>1.881</td></tr>
+<tr><td>Jupiter</td><td>5.203</td><td>0.049</td><td>11.86</td></tr>
+<tr><td>Saturn</td><td>9.539</td><td>0.057</td><td>29.46</td></tr>
+</tbody></table></div>
 
 <h2>Kepler's Second Law — Law of Equal Areas</h2>
-<p><strong>A line from the Sun to the planet sweeps equal areas in equal times.</strong></p>
-<p>This is a direct consequence of conservation of angular momentum. When a planet is closer to the Sun, it moves faster; when farther, slower. L = mvr = constant, so v ∝ 1/r at perihelion/aphelion.</p>
+<p><em>A line from the Sun to the planet sweeps equal areas in equal times.</em></p>
+<p>This is a direct consequence of conservation of angular momentum. Since gravity acts along the Sun-planet line (no tangential force component), the torque about the Sun is zero, and L = mvr = constant. When r decreases (planet closer to Sun), v must increase to maintain L. Equal areas in equal times follows mathematically from L = const.</p>
+<div class="formula-block"><span class="formula-label">Angular Momentum — Kepler's 2nd Law</span>L = m·v·r·sinφ = constant &nbsp;&nbsp;&nbsp; → v<sub>p</sub>·r<sub>p</sub> = v<sub>a</sub>·r<sub>a</sub></div>
+<p>At perihelion and aphelion, velocity is perpendicular to the radius vector (φ = 90°), so the simplified relation v<sub>p</sub>r<sub>p</sub> = v<sub>a</sub>r<sub>a</sub> holds. Earth moves at 30.3 km/s at perihelion (January) and 29.3 km/s at aphelion (July) — a 3.4% variation.</p>
 
 <h2>Kepler's Third Law — Law of Periods</h2>
-<div class="formula-block"><span class="formula-label">Kepler's Third Law</span>T² ∝ a³ &nbsp;&nbsp;⟹&nbsp;&nbsp; T² = (4π²/GM) a³</div>
-<p>The square of the orbital period is proportional to the cube of the semi-major axis. Using Newton's gravity, we can derive the proportionality constant exactly. This law allows us to calculate the mass of any body with orbiting companions — including exoplanet host stars.</p>
+<div class="formula-block"><span class="formula-label">Kepler's Third Law</span>T² = (4π²/GM) a³ &nbsp;&nbsp;&nbsp; [T in seconds, a in metres, M = mass of central body]</div>
+<p>The square of orbital period is proportional to the cube of the semi-major axis. The proportionality constant 4π²/GM depends only on the central mass M — not on the orbiting body's mass. This universality means Kepler's Third Law can be used to measure the mass of any celestial body with orbiting companions: M = 4π²a³/(GT²).</p>
 
-<h2>Vis-Viva Equation</h2>
-<p>The vis-viva equation gives the orbital speed at any point in an elliptical orbit:</p>
-<div class="formula-block"><span class="formula-label">Vis-Viva Equation</span>v² = GM(2/r − 1/a)</div>
-<p>At perihelion (r = a(1−e)): maximum speed. At aphelion (r = a(1+e)): minimum speed. For a circular orbit (r = a): v = √(GM/r).</p>
+<h2>The Vis-viva Equation</h2>
+<p>The vis-viva equation (from energy conservation) gives orbital speed at any distance r for an orbit with semi-major axis a:</p>
+<div class="formula-block"><span class="formula-label">Vis-viva Equation</span>v² = GM(2/r − 1/a)</div>
+<p>Special cases: circular orbit (r = a): v<sub>circ</sub> = √(GM/r); parabolic escape (a → ∞): v<sub>esc</sub> = √(2GM/r) = √2 · v<sub>circ</sub>.</p>
 
-<h2>Orbital Energy</h2>
-<div class="formula-block"><span class="formula-label">Orbital Mechanical Energy</span>E = −GMm/(2a)</div>
-<p>The total mechanical energy depends only on the semi-major axis, not the eccentricity. Circular and highly elliptical orbits with the same a have the same energy. To move to a higher orbit, you add energy (do positive work); to deorbit, you remove energy.</p>
+<h2>Orbital Energy and Manoeuvres</h2>
+<div class="formula-block"><span class="formula-label">Total Orbital Energy</span>E = KE + PE = −GMm/(2a)</div>
+<p>The total energy depends only on the semi-major axis — not on eccentricity. To raise an orbit (go from a lower to a higher orbit), you must increase energy (do positive work, fire engines in the direction of motion). The Hohmann transfer orbit is the most fuel-efficient two-burn manoeuvre between circular orbits: one burn at the lower orbit raises aphelion to the higher orbit, a second burn at aphelion circularises the orbit.</p>
 
-<div class="info-box info-box--tip">
-<div class="info-box-title" style="color:var(--accent-green)">🛰 Geosynchronous Orbit</div>
-<p style="margin:0">A satellite in geosynchronous orbit has T = 24 hours. Using Kepler's third law: a = (GM<sub>E</sub>T²/4π²)<sup>1/3</sup> ≈ 42,164 km from Earth's centre (≈35,786 km altitude). At this altitude, the satellite remains stationary above a fixed point on Earth — the basis of GPS and communication satellites.</p>
+<div class="info-box info-box--fact"><div class="info-box-title" style="color:#a078ff">🛰 GPS Satellite Orbits</div><p style="margin:0">GPS satellites orbit at a = 26,560 km (altitude ~20,200 km). Using Kepler's Third Law: T = 2π√(a³/GM<sub>E</sub>) = 2π√((26.56×10⁶)³/(3.986×10¹⁴)) = 43,082 s ≈ 11 hours 58 minutes. With 24 active satellites in 6 orbital planes, at least 4 satellites are always visible from any point on Earth, enabling 3D position fixes to within 3–5 metres (civilian) or ~0.3 m (military/differential GPS).</p></div></div>
+<div class="ad-container"><div style="text-align:center;width:100%"><span class="ad-label">Advertisement</span><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div>
+<div style="display:flex;justify-content:space-between;margin-top:40px;gap:16px;flex-wrap:wrap">
+  <a href="friction-and-drag.html" class="btn btn-outline">← Friction & Drag</a>
+  <a href="waves-and-oscillations.html" class="btn btn-primary">Next: Waves & Oscillations →</a>
 </div>
-</div>
-      <div class="ad-container" style="margin-top:40px">
-        <div style="text-align:center;width:100%">
-          <span class="ad-label">Advertisement</span>
-          <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
-          <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
-        </div>
-      </div>
-    </article>
-    <aside class="topic-sidebar">
-      <div class="sidebar-card">
-        <h4 style="font-family:var(--font-mono);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent-plasma);margin-bottom:14px">// Topic Info</h4>
-        <div class="sidebar-stat"><span>Branch</span><span>Classical Mechanics</span></div>
-        <div class="sidebar-stat"><span>Topic</span><span>11 / 22</span></div>
-        <div class="sidebar-stat"><span>Level</span><span>Advanced</span></div>
-      </div>
-      <div class="sidebar-card">
-        <h4 style="font-family:var(--font-mono);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent-plasma);margin-bottom:14px">// All Topics</h4>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:6px">
-          <li><a href="newtons-laws.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">01. Newton's Laws</a></li>
-          <li><a href="projectile-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">02. Projectile Motion</a></li>
-          <li><a href="conservation-of-energy.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">03. Conservation of Energy</a></li>
-          <li><a href="linear-momentum.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">04. Linear Momentum</a></li>
-          <li><a href="circular-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">05. Circular Motion</a></li>
-          <li><a href="gravitational-force.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">06. Gravitational Force</a></li>
-          <li><a href="simple-harmonic-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">07. Simple Harmonic Motion</a></li>
-          <li><a href="rotational-dynamics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">08. Rotational Dynamics</a></li>
-          <li><a href="work-and-power.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">09. Work & Power</a></li>
-          <li><a href="friction-and-drag.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">10. Friction & Drag</a></li>
-          <li><a href="keplers-laws.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">11. Kepler's Laws</a></li>
-          <li><a href="waves-and-oscillations.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">12. Waves & Oscillations</a></li>
-          <li><a href="centre-of-mass.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">13. Centre of Mass</a></li>
-          <li><a href="statics-and-equilibrium.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">14. Statics & Equilibrium</a></li>
-          <li><a href="fluid-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">15. Fluid Mechanics</a></li>
-          <li><a href="elasticity-and-stress.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">16. Elasticity & Stress</a></li>
-          <li><a href="kinematics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">17. Kinematics</a></li>
-          <li><a href="damped-oscillations.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">18. Damped Oscillations</a></li>
-          <li><a href="lagrangian-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">19. Lagrangian Mechanics</a></li>
-          <li><a href="hamiltonian-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">20. Hamiltonian Mechanics</a></li>
-          <li><a href="rigid-body-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">21. Rigid Body Motion</a></li>
-          <li><a href="non-inertial-frames.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">22. Non-Inertial Frames</a></li>
-        </ul>
-      </div>
-      <div class="ad-container" style="min-height:250px;flex-direction:column">
-        <span class="ad-label">Advertisement</span>
-        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
-        <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
-      </div>
-    </aside>
+</article>
+<aside class="topic-sidebar">
+  <div class="sidebar-card">
+    <h4 style="font-family:var(--font-mono);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent-plasma);margin-bottom:14px">// Key Equations</h4>
+    <div class="formula-block" style="margin:0 0 8px;font-size:0.82rem">T² ∝ a³ (Kepler 3rd)</div><div class="formula-block" style="margin:0 0 8px;font-size:0.82rem">T² = 4π²a³/(GM)</div><div class="formula-block" style="margin:0 0 8px;font-size:0.82rem">v² = GM(2/r − 1/a)</div><div class="formula-block" style="margin:0 0 8px;font-size:0.82rem">E = −GMm/2a</div>
   </div>
+  <div class="sidebar-card">
+    <h4 style="font-family:var(--font-mono);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent-plasma);margin-bottom:14px">// Topic Info</h4>
+    <div class="sidebar-stat"><span>Branch</span><span>Classical Mechanics</span></div>
+    <div class="sidebar-stat"><span>Topic</span><span>11 / 22</span></div>
+    <div class="sidebar-stat"><span>Simulation</span><span>No</span></div>
+  </div>
+  <div class="sidebar-card">
+    <h4 style="font-family:var(--font-mono);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent-plasma);margin-bottom:14px">// All 22 Topics</h4>
+    <ul style="list-style:none;display:flex;flex-direction:column;gap:5px">
+<li><a href="newtons-laws.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">01. Newton's Laws</a></li>
+<li><a href="projectile-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">02. Projectile Motion</a></li>
+<li><a href="conservation-of-energy.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">03. Conservation of Energy</a></li>
+<li><a href="linear-momentum.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">04. Linear Momentum</a></li>
+<li><a href="circular-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">05. Circular Motion</a></li>
+<li><a href="gravitational-force.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">06. Gravitational Force</a></li>
+<li><a href="simple-harmonic-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">07. Simple Harmonic Motion</a></li>
+<li><a href="rotational-dynamics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">08. Rotational Dynamics</a></li>
+<li><a href="work-and-power.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">09. Work &amp; Power</a></li>
+<li><a href="friction-and-drag.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">10. Friction &amp; Drag</a></li>
+<li><a href="keplers-laws.html" style="font-size:0.8rem;color:var(--accent-plasma);font-weight:600;text-decoration:none">11. Kepler's Laws</a></li>
+<li><a href="waves-and-oscillations.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">12. Waves &amp; Oscillations</a></li>
+<li><a href="centre-of-mass.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">13. Centre of Mass</a></li>
+<li><a href="statics-and-equilibrium.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">14. Statics &amp; Equilibrium</a></li>
+<li><a href="fluid-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">15. Fluid Mechanics</a></li>
+<li><a href="elasticity-and-stress.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">16. Elasticity &amp; Stress</a></li>
+<li><a href="kinematics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">17. Kinematics</a></li>
+<li><a href="damped-oscillations.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">18. Damped Oscillations</a></li>
+<li><a href="lagrangian-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">19. Lagrangian Mechanics</a></li>
+<li><a href="hamiltonian-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">20. Hamiltonian Mechanics</a></li>
+<li><a href="rigid-body-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">21. Rigid Body Motion</a></li>
+<li><a href="non-inertial-frames.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">22. Non-Inertial Frames</a></li>
+</ul>
+  </div>
+  <div class="ad-container" style="min-height:250px;flex-direction:column"><span class="ad-label">Advertisement</span><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div>
+</aside>
+</div>
 </main>
 <div id="footer-placeholder"></div>
 <script src="../../js/components.js"></script>

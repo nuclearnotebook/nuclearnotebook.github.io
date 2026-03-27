@@ -1,150 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Waves & Oscillations — Classical Mechanics | QuantumAtlas</title>
-  <meta name="description" content="Full treatment of wave physics — the wave equation, types of waves, superposition principle, standing waves, resonance, and wave energy."/>
-  <meta name="keywords" content="waves, oscillations, wave equation, standing waves, superposition, resonance, wavelength, frequency, wave speed, transverse waves, longitudinal waves"/>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🌊 — Classical Mechanics | QuantumAtlas</title>
+  <meta name="description" content="Wave Mechanics, Superposition, Standing Waves, and Resonance. Comprehensive physics treatment with equations, diagrams, and real-world applications."/>
+  <meta name="keywords" content="waves, wave equation, standing waves, superposition, resonance, wavelength, frequency, wave speed, transverse longitudinal waves, interference, diffraction, phase velocity"/>
   <link rel="canonical" href="https://yourdomain.com/topics/classical-mechanics/waves-and-oscillations.html"/>
-  <meta property="og:title" content="Waves & Oscillations | QuantumAtlas"/>
-  <meta property="og:description" content="Full treatment of wave physics — the wave equation, types of waves, superposition principle, standing waves, resonance, and wave energy."/>
-  <meta property="og:image" content="https://images.unsplash.com/photo-1505118380757-91f5f5632de0?w=1200&q=75&auto=format"/>
-  <script type="application/ld+json">{
-    "@context":"https://schema.org","@type":"Article",
-    "headline":"Waves & Oscillations","description":"Full treatment of wave physics — the wave equation, types of waves, superposition principle, standing waves, resonance, and wave energy.",
-    "image":"https://images.unsplash.com/photo-1505118380757-91f5f5632de0?w=1200&q=75&auto=format",
-    "author":{"@type":"Organization","name":"QuantumAtlas"},
-    "publisher":{"@type":"Organization","name":"QuantumAtlas","url":"https://yourdomain.com"},
-    "breadcrumb":{"@type":"BreadcrumbList","itemListElement":[
-      {"@type":"ListItem","position":1,"name":"Home","item":"https://yourdomain.com/"},
-      {"@type":"ListItem","position":2,"name":"Branches","item":"https://yourdomain.com/theory.html"},
-      {"@type":"ListItem","position":3,"name":"Classical Mechanics","item":"https://yourdomain.com/branches/classical-mechanics.html"},
-      {"@type":"ListItem","position":4,"name":"Waves & Oscillations"}
-    ]}
-  }</script>
+  <meta property="og:title" content="🌊 | QuantumAtlas"/><meta property="og:image" content="https://images.unsplash.com/photo-1505118380757-91f5f5632de0?w=1400&q=80&auto=format"/>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-4X0M6RM0F6"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4X0M6RM0F6',{page_title:document.title,page_location:window.location.href});</script>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2633513915753897" crossorigin="anonymous"></script>
   <meta name="google-adsense-account" content="ca-pub-2633513915753897">
-  <link rel="stylesheet" href="../../css/global.css"/>
-  <link rel="stylesheet" href="../../css/nav.css"/>
-  <link rel="stylesheet" href="../../css/topic.css"/>
+  <link rel="stylesheet" href="../../css/global.css"/><link rel="stylesheet" href="../../css/nav.css"/><link rel="stylesheet" href="../../css/topic.css"/>
 </head>
 <body>
 <div id="nav-placeholder"></div>
 <main>
-  <section class="topic-hero">
-    <img src="https://images.unsplash.com/photo-1505118380757-91f5f5632de0?w=1200&q=75&auto=format" alt="Ocean waves demonstrating wave mechanics" class="topic-hero-bg-img" loading="eager"/>
-    <div class="topic-hero-overlay"></div>
-    <div class="container topic-hero-content">
-      <nav class="breadcrumb">
-        <a href="../../index.html">Home</a><span class="sep">›</span>
-        <a href="../../theory.html">Branches</a><span class="sep">›</span>
-        <a href="../../branches/classical-mechanics.html">Classical Mechanics</a><span class="sep">›</span>
-        <span class="current">Waves & Oscillations</span>
-      </nav>
-      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px">
-        <span class="badge badge-plasma">Classical Mechanics</span>
-        
-        <span class="badge badge-nova">Topic 12</span>
-      </div>
-      <h1 class="topic-hero-title">🌊 Waves & Oscillations</h1>
-      <p class="topic-hero-sub">Wave Mechanics, Superposition, and Standing Waves</p>
-      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:20px"><span class="tc-tag" style="padding:5px 12px;font-size:0.75rem">Waves</span> <span class="tc-tag" style="padding:5px 12px;font-size:0.75rem">Standing Waves</span> <span class="tc-tag" style="padding:5px 12px;font-size:0.75rem">Resonance</span></div>
+<section class="topic-hero">
+  <img src="https://images.unsplash.com/photo-1505118380757-91f5f5632de0?w=1400&q=80&auto=format" alt="Ocean waves demonstrating wave mechanics and interference" class="topic-hero-bg-img" loading="eager"/>
+  <div class="topic-hero-overlay"></div>
+  <div class="container topic-hero-content">
+    <nav class="breadcrumb"><a href="../../index.html">Home</a><span class="sep">›</span><a href="../../branches/classical-mechanics.html">Classical Mechanics</a><span class="sep">›</span><span class="current">🌊</span></nav>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px">
+      <span class="badge badge-plasma">Classical Mechanics</span>
+      <span class="badge badge-nova">Topic 12 / 22</span>
     </div>
-  </section>
-  <div class="container topic-layout">
-    <article class="topic-article">
-      <div class="ad-container" style="margin-bottom:36px">
-        <div style="text-align:center;width:100%">
-          <span class="ad-label">Advertisement</span>
-          <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
-          <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
-        </div>
-      </div>
-      <div class="topic-body">
-<p>Waves are one of the most pervasive phenomena in physics. From the ripples on water to electromagnetic radiation, from sound to quantum mechanical probability waves, the mathematics of wave motion appears across every domain of physics. A deep understanding of classical waves is the foundation for understanding optics, acoustics, and even quantum mechanics.</p>
+    <h1 class="topic-hero-title">Waves & Oscillations 🌊</h1>
+    <p class="topic-hero-sub">Wave Mechanics, Superposition, Standing Waves, and Resonance</p>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:20px"><span class="tc-tag" style="padding:5px 14px;font-size:0.78rem">Waves</span> <span class="tc-tag" style="padding:5px 14px;font-size:0.78rem">Standing Waves</span> <span class="tc-tag" style="padding:5px 14px;font-size:0.78rem">Superposition</span> <span class="tc-tag" style="padding:5px 14px;font-size:0.78rem">Resonance</span></div>
+  </div>
+</section>
+<div class="container topic-layout">
+<article class="topic-article">
+<div class="ad-container"><div style="text-align:center;width:100%"><span class="ad-label">Advertisement</span><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div>
+
+<div class="topic-body"><figure style="margin:0 0 32px"><img src="https://images.unsplash.com/photo-1505118380757-91f5f5632de0?w=900&q=80&auto=format" alt="Ocean waves showing wave interference and propagation" class="img-frame"/><figcaption>Ocean waves are among the most visually striking wave phenomena — but they are gravity-capillary waves at a fluid interface, far more complex than the mechanical waves of strings. Nonetheless, the same fundamental wave mathematics applies: superposition, interference patterns, and standing wave formation all occur in ocean dynamics, with profound effects on coastal erosion, harbour resonance, and tsunami propagation.</figcaption></figure>
 
 <h2>What is a Wave?</h2>
-<p>A wave is a disturbance that travels through space transferring energy without transferring matter. Waves are characterised by wavelength λ, frequency f, and wave speed v:</p>
-<div class="formula-block"><span class="formula-label">Fundamental Wave Relation</span>v = fλ = λ/T</div>
+<p>A wave is a disturbance that propagates through space and time, transferring energy and momentum without transferring matter. This definition captures the essence: when a wave passes through a medium, the medium itself oscillates about its equilibrium position but does not travel with the wave. A Mexican wave in a stadium is a perfect human-scale illustration — each person momentarily stands up and sits down, but nobody moves along the stadium.</p>
+
+<h2>Wave Parameters and the Fundamental Relation</h2>
+<div class="formula-block"><span class="formula-label">Fundamental Wave Relation</span>v = fλ &nbsp;&nbsp;&nbsp; [wave speed = frequency × wavelength]</div>
+<p>The wave speed v is determined by the properties of the medium (tension and mass density for a string, elastic modulus and density for solids, pressure and density for sound). Frequency f is set by the source. Wavelength λ adjusts accordingly: λ = v/f. When a wave moves from one medium to another, frequency is preserved (set by the source), but v and λ change.</p>
 
 <h2>The Wave Equation</h2>
+<p>The wave equation governs how the displacement y of a medium element varies with position x and time t:</p>
 <div class="formula-block"><span class="formula-label">1D Wave Equation</span>∂²y/∂t² = v² ∂²y/∂x²</div>
-<p>Solutions are of the form y(x,t) = A sin(kx − ωt + φ), where k = 2π/λ is the wave number, ω = 2πf is the angular frequency, and v = ω/k.</p>
+<p>General solutions: y = f(x−vt) (rightward-propagating wave) and y = g(x+vt) (leftward). The sinusoidal solution:</p>
+<div class="formula-block"><span class="formula-label">Sinusoidal Wave</span>y(x,t) = A sin(kx − ωt + φ) &nbsp;&nbsp;&nbsp; k = 2π/λ, ω = 2πf, v = ω/k</div>
 
 <h2>Transverse vs Longitudinal Waves</h2>
-<p><strong>Transverse waves:</strong> Oscillation perpendicular to propagation direction (light, waves on a string). Can be polarized.</p>
-<p><strong>Longitudinal waves:</strong> Oscillation parallel to propagation direction (sound, pressure waves). Cannot be polarized. Sound travels as compression-rarefaction cycles through the medium.</p>
+<p><strong>Transverse waves:</strong> displacement perpendicular to propagation direction. Waves on a string, electromagnetic waves, surface water waves (approximately). Can be polarised (displacement restricted to one plane).</p>
+<p><strong>Longitudinal waves:</strong> displacement parallel to propagation. Sound waves in air, P-waves in seismology, ultrasound. Cannot be polarised. Speed of sound in air (20°C): v = 343 m/s. Speed of sound in steel: ~5,100 m/s — 15× faster, because steel's bulk modulus far exceeds air.</p>
 
 <h2>Superposition Principle</h2>
-<p>When two or more waves occupy the same region, the resultant displacement is the algebraic sum of the individual displacements. This leads to constructive interference (crest + crest) and destructive interference (crest + trough).</p>
+<p>For linear wave equations, the superposition principle holds: the total displacement when two or more waves overlap is the algebraic sum of the individual displacements:</p>
+<div class="formula-block"><span class="formula-label">Superposition</span>y_total(x,t) = y₁(x,t) + y₂(x,t) + ...</div>
+<p>Constructive interference: crests coincide (phase difference 0, 2π, 4π...) → amplitude doubles. Destructive interference: crest coincides with trough (phase difference π, 3π...) → amplitude cancels. Intermediate phases give intermediate amplitudes.</p>
 
-<h2>Standing Waves</h2>
-<p>Two waves of equal amplitude and frequency travelling in opposite directions superpose to form a standing wave:</p>
-<div class="formula-block"><span class="formula-label">Standing Wave</span>y = 2A sin(kx) cos(ωt)</div>
-<p>Nodes (zero amplitude) occur at kx = nπ; antinodes (maximum amplitude) at kx = (n+½)π. For a string fixed at both ends of length L, only certain wavelengths are allowed:</p>
-<div class="formula-block"><span class="formula-label">Resonant Wavelengths (fixed-fixed string)</span>λ<sub>n</sub> = 2L/n &nbsp;&nbsp;→&nbsp;&nbsp; f<sub>n</sub> = nv/(2L), n = 1, 2, 3,...</div>
+<h2>Standing Waves — Resonance in Bounded Media</h2>
+<p>When two waves of equal amplitude and frequency travel in opposite directions (e.g., incident + reflected wave), they combine to form a standing wave — a pattern that oscillates in place with no net energy flow:</p>
+<div class="formula-block"><span class="formula-label">Standing Wave</span>y = [2A sin(kx)] cos(ωt)</div>
+<p>Nodes (y = 0 always): at kx = nπ → x = nλ/2. Antinodes (maximum oscillation): at kx = (n+½)π → x = (n+½)λ/2. For a string fixed at both ends (length L), boundary conditions require nodes at x = 0 and x = L:</p>
+<div class="formula-block"><span class="formula-label">String Resonant Frequencies (Harmonics)</span>f_n = n·v/(2L) = n·f₁ &nbsp;&nbsp;&nbsp; n = 1, 2, 3, ...</div>
+<p>The fundamental (n=1, f₁ = v/2L) is the lowest resonant frequency. Higher harmonics (overtones) at 2f₁, 3f₁, 4f₁... give musical instruments their characteristic timbre. A guitar string tuned to A₄ (440 Hz) vibrates with all harmonics simultaneously, the mix determined by how the string is plucked.</p>
 
 <h2>Wave Energy and Intensity</h2>
-<div class="formula-block"><span class="formula-label">Wave Intensity</span>I = P/A = ½ρω²A²v</div>
-<p>Intensity is proportional to the square of the amplitude. For a point source, intensity falls as 1/r² (inverse square law). The decibel scale for sound: β = 10 log₁₀(I/I₀), where I₀ = 10⁻¹² W/m².</p>
+<div class="formula-block"><span class="formula-label">Wave Intensity</span>I = P/A = ½ρvω²A² &nbsp;&nbsp;&nbsp; (∝ amplitude²)</div>
+<p>Intensity is proportional to the square of the amplitude — doubling amplitude quadruples intensity. For a point source radiating uniformly in 3D, intensity decreases as 1/r² (inverse-square law): I = P_source/(4πr²). This is why distant sources sound quiet and look dim — a direct consequence of geometry, not energy loss.</p>
 
-<div class="info-box info-box--warn">
-<div class="info-box-title" style="color:var(--accent-solar)">⚠ Resonance and Structural Engineering</div>
-<p style="margin:0">Resonance — when a system is driven at its natural frequency — causes dramatic amplitude amplification. The Tacoma Narrows Bridge (1940) collapsed due to aeroelastic resonance driven by wind. Modern bridge design explicitly avoids resonance conditions through careful frequency analysis.</p>
+<div class="info-box info-box--warn"><div class="info-box-title" style="color:var(--accent-solar)">⚠ Tacoma Narrows Bridge Collapse (1940)</div><p style="margin:0">The Tacoma Narrows Bridge collapsed four months after opening due to aeroelastic flutter — a resonance phenomenon between the bridge's torsional oscillation mode and periodic vortex shedding from wind. The wind speed happened to match the bridge's natural torsional frequency, driving it into resonance. The collapse is a textbook example of the catastrophic consequences of resonance in engineering structures. Modern bridge design uses flutter analysis and tuned mass dampers to prevent resonance.</p></div></div>
+<div class="ad-container"><div style="text-align:center;width:100%"><span class="ad-label">Advertisement</span><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div>
+<div style="display:flex;justify-content:space-between;margin-top:40px;gap:16px;flex-wrap:wrap">
+  <a href="keplers-laws.html" class="btn btn-outline">← Kepler's Laws</a>
+  <a href="centre-of-mass.html" class="btn btn-primary">Next: Centre of Mass →</a>
 </div>
-</div>
-      <div class="ad-container" style="margin-top:40px">
-        <div style="text-align:center;width:100%">
-          <span class="ad-label">Advertisement</span>
-          <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
-          <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
-        </div>
-      </div>
-    </article>
-    <aside class="topic-sidebar">
-      <div class="sidebar-card">
-        <h4 style="font-family:var(--font-mono);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent-plasma);margin-bottom:14px">// Topic Info</h4>
-        <div class="sidebar-stat"><span>Branch</span><span>Classical Mechanics</span></div>
-        <div class="sidebar-stat"><span>Topic</span><span>12 / 22</span></div>
-        <div class="sidebar-stat"><span>Level</span><span>Advanced</span></div>
-      </div>
-      <div class="sidebar-card">
-        <h4 style="font-family:var(--font-mono);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent-plasma);margin-bottom:14px">// All Topics</h4>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:6px">
-          <li><a href="newtons-laws.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">01. Newton's Laws</a></li>
-          <li><a href="projectile-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">02. Projectile Motion</a></li>
-          <li><a href="conservation-of-energy.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">03. Conservation of Energy</a></li>
-          <li><a href="linear-momentum.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">04. Linear Momentum</a></li>
-          <li><a href="circular-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">05. Circular Motion</a></li>
-          <li><a href="gravitational-force.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">06. Gravitational Force</a></li>
-          <li><a href="simple-harmonic-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">07. Simple Harmonic Motion</a></li>
-          <li><a href="rotational-dynamics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">08. Rotational Dynamics</a></li>
-          <li><a href="work-and-power.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">09. Work & Power</a></li>
-          <li><a href="friction-and-drag.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">10. Friction & Drag</a></li>
-          <li><a href="keplers-laws.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">11. Kepler's Laws</a></li>
-          <li><a href="waves-and-oscillations.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">12. Waves & Oscillations</a></li>
-          <li><a href="centre-of-mass.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">13. Centre of Mass</a></li>
-          <li><a href="statics-and-equilibrium.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">14. Statics & Equilibrium</a></li>
-          <li><a href="fluid-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">15. Fluid Mechanics</a></li>
-          <li><a href="elasticity-and-stress.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">16. Elasticity & Stress</a></li>
-          <li><a href="kinematics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">17. Kinematics</a></li>
-          <li><a href="damped-oscillations.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">18. Damped Oscillations</a></li>
-          <li><a href="lagrangian-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">19. Lagrangian Mechanics</a></li>
-          <li><a href="hamiltonian-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">20. Hamiltonian Mechanics</a></li>
-          <li><a href="rigid-body-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">21. Rigid Body Motion</a></li>
-          <li><a href="non-inertial-frames.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">22. Non-Inertial Frames</a></li>
-        </ul>
-      </div>
-      <div class="ad-container" style="min-height:250px;flex-direction:column">
-        <span class="ad-label">Advertisement</span>
-        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
-        <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
-      </div>
-    </aside>
+</article>
+<aside class="topic-sidebar">
+  <div class="sidebar-card">
+    <h4 style="font-family:var(--font-mono);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent-plasma);margin-bottom:14px">// Key Equations</h4>
+    <div class="formula-block" style="margin:0 0 8px;font-size:0.82rem">v = fλ</div><div class="formula-block" style="margin:0 0 8px;font-size:0.82rem">y(x,t) = A sin(kx−ωt)</div><div class="formula-block" style="margin:0 0 8px;font-size:0.82rem">k = 2π/λ, ω = 2πf</div><div class="formula-block" style="margin:0 0 8px;font-size:0.82rem">λ_n = 2L/n (standing waves)</div>
   </div>
+  <div class="sidebar-card">
+    <h4 style="font-family:var(--font-mono);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent-plasma);margin-bottom:14px">// Topic Info</h4>
+    <div class="sidebar-stat"><span>Branch</span><span>Classical Mechanics</span></div>
+    <div class="sidebar-stat"><span>Topic</span><span>12 / 22</span></div>
+    <div class="sidebar-stat"><span>Simulation</span><span>No</span></div>
+  </div>
+  <div class="sidebar-card">
+    <h4 style="font-family:var(--font-mono);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent-plasma);margin-bottom:14px">// All 22 Topics</h4>
+    <ul style="list-style:none;display:flex;flex-direction:column;gap:5px">
+<li><a href="newtons-laws.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">01. Newton's Laws</a></li>
+<li><a href="projectile-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">02. Projectile Motion</a></li>
+<li><a href="conservation-of-energy.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">03. Conservation of Energy</a></li>
+<li><a href="linear-momentum.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">04. Linear Momentum</a></li>
+<li><a href="circular-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">05. Circular Motion</a></li>
+<li><a href="gravitational-force.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">06. Gravitational Force</a></li>
+<li><a href="simple-harmonic-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">07. Simple Harmonic Motion</a></li>
+<li><a href="rotational-dynamics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">08. Rotational Dynamics</a></li>
+<li><a href="work-and-power.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">09. Work &amp; Power</a></li>
+<li><a href="friction-and-drag.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">10. Friction &amp; Drag</a></li>
+<li><a href="keplers-laws.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">11. Kepler's Laws</a></li>
+<li><a href="waves-and-oscillations.html" style="font-size:0.8rem;color:var(--accent-plasma);font-weight:600;text-decoration:none">12. Waves &amp; Oscillations</a></li>
+<li><a href="centre-of-mass.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">13. Centre of Mass</a></li>
+<li><a href="statics-and-equilibrium.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">14. Statics &amp; Equilibrium</a></li>
+<li><a href="fluid-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">15. Fluid Mechanics</a></li>
+<li><a href="elasticity-and-stress.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">16. Elasticity &amp; Stress</a></li>
+<li><a href="kinematics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">17. Kinematics</a></li>
+<li><a href="damped-oscillations.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">18. Damped Oscillations</a></li>
+<li><a href="lagrangian-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">19. Lagrangian Mechanics</a></li>
+<li><a href="hamiltonian-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">20. Hamiltonian Mechanics</a></li>
+<li><a href="rigid-body-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">21. Rigid Body Motion</a></li>
+<li><a href="non-inertial-frames.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">22. Non-Inertial Frames</a></li>
+</ul>
+  </div>
+  <div class="ad-container" style="min-height:250px;flex-direction:column"><span class="ad-label">Advertisement</span><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div>
+</aside>
+</div>
 </main>
 <div id="footer-placeholder"></div>
 <script src="../../js/components.js"></script>

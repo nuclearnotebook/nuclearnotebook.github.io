@@ -1,347 +1,365 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Conservation of Energy — Classical Mechanics | QuantumAtlas</title>
-  <meta name="description" content="In-depth exploration of energy conservation in classical mechanics — work-energy theorem, kinetic and potential energy, conservative forces, and energy conservation in systems."/>
-  <meta name="keywords" content="conservation of energy, kinetic energy, potential energy, work energy theorem, conservative forces, mechanical energy, energy transformation"/>
+  <meta name="description" content="Complete scientific treatment of conservation of energy — work-energy theorem, kinetic and potential energy, conservative forces, Noether's theorem, and energy in dissipative systems."/>
+  <meta name="keywords" content="conservation of energy, kinetic energy, potential energy, work energy theorem, conservative forces, Noether's theorem, mechanical energy, power, joule, dissipation"/>
   <link rel="canonical" href="https://yourdomain.com/topics/classical-mechanics/conservation-of-energy.html"/>
   <meta property="og:title" content="Conservation of Energy | QuantumAtlas"/>
-  <meta property="og:description" content="In-depth exploration of energy conservation in classical mechanics — work-energy theorem, kinetic and potential energy, conservative forces, and energy conservation in systems."/>
-  <meta property="og:type" content="article"/>
-  <meta property="og:image" content="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=1200&q=75&auto=format"/>
-  <meta name="twitter:card" content="summary_large_image"/>
-  <script type="application/ld+json">{
-    "@context":"https://schema.org","@type":"Article",
-    "headline":"Conservation of Energy",
-    "description":"In-depth exploration of energy conservation in classical mechanics — work-energy theorem, kinetic and potential energy, conservative forces, and energy conservation in systems.",
-    "image":"https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=1200&q=75&auto=format",
-    "author":{"@type":"Organization","name":"QuantumAtlas"},
-    "publisher":{"@type":"Organization","name":"QuantumAtlas","url":"https://yourdomain.com"},
-    "breadcrumb":{"@type":"BreadcrumbList","itemListElement":[
-      {"@type":"ListItem","position":1,"name":"Home","item":"https://yourdomain.com/"},
-      {"@type":"ListItem","position":2,"name":"Branches","item":"https://yourdomain.com/theory.html"},
-      {"@type":"ListItem","position":3,"name":"Classical Mechanics","item":"https://yourdomain.com/branches/classical-mechanics.html"},
-      {"@type":"ListItem","position":4,"name":"Conservation of Energy"}
-    ]}
-  }</script>
-
+  <meta property="og:image" content="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=1200&q=80"/>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Conservation of Energy","author":{"@type":"Organization","name":"QuantumAtlas"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://yourdomain.com/"},{"@type":"ListItem","position":2,"name":"Classical Mechanics","item":"https://yourdomain.com/branches/classical-mechanics.html"},{"@type":"ListItem","position":3,"name":"Conservation of Energy"}]}}</script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-4X0M6RM0F6"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4X0M6RM0F6',{page_title:document.title,page_location:window.location.href});</script>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2633513915753897" crossorigin="anonymous"></script>
   <meta name="google-adsense-account" content="ca-pub-2633513915753897">
-
-  <link rel="stylesheet" href="../../css/global.css"/>
-  <link rel="stylesheet" href="../../css/nav.css"/>
-  <link rel="stylesheet" href="../../css/topic.css"/>
+  <link rel="stylesheet" href="../../css/global.css"/><link rel="stylesheet" href="../../css/nav.css"/><link rel="stylesheet" href="../../css/topic.css"/>
 </head>
 <body>
 <div id="nav-placeholder"></div>
-
 <main>
-  <!-- Hero -->
-  <section class="topic-hero">
-    <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=1200&q=75&auto=format" alt="Energy and power — electrical systems representing energy conservation" class="topic-hero-bg-img" loading="eager"/>
-    <div class="topic-hero-overlay"></div>
-    <div class="container topic-hero-content">
-      <nav class="breadcrumb">
-        <a href="../../index.html">Home</a><span class="sep">›</span>
-        <a href="../../theory.html">Branches</a><span class="sep">›</span>
-        <a href="../../branches/classical-mechanics.html">Classical Mechanics</a><span class="sep">›</span>
-        <span class="current">Conservation of Energy</span>
-      </nav>
-      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px">
-        <span class="badge badge-plasma">Classical Mechanics</span>
-        <span class='badge badge-green'>Interactive Simulation</span>
-        <span class="badge badge-nova">Topic 03</span>
-      </div>
-      <h1 class="topic-hero-title">⚡ Conservation of Energy</h1>
-      <p class="topic-hero-sub">Work, Energy, and the Principle of Conservation</p>
-      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:20px">
-        <span class="tc-tag" style="padding:5px 12px;font-size:0.75rem">Energy</span> <span class="tc-tag" style="padding:5px 12px;font-size:0.75rem">Work</span> <span class="tc-tag" style="padding:5px 12px;font-size:0.75rem">Conservation Laws</span>
-      </div>
+<section class="topic-hero">
+  <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=1400&q=80&auto=format" alt="Hydroelectric dam and energy transformation" class="topic-hero-bg-img" loading="eager"/>
+  <div class="topic-hero-overlay"></div>
+  <div class="container topic-hero-content">
+    <nav class="breadcrumb"><a href="../../index.html">Home</a><span class="sep">›</span><a href="../../branches/classical-mechanics.html">Classical Mechanics</a><span class="sep">›</span><span class="current">Conservation of Energy</span></nav>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px">
+      <span class="badge badge-plasma">Classical Mechanics</span>
+      <span class="badge badge-green">Interactive Simulation</span>
+      <span class="badge badge-nova">Topic 03 / 22</span>
     </div>
-  </section>
+    <h1 class="topic-hero-title">⚡ Conservation of Energy</h1>
+    <p class="topic-hero-sub">Work, Energy, Power — and the Deepest Symmetry in Nature</p>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:20px">
+      <span class="tc-tag" style="padding:5px 14px;font-size:0.78rem">Energy</span>
+      <span class="tc-tag" style="padding:5px 14px;font-size:0.78rem">Work</span>
+      <span class="tc-tag" style="padding:5px 14px;font-size:0.78rem">Conservation Laws</span>
+      <span class="tc-tag" style="padding:5px 14px;font-size:0.78rem">Noether's Theorem</span>
+    </div>
+  </div>
+</section>
 
-  <div class="container topic-layout">
-    <!-- Article -->
-    <article class="topic-article">
-      <!-- AdSense top -->
-      <div class="ad-container" style="margin-bottom:36px">
-        <div style="text-align:center;width:100%">
-          <span class="ad-label">Advertisement</span>
-          <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
-          <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
-        </div>
-      </div>
+<div class="container topic-layout">
+<article class="topic-article">
+<div class="ad-container"><div style="text-align:center;width:100%"><span class="ad-label">Advertisement</span><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div>
 
-      
-      <h2 id="simulation">Interactive Simulation</h2>
-      
+<h2 id="simulation" style="margin-top:0;border-top:none;padding-top:0">Energy Conservation — Roller Coaster Simulation</h2>
 <div class="simulation-wrapper">
   <div class="simulation-toolbar">
-    <span class="simulation-title">⚡ Energy Skate Park Simulator</span>
-    <div class="sim-control">
-      <label>Mass (kg)</label>
-      <input type="range" id="ep-mass" min="1" max="20" value="5" step="1"/>
-      <span id="ep-mass-val">5 kg</span>
-    </div>
-    <div class="sim-control">
-      <label>Height (m)</label>
-      <input type="range" id="ep-height" min="1" max="20" value="10" step="1"/>
-      <span id="ep-height-val">10 m</span>
-    </div>
-    <button id="ep-start" class="btn btn-primary" style="padding:7px 18px;font-size:0.78rem">Drop</button>
-    <button id="ep-reset" class="btn btn-outline"  style="padding:7px 14px;font-size:0.78rem">Reset</button>
+    <span class="simulation-title">⚡ Energy Conservation on a Curved Track</span>
+    <div class="sim-control"><label>Mass (kg)</label><input type="range" id="ce-mass" min="1" max="20" value="5" step="1"/><span id="ce-mv">5 kg</span></div>
+    <div class="sim-control"><label>Release Height (m)</label><input type="range" id="ce-h" min="2" max="25" value="12" step="1"/><span id="ce-hv">12 m</span></div>
+    <div class="sim-control"><label>Friction μ</label><input type="range" id="ce-mu" min="0" max="0.4" value="0" step="0.02"/><span id="ce-muv">0.00</span></div>
+    <button id="ce-start" class="btn btn-primary" style="padding:7px 18px;font-size:0.78rem">Drop</button>
+    <button id="ce-reset" class="btn btn-outline" style="padding:7px 14px;font-size:0.78rem">Reset</button>
   </div>
-  <div class="sim-canvas-wrap"><canvas id="ep-canvas" height="340"></canvas></div>
-  <div style="padding:14px 20px;display:flex;gap:28px;flex-wrap:wrap;font-family:var(--font-mono);font-size:0.78rem;color:var(--text-muted);background:rgba(0,0,0,0.2);border-top:1px solid var(--border-dim)">
-    <span>KE: <strong id="ep-ke" style="color:var(--accent-plasma)">0 J</strong></span>
-    <span>PE: <strong id="ep-pe" style="color:var(--accent-nova)">0 J</strong></span>
-    <span>Total E: <strong id="ep-te" style="color:var(--accent-gold)">0 J</strong></span>
-    <span>Speed: <strong id="ep-v"  style="color:var(--accent-green)">0 m/s</strong></span>
+  <div class="sim-canvas-wrap"><canvas id="ce-canvas" height="370"></canvas></div>
+  <div style="padding:12px 20px;display:flex;gap:24px;flex-wrap:wrap;font-family:var(--font-mono);font-size:0.78rem;color:var(--text-muted);background:rgba(0,0,0,0.25);border-top:1px solid var(--border-dim)">
+    <span>KE: <strong id="ce-ke" style="color:var(--accent-plasma)">0 J</strong></span>
+    <span>PE: <strong id="ce-pe" style="color:#a078ff">0 J</strong></span>
+    <span>Total E: <strong id="ce-te" style="color:var(--accent-gold)">0 J</strong></span>
+    <span>Heat lost: <strong id="ce-heat" style="color:var(--accent-solar)">0 J</strong></span>
+    <span>Speed: <strong id="ce-spd" style="color:var(--accent-green)">0 m/s</strong></span>
   </div>
 </div>
 <script>
 (function(){
-  const canvas = document.getElementById('ep-canvas');
-  const ctx    = canvas.getContext('2d');
-  const massSl = document.getElementById('ep-mass');
-  const hSl    = document.getElementById('ep-height');
-  const massV  = document.getElementById('ep-mass-val');
-  const hV     = document.getElementById('ep-height-val');
-  let raf=null, y=0, vy=0, running=false;
+  const cv=document.getElementById('ce-canvas'),cx=cv.getContext('2d');
+  const mSl=document.getElementById('ce-mass'),hSl=document.getElementById('ce-h'),muSl=document.getElementById('ce-mu');
+  mSl.oninput=()=>document.getElementById('ce-mv').textContent=mSl.value+' kg';
+  hSl.oninput=()=>document.getElementById('ce-hv').textContent=hSl.value+' m';
+  muSl.oninput=()=>document.getElementById('ce-muv').textContent=parseFloat(muSl.value).toFixed(2);
+  let raf=null,running=false,cy_ball=0,vel=0,heatLost=0;
   const g=9.81;
-  function W(){ return canvas.width = canvas.offsetWidth||600; }
-  function H(){ return canvas.height=340; }
-  W(); H();
-  window.addEventListener('resize',()=>{W();draw();});
-  massSl.oninput=()=>massV.textContent=massSl.value+' kg';
-  hSl.oninput=()=>hV.textContent=hSl.value+' m';
-  const m=()=>parseFloat(massSl.value);
-  const h0=()=>parseFloat(hSl.value);
-  function updateInfo(y,vy){
-    const m2=m(), h=h0(), scale=(canvas.height-80)/h;
-    const curH = Math.max(0, h - y/scale);
-    const pe=m2*g*curH, ke=0.5*m2*vy*vy, te=m2*g*h;
-    document.getElementById('ep-ke').textContent=(ke).toFixed(1)+' J';
-    document.getElementById('ep-pe').textContent=(pe).toFixed(1)+' J';
-    document.getElementById('ep-te').textContent=(te).toFixed(1)+' J';
-    document.getElementById('ep-v' ).textContent=Math.abs(vy).toFixed(2)+' m/s';
+  function W(){cv.width=cv.offsetWidth||800;}W();window.addEventListener('resize',()=>{W();if(!running)draw(0,0,0);});
+  // Track: a curved slope defined by y(x) - cosine hill shape
+  function trackY(xNorm,H){
+    // xNorm in [0,1], creates a ramp then bump then flat
+    if(xNorm<0.3)return H*(1-xNorm/0.3);
+    if(xNorm<0.55)return H*0*(0.5+0.5*Math.cos(Math.PI*(xNorm-0.3)/0.25));
+    return 0;
   }
-  function draw(){
-    const W2=canvas.width, H2=canvas.height, m2=m(), h=h0();
-    const scale=(H2-80)/h;
-    ctx.clearRect(0,0,W2,H2);
-    // Sky gradient
-    const grad=ctx.createLinearGradient(0,0,0,H2);
-    grad.addColorStop(0,'#050810'); grad.addColorStop(1,'#0d1530');
-    ctx.fillStyle=grad; ctx.fillRect(0,0,W2,H2);
-    // Ground
-    ctx.fillStyle='rgba(0,212,255,0.15)'; ctx.fillRect(0,H2-50,W2,50);
-    ctx.strokeStyle='rgba(0,212,255,0.4)'; ctx.lineWidth=2;
-    ctx.beginPath(); ctx.moveTo(0,H2-50); ctx.lineTo(W2,H2-50); ctx.stroke();
-    // Height reference line
-    const topY=40;
-    ctx.setLineDash([6,6]); ctx.strokeStyle='rgba(123,47,255,0.3)'; ctx.lineWidth=1;
-    ctx.beginPath(); ctx.moveTo(80,topY); ctx.lineTo(W2-80,topY); ctx.stroke();
-    ctx.setLineDash([]);
-    ctx.fillStyle='rgba(123,47,255,0.5)'; ctx.font='11px JetBrains Mono, monospace';
-    ctx.fillText(`h = ${h} m`, W2-120, topY-6);
-    // Energy bars
-    const barX=W2-70, barMaxH=H2-100, barW=20;
-    const te=m2*g*h;
-    const curH2=Math.max(0, h-(y/scale||0));
-    const pe=m2*g*curH2; const ke=te-pe;
+  function draw(ballX,ballY_m,spd){
+    const W2=cv.width,H2=370,m=parseFloat(mSl.value),h0=parseFloat(hSl.value),mu=parseFloat(muSl.value);
+    const totalE=m*g*h0;
+    const groundY=H2-60;const trackH=groundY-50;const scale=trackH/Math.max(h0,1);
+    cx.clearRect(0,0,W2,H2);
+    const bg=cx.createLinearGradient(0,0,0,H2);bg.addColorStop(0,'#050810');bg.addColorStop(1,'#0a0e22');
+    cx.fillStyle=bg;cx.fillRect(0,0,W2,H2);
+    // Draw track
+    cx.beginPath();cx.strokeStyle='rgba(0,212,255,0.4)';cx.lineWidth=3;
+    for(let i=0;i<=100;i++){
+      const xN=i/100;const px=60+xN*(W2-100);const py=groundY-trackY(xN,h0)*scale;
+      i===0?cx.moveTo(px,py):cx.lineTo(px,py);
+    }
+    cx.stroke();
+    // Ground fill
+    cx.fillStyle='rgba(0,212,255,0.05)';cx.beginPath();
+    for(let i=0;i<=100;i++){const xN=i/100;const px=60+xN*(W2-100);const py=groundY-trackY(xN,h0)*scale;i===0?cx.moveTo(px,py):cx.lineTo(px,py);}
+    cx.lineTo(W2-40,groundY);cx.lineTo(60,groundY);cx.closePath();cx.fill();
+    // Energy bars (on right)
+    const barX=W2-70,barMaxH=H2-120,barW=22;
+    const pe=m*g*Math.max(ballY_m,0);const ke=Math.max(0,totalE-heatLost-pe);
+    const heat=heatLost;
+    cx.fillStyle='rgba(0,0,0,0.3)';cx.fillRect(barX-5,50,barW+10,barMaxH);
     // PE bar
-    ctx.fillStyle='rgba(123,47,255,0.2)'; ctx.fillRect(barX-5,40,barW,barMaxH);
-    const peH=(pe/te)*barMaxH;
-    ctx.fillStyle='rgba(123,47,255,0.7)'; ctx.fillRect(barX-5,40+barMaxH-peH,barW,peH);
-    ctx.fillStyle='rgba(123,47,255,0.9)'; ctx.font='9px JetBrains Mono,monospace';
-    ctx.fillText('PE',barX-3,35);
+    cx.fillStyle='rgba(123,47,255,0.7)';const peH=(pe/totalE)*barMaxH;cx.fillRect(barX-3,50+barMaxH-peH,barW,peH);
     // KE bar
-    const bx2=barX+barW+4;
-    ctx.fillStyle='rgba(0,212,255,0.15)'; ctx.fillRect(bx2,40,barW,barMaxH);
-    const keH=(ke/te)*barMaxH;
-    ctx.fillStyle='rgba(0,212,255,0.7)'; ctx.fillRect(bx2,40+barMaxH-keH,barW,keH);
-    ctx.fillStyle='rgba(0,212,255,0.9)'; ctx.fillText('KE',bx2+2,35);
+    cx.fillStyle='rgba(0,212,255,0.7)';const keH=(ke/totalE)*barMaxH;cx.fillRect(barX-3+barW+4,50+barMaxH-keH,barW,keH);
+    // Heat bar
+    if(heat>0){cx.fillStyle='rgba(255,107,26,0.7)';const heatH=(heat/totalE)*barMaxH;cx.fillRect(barX-3+2*(barW+4),50+barMaxH-heatH,barW,heatH);}
+    cx.fillStyle='rgba(0,212,255,0.6)';cx.font='9px JetBrains Mono,monospace';cx.textAlign='center';
+    cx.fillText('PE',barX-3+barW/2,46);cx.fillText('KE',barX-3+barW+4+barW/2,46);if(heat>0)cx.fillText('Q',barX-3+2*(barW+4)+barW/2,46);cx.textAlign='left';
     // Ball
-    const ballX=W2/2-60;
-    const ballY=topY + (y||0);
-    ctx.beginPath(); ctx.arc(ballX,ballY,14,0,Math.PI*2);
-    ctx.fillStyle='#ff6b1a'; ctx.shadowColor='#ff6b1a'; ctx.shadowBlur=16; ctx.fill(); ctx.shadowBlur=0;
+    const trackXNorm=ballX;const bpx=60+trackXNorm*(W2-100);const bpy=groundY-ballY_m*scale-10;
+    cx.beginPath();cx.arc(bpx,bpy,11,0,Math.PI*2);cx.fillStyle='#ff6b1a';cx.shadowColor='#ff6b1a';cx.shadowBlur=14;cx.fill();cx.shadowBlur=0;
+    // Speed label
+    if(spd>0.1){cx.fillStyle='rgba(0,255,136,0.8)';cx.font='bold 11px JetBrains Mono,monospace';cx.fillText('v='+spd.toFixed(1)+' m/s',bpx+14,bpy);}
+    // Height indicator
+    if(ballY_m>0.2){cx.setLineDash([3,4]);cx.strokeStyle='rgba(123,47,255,0.3)';cx.lineWidth=1;cx.beginPath();cx.moveTo(bpx,bpy+11);cx.lineTo(bpx,groundY);cx.stroke();cx.setLineDash([]);
+    cx.fillStyle='rgba(123,47,255,0.6)';cx.font='9px JetBrains Mono,monospace';cx.fillText('h='+ballY_m.toFixed(1)+'m',bpx+6,bpy+(groundY-bpy)/2);}
+    document.getElementById('ce-ke').textContent=ke.toFixed(1)+' J';
+    document.getElementById('ce-pe').textContent=pe.toFixed(1)+' J';
+    document.getElementById('ce-te').textContent=(ke+pe+heatLost).toFixed(1)+' J';
+    document.getElementById('ce-heat').textContent=heatLost.toFixed(1)+' J';
+    document.getElementById('ce-spd').textContent=spd.toFixed(2)+' m/s';
   }
   function start(){
-    if(running)return;
-    running=true; y=0; vy=0;
-    const h=h0(), scale=(canvas.height-80)/h;
-    const maxY=h*scale;
+    if(running)return;running=true;
+    const m=parseFloat(mSl.value),h0=parseFloat(hSl.value),mu=parseFloat(muSl.value);
+    let xNorm=0,curH=h0,speed=0;heatLost=0;
     let last=null;
     function step(ts){
-      if(!last)last=ts;
-      const dt=Math.min((ts-last)/1000,0.03); last=ts;
-      vy+=g*dt; y+=vy*dt*scale;
-      if(y>=maxY){y=maxY;vy=-vy*0.7;}
-      updateInfo(y,vy); draw();
-      if(running && Math.abs(vy)>0.1) raf=requestAnimationFrame(step);
-      else running=false;
+      if(!last)last=ts;const dt=Math.min((ts-last)/1000,0.025);last=ts;
+      // Track slope at xNorm
+      const dx=0.005;const y1=trackY(xNorm,h0),y2=trackY(Math.min(xNorm+dx,1),h0);
+      const slope=(y2-y1)/dx;const sinA=slope/Math.sqrt(1+slope*slope);const cosA=1/Math.sqrt(1+slope*slope);
+      const N=m*g*cosA;const fr=mu*N;
+      const a=g*sinA-fr/m*Math.sign(speed||1);
+      speed+=a*dt;if(speed<0)speed=0;
+      xNorm+=speed*dt/(cv.width-100)*80;
+      const rawH=trackY(Math.min(xNorm,1),h0);
+      const dh=curH-rawH;if(dh<0)heatLost+=Math.abs(dh)*m*g*0;
+      heatLost+=fr*speed*dt;curH=rawH;
+      draw(Math.min(xNorm,1),curH,speed);
+      if(xNorm<1&&running)raf=requestAnimationFrame(step);else running=false;
     }
     raf=requestAnimationFrame(step);
   }
-  function reset(){ cancelAnimationFrame(raf); running=false; y=0; vy=0; draw(); updateInfo(0,0); }
-  document.getElementById('ep-start').onclick=start;
-  document.getElementById('ep-reset').onclick=reset;
-  draw(); updateInfo(0,0);
+  function reset(){cancelAnimationFrame(raf);running=false;heatLost=0;draw(0,parseFloat(hSl.value),0);}
+  document.getElementById('ce-start').onclick=start;document.getElementById('ce-reset').onclick=reset;
+  draw(0,parseFloat(hSl.value),0);
 })();
 </script>
 
+<div class="topic-body">
 
+<figure style="margin:32px 0">
+  <img src="https://images.unsplash.com/photo-1581093577421-f561a654a353?w=1000&q=80&auto=format" alt="Waterfall representing conversion of potential to kinetic energy" class="img-frame"/>
+  <figcaption>Niagara Falls: water at the crest possesses enormous gravitational potential energy (U = mgh). As it falls ~57 metres, this is converted almost entirely to kinetic energy (KE = ½mv²) — reaching terminal approach speeds near 25 m/s before impact. The roaring sound and spray represent the subsequent conversion to thermal energy and wave energy. Total energy is conserved at every step.</figcaption>
+</figure>
 
-      <div class="topic-body">
-        
-<p>The conservation of energy is one of the most fundamental and far-reaching principles in all of science. In classical mechanics, it states that the total mechanical energy of an isolated system — the sum of kinetic and potential energy — remains constant in time. This is not merely a convenience; it reflects a deep symmetry of nature known as <em>time-translation symmetry</em> (Noether's theorem), and it holds across every domain of physics from the quantum scale to cosmology.</p>
+<h2>Why Energy Conservation Is One of the Deepest Laws in Physics</h2>
+<p>The conservation of energy is not merely a useful calculational tool — it reflects one of the deepest mathematical symmetries in the universe. In 1915, the German mathematician Emmy Noether proved her extraordinary theorem: every continuous symmetry of a physical system corresponds to a conserved quantity. Time-translation symmetry — the fact that the laws of physics are the same today as yesterday and tomorrow — <em>directly implies</em> the conservation of energy. As long as physics does not change over time, energy is exactly conserved. This is not an approximation or empirical regularity — it is a mathematical certainty following from the structure of natural law itself.</p>
 
-<h2>Work and the Work-Energy Theorem</h2>
-<p>The concept of energy in mechanics begins with the concept of <strong>work</strong>. The work done by a force on an object is defined as the force component along the direction of displacement, multiplied by the displacement magnitude:</p>
+<p>Energy conservation holds across every domain of physics: classical mechanics, electromagnetism, quantum mechanics, relativity, nuclear physics, and cosmology. Even in processes where mechanical energy appears to be "lost" (friction, sound, heat), the total energy including all microscopic forms is rigorously conserved. The concept of energy and its conservation is arguably the single most unifying principle in all of science.</p>
+
+<h2>Work — The Transfer of Energy by a Force</h2>
+<p>Mechanical energy is transferred to a system when a force acts through a displacement. This transfer is called <strong>work</strong>. For a constant force F acting over displacement d at angle θ between them:</p>
 
 <div class="formula-block">
-  <span class="formula-label">Work Done by a Force</span>
-  W = F⃗ · d⃗ = Fd cos θ
+  <span class="formula-label">Work by a Constant Force</span>
+  W = F⃗ · d⃗ = Fd cos θ &nbsp;&nbsp;&nbsp; [J = N·m = kg·m²/s²]
 </div>
 
-<p>Where θ is the angle between the force vector and the displacement vector. If θ = 0° (force parallel to motion), W = Fd, the maximum work. If θ = 90° (force perpendicular to motion, as in circular motion), W = 0. If θ = 180° (force opposing motion), W = −Fd, negative work.</p>
+<p>The dot product captures the essential physics: only the component of force <em>along</em> the direction of motion does work. A force perpendicular to motion (like the normal force from a surface, or the tension in circular motion) does zero work — it changes direction but not speed. Work is a scalar quantity — it has magnitude and sign but no direction.</p>
 
-<p>The work-energy theorem connects work to the change in kinetic energy:</p>
+<p>For a variable force (force that changes with position), work is computed by integration:</p>
+
+<div class="formula-block">
+  <span class="formula-label">Work by a Variable Force</span>
+  W = ∫<sub>x₁</sub><sup>x₂</sup> F(x) dx &nbsp;&nbsp;&nbsp; (1D) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; W = ∫ F⃗·dr⃗ &nbsp;&nbsp;&nbsp; (general path)
+</div>
+
+<p>This general form is essential for springs (F = −kx, W = ½kx²), gravitational fields, and electromagnetic forces. The work done by a spring in compressing it from 0 to x is the area under the F vs x graph: W = ½kx².</p>
+
+<h2>The Work-Energy Theorem</h2>
+<p>The Work-Energy Theorem is the mathematical bridge between Newton's second law (forces) and energy (scalars). It states that the net work done on an object equals its change in kinetic energy:</p>
 
 <div class="formula-block">
   <span class="formula-label">Work-Energy Theorem</span>
   W<sub>net</sub> = ΔKE = ½mv<sub>f</sub>² − ½mv<sub>i</sub>²
 </div>
 
-<h2>Kinetic Energy</h2>
-<p>Kinetic energy (KE) is the energy an object possesses due to its motion. For a particle of mass m moving at speed v:</p>
+<p>Derivation: From Newton's second law, F<sub>net</sub> = ma. Multiply both sides by dx = v dt: F<sub>net</sub>·v·dt = ma·v·dt. Integrate: ∫F·dx = ∫m·v·dv = ½mv₂² − ½mv₁². This derivation requires no assumptions about the nature of the forces — it applies universally to any combination of forces, conservative or not.</p>
 
+<figure style="margin:32px 0">
+  <img src="https://images.unsplash.com/photo-1492552181161-62217fc3076d?w=900&q=80&auto=format" alt="Roller coaster demonstrating energy conversion between kinetic and potential" class="img-frame"/>
+  <figcaption>A roller coaster is a mechanical energy converter. At the top of each rise, kinetic energy is converted to gravitational potential energy; at each descent, PE converts back to KE. In a frictionless ideal coaster, the car's speed at any point depends only on its height relative to the starting point — mass is irrelevant. Real coasters lose ~10-20% of mechanical energy to friction and aerodynamic drag.</figcaption>
+</figure>
+
+<h2>Kinetic Energy</h2>
 <div class="formula-block">
   <span class="formula-label">Kinetic Energy</span>
-  KE = ½mv²
+  KE = ½mv² &nbsp;&nbsp;&nbsp; [J = kg·m²/s²]
 </div>
 
-<p>Kinetic energy is always non-negative and is measured in Joules (J = kg·m²/s²). It is proportional to the square of speed — doubling the speed quadruples the kinetic energy. This is why high-speed collisions are so much more destructive than low-speed ones.</p>
+<p>Kinetic energy is always ≥ 0 (since v² ≥ 0 and m > 0). It is proportional to the <em>square</em> of speed — one of the most important facts in all of mechanics. Doubling speed quadruples kinetic energy. This is why high-speed collisions are so disproportionately destructive: a car at 100 km/h has four times the kinetic energy of the same car at 50 km/h, not twice. Braking distance scales as v², not v — a car travelling at 100 km/h needs approximately four times the stopping distance of one at 50 km/h.</p>
 
-<h2>Potential Energy</h2>
-<p>Potential energy (PE) is stored energy associated with the configuration of a system. The most important forms in classical mechanics are:</p>
-<ul style="margin:0 0 20px 20px;color:var(--text-secondary)">
-  <li style="margin-bottom:12px"><strong>Gravitational PE:</strong> U<sub>g</sub> = mgh (near Earth's surface, h measured from reference level)</li>
-  <li style="margin-bottom:12px"><strong>Elastic PE:</strong> U<sub>e</sub> = ½kx² (spring compressed or stretched by x from equilibrium)</li>
-  <li style="margin-bottom:12px"><strong>Gravitational PE (general):</strong> U<sub>g</sub> = −GMm/r (between masses M and m separated by distance r)</li>
-</ul>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Object</th><th>Mass</th><th>Speed</th><th>Kinetic Energy</th></tr></thead>
+<tbody>
+<tr><td>Walking person</td><td>70 kg</td><td>1.4 m/s (5 km/h)</td><td>68.6 J</td></tr>
+<tr><td>Sprinting athlete</td><td>70 kg</td><td>10 m/s (36 km/h)</td><td>3,500 J</td></tr>
+<tr><td>Car at motorway speed</td><td>1500 kg</td><td>30 m/s (108 km/h)</td><td>675,000 J (675 kJ)</td></tr>
+<tr><td>Boeing 747 at cruise</td><td>300,000 kg</td><td>250 m/s (900 km/h)</td><td>9.4 × 10⁹ J (9.4 GJ)</td></tr>
+<tr><td>1 kg rifle bullet</td><td>0.010 kg</td><td>900 m/s</td><td>4,050 J</td></tr>
+<tr><td>Moon in orbit</td><td>7.35×10²² kg</td><td>1022 m/s</td><td>3.8 × 10²⁸ J</td></tr>
+</tbody>
+</table>
+</div>
 
-<h2>Conservative vs. Non-Conservative Forces</h2>
-<p>A force is <strong>conservative</strong> if the work it does on a particle is independent of the path taken — it depends only on the initial and final positions. Gravity and spring forces are conservative. For such forces, we can define a potential energy function U such that F = −dU/dx.</p>
-<p>A force is <strong>non-conservative</strong> if the work done depends on the path. Friction and air drag are non-conservative; they always do negative work, converting mechanical energy to thermal energy.</p>
+<h2>Gravitational Potential Energy</h2>
+<p>Near Earth's surface (uniform g approximation), the gravitational potential energy of mass m at height h above a reference level is:</p>
 
 <div class="formula-block">
-  <span class="formula-label">Conservation of Mechanical Energy (conservative forces only)</span>
-  KE + PE = constant<br/>
+  <span class="formula-label">Gravitational PE (near surface)</span>
+  U<sub>g</sub> = mgh &nbsp;&nbsp;&nbsp; [h measured from reference level]
+</div>
+
+<p>The reference level is arbitrary — only <em>changes</em> in PE are physically meaningful. This is analogous to measuring heights above sea level, ground floor, or any convenient datum. The general form (valid for any separation r from Earth's centre) is:</p>
+
+<div class="formula-block">
+  <span class="formula-label">Gravitational PE (general)</span>
+  U<sub>g</sub> = −GMm/r &nbsp;&nbsp;&nbsp; [U → 0 as r → ∞]
+</div>
+
+<p>The negative sign reflects that work must be done against gravity to separate masses — bringing them together releases potential energy (converting it to kinetic energy of collapse or radiation in extreme cases).</p>
+
+<h2>Elastic Potential Energy</h2>
+<p>A spring compressed or stretched by displacement x from its equilibrium length stores elastic potential energy:</p>
+
+<div class="formula-block">
+  <span class="formula-label">Elastic PE (Hooke's Law spring)</span>
+  U<sub>e</sub> = ½kx² &nbsp;&nbsp;&nbsp; [k = spring constant in N/m]
+</div>
+
+<p>This derivation follows from integrating the spring force: W = ∫₀ˣ F dx = ∫₀ˣ kx dx = ½kx². The elastic PE is always positive (always requires energy to stretch or compress) and is quadratic in x — doubling the compression quadruples the stored energy. This relationship appears throughout physics: in molecular bonds, in electromagnetic fields stored in capacitors (U = ½CV²), and in inductors (U = ½LI²).</p>
+
+<h2>Conservative vs Non-Conservative Forces</h2>
+<p>A force is <strong>conservative</strong> if the work it does is path-independent — it depends only on the initial and final positions, not the route taken. For a conservative force, the work done around any closed path is zero: ∮F⃗·dr⃗ = 0. This is equivalent to saying ∇×F⃗ = 0 (curl-free force field). Conservative forces can always be associated with a potential energy function: F⃗ = −∇U. Gravity and spring forces are conservative.</p>
+
+<p>A force is <strong>non-conservative</strong> (dissipative) if the work done depends on the path. Friction and air drag are non-conservative — they always do negative work, irreversibly converting mechanical energy to thermal energy. For a system subject to both conservative and non-conservative forces:</p>
+
+<div class="formula-block">
+  <span class="formula-label">Energy Equation with Dissipation</span>
+  ΔKE + ΔPE = W<sub>non-conservative</sub> = −E<sub>dissipated</sub>
+</div>
+
+<h2>Mechanical Energy Conservation</h2>
+<p>When only conservative forces act, the total mechanical energy E = KE + PE is conserved:</p>
+
+<div class="formula-block">
+  <span class="formula-label">Conservation of Mechanical Energy</span>
+  KE₁ + PE₁ = KE₂ + PE₂ = E = constant<br/>
   ½mv₁² + U₁ = ½mv₂² + U₂
 </div>
 
-<h2>Energy Transformation</h2>
-<p>When an object falls under gravity, its potential energy is continuously converted to kinetic energy. At the bottom of the fall (just before impact), all the original potential energy has been converted to kinetic energy (ignoring air resistance):</p>
+<p>This is extraordinarily powerful. To find the speed of an object at any point along a path, we simply equate total mechanical energy at two points — without needing to know the shape of the path or the forces at every intermediate point. A roller coaster car, a pendulum bob, a ball rolling down a ramp — all are solved instantly with energy conservation.</p>
 
-<div class="formula-block">
-  <span class="formula-label">Free Fall Energy</span>
-  mgh = ½mv² &nbsp;⟹&nbsp; v = √(2gh)
+<div class="info-box info-box--note">
+  <div class="info-box-title" style="color:var(--accent-plasma)">💡 The Speed of a Falling Object</div>
+  <p style="margin:0">Setting KE<sub>top</sub> + PE<sub>top</sub> = KE<sub>bottom</sub> + PE<sub>bottom</sub> for an object falling from height h from rest: 0 + mgh = ½mv² + 0 → v = √(2gh). This result is <strong>independent of mass</strong> — exactly as Galileo demonstrated experimentally. The mass cancels completely. It also reveals why all objects fall at the same speed in vacuum.</p>
 </div>
 
-<p>This shows that the final speed of a falling object depends only on the height fallen, not on the mass — exactly as Galileo famously demonstrated. It also means that a ball released from height h and a ball that slides frictionlessly down a curved ramp of height h both arrive at the bottom with the same speed.</p>
-
-<h2>Power</h2>
-<p>Power is the rate of doing work — how fast energy is transferred:</p>
-
+<h2>Power — The Rate of Energy Transfer</h2>
 <div class="formula-block">
   <span class="formula-label">Power</span>
-  P = dW/dt = F⃗ · v⃗ = Fv cos θ
+  P = dW/dt = F⃗·v⃗ = Fv cosθ &nbsp;&nbsp;&nbsp; [W = J/s = kg·m²/s³]
 </div>
 
-<p>The SI unit of power is the Watt (W = J/s). A 1 kW motor lifting a 100 kg object can raise it at 100/9.81 ≈ 10.2 kg·m/s, or about 1 m/s. The older unit of horsepower (1 hp ≈ 746 W) is still used for engines.</p>
+<p>Power is the instantaneous rate of doing work or transferring energy. One Watt is one Joule per second. The horsepower (obsolete but still used for engines) equals 745.7 W — a rather unimpressive unit by modern standards. Key power values for context:</p>
 
-<h2>Non-Conservative Systems and Heat</h2>
-<p>When friction acts, mechanical energy is not conserved — it is converted to thermal energy (heat). The total energy of the universe is still conserved, but the mechanical energy decreases. For a system with friction:</p>
-
-<div class="formula-block">
-  <span class="formula-label">With Friction</span>
-  ΔKE + ΔPE = −W<sub>friction</sub>
+<div class="table-wrap">
+<table>
+<thead><tr><th>System</th><th>Power Output</th></tr></thead>
+<tbody>
+<tr><td>Human at rest (basal metabolic rate)</td><td>~80 W</td></tr>
+<tr><td>Elite cyclist (sustained effort)</td><td>300–450 W</td></tr>
+<tr><td>Family car engine</td><td>75–150 kW</td></tr>
+<tr><td>UK Sizewell B nuclear reactor</td><td>1.2 GW</td></tr>
+<tr><td>Solar energy striking Earth's surface</td><td>1.7 × 10¹⁷ W</td></tr>
+<tr><td>Sun's total luminosity</td><td>3.83 × 10²⁶ W</td></tr>
+</tbody>
+</table>
 </div>
 
-<p>where W<sub>friction</sub> is the work done by friction (a positive number, since friction always removes mechanical energy). The "lost" energy heats the surfaces in contact — a tire skidding on a road heats both the tire and the road.</p>
+<h2>Energy in the Universe — The Bigger Picture</h2>
+<p>The law of energy conservation applies at every scale — and reveals profound truths about the universe. In cosmology, the total energy of the universe (kinetic energy of expansion + gravitational potential energy + rest mass energy of matter + dark energy) may be exactly zero — the universe as a "free lunch" from quantum fluctuations. In nuclear physics, the binding energy of nuclei (from E = mc²) is released in fission and fusion. In particle physics, every collision and decay conserves total relativistic energy.</p>
 
-<div class="info-box info-box--tip">
-  <div class="info-box-title" style="color:var(--accent-green)">🎓 Noether's Theorem</div>
-  <p style="margin:0">The deep reason that energy is conserved is that the laws of physics do not change with time — they are the same today as yesterday and tomorrow. This time-translation symmetry, via Emmy Noether's theorem (1915), guarantees the existence of a conserved quantity we call energy. Every symmetry in nature corresponds to a conservation law.</p>
+<div class="info-box info-box--fact">
+  <div class="info-box-title" style="color:#a078ff">🎓 Noether's Theorem — The Deep Reason</div>
+  <p style="margin:0">Emmy Noether's theorem (1915) reveals why energy is conserved: because the laws of physics are the same at all times (time-translation symmetry). If the laws changed from Monday to Tuesday, energy would not be conserved between Monday and Tuesday. The conservation of momentum arises from spatial symmetry (laws are the same everywhere). Conservation of angular momentum arises from rotational symmetry. These are not separate empirical discoveries — they are facets of a single deep mathematical truth about the symmetry of natural law.</p>
 </div>
 
-      </div>
+</div>
 
-      <!-- AdSense bottom -->
-      <div class="ad-container" style="margin-top:40px">
-        <div style="text-align:center;width:100%">
-          <span class="ad-label">Advertisement</span>
-          <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
-          <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
-        </div>
-      </div>
-    </article>
+<div class="ad-container"><div style="text-align:center;width:100%"><span class="ad-label">Advertisement</span><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div>
 
-    <!-- Sidebar -->
-    <aside class="topic-sidebar">
-      <div class="sidebar-card">
-        <h4 style="font-family:var(--font-mono);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent-plasma);margin-bottom:14px">// Topic Info</h4>
-        <div class="sidebar-stat"><span>Branch</span><span>Classical Mechanics</span></div>
-        <div class="sidebar-stat"><span>Topic</span><span>03 / 22</span></div>
-        <div class="sidebar-stat"><span>Level</span><span>Advanced</span></div>
-        <div class="sidebar-stat"><span>Simulation</span><span>Yes ✓</span></div>
-      </div>
+<div style="display:flex;justify-content:space-between;margin-top:40px;gap:16px;flex-wrap:wrap">
+  <a href="projectile-motion.html" class="btn btn-outline">← Projectile Motion</a>
+  <a href="linear-momentum.html" class="btn btn-primary">Next: Linear Momentum →</a>
+</div>
+</article>
 
-      <div class="sidebar-card">
-        <h4 style="font-family:var(--font-mono);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent-plasma);margin-bottom:14px">// All Topics</h4>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:6px">
-          <li><a href="newtons-laws.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none" class="">01. Newton's Laws</a></li>
-          <li><a href="projectile-motion.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">02. Projectile Motion</a></li>
-          <li><a href="conservation-of-energy.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">03. Conservation of Energy</a></li>
-          <li><a href="linear-momentum.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">04. Linear Momentum</a></li>
-          <li><a href="circular-motion.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">05. Circular Motion</a></li>
-          <li><a href="gravitational-force.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">06. Gravitational Force</a></li>
-          <li><a href="simple-harmonic-motion.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">07. Simple Harmonic Motion</a></li>
-          <li><a href="rotational-dynamics.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">08. Rotational Dynamics</a></li>
-          <li><a href="work-and-power.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">09. Work & Power</a></li>
-          <li><a href="friction-and-drag.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">10. Friction & Drag</a></li>
-          <li><a href="keplers-laws.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">11. Kepler's Laws</a></li>
-          <li><a href="waves-and-oscillations.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">12. Waves & Oscillations</a></li>
-          <li><a href="centre-of-mass.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">13. Centre of Mass</a></li>
-          <li><a href="statics-and-equilibrium.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">14. Statics & Equilibrium</a></li>
-          <li><a href="fluid-mechanics.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">15. Fluid Mechanics</a></li>
-          <li><a href="elasticity-and-stress.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">16. Elasticity & Stress</a></li>
-          <li><a href="kinematics.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">17. Kinematics</a></li>
-          <li><a href="damped-oscillations.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">18. Damped Oscillations</a></li>
-          <li><a href="lagrangian-mechanics.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">19. Lagrangian Mechanics</a></li>
-          <li><a href="hamiltonian-mechanics.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">20. Hamiltonian Mechanics</a></li>
-          <li><a href="rigid-body-motion.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">21. Rigid Body Motion</a></li>
-          <li><a href="non-inertial-frames.html" style="font-size:0.82rem;color:var(--text-muted);text-decoration:none">22. Non-Inertial Frames</a></li>
-        </ul>
-      </div>
-
-      <!-- Sidebar AdSense -->
-      <div class="ad-container" style="min-height:250px;flex-direction:column">
-        <span class="ad-label">Advertisement</span>
-        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
-        <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
-      </div>
-    </aside>
+<aside class="topic-sidebar">
+  <div class="sidebar-card">
+    <h4 style="font-family:var(--font-mono);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent-plasma);margin-bottom:14px">// Key Equations</h4>
+    <div class="formula-block" style="margin:0 0 8px;font-size:0.82rem">KE = ½mv²</div>
+    <div class="formula-block" style="margin:0 0 8px;font-size:0.82rem">PE = mgh</div>
+    <div class="formula-block" style="margin:0 0 8px;font-size:0.82rem">W = F·d·cosθ</div>
+    <div class="formula-block" style="margin:0 0 8px;font-size:0.82rem">KE₁+PE₁ = KE₂+PE₂</div>
+    <div class="formula-block" style="margin:0;font-size:0.82rem">P = F·v</div>
   </div>
+  <div class="sidebar-card">
+    <h4 style="font-family:var(--font-mono);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent-plasma);margin-bottom:14px">// Topic Info</h4>
+    <div class="sidebar-stat"><span>Branch</span><span>Classical Mechanics</span></div>
+    <div class="sidebar-stat"><span>Topic</span><span>03 / 22</span></div>
+    <div class="sidebar-stat"><span>Level</span><span>Intermediate → Advanced</span></div>
+    <div class="sidebar-stat"><span>Simulation</span><span>Yes ✓</span></div>
+  </div>
+  <div class="sidebar-card">
+    <h4 style="font-family:var(--font-mono);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent-plasma);margin-bottom:14px">// All 22 Topics</h4>
+    <ul style="list-style:none;display:flex;flex-direction:column;gap:5px">
+      <li><a href="newtons-laws.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">01. Newton's Laws</a></li>
+      <li><a href="projectile-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">02. Projectile Motion</a></li>
+      <li><a href="conservation-of-energy.html" style="font-size:0.8rem;color:var(--accent-plasma);font-weight:600;text-decoration:none">03. Conservation of Energy ←</a></li>
+      <li><a href="linear-momentum.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">04. Linear Momentum</a></li>
+      <li><a href="circular-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">05. Circular Motion</a></li>
+      <li><a href="gravitational-force.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">06. Gravitational Force</a></li>
+      <li><a href="simple-harmonic-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">07. Simple Harmonic Motion</a></li>
+      <li><a href="rotational-dynamics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">08. Rotational Dynamics</a></li>
+      <li><a href="work-and-power.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">09. Work & Power</a></li>
+      <li><a href="friction-and-drag.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">10. Friction & Drag</a></li>
+      <li><a href="keplers-laws.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">11. Kepler's Laws</a></li>
+      <li><a href="waves-and-oscillations.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">12. Waves & Oscillations</a></li>
+      <li><a href="centre-of-mass.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">13. Centre of Mass</a></li>
+      <li><a href="statics-and-equilibrium.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">14. Statics & Equilibrium</a></li>
+      <li><a href="fluid-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">15. Fluid Mechanics</a></li>
+      <li><a href="elasticity-and-stress.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">16. Elasticity & Stress</a></li>
+      <li><a href="kinematics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">17. Kinematics</a></li>
+      <li><a href="damped-oscillations.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">18. Damped Oscillations</a></li>
+      <li><a href="lagrangian-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">19. Lagrangian Mechanics</a></li>
+      <li><a href="hamiltonian-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">20. Hamiltonian Mechanics</a></li>
+      <li><a href="rigid-body-motion.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">21. Rigid Body Motion</a></li>
+      <li><a href="non-inertial-frames.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">22. Non-Inertial Frames</a></li>
+    </ul>
+  </div>
+  <div class="ad-container" style="min-height:250px;flex-direction:column"><span class="ad-label">Advertisement</span><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div>
+</aside>
+</div>
 </main>
-
 <div id="footer-placeholder"></div>
 <script src="../../js/components.js"></script>
 </body>
