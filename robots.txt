@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# Sitemap location (helps Google discover it)
+Sitemap: https://nuclearnotebook.github.io/sitemap.xml
+
+# Optional: Disallow crawling of non-content directories
+# (saves crawl budget for your important pages)
+Disallow: /css/
+Disallow: /js/
+Disallow: /ads.txt
