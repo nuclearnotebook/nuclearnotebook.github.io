@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Root pages -->
+  <url><loc>https://nuclearnotebook.github.io/</loc></url>
+  <url><loc>https://nuclearnotebook.github.io/about.html</loc></url>
+  <url><loc>https://nuclearnotebook.github.io/contact.html</loc></url>
+  <url><loc>https://nuclearnotebook.github.io/theory.html</loc></url>
+  <url><loc>https://nuclearnotebook.github.io/privacy.html</loc></url>
+  <url><loc>https://nuclearnotebook.github.io/terms.html</loc></url>
+
+  <!-- Branches pages -->
+  <url><loc>https://nuclearnotebook.github.io/branches/acoustics.html</loc></url>
+  <url><loc>https://nuclearnotebook.github.io/branches/astrophysics.html</loc></url>
+  <url><loc>https://nuclearnotebook.github.io/branches/atomic-physics.html</loc></url>
+  <url><loc>https://nuclearnotebook.github.io/branches/biophysics.html</loc></url>
+  <url><loc>https://nuclearnotebook.github.io/branches/chaos-theory.html</loc></url>
+  <url><loc>https://nuclearnotebook.github.io/branches/classical-mechanics.html</loc></url>
+  <url><loc>https://nuclearnotebook.github.io/branches/condensed-matter.html</loc></url>
+  <url><loc>https://nuclearnotebook.github.io/branches/electromagnetism.html</loc></url>
+  <url><loc>https://nuclearnotebook.github.io/branches/geophysics.html</loc></url>
+  <url><loc>https://nuclearnotebook.github.io/branches/molecular-physics.html</loc></url>
+  <url><loc>https://nuclearnotebook.github.io/branches/nuclear-physics.html</loc></url>
+  <url><loc>https://nuclearnotebook.github.io/branches/optics.html</loc></url>
+  <url><loc>https://nuclearnotebook.github.io/branches/particle-physics.html</loc></url>
+  <url><loc>https://nuclearnotebook.github.io/branches/plasma-physics.html</loc></url>
+  <url><loc>https://nuclearnotebook.github.io/branches/quantum-mechanics.html</loc></url>
+  <url><loc>https://nuclearnotebook.github.io/branches/relativity.html</loc></url>
+  <url><loc>https://nuclearnotebook.github.io/branches/statistical-mechanics.html</loc></url>
+  <url><loc>https://nuclearnotebook.github.io/branches/thermodynamics.html</loc></url>
+
+  <!-- Classical mechanics topics -->
+  <url><loc>https://nuclearnotebook.github.io/topics/classical-mechanics/centre-of-mass.html</loc></url>
+  <url><loc>https://nuclearnotebook.github.io/topics/classical-mechanics/circular-motion.html</loc></url>
+  <url><loc>https://nuclearnotebook.github.io/topics/classical-mechanics/conservation-of-energy.html</loc></url>
+  <url><loc>https://nuclearnotebook.github.io/topics/classical-mechanics/damped-oscillations.html</loc></url>
+  <url><loc>https://nuclearnotebook.github.io/topics/classical-mechanics/elasticity-and-stress.html</loc></url>
+  <url><loc>https://nuclearnotebook.github.io/topics/classical-mechanics/fluid-mechanics.html</loc></url>
+  <url><loc>https://nuclearnotebook.github.io/topics/classical-mechanics/friction-and-drag.html</loc></url>
+  <url><loc>https://nuclearnotebook.github.io/topics/classical-mechanics/gravitational-force.html</loc></url>
+  <url><loc>https://nuclearnotebook.github.io/topics/classical-mechanics/hamiltonian-mechanics.html</loc></url>
+  <url><loc>https://nuclearnotebook.github.io/topics/classical-mechanics/keplers-laws.html</loc></url>
+  <url><loc>https://nuclearnotebook.github.io/topics/classical-mechanics/kinematics.html</loc></url>
+  <url><loc>https://nuclearnotebook.github.io/topics/classical-mechanics/lagrangian-mechanics.html</loc></url>
+  <url><loc>https://nuclearnotebook.github.io/topics/classical-mechanics/linear-momentum.html</loc></url>
+  <url><loc>https://nuclearnotebook.github.io/topics/classical-mechanics/newtons-laws.html</loc></url>
+  <url><loc>https://nuclearnotebook.github.io/topics/classical-mechanics/non-inertial-frames.html</loc></url>
+  <url><loc>https://nuclearnotebook.github.io/topics/classical-mechanics/projectile-motion.html</loc></url>
+  <url><loc>https://nuclearnotebook.github.io/topics/classical-mechanics/rigid-body-motion.html</loc></url>
+  <url><loc>https://nuclearnotebook.github.io/topics/classical-mechanics/rotational-dynamics.html</loc></url>
+  <url><loc>https://nuclearnotebook.github.io/topics/classical-mechanics/simple-harmonic-motion.html</loc></url>
+  <url><loc>https://nuclearnotebook.github.io/topics/classical-mechanics/statics-and-equilibrium.html</loc></url>
+  <url><loc>https://nuclearnotebook.github.io/topics/classical-mechanics/waves-and-oscillations.html</loc></url>
+  <url><loc>https://nuclearnotebook.github.io/topics/classical-mechanics/work-and-power.html</loc></url>
+
+  <!-- Quantum mechanics topics -->
+  <url><loc>https://nuclearnotebook.github.io/topics/quantum-mechanics/bells-theorem.html</loc></url>
+  <url><loc>https://nuclearnotebook.github.io/topics/quantum-mechanics/decoherence.html</loc></url>
+  <url><loc>https://nuclearnotebook.github.io/topics/quantum-mechanics/density-matrix.html</loc></url>
+  <url><loc>https://nuclearnotebook.github.io/topics/quantum-mechanics/hydrogen-atom.html</loc></url>
+  <url><loc>https://nuclearnotebook.github.io/topics/quantum-mechanics/identical-particles.html</loc></url>
+  <url><loc>https://nuclearnotebook.github.io/topics/quantum-mechanics/many-body-quantum-systems.html</loc></url>
+  <url><loc>https://nuclearnotebook.github.io/topics/quantum-mechanics/measurement-problem.html</loc></url>
+  <url><loc>https://nuclearnotebook.github.io/topics/quantum-mechanics/path-integrals.html</loc></url>
+  <url><loc>https://nuclearnotebook.github.io/topics/quantum-mechanics/perturbation-theory.html</loc></url>
+  <url><loc>https://nuclearnotebook.github.io/topics/quantum-mechanics/quantum-cryptography.html</loc></url>
+  <url><loc>https://nuclearnotebook.github.io/topics/quantum-mechanics/quantum-entanglement.html</loc></url>
+  <url><loc>https://nuclearnotebook.github.io/topics/quantum-mechanics/quantum-field-basics.html</loc></url>
+  <url><loc>https://nuclearnotebook.github.io/topics/quantum-mechanics/quantum-harmonic-oscillator.html</loc></url>
+  <url><loc>https://nuclearnotebook.github.io/topics/quantum-mechanics/quantum-operators.html</loc></url>
+  <url><loc>https://nuclearnotebook.github.io/topics/quantum-mechanics/quantum-statistics.html</loc></url>
+  <url><loc>https://nuclearnotebook.github.io/topics/quantum-mechanics/quantum-tunnelling.html</loc></url>
+  <url><loc>https://nuclearnotebook.github.io/topics/quantum-mechanics/relativistic-quantum-mechanics.html</loc></url>
+  <url><loc>https://nuclearnotebook.github.io/topics/quantum-mechanics/schrodinger-equation.html</loc></url>
+  <url><loc>https://nuclearnotebook.github.io/topics/quantum-mechanics/spin-and-angular-momentum.html</loc></url>
+  <url><loc>https://nuclearnotebook.github.io/topics/quantum-mechanics/standard-model-preview.html</loc></url>
+  <url><loc>https://nuclearnotebook.github.io/topics/quantum-mechanics/superposition.html</loc></url>
+  <url><loc>https://nuclearnotebook.github.io/topics/quantum-mechanics/uncertainty-principle.html</loc></url>
+  <url><loc>https://nuclearnotebook.github.io/topics/quantum-mechanics/variational-methods.html</loc></url>
+  <url><loc>https://nuclearnotebook.github.io/topics/quantum-mechanics/wave-particle-duality.html</loc></url>
+</urlset>
