@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Uncertainty Principle — Quantum Mechanics | QuantumAtlas</title>
+  <meta name="description" content="Heisenberg's Fundamental Limits — Position, Momentum, and the Nature of Quantum Measurement. Comprehensive quantum mechanics treatment with derivations, equations, and applications."/>
+  <meta name="keywords" content="Heisenberg uncertainty principle, position momentum uncertainty, energy time uncertainty, complementarity, quantum measurement, wave packet, standard deviation, quantum limit"/>
+  <link rel="canonical" href="https://yourdomain.com/topics/quantum-mechanics/uncertainty-principle.html"/>
+  <meta property="og:title" content="Uncertainty Principle | QuantumAtlas — Quantum Mechanics"/>
+  <meta property="og:image" content="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=1400&q=80&auto=format"/>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Uncertainty Principle","description":"Heisenberg's Fundamental Limits — Position, Momentum, and the Nature of Quantum Measurement","author":{"@type":"Organization","name":"QuantumAtlas"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://yourdomain.com/"},{"@type":"ListItem","position":2,"name":"Quantum Mechanics","item":"https://yourdomain.com/branches/quantum-mechanics.html"},{"@type":"ListItem","position":3,"name":"Uncertainty Principle"}]}}</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4X0M6RM0F6"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4X0M6RM0F6',{page_title:document.title,page_location:window.location.href});</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2633513915753897" crossorigin="anonymous"></script>
+  <meta name="google-adsense-account" content="ca-pub-2633513915753897">
+  <link rel="stylesheet" href="../../css/global.css"/>
+  <link rel="stylesheet" href="../../css/nav.css"/>
+  <link rel="stylesheet" href="../../css/topic-qm.css"/>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+<main>
+<section class="topic-hero">
+  <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=1400&q=80&auto=format" alt="Deep space nebula representing quantum uncertainty and probability" class="topic-hero-bg-img" loading="eager"/>
+  <div class="topic-hero-overlay"></div>
+  <div class="container topic-hero-content">
+    <nav class="breadcrumb">
+      <a href="../../index.html">Home</a><span class="sep">›</span>
+      <a href="../../branches/quantum-mechanics.html">Quantum Mechanics</a><span class="sep">›</span>
+      <span class="current">Uncertainty Principle</span>
+    </nav>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px">
+      <span class="badge badge-nova">Quantum Mechanics</span>
+      <span class="badge badge-green">Interactive Simulation</span>
+      <span class="badge badge-plasma">Topic 03 / 24</span>
+    </div>
+    <h1 class="topic-hero-title">∆ Uncertainty Principle</h1>
+    <p class="topic-hero-sub">Heisenberg's Fundamental Limits — Position, Momentum, and the Nature of Quantum Measurement</p>
+  </div>
+</section>
+
+<div class="container topic-layout">
+<article class="topic-article">
+<div class="ad-container"><div style="text-align:center;width:100%"><span class="ad-label">Advertisement</span><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div>
+<h2 id="simulation" style="margin-top:0;border-top:none;padding-top:0">Interactive Simulation</h2>
+<div class="simulation-wrapper">
+  <div class="simulation-toolbar">
+    <span class="simulation-title">∆ Wave Packet — Uncertainty Principle Visualiser</span>
+    <div class="sim-control"><label>Position width σ</label><input type="range" id="wp-sigma" min="5" max="120" value="40" step="5"/><span id="wp-sv">40</span></div>
+    <div class="sim-control"><label>Central momentum k₀</label><input type="range" id="wp-k" min="0" max="20" value="8" step="1"/><span id="wp-kv">8</span></div>
+    <button id="wp-propagate" class="btn btn-primary" style="padding:7px 18px;font-size:0.78rem;background:linear-gradient(135deg,#7b2fff,#00d4ff)">Propagate</button>
+    <button id="wp-reset" class="btn btn-outline" style="padding:7px 14px;font-size:0.78rem">Reset</button>
+  </div>
+  <div class="sim-canvas-wrap"><canvas id="wp-canvas" height="350"></canvas></div>
+  <div style="padding:12px 20px;display:flex;gap:24px;flex-wrap:wrap;font-family:var(--font-mono);font-size:0.78rem;color:var(--text-muted);background:rgba(0,0,0,0.25);border-top:1px solid var(--border-dim)">
+    <span>Δx: <strong id="wp-dx" style="color:var(--accent-nova)">—</strong></span>
+    <span>Δk ≈ 1/σ: <strong id="wp-dk" style="color:var(--accent-green)">—</strong></span>
+    <span>Δx·Δp/ℏ: <strong id="wp-prod" style="color:var(--accent-gold)">—</strong></span>
+    <span>t: <strong id="wp-t" style="color:var(--text-secondary)">0</strong></span>
+  </div>
+</div>
+<script>
+(function(){
+  const cv=document.getElementById('wp-canvas'),cx=cv.getContext('2d');
+  const sSl=document.getElementById('wp-sigma'),kSl=document.getElementById('wp-k');
+  sSl.oninput=()=>{document.getElementById('wp-sv').textContent=sSl.value;drawPkt(0,parseInt(sSl.value),parseFloat(kSl.value));};
+  kSl.oninput=()=>{document.getElementById('wp-kv').textContent=kSl.value;drawPkt(0,parseInt(sSl.value),parseFloat(kSl.value));};
+  let raf=null,running=false,startT=null;
+  function W(){cv.width=cv.offsetWidth||800;}W();window.addEventListener('resize',()=>{W();if(!running)drawPkt(0,parseInt(sSl.value),parseFloat(kSl.value));});
+  function drawPkt(t,sig,k0){
+    const W2=cv.width,H=350,cY=H*0.55;
+    cx.clearRect(0,0,W2,H);
+    const bg=cx.createLinearGradient(0,0,0,H);bg.addColorStop(0,'#050810');bg.addColorStop(1,'#0a0e22');
+    cx.fillStyle=bg;cx.fillRect(0,0,W2,H);
+    // Spreading: σ(t) = sqrt(sig² + (t/sig)²)
+    const sigT=Math.sqrt(sig*sig+Math.pow(t*2/sig,2));
+    const x0=W2/2+k0*t*1.5;// group velocity
+    // Real part of wave packet (envelope × cos)
+    cx.beginPath();cx.strokeStyle='rgba(123,47,255,0.85)';cx.lineWidth=2;cx.shadowColor='#7b2fff';cx.shadowBlur=6;
+    for(let i=0;i<W2;i++){
+      const x=(i-x0)/sigT;const env=Math.exp(-x*x/2);const wave=env*Math.cos(k0*(i-x0)/20);
+      const py=cY-wave*80;i===0?cx.moveTo(i,py):cx.lineTo(i,py);
+    }
+    cx.stroke();cx.shadowBlur=0;
+    // Probability density |ψ|²
+    cx.beginPath();cx.strokeStyle='rgba(0,212,255,0.6)';cx.lineWidth=2;
+    for(let i=0;i<W2;i++){
+      const x=(i-x0)/sigT;const prob=Math.exp(-x*x);
+      const py=cY-prob*75;i===0?cx.moveTo(i,py):cx.lineTo(i,py);
+    }
+    cx.stroke();
+    // Width indicator
+    const w2=sigT;
+    cx.strokeStyle='rgba(0,255,136,0.4)';cx.lineWidth=1;cx.setLineDash([4,4]);
+    cx.beginPath();cx.moveTo(x0-w2,cY+90);cx.lineTo(x0+w2,cY+90);cx.stroke();cx.setLineDash([]);
+    cx.fillStyle='rgba(0,255,136,0.7)';cx.font='10px JetBrains Mono,monospace';cx.textAlign='center';cx.fillText('σ(t)='+sigT.toFixed(0),x0,cY+104);
+    // Labels
+    cx.textAlign='left';cx.fillStyle='rgba(123,47,255,0.8)';cx.font='10px JetBrains Mono,monospace';cx.fillText('Re[ψ]',10,24);
+    cx.fillStyle='rgba(0,212,255,0.7)';cx.fillText('|ψ|²',10,38);
+    // Axis
+    cx.strokeStyle='rgba(255,255,255,0.08)';cx.lineWidth=1;cx.beginPath();cx.moveTo(0,cY);cx.lineTo(W2,cY);cx.stroke();
+    const dk=(1/sig).toFixed(3);const prod=(sig*(1/sig)).toFixed(2);
+    document.getElementById('wp-dx').textContent=sigT.toFixed(1)+' units';
+    document.getElementById('wp-dk').textContent=dk+' units';
+    document.getElementById('wp-prod').textContent=prod+' ≥ 0.5 ✓';
+    document.getElementById('wp-t').textContent=t.toFixed(1);
+  }
+  document.getElementById('wp-propagate').onclick=()=>{
+    if(running)return;running=true;startT=null;
+    function step(ts){
+      if(!startT)startT=ts;
+      const t=(ts-startT)/200;
+      drawPkt(t,parseInt(sSl.value),parseFloat(kSl.value));
+      if(t<30&&running)raf=requestAnimationFrame(step);else running=false;
+    }
+    raf=requestAnimationFrame(step);
+  };
+  document.getElementById('wp-reset').onclick=()=>{cancelAnimationFrame(raf);running=false;drawPkt(0,parseInt(sSl.value),parseFloat(kSl.value));};
+  drawPkt(0,40,8);
+})();
+</script>
+
+<div class="topic-body">
+<figure style="margin:0 0 32px"><img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=900&q=80&auto=format" alt="Uncertainty and probability in the quantum realm" class="img-frame"/><figcaption>The deep universe — where quantum uncertainty determines the granular structure of spacetime at the Planck scale. Heisenberg's uncertainty principle is not a statement about measurement imprecision or technological limitation — it is a fundamental statement about the nature of physical reality. A quantum particle does not simultaneously possess definite position and definite momentum; these properties are undefined simultaneously, not merely unknown.</figcaption></figure>
+
+<h2>A Principle, Not a Limitation</h2>
+<p>The Heisenberg uncertainty principle is perhaps the most misunderstood result in physics. It does not say that our measuring instruments are imprecise, that we inevitably disturb particles when we measure them, or that we simply don't know a particle's position and momentum simultaneously. It says something far more radical: a quantum particle, in a state with definite momentum (a perfect sinusoidal wave), is simultaneously in a state with completely indefinite position — it is spread uniformly throughout all of space. Position and momentum are not simultaneously defined, not merely not simultaneously known.</p>
+
+<h2>The Mathematical Statement</h2>
+<p>For any quantum state ψ, the standard deviations of position (Δx) and momentum (Δp) satisfy:</p>
+<div class="formula-block"><span class="formula-label">Position-Momentum Uncertainty</span>Δx · Δp ≥ ℏ/2 &nbsp;&nbsp;&nbsp; [Kennard inequality, 1927]</div>
+<p>Where Δx = √(⟨x²⟩ − ⟨x⟩²) is the standard deviation of position measurements on an ensemble of identically prepared quantum states, and Δp similarly. The equality is achieved by Gaussian wave packets — the minimum-uncertainty states that are as localised as possible in both position and momentum simultaneously.</p>
+
+<h2>Derivation from Commutator Relations</h2>
+<p>The uncertainty principle is a mathematical consequence of the commutation relation between the position and momentum operators:</p>
+<div class="formula-block"><span class="formula-label">Canonical Commutation Relation</span>[x̂, p̂] = x̂p̂ − p̂x̂ = iℏ</div>
+<p>The Robertson uncertainty relation generalises this: for any two Hermitian operators Â and B̂, ΔA·ΔB ≥ ½|⟨[Â,B̂]⟩|. Applying to x̂ and p̂ gives ΔxΔp ≥ ½|⟨iℏ⟩| = ℏ/2. This is not an approximation — it is an exact mathematical theorem following from the structure of quantum mechanics.</p>
+
+<h2>Energy-Time Uncertainty</h2>
+<div class="formula-block"><span class="formula-label">Energy-Time Uncertainty</span>ΔE · Δt ≥ ℏ/2</div>
+<p>This relation is subtler because t is not a quantum mechanical operator (unlike x and p). Δt is the characteristic time for the quantum state to change appreciably, and ΔE is the uncertainty in the system's energy. Physical consequences:</p>
+<ul style="color:var(--text-secondary)">
+<li><strong>Spectral line width:</strong> An atomic state with lifetime τ has energy uncertainty ΔE ≈ ℏ/τ, producing a spectral line of width Δν = ΔE/h = 1/(2πτ). This "natural linewidth" is the fundamental limit on spectral resolution for any radiating system.</li>
+<li><strong>Virtual particles:</strong> In quantum field theory, particles can be "borrowed" from the vacuum for time Δt ≈ ℏ/(2ΔE), with the energy debt ΔE quickly repaid. These virtual particles mediate fundamental forces (virtual photons for electromagnetic force, virtual gluons for strong force).</li>
+<li><strong>Vacuum energy fluctuations:</strong> Even the vacuum has non-zero energy fluctuations — the Casimir effect (an attractive force between uncharged parallel plates in vacuum) is a macroscopic demonstration.</li>
+</ul>
+
+<h2>Wave Packet — Minimum Uncertainty States</h2>
+<p>A Gaussian wave packet achieves the minimum uncertainty (equality in ΔxΔp = ℏ/2):</p>
+<div class="formula-block"><span class="formula-label">Gaussian Wave Packet</span>ψ(x) = (2πσ²)^(−1/4) exp[−x²/(4σ²)] exp(ip₀x/ℏ)</div>
+<p>This has Δx = σ (width of Gaussian in position) and Δp = ℏ/(2σ). As σ increases (wider in x), Δp decreases (sharper in momentum). As σ → 0 (perfect position localisation), Δp → ∞. These minimum-uncertainty wave packets appear as coherent states of the quantum harmonic oscillator.</p>
+
+<div class="table-wrap"><table>
+<thead><tr><th>System</th><th>Δx</th><th>Δp minimum</th><th>Physical consequence</th></tr></thead>
+<tbody>
+<tr><td>Electron in hydrogen atom (n=1)</td><td>~0.529 Å (Bohr radius)</td><td>~1.99×10⁻²⁴ kg·m/s</td><td>Sets the size of the hydrogen atom</td></tr>
+<tr><td>Nuclear proton (confined to ~10⁻¹⁵ m)</td><td>~10⁻¹⁵ m</td><td>~10⁻²⁰ kg·m/s</td><td>Implies nuclear binding energies ~MeV</td></tr>
+<tr><td>LIGO mirror (Δx ~10⁻¹⁹ m)</td><td>~10⁻¹⁹ m</td><td>~5×10⁻¹⁶ kg·m/s</td><td>Quantum noise limit for gravitational wave detection</td></tr>
+<tr><td>Tennis ball (mass 58 g)</td><td>Any practical Δx</td><td>~10⁻³³ kg·m/s</td><td>Completely negligible — classical physics valid</td></tr>
+</tbody></table></div>
+
+<h2>The Uncertainty Principle and Atomic Stability</h2>
+<p>The uncertainty principle resolves a fundamental classical paradox: why doesn't the electron fall into the nucleus? Classically, an orbiting electron should radiate energy (accelerating charge emits radiation) and spiral into the nucleus in ~10⁻¹¹ seconds — making atoms unstable. The uncertainty principle prevents this: confining the electron to within distance r of the nucleus requires Δx ~ r, hence Δp ~ ℏ/(2r), hence kinetic energy KE ~ (Δp)²/(2m) ~ ℏ²/(8mr²). The total energy E ≈ ℏ²/(8mr²) − e²/(4πε₀r) is minimised at r ≈ a₀ = 0.529 Å (the Bohr radius), where the KE (positive) exactly balances the reduction in potential energy. The quantum atom is stable because shrinking it further increases KE faster than it lowers PE.</p>
+
+<div class="info-box info-box--fact"><div class="info-box-title" style="color:#a078ff">🔭 LIGO and Quantum Noise</div><p style="margin:0">Advanced LIGO detects gravitational waves by measuring mirror displacements of ~10⁻¹⁹ m — smaller than 1/1000 of a proton diameter. At this precision, quantum noise from the Heisenberg uncertainty principle becomes the dominant noise source. LIGO uses "squeezed light" — a quantum optical technique that reduces position uncertainty below the standard quantum limit by trading it for increased momentum uncertainty (exactly as the uncertainty relation allows). This quantum optical engineering allows gravitational wave detection to exceed the "standard quantum limit."</p></div>
+</div>
+<div class="ad-container"><div style="text-align:center;width:100%"><span class="ad-label">Advertisement</span><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div>
+<div style="display:flex;justify-content:space-between;margin-top:40px;gap:16px;flex-wrap:wrap">
+  <a href="schrodinger-equation.html" class="btn btn-outline">← Schrödinger Equation</a>
+  <a href="quantum-tunnelling.html" class="btn btn-primary" style="background:var(--gradient-plasma)">Next: Quantum Tunnelling →</a>
+</div>
+</article>
+
+<aside class="topic-sidebar">
+  <div class="sidebar-card">
+    <h4>// Key Equations</h4>
+    <div class="formula-block" style="margin:0 0 8px;font-size:0.82rem">ΔxΔp ≥ ℏ/2</div><div class="formula-block" style="margin:0 0 8px;font-size:0.82rem">ΔEΔt ≥ ℏ/2</div><div class="formula-block" style="margin:0 0 8px;font-size:0.82rem">Δx = σ_x = √(⟨x²⟩−⟨x⟩²)</div><div class="formula-block" style="margin:0 0 8px;font-size:0.82rem">[x̂,p̂] = iℏ → ΔxΔp ≥ ℏ/2</div>
+  </div>
+  <div class="sidebar-card">
+    <h4>// Topic Info</h4>
+    <div class="sidebar-stat"><span>Branch</span><span>Quantum Mechanics</span></div>
+    <div class="sidebar-stat"><span>Topic</span><span>03 / 24</span></div>
+    <div class="sidebar-stat"><span>Simulation</span><span>Yes ✓</span></div>
+    <div class="sidebar-stat"><span>Level</span><span>Advanced</span></div>
+  </div>
+  <div class="sidebar-card">
+    <h4>// All 24 Topics</h4>
+    <ul style="list-style:none;display:flex;flex-direction:column;gap:5px"><li><a href="wave-particle-duality.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">01. Wave-Particle Duality</a></li>
+<li><a href="schrodinger-equation.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">02. Schrödinger Equation</a></li>
+<li><a href="uncertainty-principle.html" style="font-size:0.8rem;color:var(--accent-nova);font-weight:600;text-decoration:none">03. Uncertainty Principle ←</a></li>
+<li><a href="quantum-tunnelling.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">04. Quantum Tunnelling</a></li>
+<li><a href="superposition.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">05. Quantum Superposition</a></li>
+<li><a href="quantum-entanglement.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">06. Quantum Entanglement</a></li>
+<li><a href="quantum-operators.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">07. Quantum Operators</a></li>
+<li><a href="spin-and-angular-momentum.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">08. Spin & Angular Momentum</a></li>
+<li><a href="hydrogen-atom.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">09. The Hydrogen Atom</a></li>
+<li><a href="perturbation-theory.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">10. Perturbation Theory</a></li>
+<li><a href="variational-methods.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">11. Variational Methods</a></li>
+<li><a href="identical-particles.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">12. Identical Particles</a></li>
+<li><a href="quantum-statistics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">13. Quantum Statistics</a></li>
+<li><a href="path-integrals.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">14. Path Integrals</a></li>
+<li><a href="measurement-problem.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">15. The Measurement Problem</a></li>
+<li><a href="bells-theorem.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">16. Bell's Theorem</a></li>
+<li><a href="quantum-cryptography.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">17. Quantum Cryptography</a></li>
+<li><a href="density-matrix.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">18. Density Matrix</a></li>
+<li><a href="quantum-harmonic-oscillator.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">19. Quantum Harmonic Oscillator</a></li>
+<li><a href="many-body-quantum-systems.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">20. Many-Body Quantum Systems</a></li>
+<li><a href="decoherence.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">21. Decoherence</a></li>
+<li><a href="relativistic-quantum-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">22. Relativistic Quantum Mechanics</a></li>
+<li><a href="quantum-field-basics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">23. Quantum Field Theory Basics</a></li>
+<li><a href="standard-model-preview.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">24. Standard Model Preview</a></li>
+</ul>
+  </div>
+  <div class="ad-container" style="min-height:250px;flex-direction:column"><span class="ad-label">Advertisement</span><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div>
+</aside>
+</div>
+</main>
+<div id="footer-placeholder"></div>
+<script src="../../js/components.js"></script>
+</body>
+</html>

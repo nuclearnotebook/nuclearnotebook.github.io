@@ -1,0 +1,44 @@
+/* ═══════════════════════════════════════════════
+   QUANTUM MECHANICS TOPIC PAGES — PURPLE/NOVA THEME
+   ═══════════════════════════════════════════════ */
+
+/* Hero */
+.topic-hero { position:relative;padding:130px 0 60px;overflow:hidden;min-height:380px;display:flex;align-items:flex-end; }
+.topic-hero-bg-img { position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.10;filter:saturate(1.3) hue-rotate(200deg) brightness(0.8); }
+.topic-hero-overlay { position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,8,16,0.25) 0%,rgba(5,8,16,0.96) 100%); }
+.topic-hero-content { position:relative;z-index:2; }
+.topic-hero-title { font-size:clamp(2rem,4vw,3rem);font-weight:700;margin:14px 0 10px;line-height:1.15; }
+.topic-hero-sub { font-size:1.05rem;color:var(--text-secondary);margin:0;max-width:620px; }
+
+/* Layout */
+.topic-layout { display:grid;grid-template-columns:1fr 300px;gap:48px;align-items:start;padding-top:48px;padding-bottom:80px; }
+.topic-article { min-width:0; }
+
+/* Body */
+.topic-body { font-size:1rem;line-height:1.82;color:var(--text-secondary); }
+.topic-body h2 { font-size:1.5rem;color:var(--text-primary);margin:44px 0 16px;padding-bottom:10px;border-bottom:1px solid var(--border-dim);position:relative; }
+.topic-body h2::before { content:'';position:absolute;bottom:-1px;left:0;width:60px;height:2px;background:linear-gradient(135deg,#7b2fff,#00d4ff); }
+.topic-body h3 { font-size:1.15rem;color:var(--text-primary);margin:28px 0 10px; }
+.topic-body p { margin-bottom:1.2em; }
+.topic-body ul,
+.topic-body ol { margin:0 0 16px 24px;color:var(--text-secondary); }
+.topic-body li { margin-bottom:6px;line-height:1.7; }
+.topic-body img { width:100%;border-radius:var(--radius-md);border:1px solid var(--border-dim);margin:24px 0;box-shadow:var(--shadow-card); }
+.topic-body figcaption { font-family:var(--font-mono);font-size:0.72rem;color:var(--text-muted);text-align:center;margin-top:-16px;margin-bottom:24px;letter-spacing:0.05em; }
+
+/* QM formula blocks use nova colour */
+.topic-body .formula-block { border-left-color:var(--accent-nova); }
+
+/* Sidebar */
+.topic-sidebar { position:sticky;top:90px;display:flex;flex-direction:column;gap:18px; }
+.sidebar-card { background:var(--gradient-card);border:1px solid var(--border-dim);border-radius:var(--radius-lg);padding:22px; }
+.sidebar-card h4 { font-family:var(--font-mono);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent-nova);margin-bottom:14px; }
+.sidebar-stat { display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border-dim);font-size:0.85rem; }
+.sidebar-stat:last-child { border-bottom:none; }
+.sidebar-stat span:first-child { color:var(--text-muted); }
+.sidebar-stat span:last-child { color:var(--text-primary);font-weight:600;font-family:var(--font-display); }
+.active-topic { color:var(--accent-nova)!important;font-weight:600!important; }
+
+/* Responsive */
+@media (max-width:1024px) { .topic-layout { grid-template-columns:1fr; } .topic-sidebar { position:static; } }
+@media (max-width:600px)  { .topic-hero-title { font-size:1.7rem; } }

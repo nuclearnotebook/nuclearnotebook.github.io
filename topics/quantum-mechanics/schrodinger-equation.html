@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Schrödinger Equation — Quantum Mechanics | QuantumAtlas</title>
+  <meta name="description" content="The Fundamental Equation of Quantum Mechanics — Wave Functions, Hamiltonians, and Probability. Comprehensive quantum mechanics treatment with derivations, equations, and applications."/>
+  <meta name="keywords" content="Schrödinger equation, wave function, time-dependent Schrödinger equation, time-independent, Hamiltonian operator, quantum states, probability density, stationary states, particle in a box"/>
+  <link rel="canonical" href="https://yourdomain.com/topics/quantum-mechanics/schrodinger-equation.html"/>
+  <meta property="og:title" content="Schrödinger Equation | QuantumAtlas — Quantum Mechanics"/>
+  <meta property="og:image" content="https://images.unsplash.com/photo-1509228468518-180dd4864904?w=1400&q=80&auto=format"/>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Schrödinger Equation","description":"The Fundamental Equation of Quantum Mechanics — Wave Functions, Hamiltonians, and Probability","author":{"@type":"Organization","name":"QuantumAtlas"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://yourdomain.com/"},{"@type":"ListItem","position":2,"name":"Quantum Mechanics","item":"https://yourdomain.com/branches/quantum-mechanics.html"},{"@type":"ListItem","position":3,"name":"Schrödinger Equation"}]}}</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4X0M6RM0F6"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4X0M6RM0F6',{page_title:document.title,page_location:window.location.href});</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2633513915753897" crossorigin="anonymous"></script>
+  <meta name="google-adsense-account" content="ca-pub-2633513915753897">
+  <link rel="stylesheet" href="../../css/global.css"/>
+  <link rel="stylesheet" href="../../css/nav.css"/>
+  <link rel="stylesheet" href="../../css/topic-qm.css"/>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+<main>
+<section class="topic-hero">
+  <img src="https://images.unsplash.com/photo-1509228468518-180dd4864904?w=1400&q=80&auto=format" alt="Mathematical wave patterns representing quantum wave functions" class="topic-hero-bg-img" loading="eager"/>
+  <div class="topic-hero-overlay"></div>
+  <div class="container topic-hero-content">
+    <nav class="breadcrumb">
+      <a href="../../index.html">Home</a><span class="sep">›</span>
+      <a href="../../branches/quantum-mechanics.html">Quantum Mechanics</a><span class="sep">›</span>
+      <span class="current">Schrödinger Equation</span>
+    </nav>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px">
+      <span class="badge badge-nova">Quantum Mechanics</span>
+      <span class="badge badge-green">Interactive Simulation</span>
+      <span class="badge badge-plasma">Topic 02 / 24</span>
+    </div>
+    <h1 class="topic-hero-title">ψ Schrödinger Equation</h1>
+    <p class="topic-hero-sub">The Fundamental Equation of Quantum Mechanics — Wave Functions, Hamiltonians, and Probability</p>
+  </div>
+</section>
+
+<div class="container topic-layout">
+<article class="topic-article">
+<div class="ad-container"><div style="text-align:center;width:100%"><span class="ad-label">Advertisement</span><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div>
+<h2 id="simulation" style="margin-top:0;border-top:none;padding-top:0">Interactive Simulation</h2>
+<div class="simulation-wrapper">
+  <div class="simulation-toolbar">
+    <span class="simulation-title">ψ Particle in a Box — Wave Functions & Energy Levels</span>
+    <div class="sim-control"><label>Quantum number n</label><input type="range" id="pib-n" min="1" max="8" value="1" step="1"/><span id="pib-nv">n = 1</span></div>
+    <div class="sim-control"><label>Show |ψ|²</label>
+      <select id="pib-show" style="background:var(--bg-deep);color:var(--text-primary);border:1px solid var(--border-dim);padding:4px 8px;border-radius:6px;font-size:0.78rem">
+        <option value="psi">ψ(x) — Wave function</option>
+        <option value="prob">|ψ(x)|² — Probability density</option>
+        <option value="both">Both overlaid</option>
+      </select>
+    </div>
+    <button id="pib-animate" class="btn btn-primary" style="padding:7px 18px;font-size:0.78rem;background:linear-gradient(135deg,#7b2fff,#00d4ff)">Animate</button>
+    <button id="pib-stop" class="btn btn-outline" style="padding:7px 14px;font-size:0.78rem">Stop</button>
+  </div>
+  <div class="sim-canvas-wrap"><canvas id="pib-canvas" height="360"></canvas></div>
+  <div style="padding:12px 20px;display:flex;gap:24px;flex-wrap:wrap;font-family:var(--font-mono);font-size:0.78rem;color:var(--text-muted);background:rgba(0,0,0,0.25);border-top:1px solid var(--border-dim)">
+    <span>n: <strong id="pib-no" style="color:var(--accent-nova)">1</strong></span>
+    <span>E<sub>n</sub>/E₁: <strong id="pib-E" style="color:var(--accent-green)">1</strong></span>
+    <span>Nodes: <strong id="pib-nodes" style="color:var(--accent-gold)">0</strong></span>
+    <span>λ<sub>n</sub>: <strong id="pib-lam" style="color:#a078ff">2L/n</strong></span>
+  </div>
+</div>
+<script>
+(function(){
+  const cv=document.getElementById('pib-canvas'),cx=cv.getContext('2d');
+  const nSl=document.getElementById('pib-n'),showSel=document.getElementById('pib-show');
+  nSl.oninput=()=>{document.getElementById('pib-nv').textContent='n = '+nSl.value;draw(0);};
+  showSel.onchange=()=>draw(0);
+  let raf=null,running=false,t=0;
+  function W(){cv.width=cv.offsetWidth||800;}W();window.addEventListener('resize',()=>{W();if(!running)draw(0);});
+  function draw(time){
+    const W2=cv.width,H=360,n=parseInt(nSl.value),mode=showSel.value;
+    const PAD=60,boxW=W2-2*PAD,boxH=H-120;
+    const cY=H*0.5+20;
+    cx.clearRect(0,0,W2,H);
+    const bg=cx.createLinearGradient(0,0,0,H);bg.addColorStop(0,'#050810');bg.addColorStop(1,'#0a0e22');
+    cx.fillStyle=bg;cx.fillRect(0,0,W2,H);
+    // Energy levels (all up to n, on right)
+    const E1=1;
+    for(let k=1;k<=8;k++){
+      const E=k*k*E1;const levelY=H-30-E*(boxH/65);if(levelY<30)break;
+      cx.strokeStyle=k===n?'rgba(123,47,255,0.8)':'rgba(255,255,255,0.1)';
+      cx.lineWidth=k===n?2:1;cx.setLineDash(k===n?[]:[3,4]);
+      cx.beginPath();cx.moveTo(W2-50,levelY);cx.lineTo(W2-10,levelY);cx.stroke();cx.setLineDash([]);
+      if(k<=5){cx.fillStyle=k===n?'rgba(123,47,255,0.9)':'rgba(255,255,255,0.25)';cx.font='9px JetBrains Mono,monospace';cx.textAlign='right';cx.fillText('n='+k,W2-52,levelY+3);}
+    }
+    cx.textAlign='left';
+    // Box walls
+    cx.fillStyle='rgba(0,212,255,0.15)';cx.fillRect(PAD-8,30,8,H-80);cx.fillRect(W2-PAD,30,8,H-80);
+    cx.strokeStyle='rgba(0,212,255,0.5)';cx.lineWidth=2;
+    cx.beginPath();cx.moveTo(PAD,30);cx.lineTo(PAD,H-50);cx.stroke();
+    cx.beginPath();cx.moveTo(W2-PAD,30);cx.lineTo(W2-PAD,H-50);cx.stroke();
+    // Ground line
+    cx.strokeStyle='rgba(255,255,255,0.1)';cx.lineWidth=1;cx.setLineDash([3,4]);
+    cx.beginPath();cx.moveTo(PAD,cY);cx.lineTo(W2-PAD,cY);cx.stroke();cx.setLineDash([]);
+    // Wave function
+    const phase=time*n*0.5;
+    const amp=80;
+    if(mode==='psi'||mode==='both'){
+      cx.beginPath();cx.strokeStyle='rgba(123,47,255,0.9)';cx.lineWidth=2.5;cx.shadowColor='#7b2fff';cx.shadowBlur=8;
+      for(let i=0;i<=300;i++){
+        const x=i/300;const px=PAD+x*boxW;
+        const psi=Math.sqrt(2)*Math.sin(n*Math.PI*x)*Math.cos(phase);
+        const py=cY-psi*amp;
+        i===0?cx.moveTo(px,py):cx.lineTo(px,py);
+      }
+      cx.stroke();cx.shadowBlur=0;
+    }
+    if(mode==='prob'||mode==='both'){
+      cx.beginPath();cx.strokeStyle='rgba(0,212,255,0.8)';cx.lineWidth=2;cx.shadowColor='#00d4ff';cx.shadowBlur=6;
+      for(let i=0;i<=300;i++){
+        const x=i/300;const px=PAD+x*boxW;
+        const psi=Math.sqrt(2)*Math.sin(n*Math.PI*x);
+        const prob=psi*psi;
+        const py=cY-prob*amp*0.8;
+        i===0?cx.moveTo(px,py):cx.lineTo(px,py);
+      }
+      cx.stroke();cx.shadowBlur=0;
+    }
+    // Labels
+    cx.fillStyle='rgba(123,47,255,0.8)';cx.font='11px JetBrains Mono,monospace';
+    if(mode!=='prob')cx.fillText('ψ(x)',PAD+5,30);
+    if(mode!=='psi'){cx.fillStyle='rgba(0,212,255,0.8)';cx.fillText('|ψ|²',PAD+5+(mode==='both'?40:0),30);}
+    cx.fillStyle='rgba(255,255,255,0.5)';cx.font='10px JetBrains Mono,monospace';cx.textAlign='center';
+    cx.fillText('0',PAD,H-45);cx.fillText('L',W2-PAD,H-45);cx.fillText('x →',W2/2,H-45);cx.textAlign='left';
+    // Info
+    document.getElementById('pib-no').textContent=n;
+    document.getElementById('pib-E').textContent=n*n;
+    document.getElementById('pib-nodes').textContent=n-1;
+    document.getElementById('pib-lam').textContent='2L/'+n;
+  }
+  document.getElementById('pib-animate').onclick=()=>{
+    if(running)return;running=true;t=0;let last=null;
+    function step(ts){if(!last)last=ts;t=(ts-last)/1000;draw(t);if(running)raf=requestAnimationFrame(step);}
+    raf=requestAnimationFrame(step);
+  };
+  document.getElementById('pib-stop').onclick=()=>{cancelAnimationFrame(raf);running=false;t=0;draw(0);};
+  draw(0);
+})();
+</script>
+
+<div class="topic-body">
+<figure style="margin:0 0 32px"><img src="https://images.unsplash.com/photo-1509228468518-180dd4864904?w=900&q=80&auto=format" alt="Wave function oscillations representing quantum mechanics" class="img-frame"/><figcaption>Visualisation of quantum wave functions — oscillating complex-valued fields whose squared modulus gives probability density. Erwin Schrödinger formulated his famous equation in January 1926 during a "late erotic outburst" in the Swiss Alps (his words), solving the problem that had baffled physicists for two years. Within months, the equation explained the hydrogen spectrum, the photoelectric effect, and the structure of atoms — a triumph of mathematical physics.</figcaption></figure>
+
+<h2>The Birth of Wave Mechanics</h2>
+<p>By 1925, physicists knew that particles had wave properties (de Broglie, 1924) and that energy was quantised (Planck, 1900; Bohr, 1913). What was missing was a proper wave equation — an equation of motion for the quantum wave function analogous to Maxwell's equations for electromagnetic waves or Newton's equation for particles. Erwin Schrödinger, motivated by de Broglie's work, derived his equation in early 1926 using an analogy with classical wave optics. The equation he found, now bearing his name, is one of the most important differential equations in all of science.</p>
+
+<h2>The Time-Dependent Schrödinger Equation</h2>
+<p>The full Schrödinger equation describes the time evolution of the quantum state ψ(r,t) — the wave function. In 3D:</p>
+<div class="formula-block"><span class="formula-label">Time-Dependent Schrödinger Equation (TDSE)</span>iℏ ∂ψ/∂t = Ĥψ = [−ℏ²/(2m) ∇² + V(r,t)] ψ</div>
+<p>Where: ℏ = h/(2π) = 1.055 × 10⁻³⁴ J·s (reduced Planck constant), m is particle mass, ∇² is the Laplacian operator (∂²/∂x² + ∂²/∂y² + ∂²/∂z²), V(r,t) is the potential energy, and Ĥ is the Hamiltonian operator (total energy). The equation is first-order in time and second-order in space — a linear partial differential equation.</p>
+<p>The imaginary unit i on the left side is not a technicality — it is fundamental. It gives ψ a complex phase that rotates in time, allowing interference between different states. A purely real wave equation (like the classical wave equation) could not produce the destructive interference needed to explain, for example, the dark fringes in the double-slit experiment.</p>
+
+<h2>Physical Interpretation — The Born Rule</h2>
+<p>What does ψ(r,t) mean physically? Schrödinger initially thought ψ represented a real charge density — but this interpretation quickly failed (it predicted atoms would radiate continuously and collapse). Max Born proposed the correct interpretation in 1926:</p>
+<div class="formula-block"><span class="formula-label">Born Rule — Probability Density</span>P(r,t) = |ψ(r,t)|² = ψ*(r,t)·ψ(r,t)</div>
+<p>|ψ(r,t)|² dV is the probability of finding the particle in volume element dV at position r at time t. The wave function itself is not directly observable (it is complex-valued), but its modulus squared is a real, non-negative, observable probability density. This probabilistic interpretation — shocking to many physicists including Einstein and Schrödinger himself — is now the foundational postulate of quantum mechanics.</p>
+<p>The normalisation condition ∫|ψ|² dV = 1 (over all space) ensures that the particle must be found somewhere — total probability = 1.</p>
+
+<h2>The Time-Independent Schrödinger Equation (TISE)</h2>
+<p>When the potential V is time-independent (the most common case in atomic and molecular physics), we can separate variables: ψ(r,t) = φ(r)·e^(−iEt/ℏ). The spatial part φ(r) satisfies the time-independent Schrödinger equation:</p>
+<div class="formula-block"><span class="formula-label">Time-Independent Schrödinger Equation</span>Ĥφ = Eφ &nbsp;&nbsp;&nbsp; [an eigenvalue equation: Ĥ is operator, E is eigenvalue, φ is eigenstate]</div>
+<p>This is an eigenvalue problem — we seek the values of E (energy eigenvalues) and corresponding φ (energy eigenstates or stationary states) for which the equation holds. The full time-dependent solution is then the superposition of all stationary states:</p>
+<div class="formula-block"><span class="formula-label">General Solution (TDSE)</span>ψ(r,t) = Σ<sub>n</sub> c_n φ_n(r) e^(−iE_n t/ℏ)</div>
+
+<h2>Particle in an Infinite Square Well</h2>
+<p>The simplest non-trivial system: a particle confined to 0 ≤ x ≤ L with infinite potential walls. The TISE gives:</p>
+<div class="formula-block"><span class="formula-label">Particle in a Box — Solutions</span>φ_n(x) = √(2/L) sin(nπx/L) &nbsp;&nbsp;&nbsp; E_n = n²π²ℏ²/(2mL²) &nbsp;&nbsp;&nbsp; n = 1, 2, 3, ...</div>
+<p>Key results: (1) Energy is quantised — only discrete values E_n allowed. (2) Ground state (n=1) has non-zero energy E₁ = π²ℏ²/(2mL²) — the zero-point energy, a quantum effect with no classical counterpart. (3) Wave functions are standing waves with n half-wavelengths fitting in the box. (4) As L → ∞ (free particle), energy levels become continuous — recovering classical behaviour.</p>
+
+<figure style="margin:32px 0"><img src="https://images.unsplash.com/photo-1596495577886-d920f1fb7238?w=900&q=80&auto=format" alt="Quantum energy levels and wave functions" class="img-frame"/><figcaption>Representation of quantum energy levels — the discrete allowed energies of a bound quantum system. The quantisation of energy in atoms was one of the most puzzling experimental facts before quantum mechanics. The Schrödinger equation explains it naturally: bound states (confined wave functions) can only oscillate with wavelengths that fit the boundary conditions, just as standing waves on a string of fixed length can only have certain frequencies.</figcaption></figure>
+
+<h2>Properties of the Schrödinger Equation</h2>
+<ul style="color:var(--text-secondary)">
+<li><strong>Linearity:</strong> If ψ₁ and ψ₂ are solutions, so is any linear combination c₁ψ₁ + c₂ψ₂ — enabling superposition.</li>
+<li><strong>Conservation of probability:</strong> ∂|ψ|²/∂t + ∇·j = 0 (continuity equation), where j = (ℏ/2mi)(ψ*∇ψ − ψ∇ψ*) is the probability current. Total probability is conserved.</li>
+<li><strong>Determinism in ψ:</strong> Given ψ at t=0, the TDSE uniquely determines ψ at all future times. The evolution of ψ is perfectly deterministic. Randomness enters only upon measurement (Born rule).</li>
+<li><strong>Real energy eigenvalues:</strong> Because Ĥ is Hermitian, all eigenvalues E are real — physically meaningful measurable energies.</li>
+</ul>
+
+<div class="info-box info-box--fact"><div class="info-box-title" style="color:#a078ff">🏆 Immediate Triumphs of the Schrödinger Equation</div><p style="margin:0">Within months of publication, Schrödinger applied his equation to the hydrogen atom and derived the exact energy levels E_n = −13.6/n² eV — reproducing Bohr's empirical formula from first principles, and additionally predicting the correct angular structure of atomic orbitals. Heisenberg's matrix mechanics (1925) was simultaneously developed and proved mathematically equivalent. The two formalisms — wave mechanics and matrix mechanics — are unified in Dirac's bra-ket formalism, the modern language of quantum mechanics.</p></div>
+</div>
+<div class="ad-container"><div style="text-align:center;width:100%"><span class="ad-label">Advertisement</span><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div>
+<div style="display:flex;justify-content:space-between;margin-top:40px;gap:16px;flex-wrap:wrap">
+  <a href="wave-particle-duality.html" class="btn btn-outline">← Wave-Particle Duality</a>
+  <a href="uncertainty-principle.html" class="btn btn-primary" style="background:var(--gradient-plasma)">Next: Uncertainty Principle →</a>
+</div>
+</article>
+
+<aside class="topic-sidebar">
+  <div class="sidebar-card">
+    <h4>// Key Equations</h4>
+    <div class="formula-block" style="margin:0 0 8px;font-size:0.82rem">iℏ ∂ψ/∂t = Ĥψ</div><div class="formula-block" style="margin:0 0 8px;font-size:0.82rem">Ĥ = −ℏ²/2m ∇² + V</div><div class="formula-block" style="margin:0 0 8px;font-size:0.82rem">Ĥψ = Eψ (TISE)</div><div class="formula-block" style="margin:0 0 8px;font-size:0.82rem">∫|ψ|² dV = 1 (normalisation)</div>
+  </div>
+  <div class="sidebar-card">
+    <h4>// Topic Info</h4>
+    <div class="sidebar-stat"><span>Branch</span><span>Quantum Mechanics</span></div>
+    <div class="sidebar-stat"><span>Topic</span><span>02 / 24</span></div>
+    <div class="sidebar-stat"><span>Simulation</span><span>Yes ✓</span></div>
+    <div class="sidebar-stat"><span>Level</span><span>Advanced</span></div>
+  </div>
+  <div class="sidebar-card">
+    <h4>// All 24 Topics</h4>
+    <ul style="list-style:none;display:flex;flex-direction:column;gap:5px"><li><a href="wave-particle-duality.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">01. Wave-Particle Duality</a></li>
+<li><a href="schrodinger-equation.html" style="font-size:0.8rem;color:var(--accent-nova);font-weight:600;text-decoration:none">02. Schrödinger Equation ←</a></li>
+<li><a href="uncertainty-principle.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">03. Uncertainty Principle</a></li>
+<li><a href="quantum-tunnelling.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">04. Quantum Tunnelling</a></li>
+<li><a href="superposition.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">05. Quantum Superposition</a></li>
+<li><a href="quantum-entanglement.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">06. Quantum Entanglement</a></li>
+<li><a href="quantum-operators.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">07. Quantum Operators</a></li>
+<li><a href="spin-and-angular-momentum.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">08. Spin & Angular Momentum</a></li>
+<li><a href="hydrogen-atom.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">09. The Hydrogen Atom</a></li>
+<li><a href="perturbation-theory.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">10. Perturbation Theory</a></li>
+<li><a href="variational-methods.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">11. Variational Methods</a></li>
+<li><a href="identical-particles.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">12. Identical Particles</a></li>
+<li><a href="quantum-statistics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">13. Quantum Statistics</a></li>
+<li><a href="path-integrals.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">14. Path Integrals</a></li>
+<li><a href="measurement-problem.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">15. The Measurement Problem</a></li>
+<li><a href="bells-theorem.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">16. Bell's Theorem</a></li>
+<li><a href="quantum-cryptography.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">17. Quantum Cryptography</a></li>
+<li><a href="density-matrix.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">18. Density Matrix</a></li>
+<li><a href="quantum-harmonic-oscillator.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">19. Quantum Harmonic Oscillator</a></li>
+<li><a href="many-body-quantum-systems.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">20. Many-Body Quantum Systems</a></li>
+<li><a href="decoherence.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">21. Decoherence</a></li>
+<li><a href="relativistic-quantum-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">22. Relativistic Quantum Mechanics</a></li>
+<li><a href="quantum-field-basics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">23. Quantum Field Theory Basics</a></li>
+<li><a href="standard-model-preview.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">24. Standard Model Preview</a></li>
+</ul>
+  </div>
+  <div class="ad-container" style="min-height:250px;flex-direction:column"><span class="ad-label">Advertisement</span><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div>
+</aside>
+</div>
+</main>
+<div id="footer-placeholder"></div>
+<script src="../../js/components.js"></script>
+</body>
+</html>

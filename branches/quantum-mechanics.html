@@ -1,252 +1,251 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Quantum Mechanics — All Topics | QuantumAtlas</title>
-  <meta name="description" content="Explore all Quantum Mechanics topics on QuantumAtlas — Wave functions, Schrödinger equation, uncertainty principle, entanglement, and the foundations of quantum field theory."/>
-  <meta name="keywords" content="quantum mechanics, wave function, Schrödinger equation, uncertainty principle, quantum entanglement, quantum field theory, particle wave duality"/>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quantum Mechanics — All 24 Topics | QuantumAtlas</title>
+  <meta name="description" content="Explore all 24 Quantum Mechanics topics — wave-particle duality, Schrödinger equation, uncertainty principle, quantum entanglement, spin, hydrogen atom, and quantum field theory basics."/>
+  <meta name="keywords" content="quantum mechanics topics, wave function, Schrödinger equation, uncertainty principle, quantum entanglement, wave-particle duality, quantum tunnelling, spin, hydrogen atom, quantum field theory"/>
   <link rel="canonical" href="https://yourdomain.com/branches/quantum-mechanics.html"/>
   <meta property="og:title" content="Quantum Mechanics — All Topics | QuantumAtlas"/>
-  <meta property="og:description" content="Wave functions, Schrödinger equation, uncertainty principle, entanglement, and the foundations of quantum field theory."/>
-  <meta property="og:image" content="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=75&auto=format"/>
-  <script type="application/ld+json">{
-    "@context":"https://schema.org","@type":"CollectionPage",
-    "name":"Quantum Mechanics Topics","description":"Wave functions, Schrödinger equation, uncertainty principle, entanglement, and the foundations of quantum field theory.",
-    "url":"https://yourdomain.com/branches/quantum-mechanics.html",
-    "breadcrumb":{"@type":"BreadcrumbList","itemListElement":[
-      {"@type":"ListItem","position":1,"name":"Home","item":"https://yourdomain.com/"},
-      {"@type":"ListItem","position":2,"name":"Branches","item":"https://yourdomain.com/theory.html"},
-      {"@type":"ListItem","position":3,"name":"Quantum Mechanics"}
-    ]}
-  }</script>
+  <meta property="og:image" content="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=80"/>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Quantum Mechanics Topics","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://yourdomain.com/"},{"@type":"ListItem","position":2,"name":"Branches","item":"https://yourdomain.com/theory.html"},{"@type":"ListItem","position":3,"name":"Quantum Mechanics"}]}}</script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-4X0M6RM0F6"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4X0M6RM0F6',{page_title:document.title,page_location:window.location.href});</script>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2633513915753897" crossorigin="anonymous"></script>
   <meta name="google-adsense-account" content="ca-pub-2633513915753897">
-  <link rel="stylesheet" href="../css/global.css"/>
-  <link rel="stylesheet" href="../css/nav.css"/>
+  <link rel="stylesheet" href="../css/global.css"/><link rel="stylesheet" href="../css/nav.css"/>
   <style>
-    .branch-hero{padding:130px 0 70px;position:relative;overflow:hidden}
-    .branch-hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,rgba(5,8,16,0) 0%,rgba(5,8,16,0.9) 100%)}
-    .branch-hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.1}
-    .topics-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .tc{background:var(--gradient-card);border:1px solid var(--border-dim);border-radius:var(--radius-md);padding:18px;display:flex;flex-direction:column;gap:8px;transition:var(--transition);position:relative;overflow:hidden}
-    .tc::after{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--gradient-plasma);transform:scaleY(0);transform-origin:bottom;transition:transform 0.3s ease}
-    .tc:hover{transform:translateY(-3px);border-color:var(--border-glow);box-shadow:var(--shadow-hover)}
-    .tc:hover::after{transform:scaleY(1)}
-    @media(max-width:900px){.topics-grid{grid-template-columns:repeat(2,1fr)}}
-    @media(max-width:560px){.topics-grid{grid-template-columns:1fr}}
+    .bh{padding:130px 0 70px;position:relative;overflow:hidden;min-height:420px;display:flex;align-items:flex-end}
+    .bh img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.10}
+    .bh-ov{position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,8,16,0.25) 0%,rgba(5,8,16,0.96) 100%)}
+    .bh-ct{position:relative;z-index:2;width:100%}
+    .bmeta{display:flex;gap:24px;flex-wrap:wrap;margin:18px 0 28px;font-family:var(--font-mono);font-size:0.8rem;color:var(--text-muted)}
+    .bmeta strong{color:var(--text-primary)}
+    .bl{display:grid;grid-template-columns:1fr 300px;gap:48px;align-items:start}
+    .bsb{position:sticky;top:100px}
+    .scard{background:var(--gradient-card);border:1px solid var(--border-dim);border-radius:var(--radius-lg);padding:22px;margin-bottom:18px}
+    .scard h4{font-family:var(--font-mono);font-size:0.72rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent-nova);margin-bottom:14px}
+    .sst{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--border-dim);font-size:0.84rem}
+    .sst:last-child{border-bottom:none}
+    .sst span:first-child{color:var(--text-muted)}.sst span:last-child{color:var(--text-primary);font-weight:600;font-family:var(--font-display)}
+    .tg{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .tc{background:var(--gradient-card);border:1px solid var(--border-dim);border-radius:var(--radius-lg);overflow:hidden;display:flex;flex-direction:column;text-decoration:none;transition:var(--transition);box-shadow:var(--shadow-card);position:relative}
+    .tc::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--accent-nova),var(--accent-plasma));transform:scaleY(0);transform-origin:bottom;transition:transform 0.3s ease;z-index:2}
+    .tc:hover{transform:translateY(-4px);border-color:rgba(123,47,255,0.4);box-shadow:0 16px 60px rgba(0,0,0,0.7),0 0 0 1px rgba(123,47,255,0.25),0 0 40px rgba(123,47,255,0.1)}
+    .tc:hover::before{transform:scaleY(1)}
+    .ti{height:115px;overflow:hidden;position:relative;flex-shrink:0}
+    .ti img{width:100%;height:100%;object-fit:cover;filter:saturate(0.8) brightness(0.75) hue-rotate(200deg);transition:transform 0.5s ease,filter 0.3s ease}
+    .tc:hover .ti img{transform:scale(1.08);filter:saturate(1) brightness(0.85) hue-rotate(200deg)}
+    .ti-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(5,8,16,0.85) 0%,transparent 60%)}
+    .ti-n{position:absolute;top:8px;right:10px;font-family:var(--font-mono);font-size:0.6rem;color:rgba(123,47,255,0.8);letter-spacing:0.1em}
+    .tb{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:7px}
+    .tb h3{font-size:0.93rem;color:var(--text-primary);margin:0;line-height:1.3}
+    .tb p{font-size:0.77rem;color:var(--text-muted);margin:0;line-height:1.5;flex:1}
+    .tf{display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--border-dim);padding-top:9px;margin-top:auto}
+    .tt{display:flex;gap:5px;flex-wrap:wrap}
+    .ttag{font-family:var(--font-mono);font-size:0.58rem;color:#a078ff;letter-spacing:0.06em;text-transform:uppercase;background:rgba(123,47,255,0.08);padding:2px 6px;border-radius:4px;border:1px solid rgba(123,47,255,0.2)}
+    .tarr{font-family:var(--font-display);font-size:0.78rem;color:var(--accent-nova);font-weight:600;transition:var(--transition)}
+    .tc:hover .tarr{letter-spacing:0.05em}
+    .sdot{width:7px;height:7px;background:var(--accent-green);border-radius:50%;box-shadow:0 0 6px var(--accent-green);flex-shrink:0;animation:pulse-glow 2.5s ease-in-out infinite}
+    @media(max-width:1100px){.bl{grid-template-columns:1fr}.bsb{position:static}}
+    @media(max-width:900px){.tg{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:560px){.tg{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
 <div id="nav-placeholder"></div>
 <main>
-  <section class="branch-hero">
-    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=75&auto=format" alt="Quantum Mechanics" class="bg" loading="eager"/>
-    <div class="branch-hero-bg"></div>
-    <div class="container" style="position:relative;z-index:2">
-      <nav class="breadcrumb">
-        <a href="../index.html">Home</a><span class="sep">›</span>
-        <a href="../theory.html">Branches</a><span class="sep">›</span>
-        <span class="current">Quantum Mechanics</span>
-      </nav>
-      <span class="badge badge-nova" style="margin-bottom:16px">Modern</span>
-      <h1><span class="gradient-text">Quantum Mechanics</span></h1>
-      <p style="max-width:620px;font-size:1.05rem;margin-top:12px;color:var(--text-secondary)">Wave functions, Schrödinger equation, uncertainty principle, entanglement, and the foundations of quantum field theory.</p>
-      <div style="display:flex;gap:24px;flex-wrap:wrap;margin-top:24px;font-family:var(--font-mono);font-size:0.8rem;color:var(--text-muted)">
-        <span>📄 <strong style="color:var(--text-primary)">24 Topics</strong></span>
-        <span>🎮 <strong style="color:var(--text-primary)">6 Simulations</strong></span>
-      </div>
+
+<section class="bh">
+  <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1400&q=80&auto=format" alt="Quantum Mechanics" class="bg" loading="eager"/>
+  <div class="bh-ov"></div>
+  <div class="container bh-ct">
+    <nav class="breadcrumb">
+      <a href="../index.html">Home</a><span class="sep">›</span>
+      <a href="../theory.html">Branches</a><span class="sep">›</span>
+      <span class="current">Quantum Mechanics</span>
+    </nav>
+    <span class="badge badge-nova" style="margin-bottom:16px">Modern Physics</span>
+    <h1>Quantum <span style="background:linear-gradient(135deg,#7b2fff,#00d4ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Mechanics</span></h1>
+    <p style="max-width:680px;font-size:1.05rem;margin-top:14px;color:var(--text-secondary)">The physics of the very small — where particles behave as waves, measurement disturbs reality, and entanglement defies classical intuition. Quantum mechanics underpins all of chemistry, solid-state physics, lasers, and modern quantum technology.</p>
+    <div class="bmeta">
+      <div><span>📄 </span><strong>24 Topics</strong></div>
+      <div><span>🎮 </span><strong>8 Simulations</strong></div>
+      <div><span>⏱ </span><strong>~52,000 words</strong></div>
+      <div><span>📐 </span><strong>Advanced Level</strong></div>
     </div>
-  </section>
-  <section class="section--sm">
-    <div class="container">
-      <div class="ad-container" style="margin-bottom:36px">
-        <div style="text-align:center;width:100%">
-          <span class="ad-label">Advertisement</span>
-          <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
-          <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+  </div>
+</section>
+
+<div style="background:var(--bg-deep);padding:0"><div class="container"><div class="ad-container" style="margin:0 0 0"><div style="text-align:center;width:100%"><span class="ad-label">Advertisement</span><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div></div></div>
+
+<section class="section--sm">
+  <div class="container">
+    <div class="bl">
+      <div>
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:28px">
+          <span class="section-label" style="margin:0">// 24 topics</span>
+          <div style="display:flex;align-items:center;gap:6px"><div class="sdot"></div><span style="font-family:var(--font-mono);font-size:0.7rem;color:var(--accent-green)">= has simulation</span></div>
         </div>
+
+        <div class="tg">
+
+          <a href="../topics/quantum-mechanics/wave-particle-duality.html" class="tc reveal">
+            <div class="ti"><img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=500&q=70&auto=format" alt="" loading="lazy"/><div class="ti-ov"></div><span class="ti-n">01 / 24</span></div>
+            <div class="tb"><div style="display:flex;gap:6px;align-items:center;margin-bottom:2px"><h3>Wave-Particle Duality</h3><div class="sdot"></div></div><p>The double-slit experiment, de Broglie hypothesis, and the quantum nature of matter and light.</p><div class="tf"><div class="tt"><span class="ttag">Foundations</span><span class="ttag">Sim</span></div><span class="tarr">→</span></div></div>
+          </a>
+
+          <a href="../topics/quantum-mechanics/schrodinger-equation.html" class="tc reveal delay-1">
+            <div class="ti"><img src="https://images.unsplash.com/photo-1509228468518-180dd4864904?w=500&q=70&auto=format" alt="" loading="lazy"/><div class="ti-ov"></div><span class="ti-n">02 / 24</span></div>
+            <div class="tb"><div style="display:flex;gap:6px;align-items:center;margin-bottom:2px"><h3>Schrödinger Equation</h3><div class="sdot"></div></div><p>Time-dependent and time-independent forms, wave function solutions, and physical interpretation.</p><div class="tf"><div class="tt"><span class="ttag">Wave Function</span><span class="ttag">Sim</span></div><span class="tarr">→</span></div></div>
+          </a>
+
+          <a href="../topics/quantum-mechanics/uncertainty-principle.html" class="tc reveal delay-2">
+            <div class="ti"><img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=500&q=70&auto=format" alt="" loading="lazy"/><div class="ti-ov"></div><span class="ti-n">03 / 24</span></div>
+            <div class="tb"><div style="display:flex;gap:6px;align-items:center;margin-bottom:2px"><h3>Uncertainty Principle</h3><div class="sdot"></div></div><p>Heisenberg's relations, complementarity, and fundamental limits on simultaneous measurement.</p><div class="tf"><div class="tt"><span class="ttag">Measurement</span><span class="ttag">Sim</span></div><span class="tarr">→</span></div></div>
+          </a>
+
+          <a href="../topics/quantum-mechanics/quantum-tunnelling.html" class="tc reveal">
+            <div class="ti"><img src="https://images.unsplash.com/photo-1581093577421-f561a654a353?w=500&q=70&auto=format" alt="" loading="lazy"/><div class="ti-ov"></div><span class="ti-n">04 / 24</span></div>
+            <div class="tb"><div style="display:flex;gap:6px;align-items:center;margin-bottom:2px"><h3>Quantum Tunnelling</h3><div class="sdot"></div></div><p>Barrier penetration, WKB approximation, scanning tunnelling microscopy, and nuclear fusion.</p><div class="tf"><div class="tt"><span class="ttag">Barriers</span><span class="ttag">Sim</span></div><span class="tarr">→</span></div></div>
+          </a>
+
+          <a href="../topics/quantum-mechanics/superposition.html" class="tc reveal delay-1">
+            <div class="ti"><img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=500&q=70&auto=format" alt="" loading="lazy"/><div class="ti-ov"></div><span class="ti-n">05 / 24</span></div>
+            <div class="tb"><h3>Quantum Superposition</h3><p>Linear superposition, Schrödinger's cat paradox, coherence, and applications in quantum computing.</p><div class="tf"><div class="tt"><span class="ttag">States</span></div><span class="tarr">→</span></div></div>
+          </a>
+
+          <a href="../topics/quantum-mechanics/quantum-entanglement.html" class="tc reveal delay-2">
+            <div class="ti"><img src="https://images.unsplash.com/photo-1629904853893-c2c8981a1dc5?w=500&q=70&auto=format" alt="" loading="lazy"/><div class="ti-ov"></div><span class="ti-n">06 / 24</span></div>
+            <div class="tb"><h3>Quantum Entanglement</h3><p>Bell's theorem, EPR paradox, non-local correlations, and quantum information applications.</p><div class="tf"><div class="tt"><span class="ttag">Non-locality</span></div><span class="tarr">→</span></div></div>
+          </a>
+
+          <a href="../topics/quantum-mechanics/quantum-operators.html" class="tc reveal">
+            <div class="ti"><img src="https://images.unsplash.com/photo-1596495577886-d920f1fb7238?w=500&q=70&auto=format" alt="" loading="lazy"/><div class="ti-ov"></div><span class="ti-n">07 / 24</span></div>
+            <div class="tb"><h3>Quantum Operators & Observables</h3><p>Hermitian operators, eigenvalues, expectation values, commutators, and the measurement postulate.</p><div class="tf"><div class="tt"><span class="ttag">Formalism</span></div><span class="tarr">→</span></div></div>
+          </a>
+
+          <a href="../topics/quantum-mechanics/spin-and-angular-momentum.html" class="tc reveal delay-1">
+            <div class="ti"><img src="https://images.unsplash.com/photo-1614642264762-d0a3b8bf3700?w=500&q=70&auto=format" alt="" loading="lazy"/><div class="ti-ov"></div><span class="ti-n">08 / 24</span></div>
+            <div class="tb"><div style="display:flex;gap:6px;align-items:center;margin-bottom:2px"><h3>Spin & Angular Momentum</h3><div class="sdot"></div></div><p>Intrinsic spin, Pauli matrices, spin-½ systems, Stern-Gerlach experiment, and addition of momenta.</p><div class="tf"><div class="tt"><span class="ttag">Spin</span><span class="ttag">Sim</span></div><span class="tarr">→</span></div></div>
+          </a>
+
+          <a href="../topics/quantum-mechanics/hydrogen-atom.html" class="tc reveal delay-2">
+            <div class="ti"><img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=500&q=70&auto=format" alt="" loading="lazy"/><div class="ti-ov"></div><span class="ti-n">09 / 24</span></div>
+            <div class="tb"><div style="display:flex;gap:6px;align-items:center;margin-bottom:2px"><h3>The Hydrogen Atom</h3><div class="sdot"></div></div><p>Quantum numbers n,l,m; spherical harmonics, radial wave functions, and the spectral series.</p><div class="tf"><div class="tt"><span class="ttag">Atomic</span><span class="ttag">Sim</span></div><span class="tarr">→</span></div></div>
+          </a>
+
+          <a href="../topics/quantum-mechanics/perturbation-theory.html" class="tc reveal">
+            <div class="ti"><img src="https://images.unsplash.com/photo-1507413245164-6160d8298b31?w=500&q=70&auto=format" alt="" loading="lazy"/><div class="ti-ov"></div><span class="ti-n">10 / 24</span></div>
+            <div class="tb"><h3>Perturbation Theory</h3><p>Time-independent and time-dependent perturbation, Fermi's golden rule, and selection rules.</p><div class="tf"><div class="tt"><span class="ttag">Advanced</span></div><span class="tarr">→</span></div></div>
+          </a>
+
+          <a href="../topics/quantum-mechanics/variational-methods.html" class="tc reveal delay-1">
+            <div class="ti"><img src="https://images.unsplash.com/photo-1629904853893-c2c8981a1dc5?w=500&q=70&auto=format" alt="" loading="lazy" style="filter:saturate(0.8) brightness(0.75) hue-rotate(100deg)"/><div class="ti-ov"></div><span class="ti-n">11 / 24</span></div>
+            <div class="tb"><h3>Variational Methods</h3><p>The variational principle, trial wave functions, ground state energy bounds, and the helium atom.</p><div class="tf"><div class="tt"><span class="ttag">Approximation</span></div><span class="tarr">→</span></div></div>
+          </a>
+
+          <a href="../topics/quantum-mechanics/identical-particles.html" class="tc reveal delay-2">
+            <div class="ti"><img src="https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=500&q=70&auto=format" alt="" loading="lazy"/><div class="ti-ov"></div><span class="ti-n">12 / 24</span></div>
+            <div class="tb"><h3>Identical Particles</h3><p>Exchange symmetry, bosons and fermions, Pauli exclusion principle, and the periodic table structure.</p><div class="tf"><div class="tt"><span class="ttag">Statistics</span></div><span class="tarr">→</span></div></div>
+          </a>
+
+          <a href="../topics/quantum-mechanics/quantum-statistics.html" class="tc reveal">
+            <div class="ti"><img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&q=70&auto=format" alt="" loading="lazy"/><div class="ti-ov"></div><span class="ti-n">13 / 24</span></div>
+            <div class="tb"><h3>Quantum Statistics</h3><p>Fermi-Dirac and Bose-Einstein distributions, the Fermi energy, and Bose-Einstein condensation.</p><div class="tf"><div class="tt"><span class="ttag">Statistics</span></div><span class="tarr">→</span></div></div>
+          </a>
+
+          <a href="../topics/quantum-mechanics/path-integrals.html" class="tc reveal delay-1">
+            <div class="ti"><img src="https://images.unsplash.com/photo-1465101162946-4377e57745c3?w=500&q=70&auto=format" alt="" loading="lazy"/><div class="ti-ov"></div><span class="ti-n">14 / 24</span></div>
+            <div class="tb"><h3>Path Integrals</h3><p>Feynman's sum-over-histories formulation, propagators, and the classical limit.</p><div class="tf"><div class="tt"><span class="ttag">Advanced</span></div><span class="tarr">→</span></div></div>
+          </a>
+
+          <a href="../topics/quantum-mechanics/measurement-problem.html" class="tc reveal delay-2">
+            <div class="ti"><img src="https://images.unsplash.com/photo-1596495577886-d920f1fb7238?w=500&q=70&auto=format" alt="" loading="lazy" style="filter:saturate(0.8) brightness(0.75) hue-rotate(280deg)"/><div class="ti-ov"></div><span class="ti-n">15 / 24</span></div>
+            <div class="tb"><h3>The Measurement Problem</h3><p>Wave function collapse, Copenhagen, Many Worlds interpretation, decoherence, and quantum Zeno effect.</p><div class="tf"><div class="tt"><span class="ttag">Foundations</span></div><span class="tarr">→</span></div></div>
+          </a>
+
+          <a href="../topics/quantum-mechanics/bells-theorem.html" class="tc reveal">
+            <div class="ti"><img src="https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=500&q=70&auto=format" alt="" loading="lazy"/><div class="ti-ov"></div><span class="ti-n">16 / 24</span></div>
+            <div class="tb"><h3>Bell's Theorem</h3><p>Bell inequalities, Aspect's experiments, hidden variables, and the proven non-locality of QM.</p><div class="tf"><div class="tt"><span class="ttag">Non-locality</span></div><span class="tarr">→</span></div></div>
+          </a>
+
+          <a href="../topics/quantum-mechanics/quantum-cryptography.html" class="tc reveal delay-1">
+            <div class="ti"><img src="https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=500&q=70&auto=format" alt="" loading="lazy" style="filter:saturate(0.8) brightness(0.75) hue-rotate(60deg)"/><div class="ti-ov"></div><span class="ti-n">17 / 24</span></div>
+            <div class="tb"><h3>Quantum Cryptography & QKD</h3><p>BB84 protocol, quantum key distribution, eavesdropping detection, and quantum communication.</p><div class="tf"><div class="tt"><span class="ttag">Applied</span></div><span class="tarr">→</span></div></div>
+          </a>
+
+          <a href="../topics/quantum-mechanics/density-matrix.html" class="tc reveal delay-2">
+            <div class="ti"><img src="https://images.unsplash.com/photo-1509228468518-180dd4864904?w=500&q=70&auto=format" alt="" loading="lazy" style="filter:saturate(0.8) brightness(0.75) hue-rotate(320deg)"/><div class="ti-ov"></div><span class="ti-n">18 / 24</span></div>
+            <div class="tb"><h3>Density Matrix & Mixed States</h3><p>Statistical mixtures, the density operator ρ, von Neumann entropy, and open quantum systems.</p><div class="tf"><div class="tt"><span class="ttag">Formalism</span></div><span class="tarr">→</span></div></div>
+          </a>
+
+          <a href="../topics/quantum-mechanics/quantum-harmonic-oscillator.html" class="tc reveal">
+            <div class="ti"><img src="https://images.unsplash.com/photo-1606761568499-6d2451b23c66?w=500&q=70&auto=format" alt="" loading="lazy"/><div class="ti-ov"></div><span class="ti-n">19 / 24</span></div>
+            <div class="tb"><div style="display:flex;gap:6px;align-items:center;margin-bottom:2px"><h3>Quantum Harmonic Oscillator</h3><div class="sdot"></div></div><p>Ladder operators, energy levels E_n = ℏω(n+½), zero-point energy, coherent states, and squeezed states.</p><div class="tf"><div class="tt"><span class="ttag">Core</span><span class="ttag">Sim</span></div><span class="tarr">→</span></div></div>
+          </a>
+
+          <a href="../topics/quantum-mechanics/many-body-quantum-systems.html" class="tc reveal delay-1">
+            <div class="ti"><img src="https://images.unsplash.com/photo-1532187643603-ba119ca4109e?w=500&q=70&auto=format" alt="" loading="lazy"/><div class="ti-ov"></div><span class="ti-n">20 / 24</span></div>
+            <div class="tb"><h3>Many-Body Quantum Systems</h3><p>Second quantisation, Fock space, the Hubbard model, and quantum phase transitions.</p><div class="tf"><div class="tt"><span class="ttag">Advanced</span></div><span class="tarr">→</span></div></div>
+          </a>
+
+          <a href="../topics/quantum-mechanics/decoherence.html" class="tc reveal delay-2">
+            <div class="ti"><img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=500&q=70&auto=format" alt="" loading="lazy" style="filter:saturate(0.8) brightness(0.75) hue-rotate(160deg)"/><div class="ti-ov"></div><span class="ti-n">21 / 24</span></div>
+            <div class="tb"><h3>Decoherence & Classical Limit</h3><p>Environment-induced decoherence, pointer states, and how the classical world emerges from QM.</p><div class="tf"><div class="tt"><span class="ttag">Foundations</span></div><span class="tarr">→</span></div></div>
+          </a>
+
+          <a href="../topics/quantum-mechanics/relativistic-quantum-mechanics.html" class="tc reveal">
+            <div class="ti"><img src="https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=500&q=70&auto=format" alt="" loading="lazy"/><div class="ti-ov"></div><span class="ti-n">22 / 24</span></div>
+            <div class="tb"><h3>Relativistic Quantum Mechanics</h3><p>Klein-Gordon equation, the Dirac equation, antimatter prediction, and spin from relativity.</p><div class="tf"><div class="tt"><span class="ttag">Relativistic</span></div><span class="tarr">→</span></div></div>
+          </a>
+
+          <a href="../topics/quantum-mechanics/quantum-field-basics.html" class="tc reveal delay-1">
+            <div class="ti"><img src="https://images.unsplash.com/photo-1579389083078-4e7018379f7e?w=500&q=70&auto=format" alt="" loading="lazy"/><div class="ti-ov"></div><span class="ti-n">23 / 24</span></div>
+            <div class="tb"><h3>Quantum Field Theory Basics</h3><p>Field quantisation, virtual particles, Feynman diagrams, QED, and the structure of the vacuum.</p><div class="tf"><div class="tt"><span class="ttag">QFT</span></div><span class="tarr">→</span></div></div>
+          </a>
+
+          <a href="../topics/quantum-mechanics/standard-model-preview.html" class="tc reveal delay-2">
+            <div class="ti"><img src="https://images.unsplash.com/photo-1564327767484-ea27b4b7add7?w=500&q=70&auto=format" alt="" loading="lazy"/><div class="ti-ov"></div><span class="ti-n">24 / 24</span></div>
+            <div class="tb"><h3>Standard Model Preview</h3><p>Gauge theories, SU(3)×SU(2)×U(1) symmetry, electroweak unification, and the Higgs mechanism.</p><div class="tf"><div class="tt"><span class="ttag">Particle</span></div><span class="tarr">→</span></div></div>
+          </a>
+
+        </div><!-- /tg -->
+
+        <div class="ad-container" style="margin-top:48px"><div style="text-align:center;width:100%"><span class="ad-label">Advertisement</span><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div>
       </div>
-      <div class="topics-grid reveal">
-        <a href="../topics/quantum-mechanics/wave-particle-duality.html" class="tc" style="text-decoration:none">
-          <span style="font-family:var(--font-mono);font-size:0.65rem;color:var(--text-muted)">01 / 24</span>
-          <h3 style="font-size:0.95rem;color:var(--text-primary);margin:0">Wave-Particle Duality</h3>
-          <div style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border-dim);padding-top:8px;margin-top:auto">
-            <span style="font-family:var(--font-display);font-size:0.7rem;color:var(--accent-plasma)">Read →</span>
-          </div>
-        </a>
-        <a href="../topics/quantum-mechanics/schrödinger-equation.html" class="tc" style="text-decoration:none">
-          <span style="font-family:var(--font-mono);font-size:0.65rem;color:var(--text-muted)">02 / 24</span>
-          <h3 style="font-size:0.95rem;color:var(--text-primary);margin:0">Schrödinger Equation</h3>
-          <div style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border-dim);padding-top:8px;margin-top:auto">
-            <span style="font-family:var(--font-display);font-size:0.7rem;color:var(--accent-plasma)">Read →</span>
-          </div>
-        </a>
-        <a href="../topics/quantum-mechanics/uncertainty-principle.html" class="tc" style="text-decoration:none">
-          <span style="font-family:var(--font-mono);font-size:0.65rem;color:var(--text-muted)">03 / 24</span>
-          <h3 style="font-size:0.95rem;color:var(--text-primary);margin:0">Uncertainty Principle</h3>
-          <div style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border-dim);padding-top:8px;margin-top:auto">
-            <span style="font-family:var(--font-display);font-size:0.7rem;color:var(--accent-plasma)">Read →</span>
-          </div>
-        </a>
-        <a href="../topics/quantum-mechanics/quantum-tunnelling.html" class="tc" style="text-decoration:none">
-          <span style="font-family:var(--font-mono);font-size:0.65rem;color:var(--text-muted)">04 / 24</span>
-          <h3 style="font-size:0.95rem;color:var(--text-primary);margin:0">Quantum Tunnelling</h3>
-          <div style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border-dim);padding-top:8px;margin-top:auto">
-            <span style="font-family:var(--font-display);font-size:0.7rem;color:var(--accent-plasma)">Read →</span>
-          </div>
-        </a>
-        <a href="../topics/quantum-mechanics/superposition.html" class="tc" style="text-decoration:none">
-          <span style="font-family:var(--font-mono);font-size:0.65rem;color:var(--text-muted)">05 / 24</span>
-          <h3 style="font-size:0.95rem;color:var(--text-primary);margin:0">Superposition</h3>
-          <div style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border-dim);padding-top:8px;margin-top:auto">
-            <span style="font-family:var(--font-display);font-size:0.7rem;color:var(--accent-plasma)">Read →</span>
-          </div>
-        </a>
-        <a href="../topics/quantum-mechanics/entanglement.html" class="tc" style="text-decoration:none">
-          <span style="font-family:var(--font-mono);font-size:0.65rem;color:var(--text-muted)">06 / 24</span>
-          <h3 style="font-size:0.95rem;color:var(--text-primary);margin:0">Entanglement</h3>
-          <div style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border-dim);padding-top:8px;margin-top:auto">
-            <span style="font-family:var(--font-display);font-size:0.7rem;color:var(--accent-plasma)">Read →</span>
-          </div>
-        </a>
-        <a href="../topics/quantum-mechanics/quantum-operators.html" class="tc" style="text-decoration:none">
-          <span style="font-family:var(--font-mono);font-size:0.65rem;color:var(--text-muted)">07 / 24</span>
-          <h3 style="font-size:0.95rem;color:var(--text-primary);margin:0">Quantum Operators</h3>
-          <div style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border-dim);padding-top:8px;margin-top:auto">
-            <span style="font-family:var(--font-display);font-size:0.7rem;color:var(--accent-plasma)">Read →</span>
-          </div>
-        </a>
-        <a href="../topics/quantum-mechanics/spin-and-angular-momentum.html" class="tc" style="text-decoration:none">
-          <span style="font-family:var(--font-mono);font-size:0.65rem;color:var(--text-muted)">08 / 24</span>
-          <h3 style="font-size:0.95rem;color:var(--text-primary);margin:0">Spin and Angular Momentum</h3>
-          <div style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border-dim);padding-top:8px;margin-top:auto">
-            <span style="font-family:var(--font-display);font-size:0.7rem;color:var(--accent-plasma)">Read →</span>
-          </div>
-        </a>
-        <a href="../topics/quantum-mechanics/hydrogen-atom.html" class="tc" style="text-decoration:none">
-          <span style="font-family:var(--font-mono);font-size:0.65rem;color:var(--text-muted)">09 / 24</span>
-          <h3 style="font-size:0.95rem;color:var(--text-primary);margin:0">Hydrogen Atom</h3>
-          <div style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border-dim);padding-top:8px;margin-top:auto">
-            <span style="font-family:var(--font-display);font-size:0.7rem;color:var(--accent-plasma)">Read →</span>
-          </div>
-        </a>
-        <a href="../topics/quantum-mechanics/perturbation-theory.html" class="tc" style="text-decoration:none">
-          <span style="font-family:var(--font-mono);font-size:0.65rem;color:var(--text-muted)">10 / 24</span>
-          <h3 style="font-size:0.95rem;color:var(--text-primary);margin:0">Perturbation Theory</h3>
-          <div style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border-dim);padding-top:8px;margin-top:auto">
-            <span style="font-family:var(--font-display);font-size:0.7rem;color:var(--accent-plasma)">Read →</span>
-          </div>
-        </a>
-        <a href="../topics/quantum-mechanics/variational-methods.html" class="tc" style="text-decoration:none">
-          <span style="font-family:var(--font-mono);font-size:0.65rem;color:var(--text-muted)">11 / 24</span>
-          <h3 style="font-size:0.95rem;color:var(--text-primary);margin:0">Variational Methods</h3>
-          <div style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border-dim);padding-top:8px;margin-top:auto">
-            <span style="font-family:var(--font-display);font-size:0.7rem;color:var(--accent-plasma)">Read →</span>
-          </div>
-        </a>
-        <a href="../topics/quantum-mechanics/identical-particles.html" class="tc" style="text-decoration:none">
-          <span style="font-family:var(--font-mono);font-size:0.65rem;color:var(--text-muted)">12 / 24</span>
-          <h3 style="font-size:0.95rem;color:var(--text-primary);margin:0">Identical Particles</h3>
-          <div style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border-dim);padding-top:8px;margin-top:auto">
-            <span style="font-family:var(--font-display);font-size:0.7rem;color:var(--accent-plasma)">Read →</span>
-          </div>
-        </a>
-        <a href="../topics/quantum-mechanics/quantum-statistics.html" class="tc" style="text-decoration:none">
-          <span style="font-family:var(--font-mono);font-size:0.65rem;color:var(--text-muted)">13 / 24</span>
-          <h3 style="font-size:0.95rem;color:var(--text-primary);margin:0">Quantum Statistics</h3>
-          <div style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border-dim);padding-top:8px;margin-top:auto">
-            <span style="font-family:var(--font-display);font-size:0.7rem;color:var(--accent-plasma)">Read →</span>
-          </div>
-        </a>
-        <a href="../topics/quantum-mechanics/path-integrals.html" class="tc" style="text-decoration:none">
-          <span style="font-family:var(--font-mono);font-size:0.65rem;color:var(--text-muted)">14 / 24</span>
-          <h3 style="font-size:0.95rem;color:var(--text-primary);margin:0">Path Integrals</h3>
-          <div style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border-dim);padding-top:8px;margin-top:auto">
-            <span style="font-family:var(--font-display);font-size:0.7rem;color:var(--accent-plasma)">Read →</span>
-          </div>
-        </a>
-        <a href="../topics/quantum-mechanics/measurement-problem.html" class="tc" style="text-decoration:none">
-          <span style="font-family:var(--font-mono);font-size:0.65rem;color:var(--text-muted)">15 / 24</span>
-          <h3 style="font-size:0.95rem;color:var(--text-primary);margin:0">Measurement Problem</h3>
-          <div style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border-dim);padding-top:8px;margin-top:auto">
-            <span style="font-family:var(--font-display);font-size:0.7rem;color:var(--accent-plasma)">Read →</span>
-          </div>
-        </a>
-        <a href="../topics/quantum-mechanics/bells-theorem.html" class="tc" style="text-decoration:none">
-          <span style="font-family:var(--font-mono);font-size:0.65rem;color:var(--text-muted)">16 / 24</span>
-          <h3 style="font-size:0.95rem;color:var(--text-primary);margin:0">Bell's Theorem</h3>
-          <div style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border-dim);padding-top:8px;margin-top:auto">
-            <span style="font-family:var(--font-display);font-size:0.7rem;color:var(--accent-plasma)">Read →</span>
-          </div>
-        </a>
-        <a href="../topics/quantum-mechanics/quantum-cryptography.html" class="tc" style="text-decoration:none">
-          <span style="font-family:var(--font-mono);font-size:0.65rem;color:var(--text-muted)">17 / 24</span>
-          <h3 style="font-size:0.95rem;color:var(--text-primary);margin:0">Quantum Cryptography</h3>
-          <div style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border-dim);padding-top:8px;margin-top:auto">
-            <span style="font-family:var(--font-display);font-size:0.7rem;color:var(--accent-plasma)">Read →</span>
-          </div>
-        </a>
-        <a href="../topics/quantum-mechanics/density-matrix.html" class="tc" style="text-decoration:none">
-          <span style="font-family:var(--font-mono);font-size:0.65rem;color:var(--text-muted)">18 / 24</span>
-          <h3 style="font-size:0.95rem;color:var(--text-primary);margin:0">Density Matrix</h3>
-          <div style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border-dim);padding-top:8px;margin-top:auto">
-            <span style="font-family:var(--font-display);font-size:0.7rem;color:var(--accent-plasma)">Read →</span>
-          </div>
-        </a>
-        <a href="../topics/quantum-mechanics/quantum-harmonic-oscillator.html" class="tc" style="text-decoration:none">
-          <span style="font-family:var(--font-mono);font-size:0.65rem;color:var(--text-muted)">19 / 24</span>
-          <h3 style="font-size:0.95rem;color:var(--text-primary);margin:0">Quantum Harmonic Oscillator</h3>
-          <div style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border-dim);padding-top:8px;margin-top:auto">
-            <span style="font-family:var(--font-display);font-size:0.7rem;color:var(--accent-plasma)">Read →</span>
-          </div>
-        </a>
-        <a href="../topics/quantum-mechanics/many-body-quantum-systems.html" class="tc" style="text-decoration:none">
-          <span style="font-family:var(--font-mono);font-size:0.65rem;color:var(--text-muted)">20 / 24</span>
-          <h3 style="font-size:0.95rem;color:var(--text-primary);margin:0">Many-Body Quantum Systems</h3>
-          <div style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border-dim);padding-top:8px;margin-top:auto">
-            <span style="font-family:var(--font-display);font-size:0.7rem;color:var(--accent-plasma)">Read →</span>
-          </div>
-        </a>
-        <a href="../topics/quantum-mechanics/decoherence.html" class="tc" style="text-decoration:none">
-          <span style="font-family:var(--font-mono);font-size:0.65rem;color:var(--text-muted)">21 / 24</span>
-          <h3 style="font-size:0.95rem;color:var(--text-primary);margin:0">Decoherence</h3>
-          <div style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border-dim);padding-top:8px;margin-top:auto">
-            <span style="font-family:var(--font-display);font-size:0.7rem;color:var(--accent-plasma)">Read →</span>
-          </div>
-        </a>
-        <a href="../topics/quantum-mechanics/relativistic-qm.html" class="tc" style="text-decoration:none">
-          <span style="font-family:var(--font-mono);font-size:0.65rem;color:var(--text-muted)">22 / 24</span>
-          <h3 style="font-size:0.95rem;color:var(--text-primary);margin:0">Relativistic QM</h3>
-          <div style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border-dim);padding-top:8px;margin-top:auto">
-            <span style="font-family:var(--font-display);font-size:0.7rem;color:var(--accent-plasma)">Read →</span>
-          </div>
-        </a>
-        <a href="../topics/quantum-mechanics/quantum-field-basics.html" class="tc" style="text-decoration:none">
-          <span style="font-family:var(--font-mono);font-size:0.65rem;color:var(--text-muted)">23 / 24</span>
-          <h3 style="font-size:0.95rem;color:var(--text-primary);margin:0">Quantum Field Basics</h3>
-          <div style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border-dim);padding-top:8px;margin-top:auto">
-            <span style="font-family:var(--font-display);font-size:0.7rem;color:var(--accent-plasma)">Read →</span>
-          </div>
-        </a>
-        <a href="../topics/quantum-mechanics/the-standard-model-preview.html" class="tc" style="text-decoration:none">
-          <span style="font-family:var(--font-mono);font-size:0.65rem;color:var(--text-muted)">24 / 24</span>
-          <h3 style="font-size:0.95rem;color:var(--text-primary);margin:0">The Standard Model Preview</h3>
-          <div style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border-dim);padding-top:8px;margin-top:auto">
-            <span style="font-family:var(--font-display);font-size:0.7rem;color:var(--accent-plasma)">Read →</span>
-          </div>
-        </a></div>
-      <div class="ad-container" style="margin-top:48px">
-        <div style="text-align:center;width:100%">
-          <span class="ad-label">Advertisement</span>
-          <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
-          <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+
+      <!-- Sidebar -->
+      <aside class="bsb">
+        <div class="scard">
+          <h4>// Branch Overview</h4>
+          <div class="sst"><span>Topics</span><span>24</span></div>
+          <div class="sst"><span>Simulations</span><span>8</span></div>
+          <div class="sst"><span>Content</span><span>~52,000 words</span></div>
+          <div class="sst"><span>Level</span><span>Advanced</span></div>
+          <div class="sst"><span>Prerequisites</span><span>Calculus, CM</span></div>
         </div>
-      </div>
+        <div class="scard">
+          <h4>// Key Equations</h4>
+          <div class="formula-block" style="margin:0 0 8px;font-size:0.8rem">iℏ ∂ψ/∂t = Ĥψ</div>
+          <div class="formula-block" style="margin:0 0 8px;font-size:0.8rem">ΔxΔp ≥ ℏ/2</div>
+          <div class="formula-block" style="margin:0 0 8px;font-size:0.8rem">E_n = ℏω(n+½)</div>
+          <div class="formula-block" style="margin:0;font-size:0.8rem">λ = h/mv (de Broglie)</div>
+        </div>
+        <div class="scard">
+          <h4>// Related Branches</h4>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:8px">
+            <li><a href="classical-mechanics.html" style="font-size:0.85rem;color:var(--text-muted)">Classical Mechanics →</a></li>
+            <li><a href="particle-physics.html" style="font-size:0.85rem;color:var(--text-muted)">Particle Physics →</a></li>
+            <li><a href="atomic-physics.html" style="font-size:0.85rem;color:var(--text-muted)">Atomic Physics →</a></li>
+            <li><a href="condensed-matter.html" style="font-size:0.85rem;color:var(--text-muted)">Condensed Matter →</a></li>
+          </ul>
+        </div>
+        <div class="ad-container" style="min-height:250px"><div style="text-align:center;width:100%"><span class="ad-label">Advertisement</span><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div>
+      </aside>
     </div>
-  </section>
+  </div>
+</section>
 </main>
 <div id="footer-placeholder"></div>
 <script src="../js/components.js"></script>

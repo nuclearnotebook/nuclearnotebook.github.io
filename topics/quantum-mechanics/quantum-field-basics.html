@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quantum Field Theory Basics &#8212; Quantum Mechanics | QuantumAtlas</title>
+  <meta name="description" content="Field Quantisation, Feynman Diagrams, QED, and the Vacuum. Complete scientific treatment with derivations, equations, and real-world applications in quantum physics."/>
+  <link rel="canonical" href="https://yourdomain.com/topics/quantum-mechanics/quantum-field-basics.html"/>
+  <meta property="og:title" content="Quantum Field Theory Basics | QuantumAtlas"/><meta property="og:image" content="https://images.unsplash.com/photo-1579389083078-4e7018379f7e?w=1400&q=80&auto=format"/>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4X0M6RM0F6"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4X0M6RM0F6',{page_title:document.title,page_location:window.location.href});</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2633513915753897" crossorigin="anonymous"></script>
+  <meta name="google-adsense-account" content="ca-pub-2633513915753897">
+  <link rel="stylesheet" href="../../css/global.css"/><link rel="stylesheet" href="../../css/nav.css"/><link rel="stylesheet" href="../../css/topic-qm.css"/>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+<main>
+<section class="topic-hero">
+  <img src="https://images.unsplash.com/photo-1579389083078-4e7018379f7e?w=1400&q=80&auto=format" alt="Feynman diagrams — perturbative expansion of quantum field theory" class="topic-hero-bg-img" loading="eager"/>
+  <div class="topic-hero-overlay"></div>
+  <div class="container topic-hero-content">
+    <nav class="breadcrumb">
+      <a href="../../index.html">Home</a><span class="sep">&#8250;</span>
+      <a href="../../branches/quantum-mechanics.html">Quantum Mechanics</a><span class="sep">&#8250;</span>
+      <span class="current">Quantum Field Theory Basics</span>
+    </nav>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px">
+      <span class="badge badge-nova">Quantum Mechanics</span>
+      <span class="badge badge-plasma">Topic 23 / 24</span>
+    </div>
+    <h1 class="topic-hero-title">&#9883; Quantum Field Theory Basics</h1>
+    <p class="topic-hero-sub">Field Quantisation, Feynman Diagrams, QED, and the Vacuum</p>
+  </div>
+</section>
+<div class="container topic-layout">
+<article class="topic-article">
+<div class="ad-container"><div style="text-align:center;width:100%"><span class="ad-label">Advertisement</span><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div>
+
+<div class="topic-body">
+<figure style="margin:0 0 36px">
+  <img src="https://images.unsplash.com/photo-1579389083078-4e7018379f7e?w=1400&q=80&auto=format" alt="Feynman diagrams — perturbative expansion of quantum field theory" class="img-frame"/>
+  <figcaption>Feynman diagrams are the pictorial shorthand of perturbative quantum field theory, invented by Richard Feynman in 1948. Each diagram represents a specific term in the S-matrix perturbation expansion: external lines are real incoming/outgoing particles, internal lines are virtual particle propagators, and vertices carry coupling constants. The total scattering amplitude is the sum over all topologically distinct diagrams. For QED, the fine structure constant α ≈ 1/137 is small, making higher-order diagrams increasingly small — the perturbation series converges rapidly and gives extraordinary predictive precision.</figcaption>
+</figure>
+<h2>Why We Need Quantum Fields</h2>
+<p>Non-relativistic quantum mechanics describes a fixed number of particles: the N-particle Schrödinger equation. But processes like pair creation (γ → e⁺e⁻), particle decay (π⁰ → 2γ), and scattering (e⁻e⁻ → e⁻e⁻ via photon exchange) involve changing particle numbers. These require a framework where particle creation and annihilation are fundamental operations — quantum field theory. QFT promotes classical fields (like the electromagnetic field A_μ(x)) to quantum operators, whose excitations are the particles we observe.</p>
+
+<h2>Field Quantisation — From Classical to Quantum</h2>
+<p>For a real scalar field φ(x,t) satisfying the Klein-Gordon equation (∂²_t − ∇² + m²)φ = 0, the Fourier mode expansion is:</p>
+
+<div class="formula-block"><span class="formula-label">Quantum Scalar Field (mode expansion)</span>φ̂(x,t) = ∫d³k/(2π)^{3/2}/√(2ωₖ) [âₖ e^{i(k·x−ωₖt)} + â†ₖ e^{−i(k·x−ωₖt)}]</div>
+
+<p>where ωₖ = √(k² + m²)c. The creation operator â†ₖ creates a particle of momentum ℏk and energy ℏωₖ; âₖ destroys one. The vacuum state |0⟩ has no particles but non-zero zero-point energy E₀ = Σₖ ℏωₖ/2 — an infinite sum regulated by renormalisation.</p>
+
+<figure style="margin:32px 0">
+  <img src="https://images.unsplash.com/photo-1564327767484-ea27b4b7add7?w=900&q=80&auto=format" alt="CERN LHC particle collision QFT process" class="img-frame"/>
+  <figcaption>A proton-proton collision event at the LHC — each collision involves hundreds of QFT processes. The coloured jets (left) are from quark-gluon interactions (QCD); the electromagnetic tracks and calorimeter deposits (yellow blocks) are from QED processes. The Standard Model of particle physics — a QFT with gauge group SU(3)×SU(2)×U(1) — predicts every measured quantity in this collision to the available experimental precision. The LHC has delivered ~300 fb⁻¹ of integrated luminosity at 13 TeV, testing QFT predictions to sub-percent accuracy across 17 orders of magnitude in energy scale.</figcaption>
+</figure>
+
+<h2>QED — Feynman Rules</h2>
+<p>Quantum electrodynamics describes the interaction between electrons (Dirac field ψ), positrons (ψ̄), and photons (gauge field A_μ). The QED Lagrangian:</p>
+
+<div class="formula-block"><span class="formula-label">QED Lagrangian Density</span>ℒ_QED = ψ̄(iγ^μD_μ − mc/ℏ)ψ − ¼F_{μν}F^{μν} &nbsp;&nbsp;&nbsp; D_μ = ∂_μ + ieA_μ/ℏc</div>
+
+<p>The Feynman rules translate each diagram element into a mathematical factor: electron propagator S_F(p) = i(γ·p + m)/(p²−m²+iε), photon propagator D_F^{μν}(k) = −ig^{μν}/(k²+iε), and QED vertex −ieγ^μ/ℏ. The fine structure constant α = e²/(4πε₀ℏc) ≈ 1/137.036 is the expansion parameter — each additional photon line adds a factor ~α.</p>
+
+<h2>The Most Precise Test in Physics</h2>
+<p>The electron anomalous magnetic moment a_e = (g_e−2)/2 has been calculated in QED to 5th order in α (requiring evaluation of 10,000+ Feynman diagrams) and including small hadronic and electroweak corrections:</p>
+
+<div class="formula-block"><span class="formula-label">QED Prediction (5th order)</span>a_e(theory) = 0.001 159 652 181 606 (229)<br/>a_e(experiment) = 0.001 159 652 180 591 (026) (Harvard, 2022)</div>
+
+<p>Agreement to 12 significant figures — the most precisely tested prediction in the history of science. The tiny ~2σ discrepancy may indicate physics beyond the Standard Model and is actively investigated.</p>
+
+<h2>Virtual Particles and the Casimir Effect</h2>
+<p>In Feynman diagrams, internal lines represent virtual particles — intermediate quantum states not satisfying E² = (pc)² + (mc²)². Their "existence" for time Δt ~ ℏ/(2ΔE) is consistent with the energy-time uncertainty principle. The Casimir effect provides macroscopic evidence for quantum vacuum fluctuations: two uncharged parallel conducting plates separated by d attract each other with pressure:</p>
+
+<div class="formula-block"><span class="formula-label">Casimir Pressure</span>P = −ℏcπ²/(240d⁴) ≈ −1.3×10⁻³ Pa at d = 1 μm</div>
+
+<p>First measured by Sparnaay (1958), precisely confirmed by Lamoreaux (1997). The Casimir force is now measured routinely at sub-micron separations and must be accounted for in MEMS device design — a macroscopic, measurable consequence of the quantum field vacuum.</p>
+
+<div class="info-box info-box--fact">
+  <div class="info-box-title" style="color:#a078ff">&#127776; Renormalisation</div>
+  <p style="margin:0">Naive QFT calculations produce divergent integrals — infinite loop corrections to particle masses, charges, and scattering amplitudes. Renormalisation resolves this: the "bare" parameters of the Lagrangian are unphysical infinities that cancel against the infinite loop corrections, leaving finite, physically measurable "renormalised" parameters. The procedure was developed by Tomonaga, Schwinger, Feynman, and Dyson (Nobel Prize 1965) for QED, and extended to the full Standard Model by 't Hooft and Veltman (Nobel Prize 1999). Renormalisation is not mathematical sleight-of-hand — the renormalisation group (Wilson, Nobel 1982) provides a deep physical understanding: QFT describes physics at a given scale, with short-distance physics absorbed into renormalised couplings that "run" (change value) with the energy scale probed.</p>
+</div>
+</div>
+<div class="ad-container"><div style="text-align:center;width:100%"><span class="ad-label">Advertisement</span><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div>
+<div style="display:flex;justify-content:space-between;margin-top:40px;gap:16px;flex-wrap:wrap">
+  <a href="relativistic-quantum-mechanics.html" class="btn btn-outline">&#8592; Relativistic QM</a>
+  <a href="standard-model-preview.html" class="btn btn-primary" style="background:var(--gradient-plasma)">Next: Standard Model Preview &#8594;</a>
+</div>
+</article>
+<aside class="topic-sidebar">
+  <div class="sidebar-card"><h4>// Key Equations</h4><div class="formula-block" style="margin:0 0 8px;font-size:0.82rem"><span class="formula-label">Scalar field mode expansion</span>φ̂(x) = ∫d³k/(2π)³(âₖe^{ikx}+â†ₖe^{−ikx})</div><div class="formula-block" style="margin:0 0 8px;font-size:0.82rem"><span class="formula-label">QED fine structure constant</span>α = e²/(4πε₀ℏc) ≈ 1/137.036</div><div class="formula-block" style="margin:0 0 8px;font-size:0.82rem"><span class="formula-label">Electron anomalous magnetic moment</span>a_e = (g_e−2)/2 = 0.00115965... (theory)</div><div class="formula-block" style="margin:0 0 8px;font-size:0.82rem"><span class="formula-label">Casimir pressure</span>P_Casimir = −ℏcπ²/(240d⁴)</div></div>
+  <div class="sidebar-card">
+    <h4>// Topic Info</h4>
+    <div class="sidebar-stat"><span>Branch</span><span>Quantum Mechanics</span></div>
+    <div class="sidebar-stat"><span>Topic</span><span>23 / 24</span></div>
+    <div class="sidebar-stat"><span>Simulation</span><span>No</span></div>
+    <div class="sidebar-stat"><span>Level</span><span>Advanced</span></div>
+  </div>
+  <div class="sidebar-card"><h4>// All 24 Topics</h4><ul style='list-style:none;display:flex;flex-direction:column;gap:5px'><li><a href="wave-particle-duality.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">01. Wave-Particle Duality</a></li><li><a href="schrodinger-equation.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">02. Schrödinger Equation</a></li><li><a href="uncertainty-principle.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">03. Uncertainty Principle</a></li><li><a href="quantum-tunnelling.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">04. Quantum Tunnelling</a></li><li><a href="superposition.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">05. Quantum Superposition</a></li><li><a href="quantum-entanglement.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">06. Quantum Entanglement</a></li><li><a href="quantum-operators.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">07. Quantum Operators</a></li><li><a href="spin-and-angular-momentum.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">08. Spin & Angular Momentum</a></li><li><a href="hydrogen-atom.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">09. The Hydrogen Atom</a></li><li><a href="perturbation-theory.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">10. Perturbation Theory</a></li><li><a href="variational-methods.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">11. Variational Methods</a></li><li><a href="identical-particles.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">12. Identical Particles</a></li><li><a href="quantum-statistics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">13. Quantum Statistics</a></li><li><a href="path-integrals.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">14. Path Integrals</a></li><li><a href="measurement-problem.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">15. The Measurement Problem</a></li><li><a href="bells-theorem.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">16. Bell's Theorem</a></li><li><a href="quantum-cryptography.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">17. Quantum Cryptography</a></li><li><a href="density-matrix.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">18. Density Matrix</a></li><li><a href="quantum-harmonic-oscillator.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">19. Quantum Harmonic Oscillator</a></li><li><a href="many-body-quantum-systems.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">20. Many-Body Systems</a></li><li><a href="decoherence.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">21. Decoherence</a></li><li><a href="relativistic-quantum-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">22. Relativistic QM</a></li><li><a href="quantum-field-basics.html" style="font-size:0.8rem;color:var(--accent-nova);font-weight:600;text-decoration:none">23. Quantum Field Theory &#8592;</a></li><li><a href="standard-model-preview.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">24. Standard Model</a></li></ul></div>
+  <div class="ad-container" style="min-height:250px;flex-direction:column">
+    <span class="ad-label">Advertisement</span>
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+  </div>
+</aside>
+</div>
+</main>
+<div id="footer-placeholder"></div>
+<script src="../../js/components.js"></script>
+</body>
+</html>

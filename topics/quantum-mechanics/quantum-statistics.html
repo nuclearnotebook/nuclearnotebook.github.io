@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quantum Statistics &#8212; Quantum Mechanics | QuantumAtlas</title>
+  <meta name="description" content="Fermi-Dirac and Bose-Einstein Distributions, Fermi Energy, and Bose-Einstein Condensation. Complete scientific treatment with derivations, equations, and real-world applications in quantum physics."/>
+  <link rel="canonical" href="https://yourdomain.com/topics/quantum-mechanics/quantum-statistics.html"/>
+  <meta property="og:title" content="Quantum Statistics | QuantumAtlas"/><meta property="og:image" content="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1400&q=80&auto=format"/>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4X0M6RM0F6"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4X0M6RM0F6',{page_title:document.title,page_location:window.location.href});</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2633513915753897" crossorigin="anonymous"></script>
+  <meta name="google-adsense-account" content="ca-pub-2633513915753897">
+  <link rel="stylesheet" href="../../css/global.css"/>
+  <link rel="stylesheet" href="../../css/nav.css"/>
+  <link rel="stylesheet" href="../../css/topic-qm.css"/>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+<main>
+<section class="topic-hero">
+  <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1400&q=80&auto=format" alt="Fermi sea visualisation — filled energy states up to the Fermi energy" class="topic-hero-bg-img" loading="eager"/>
+  <div class="topic-hero-overlay"></div>
+  <div class="container topic-hero-content">
+    <nav class="breadcrumb">
+      <a href="../../index.html">Home</a><span class="sep">&#8250;</span>
+      <a href="../../branches/quantum-mechanics.html">Quantum Mechanics</a><span class="sep">&#8250;</span>
+      <span class="current">Quantum Statistics</span>
+    </nav>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px">
+      <span class="badge badge-nova">Quantum Mechanics</span><span class="badge badge-green">Interactive Simulation</span>
+      <span class="badge badge-plasma">Topic 13 / 24</span>
+    </div>
+    <h1 class="topic-hero-title">&#128202; Quantum Statistics</h1>
+    <p class="topic-hero-sub">Fermi-Dirac and Bose-Einstein Distributions, Fermi Energy, and Bose-Einstein Condensation</p>
+  </div>
+</section>
+<div class="container topic-layout">
+<article class="topic-article">
+<div class="ad-container"><div style="text-align:center;width:100%"><span class="ad-label">Advertisement</span><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div>
+<h2 id="simulation" style="margin-top:0;border-top:none;padding-top:0">&#127918; Interactive Simulation</h2>
+<div class="simulation-wrapper">
+  <div class="simulation-toolbar">
+    <span class="simulation-title">&#128200; Quantum Distribution Functions Visualiser</span>
+    <div class="sim-control"><label>Temperature kT</label><input type="range" id="fd-T" min="0.05" max="4" value="0.5" step="0.05"/><span id="fd-Tv">0.50</span></div>
+    <div class="sim-control"><label>Chem. potential &#956;/E_F</label><input type="range" id="fd-mu" min="-3" max="1.5" value="1" step="0.1"/><span id="fd-muv">1.0</span></div>
+    <div class="sim-control"><label>Distribution</label>
+      <select id="fd-type" style="background:var(--bg-deep);color:var(--text-primary);border:1px solid var(--border-dim);padding:4px 8px;border-radius:6px;font-size:0.78rem">
+        <option value="fd">Fermi-Dirac (electrons)</option>
+        <option value="be">Bose-Einstein (photons/BEC)</option>
+        <option value="mb">Maxwell-Boltzmann (classical)</option>
+      </select>
+    </div>
+  </div>
+  <div class="sim-canvas-wrap"><canvas id="fd-cv" height="290"></canvas></div>
+  <div style="padding:12px 20px;font-family:var(--font-mono);font-size:0.78rem;color:var(--text-muted);background:rgba(0,0,0,0.25);border-top:1px solid var(--border-dim)">
+    Drag sliders to see how temperature and chemical potential change the occupation probability f(E). At T&#8594;0 the FD distribution becomes a perfect step function at E=&#956;.
+  </div>
+</div>
+<script>
+(function(){
+  var cv=document.getElementById('fd-cv'),cx=cv.getContext('2d');
+  var TSl=document.getElementById('fd-T'),muSl=document.getElementById('fd-mu'),typeSel=document.getElementById('fd-type');
+  function W(){cv.width=cv.offsetWidth||700;}W();window.addEventListener('resize',function(){W();draw();});
+  function f(E,T,mu,type){
+    var x=(E-mu)/T;
+    if(type==='fd')return 1/(Math.exp(x)+1);
+    if(type==='be'){var v=Math.exp(x)-1;return v>0.0001?Math.min(1/v,10):10;}
+    return Math.min(Math.exp(-x),10);
+  }
+  function draw(){
+    var W2=cv.width,H=290,PAD=55,T=parseFloat(TSl.value),mu=parseFloat(muSl.value),type=typeSel.value;
+    cx.clearRect(0,0,W2,H);
+    var bg=cx.createLinearGradient(0,0,0,H);bg.addColorStop(0,'#050810');bg.addColorStop(1,'#0a0e22');cx.fillStyle=bg;cx.fillRect(0,0,W2,H);
+    var plotW=W2-2*PAD,plotH=H-2*PAD,Emax=4;
+    // Grid
+    for(var i=0;i<=4;i++){var gy=PAD+i*plotH/4;cx.strokeStyle='rgba(255,255,255,0.04)';cx.lineWidth=1;cx.beginPath();cx.moveTo(PAD,gy);cx.lineTo(W2-PAD,gy);cx.stroke();}
+    for(var i=0;i<=4;i++){var gx=PAD+i*plotW/4;cx.strokeStyle='rgba(255,255,255,0.04)';cx.lineWidth=1;cx.beginPath();cx.moveTo(gx,PAD);cx.lineTo(gx,H-PAD);cx.stroke();}
+    // Axes
+    cx.strokeStyle='rgba(0,212,255,0.3)';cx.lineWidth=2;
+    cx.beginPath();cx.moveTo(PAD,PAD);cx.lineTo(PAD,H-PAD);cx.lineTo(W2-PAD,H-PAD);cx.stroke();
+    // f=1 reference line
+    cx.strokeStyle='rgba(255,255,255,0.08)';cx.lineWidth=1;cx.setLineDash([3,5]);cx.beginPath();cx.moveTo(PAD,PAD);cx.lineTo(W2-PAD,PAD);cx.stroke();cx.setLineDash([]);
+    cx.fillStyle='rgba(255,255,255,0.25)';cx.font='9px JetBrains Mono,monospace';cx.textAlign='right';cx.fillText('f=1',PAD-3,PAD+3);
+    // Mu marker
+    if(mu>0&&mu<Emax){var mux=PAD+(mu/Emax)*plotW;cx.strokeStyle='rgba(255,200,0,0.4)';cx.setLineDash([4,4]);cx.lineWidth=1;cx.beginPath();cx.moveTo(mux,PAD);cx.lineTo(mux,H-PAD);cx.stroke();cx.setLineDash([]);cx.fillStyle='rgba(255,200,0,0.6)';cx.textAlign='center';cx.fillText('E_F',mux,PAD-6);}
+    // Distribution
+    var col=type==='fd'?'rgba(0,212,255,0.9)':type==='be'?'rgba(123,47,255,0.9)':'rgba(255,200,0,0.8)';
+    cx.beginPath();cx.strokeStyle=col;cx.lineWidth=2.5;cx.shadowColor=col;cx.shadowBlur=8;
+    for(var i=0;i<=400;i++){
+      var E=0.02+i*Emax/400;var fv=Math.min(f(E,T,mu,type),1.05);
+      var px=PAD+(E/Emax)*plotW;var py=H-PAD-Math.max(0,Math.min(fv,1))*plotH;
+      i===0?cx.moveTo(px,py):cx.lineTo(px,py);
+    }
+    cx.stroke();cx.shadowBlur=0;
+    // Shaded area
+    cx.fillStyle=col.replace('0.9','0.08');cx.beginPath();cx.moveTo(PAD,H-PAD);
+    for(var i=0;i<=400;i++){var E=0.02+i*Emax/400;var fv=Math.min(f(E,T,mu,type),1);var px=PAD+(E/Emax)*plotW;var py=H-PAD-Math.max(0,fv)*plotH;cx.lineTo(px,py);}
+    cx.lineTo(W2-PAD,H-PAD);cx.closePath();cx.fill();
+    // Labels
+    cx.fillStyle=col;cx.font='10px JetBrains Mono,monospace';cx.textAlign='left';
+    var lbl=type==='fd'?'Fermi-Dirac f(E)':type==='be'?'Bose-Einstein f(E)':'Maxwell-Boltzmann f(E)';
+    cx.fillText(lbl,PAD+6,PAD+16);
+    cx.fillStyle='rgba(255,255,255,0.4)';cx.fillText('kT='+T.toFixed(2)+' E_F',PAD+6,PAD+30);
+    cx.textAlign='center';cx.fillStyle='rgba(0,212,255,0.4)';cx.fillText('E/E_F',W2/2,H-8);
+    cx.textAlign='left';
+    document.getElementById('fd-Tv').textContent=T.toFixed(2);document.getElementById('fd-muv').textContent=parseFloat(muSl.value).toFixed(1);
+  }
+  TSl.oninput=draw;muSl.oninput=draw;typeSel.onchange=draw;draw();
+})();
+</script>
+<div class="topic-body">
+<figure style="margin:0 0 36px">
+  <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1400&q=80&auto=format" alt="Fermi sea visualisation — filled energy states up to the Fermi energy" class="img-frame"/>
+  <figcaption>The Fermi sea of a metal: at T=0 all electron states below the Fermi energy E_F are filled (f=1), all above are empty (f=0). The Fermi surface — the 3D surface of occupied states in momentum space — determines the metal's electrical, thermal, and optical properties. For copper, E_F = 7.0 eV corresponds to 81,000 K — electrons are quantum mechanically degenerate even at room temperature (k_BT = 0.025 eV ≪ E_F). This is why metals conduct electricity at room temperature: only electrons near E_F can be thermally excited.</figcaption>
+</figure>
+<h2>Three Statistics — Three Different Physical Worlds</h2>
+<p>Identical particles come in two types — fermions and bosons — with fundamentally different statistical behaviour that shapes the entire physical world. Classical Maxwell-Boltzmann statistics (treating particles as distinguishable) gives way to:</p>
+
+<ul style="color:var(--text-secondary)">
+  <li><strong>Fermi-Dirac statistics:</strong> Electrons, protons, neutrons, quarks — maximum one particle per state</li>
+  <li><strong>Bose-Einstein statistics:</strong> Photons, ⁴He, Cooper pairs, ⁸⁷Rb atoms — unlimited particles per state, with bunching tendency</li>
+</ul>
+
+<p>These are not merely theoretical curiosities — they govern the behaviour of all matter at low temperatures, explaining metals, semiconductors, superfluids, superconductors, and Bose-Einstein condensates.</p>
+
+<h2>Fermi-Dirac Distribution — Electrons</h2>
+<div class="formula-block"><span class="formula-label">Fermi-Dirac Occupation Probability</span>f_FD(E) = 1 / (exp[(E−μ)/(k_BT)] + 1) &nbsp;&nbsp;&nbsp; 0 ≤ f_FD ≤ 1</div>
+
+<p>At T=0: f_FD(E) = 1 for E < μ = E_F (all states filled), 0 for E > E_F (all states empty). At finite T, the sharp step broadens over ~4k_BT. The chemical potential μ (Fermi level) at T=0 equals the Fermi energy E_F. For a free electron gas of density n:</p>
+
+<div class="formula-block"><span class="formula-label">Fermi Energy (3D free electron gas)</span>E_F = ℏ²(3π²n)^{2/3} / (2mₑ)</div>
+
+<div class="table-wrap"><table>
+<thead><tr><th>Metal</th><th>n (m⁻³)</th><th>E_F (eV)</th><th>T_F = E_F/k_B (K)</th></tr></thead>
+<tbody>
+<tr><td>Lithium</td><td>4.70×10²⁸</td><td>4.74</td><td>55,000</td></tr>
+<tr><td>Copper</td><td>8.49×10²⁸</td><td>7.04</td><td>81,700</td></tr>
+<tr><td>Gold</td><td>5.90×10²⁸</td><td>5.51</td><td>64,000</td></tr>
+<tr><td>Aluminium</td><td>18.1×10²⁸</td><td>11.7</td><td>135,900</td></tr>
+</tbody></table></div>
+
+<figure style="margin:32px 0">
+  <img src="https://images.unsplash.com/photo-1532187643603-ba119ca4109e?w=900&q=80&auto=format" alt="Superconducting material showing Cooper pair Bose-Einstein condensation" class="img-frame"/>
+  <figcaption>Niobium — a Type II superconductor — cooling through its critical temperature T_c = 9.26 K. Below T_c, electrons near the Fermi surface form Cooper pairs (two electrons bound by lattice phonon exchange), which are bosons (integer total spin). These Cooper pairs form a Bose-Einstein condensate — a macroscopic quantum state described by a single wave function. This condensate flows without resistance, exhibiting perfect conductivity and perfect diamagnetism (Meissner effect). The BCS theory of superconductivity (Bardeen, Cooper, Schrieffer — Nobel 1972) explains this as a quantum phase transition of the Fermi sea.</figcaption>
+</figure>
+
+<h2>Bose-Einstein Distribution and Condensation</h2>
+<div class="formula-block"><span class="formula-label">Bose-Einstein Occupation Number</span>f_BE(E) = 1 / (exp[(E−μ)/(k_BT)] − 1) &nbsp;&nbsp;&nbsp; f_BE ≥ 0, diverges as E → μ</div>
+
+<p>For bosons, the chemical potential must satisfy μ ≤ E_min to keep f_BE ≥ 0. As T decreases, μ approaches E_0 (ground state energy). At the critical temperature T_BEC, μ reaches E_0 and the ground state population diverges — Bose-Einstein condensation:</p>
+
+<div class="formula-block"><span class="formula-label">BEC Critical Temperature</span>T_BEC = 3.31ℏ²n^{2/3} / (mk_B) &nbsp;&nbsp;&nbsp; N₀/N = 1 − (T/T_BEC)^{3/2}</div>
+
+<p>The first gaseous BEC was achieved by Cornell, Wieman (JILA, 1995) and Ketterle (MIT, 1995) using laser-cooled and magnetically trapped ⁸⁷Rb atoms at T ≈ 170 nK — winning the 2001 Nobel Prize. The condensate can be observed directly with absorption imaging and behaves as a coherent matter wave, showing interference fringes when two condensates overlap.</p>
+
+<h2>Applications of Quantum Statistics</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>System</th><th>Statistics</th><th>Physical Consequence</th></tr></thead>
+<tbody>
+<tr><td>Electrons in metals</td><td>Fermi-Dirac</td><td>Small electronic heat capacity C ∝ T (vs classical T-independent)</td></tr>
+<tr><td>Photons (blackbody)</td><td>Bose-Einstein (μ=0)</td><td>Planck radiation law; avoids ultraviolet catastrophe</td></tr>
+<tr><td>Phonons (lattice vibrations)</td><td>Bose-Einstein (μ=0)</td><td>Debye heat capacity C ∝ T³ at low T</td></tr>
+<tr><td>Cooper pairs in superconductors</td><td>Bose-Einstein</td><td>Macroscopic quantum coherence; zero resistance</td></tr>
+<tr><td>⁴He atoms below 2.17 K</td><td>Bose-Einstein</td><td>Superfluid phase; zero viscosity, quantised vortices</td></tr>
+</tbody></table></div>
+
+<div class="info-box info-box--fact">
+  <div class="info-box-title" style="color:#a078ff">&#127775; Planck's Law from Bose-Einstein Statistics</div>
+  <p style="margin:0">The blackbody radiation law I(ν,T) = (2hν³/c²)/(e^{hν/kT}−1) is the Bose-Einstein distribution for photons with μ=0 (photon number not conserved by emission/absorption). The denominator e^{hν/kT}−1 is purely bosonic — without it, the distribution would be the classical Rayleigh-Jeans law I ∝ ν²T, which diverges at high frequencies (the ultraviolet catastrophe). The bosonic denominator introduces the factor 1/(e^{hν/kT}−1) which suppresses high-frequency modes exponentially. Planck's discovery of this formula in 1900 launched quantum mechanics — the first quantisation postulate was required precisely to explain this Bose-Einstein factor.</p>
+</div>
+</div>
+<div class="ad-container"><div style="text-align:center;width:100%"><span class="ad-label">Advertisement</span><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div>
+<div style="display:flex;justify-content:space-between;margin-top:40px;gap:16px;flex-wrap:wrap">
+  <a href="identical-particles.html" class="btn btn-outline">&#8592; Identical Particles</a>
+  <a href="path-integrals.html" class="btn btn-primary" style="background:var(--gradient-plasma)">Next: Path Integrals &#8594;</a>
+</div>
+</article>
+<aside class="topic-sidebar">
+  <div class="sidebar-card"><h4>// Key Equations</h4><div class="formula-block" style="margin:0 0 8px;font-size:0.82rem"><span class="formula-label">Fermi-Dirac distribution</span>f_FD(E) = 1/(e^{(E−μ)/kT}+1)</div><div class="formula-block" style="margin:0 0 8px;font-size:0.82rem"><span class="formula-label">Bose-Einstein distribution</span>f_BE(E) = 1/(e^{(E−μ)/kT}−1)</div><div class="formula-block" style="margin:0 0 8px;font-size:0.82rem"><span class="formula-label">Fermi energy (T=0)</span>E_F = ℏ²(3π²n)^{2/3}/(2m)</div><div class="formula-block" style="margin:0 0 8px;font-size:0.82rem"><span class="formula-label">BEC critical temperature</span>T_BEC = 3.31ℏ²n^{2/3}/(mk_B)</div></div>
+  <div class="sidebar-card">
+    <h4>// Topic Info</h4>
+    <div class="sidebar-stat"><span>Branch</span><span>Quantum Mechanics</span></div>
+    <div class="sidebar-stat"><span>Topic</span><span>13 / 24</span></div>
+    <div class="sidebar-stat"><span>Simulation</span><span>Yes &#10003;</span></div>
+    <div class="sidebar-stat"><span>Level</span><span>Advanced</span></div>
+  </div>
+  <div class="sidebar-card"><h4>// All 24 Topics</h4><ul style='list-style:none;display:flex;flex-direction:column;gap:5px'><li><a href="wave-particle-duality.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">01. Wave-Particle Duality</a></li><li><a href="schrodinger-equation.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">02. Schrödinger Equation</a></li><li><a href="uncertainty-principle.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">03. Uncertainty Principle</a></li><li><a href="quantum-tunnelling.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">04. Quantum Tunnelling</a></li><li><a href="superposition.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">05. Quantum Superposition</a></li><li><a href="quantum-entanglement.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">06. Quantum Entanglement</a></li><li><a href="quantum-operators.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">07. Quantum Operators</a></li><li><a href="spin-and-angular-momentum.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">08. Spin & Angular Momentum</a></li><li><a href="hydrogen-atom.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">09. The Hydrogen Atom</a></li><li><a href="perturbation-theory.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">10. Perturbation Theory</a></li><li><a href="variational-methods.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">11. Variational Methods</a></li><li><a href="identical-particles.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">12. Identical Particles</a></li><li><a href="quantum-statistics.html" style="font-size:0.8rem;color:var(--accent-nova);font-weight:600;text-decoration:none">13. Quantum Statistics &#8592;</a></li><li><a href="path-integrals.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">14. Path Integrals</a></li><li><a href="measurement-problem.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">15. The Measurement Problem</a></li><li><a href="bells-theorem.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">16. Bell's Theorem</a></li><li><a href="quantum-cryptography.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">17. Quantum Cryptography</a></li><li><a href="density-matrix.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">18. Density Matrix</a></li><li><a href="quantum-harmonic-oscillator.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">19. Quantum Harmonic Oscillator</a></li><li><a href="many-body-quantum-systems.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">20. Many-Body Systems</a></li><li><a href="decoherence.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">21. Decoherence</a></li><li><a href="relativistic-quantum-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">22. Relativistic QM</a></li><li><a href="quantum-field-basics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">23. Quantum Field Theory</a></li><li><a href="standard-model-preview.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">24. Standard Model</a></li></ul></div>
+  <div class="ad-container" style="min-height:250px;flex-direction:column">
+    <span class="ad-label">Advertisement</span>
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+  </div>
+</aside>
+</div>
+</main>
+<div id="footer-placeholder"></div>
+<script src="../../js/components.js"></script>
+</body>
+</html>

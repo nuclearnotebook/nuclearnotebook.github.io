@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quantum Tunnelling — Quantum Mechanics | QuantumAtlas</title>
+  <meta name="description" content="Complete treatment of quantum tunnelling — WKB approximation, transmission coefficients, scanning tunnelling microscopy, alpha decay, and nuclear fusion applications."/>
+  <meta name="keywords" content="quantum tunnelling, tunnel effect, WKB approximation, transmission coefficient, alpha decay, scanning tunnelling microscope, nuclear fusion, potential barrier"/>
+  <link rel="canonical" href="https://yourdomain.com/topics/quantum-mechanics/quantum-tunnelling.html"/>
+  <meta property="og:title" content="Quantum Tunnelling | QuantumAtlas"/>
+  <meta property="og:image" content="https://images.unsplash.com/photo-1581093577421-f561a654a353?w=1200&q=80"/>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4X0M6RM0F6"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4X0M6RM0F6',{page_title:document.title,page_location:window.location.href});</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2633513915753897" crossorigin="anonymous"></script>
+  <meta name="google-adsense-account" content="ca-pub-2633513915753897">
+  <link rel="stylesheet" href="../../css/global.css"/><link rel="stylesheet" href="../../css/nav.css"/><link rel="stylesheet" href="../../css/topic-qm.css"/>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+<main>
+<section class="topic-hero">
+  <img src="https://images.unsplash.com/photo-1581093577421-f561a654a353?w=1400&q=80&auto=format" alt="Quantum tunnelling through potential barrier" class="topic-hero-bg-img" loading="eager"/>
+  <div class="topic-hero-overlay"></div>
+  <div class="container topic-hero-content">
+    <nav class="breadcrumb"><a href="../../index.html">Home</a><span class="sep">›</span><a href="../../branches/quantum-mechanics.html">Quantum Mechanics</a><span class="sep">›</span><span class="current">Quantum Tunnelling</span></nav>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px">
+      <span class="badge badge-nova">Quantum Mechanics</span>
+      <span class="badge badge-green">Interactive Simulation</span>
+      <span class="badge badge-plasma">Topic 04 / 24</span>
+    </div>
+    <h1 class="topic-hero-title">🚧 Quantum Tunnelling</h1>
+    <p class="topic-hero-sub">Barrier Penetration, WKB Approximation, and Quantum Technology</p>
+  </div>
+</section>
+<div class="container topic-layout">
+<article class="topic-article">
+<div class="ad-container"><div style="text-align:center;width:100%"><span class="ad-label">Advertisement</span><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div>
+
+<h2 id="simulation" style="margin-top:0;border-top:none;padding-top:0">Quantum Tunnelling Simulator</h2>
+<div class="simulation-wrapper">
+  <div class="simulation-toolbar">
+    <span class="simulation-title">🚧 Potential Barrier Tunnelling</span>
+    <div class="sim-control"><label>Barrier height V₀</label><input type="range" id="qt-V" min="1" max="10" value="5" step="0.5"/><span id="qt-Vv">5.0</span></div>
+    <div class="sim-control"><label>Barrier width a</label><input type="range" id="qt-a" min="5" max="60" value="20" step="5"/><span id="qt-av">20 px</span></div>
+    <div class="sim-control"><label>Particle energy E</label><input type="range" id="qt-E" min="0.5" max="9.5" value="3" step="0.5"/><span id="qt-Ev">3.0</span></div>
+    <button id="qt-run" class="btn btn-primary" style="padding:7px 18px;font-size:0.78rem;background:linear-gradient(135deg,#7b2fff,#00d4ff)">Fire Particle</button>
+    <button id="qt-reset" class="btn btn-outline" style="padding:7px 14px;font-size:0.78rem">Reset</button>
+  </div>
+  <div class="sim-canvas-wrap"><canvas id="qt-canvas" height="360"></canvas></div>
+  <div style="padding:12px 20px;display:flex;gap:24px;flex-wrap:wrap;font-family:var(--font-mono);font-size:0.78rem;color:var(--text-muted);background:rgba(0,0,0,0.25);border-top:1px solid var(--border-dim)">
+    <span>T (transmission): <strong id="qt-T" style="color:var(--accent-nova)">—</strong></span>
+    <span>R (reflection): <strong id="qt-R" style="color:var(--accent-solar)">—</strong></span>
+    <span>κ (decay rate): <strong id="qt-kap" style="color:var(--accent-green)">—</strong></span>
+    <span>E vs V₀: <strong id="qt-Ecomp" style="color:var(--accent-gold)">—</strong></span>
+  </div>
+</div>
+<script>
+(function(){
+  const cv=document.getElementById('qt-canvas'),cx=cv.getContext('2d');
+  const VSl=document.getElementById('qt-V'),aSl=document.getElementById('qt-a'),ESl=document.getElementById('qt-E');
+  VSl.oninput=()=>{document.getElementById('qt-Vv').textContent=parseFloat(VSl.value).toFixed(1);draw(null);};
+  aSl.oninput=()=>{document.getElementById('qt-av').textContent=aSl.value+' px';draw(null);};
+  ESl.oninput=()=>{document.getElementById('qt-Ev').textContent=parseFloat(ESl.value).toFixed(1);draw(null);};
+  let raf=null,running=false,t=0;
+  function W(){cv.width=cv.offsetWidth||800;}W();window.addEventListener('resize',()=>{W();draw(null);});
+  function getT(){
+    const V=parseFloat(VSl.value),a=parseInt(aSl.value),E=parseFloat(ESl.value);
+    if(E>=V){// above barrier — oscillatory
+      const k1=Math.sqrt(E),k2=Math.sqrt(E-V);
+      const T=1/(1+((k1*k1-k2*k2)*(k1*k1-k2*k2))/(4*k1*k1*k2*k2)*Math.pow(Math.sin(k2*a/10),2));
+      return{T,R:1-T,aboveBarrier:true,kap:0};
+    } else {// below barrier — tunnelling
+      const kap=Math.sqrt(V-E)*0.5;
+      const sinh2=Math.sinh(kap*a/20)**2;
+      const T=1/(1+(V*V*sinh2)/(4*E*(V-E)));
+      return{T,R:1-T,aboveBarrier:false,kap};
+    }
+  }
+  function draw(time){
+    const W2=cv.width,H=360,V=parseFloat(VSl.value),a=parseInt(aSl.value),E=parseFloat(ESl.value);
+    cx.clearRect(0,0,W2,H);
+    const bg=cx.createLinearGradient(0,0,0,H);bg.addColorStop(0,'#050810');bg.addColorStop(1,'#0a0e22');
+    cx.fillStyle=bg;cx.fillRect(0,0,W2,H);
+    const PAD=50,potH=H-100,cY=H-70;
+    const vScale=potH/(V*1.5);const eScale=vScale;
+    const bx1=W2*0.38,bx2=bx1+a;
+    // Potential barrier
+    cx.fillStyle='rgba(123,47,255,0.18)';cx.fillRect(bx1,cY-V*vScale,bx2-bx1,V*vScale);
+    cx.strokeStyle='rgba(123,47,255,0.7)';cx.lineWidth=2;
+    cx.beginPath();cx.moveTo(PAD,cY);cx.lineTo(bx1,cY);cx.lineTo(bx1,cY-V*vScale);cx.lineTo(bx2,cY-V*vScale);cx.lineTo(bx2,cY);cx.lineTo(W2-PAD,cY);cx.stroke();
+    // V₀ label
+    cx.fillStyle='rgba(123,47,255,0.9)';cx.font='10px JetBrains Mono,monospace';cx.textAlign='right';cx.fillText('V₀='+V.toFixed(1),bx1-4,cY-V*vScale+4);cx.textAlign='left';
+    // Energy level
+    const ey=cY-E*eScale;
+    cx.strokeStyle='rgba(0,212,255,0.7)';cx.lineWidth=1.5;cx.setLineDash([6,4]);
+    cx.beginPath();cx.moveTo(PAD,ey);cx.lineTo(W2-PAD,ey);cx.stroke();cx.setLineDash([]);
+    cx.fillStyle='rgba(0,212,255,0.9)';cx.font='10px JetBrains Mono,monospace';cx.fillText('E='+E.toFixed(1),PAD+4,ey-4);
+    // Wave function
+    const {T,R,aboveBarrier,kap}=getT();
+    const k1=Math.sqrt(E)*1.5,amp=55;
+    if(time!==null){
+      // Incident + reflected wave (left region)
+      cx.beginPath();cx.strokeStyle='rgba(0,212,255,0.85)';cx.lineWidth=2.5;cx.shadowColor='#00d4ff';cx.shadowBlur=8;
+      for(let x=PAD;x<=bx1;x++){
+        const phase=k1*(x-bx1)*0.08-time*2;
+        const psi=Math.cos(phase)+Math.sqrt(R)*Math.cos(-k1*(x-bx1)*0.08-time*2);
+        cx.lineTo(x,ey-psi*amp*0.5);
+        if(x===PAD)cx.moveTo(x,ey-psi*amp*0.5);
+      }
+      cx.stroke();cx.shadowBlur=0;
+      // Inside barrier — exponential decay or oscillation
+      cx.beginPath();cx.strokeStyle='rgba(123,47,255,0.7)';cx.lineWidth=2;cx.shadowColor='#7b2fff';cx.shadowBlur=6;
+      for(let x=bx1;x<=bx2;x++){
+        const u=(x-bx1)/(bx2-bx1);
+        let psi;
+        if(!aboveBarrier){psi=Math.exp(-kap*(x-bx1)*0.1)*Math.cos(time*1.5)*0.7;}
+        else{const k2=Math.sqrt(E-V)*1.5;psi=Math.cos(k2*(x-bx1)*0.08-time*2);}
+        cx.lineTo(x,ey-psi*amp*0.5*Math.exp(-kap*u*2));
+        if(x===bx1)cx.moveTo(x,ey-psi*amp*0.5);
+      }
+      cx.stroke();cx.shadowBlur=0;
+      // Transmitted wave (right region)
+      if(T>0.001){
+        cx.beginPath();cx.strokeStyle=`rgba(0,255,136,${Math.min(0.9,T*2+0.2)})`;cx.lineWidth=2;cx.shadowColor='#00ff88';cx.shadowBlur=6;
+        for(let x=bx2;x<=W2-PAD;x++){
+          const phase=k1*(x-bx2)*0.08-time*2;
+          const psi=Math.sqrt(T)*Math.cos(phase);
+          cx.lineTo(x,ey-psi*amp*0.5);
+          if(x===bx2)cx.moveTo(x,ey-psi*amp*0.5);
+        }
+        cx.stroke();cx.shadowBlur=0;
+      }
+    }
+    // Labels
+    cx.fillStyle='rgba(0,212,255,0.6)';cx.font='9px JetBrains Mono,monospace';cx.textAlign='center';cx.fillText('INCIDENT',bx1/2+PAD/2,H-35);
+    cx.fillStyle='rgba(0,255,136,0.6)';cx.fillText('TRANSMITTED',bx2+(W2-PAD-bx2)/2,H-35);
+    cx.fillStyle='rgba(123,47,255,0.6)';cx.fillText('BARRIER',bx1+(bx2-bx1)/2,H-35);cx.textAlign='left';
+    // Update info
+    document.getElementById('qt-T').textContent=(T*100).toFixed(2)+'%';
+    document.getElementById('qt-R').textContent=(R*100).toFixed(2)+'%';
+    document.getElementById('qt-kap').textContent=aboveBarrier?'N/A (above)':kap.toFixed(3);
+    document.getElementById('qt-Ecomp').textContent=E<V?`E < V₀ (TUNNELS!)`:`E > V₀ (classical)`;
+  }
+  function run(){
+    if(running)return;running=true;t=0;let last=null;
+    function step(ts){if(!last)last=ts;t=(ts-last)/500;draw(t);if(running)raf=requestAnimationFrame(step);}
+    raf=requestAnimationFrame(step);
+  }
+  document.getElementById('qt-run').onclick=run;
+  document.getElementById('qt-reset').onclick=()=>{cancelAnimationFrame(raf);running=false;draw(null);};
+  draw(null);
+})();
+</script>
+
+<div class="topic-body">
+<figure style="margin:32px 0"><img src="https://images.unsplash.com/photo-1581093577421-f561a654a353?w=900&q=80&auto=format" alt="Nuclear fusion reaction representing quantum tunnelling in stars" class="img-frame"/><figcaption>The Sun shines because of quantum tunnelling. In the solar core (temperature ~15 million K), protons have thermal energies of ~1.3 keV — far less than the ~1 MeV Coulomb barrier between them. Classically, fusion should be impossible. Quantum tunnelling allows protons to penetrate the barrier with tiny but non-zero probability. Integrated over the Sun's 10⁵⁷ protons, this produces the Sun's luminosity of 3.83 × 10²⁶ W.</figcaption></figure>
+
+<h2>The Classical Impossibility</h2>
+<p>In classical mechanics, a particle approaching a potential energy barrier higher than its total energy is completely reflected — it cannot enter the classically forbidden region. The kinetic energy would become negative, which is physically meaningless classically. In quantum mechanics, this changes fundamentally: the wave function does not abruptly vanish at the barrier edge. It penetrates exponentially into the classically forbidden region, and if the barrier has finite thickness, the wave function emerges on the other side with non-zero amplitude. There is a finite probability that the particle is transmitted — it has "tunnelled" through the barrier.</p>
+
+<h2>The Square Barrier — Exact Solution</h2>
+<p>Consider a particle of energy E approaching a rectangular potential barrier of height V₀ and width a. For E < V₀ (tunnelling case), inside the barrier the Schrödinger equation gives exponentially decaying (evanescent) solutions:</p>
+<div class="formula-block"><span class="formula-label">Wave Function Inside Barrier (E &lt; V₀)</span>ψ(x) = A e^(κx) + B e^(−κx) &nbsp;&nbsp;&nbsp; κ = √[2m(V₀−E)]/ℏ</div>
+<p>Matching boundary conditions at both edges and computing probability currents gives the exact transmission coefficient:</p>
+<div class="formula-block"><span class="formula-label">Transmission Coefficient (Exact)</span>T = [1 + V₀² sinh²(κa) / (4E(V₀−E))]⁻¹</div>
+<p>For thick or tall barriers (κa ≫ 1): T ≈ 16(E/V₀)(1−E/V₀) e^(−2κa). The exponential e^(−2κa) dominates — tunnelling probability falls exponentially with barrier width a and with √(V₀−E). This exponential sensitivity is the key feature exploited in technological applications.</p>
+
+<h2>The WKB Approximation</h2>
+<p>For smoothly varying potentials V(x), the Wentzel-Kramers-Brillouin (WKB) semiclassical approximation gives the transmission probability:</p>
+<div class="formula-block"><span class="formula-label">WKB Tunnelling Probability</span>T ≈ exp[−2∫√(2m(V(x)−E))/ℏ dx] &nbsp;&nbsp;&nbsp; (integral over classically forbidden region)</div>
+<p>The WKB result applies whenever the potential varies slowly on the scale of the de Broglie wavelength. It correctly predicts the exponential dependence on barrier height, width, and particle mass. For the Coulomb barrier (V ∝ 1/r), the integral can be evaluated analytically — giving the Gamow factor used in nuclear physics.</p>
+
+<div class="table-wrap"><table>
+<thead><tr><th>Application</th><th>Barrier type</th><th>Tunnelling consequence</th></tr></thead>
+<tbody>
+<tr><td>Alpha decay</td><td>Nuclear Coulomb barrier (~25 MeV)</td><td>Half-lives ranging from 10⁻⁷ s to 10²⁴ y</td></tr>
+<tr><td>Nuclear fusion in stars</td><td>Coulomb barrier between protons</td><td>Powers the Sun; thermonuclear energy</td></tr>
+<tr><td>Scanning tunnelling microscope</td><td>Vacuum gap (~0.5–2 nm)</td><td>Atomic-resolution surface imaging</td></tr>
+<tr><td>Tunnel diode</td><td>p-n junction depletion region</td><td>Negative resistance; THz electronics</td></tr>
+<tr><td>Josephson junction</td><td>Insulating layer (~1–2 nm)</td><td>Cooper pair tunnelling; quantum computing qubits</td></tr>
+<tr><td>Enzyme catalysis</td><td>Chemical activation barrier</td><td>Proton tunnelling accelerates reaction rates</td></tr>
+</tbody></table></div>
+
+<h2>Alpha Decay — Gamow's Theory</h2>
+<p>George Gamow (1928) explained radioactive alpha decay using quantum tunnelling — one of the first quantum mechanical applications to nuclear physics. An alpha particle (helium-4 nucleus) inside a heavy nucleus is trapped by the strong nuclear force, but faces a Coulomb repulsion barrier outside. The Gamow factor determines the tunnelling probability:</p>
+<div class="formula-block"><span class="formula-label">Gamow Factor (Alpha Decay)</span>G = 2∫ κ(r) dr = (πZe²/ℏ)√(2M/E) − 4√(2MRV₀)/ℏ</div>
+<p>The decay half-life t₁/₂ ∝ e^G. Because G depends exponentially on E (the alpha particle energy), tiny differences in energy produce enormous differences in half-life — the Geiger-Nuttall law: log(t₁/₂) ∝ 1/√E. Polonium-212 (E = 8.78 MeV) has t₁/₂ = 0.3 μs; Uranium-238 (E = 4.27 MeV) has t₁/₂ = 4.5 × 10⁹ years — a factor of 10²⁴ difference from a 2× change in energy, all explained by quantum tunnelling.</p>
+
+<h2>Scanning Tunnelling Microscope</h2>
+<p>The scanning tunnelling microscope (STM), invented by Binnig and Rohrer in 1981 (Nobel Prize 1986), directly exploits quantum tunnelling to image individual atoms. A sharp metallic tip is positioned within ~0.5–1 nm of a conducting surface. At this distance, electrons tunnel through the vacuum gap between tip and surface. The tunnelling current is exquisitely sensitive to gap distance d:</p>
+<div class="formula-block"><span class="formula-label">STM Tunnelling Current</span>I ∝ V · e^(−2κd) &nbsp;&nbsp;&nbsp; κ ≈ √(2mφ)/ℏ ≈ 10⁻¹⁰ m⁻¹ (for φ ~ few eV)</div>
+<p>With κ ≈ 10¹⁰ m⁻¹, changing d by just 0.1 nm (1 Å) changes I by e^(2) ≈ 7.4×. This means a change of one atomic diameter in height changes the current by nearly an order of magnitude — providing sub-Ångström height resolution. STM was used to create the first images of individual silicon and carbon atoms, and has since been used to position individual atoms on surfaces (the famous IBM "quantum corral" of 48 iron atoms on copper, forming a ring that shows quantum interference patterns of trapped electrons).</p>
+
+<div class="info-box info-box--fact"><div class="info-box-title" style="color:#a078ff">💻 Quantum Computing: Josephson Junctions</div><p style="margin:0">Superconducting qubits — the basis of IBM, Google, and most quantum computers — exploit Cooper pair tunnelling through Josephson junctions (two superconductors separated by a thin insulator). The quantum states |0⟩ and |1⟩ correspond to different quantum states of the superconducting circuit, and quantum gates are implemented by microwave pulses. Google's Sycamore processor (2019) used 53 transmon qubits based on Josephson junctions to achieve "quantum advantage" — performing a specific computation in 200 seconds that would take a classical supercomputer ~10,000 years (though the classical estimate has been disputed).</p></div>
+</div>
+
+<div class="ad-container"><div style="text-align:center;width:100%"><span class="ad-label">Advertisement</span><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div>
+<div style="display:flex;justify-content:space-between;margin-top:40px;gap:16px;flex-wrap:wrap">
+  <a href="uncertainty-principle.html" class="btn btn-outline">← Uncertainty Principle</a>
+  <a href="superposition.html" class="btn btn-primary" style="background:var(--gradient-plasma)">Next: Quantum Superposition →</a>
+</div>
+</article>
+<aside class="topic-sidebar">
+  <div class="sidebar-card">
+    <h4>// Key Equations</h4>
+    <div class="formula-block" style="margin:0 0 8px;font-size:0.82rem">T ≈ e^(−2κa)</div>
+    <div class="formula-block" style="margin:0 0 8px;font-size:0.82rem">κ = √[2m(V₀−E)]/ℏ</div>
+    <div class="formula-block" style="margin:0 0 8px;font-size:0.82rem">T·WKB = e^(−2∫κ dx)</div>
+    <div class="formula-block" style="margin:0;font-size:0.82rem">I(STM) ∝ e^(−2κd)</div>
+  </div>
+  <div class="sidebar-card">
+    <h4>// Topic Info</h4>
+    <div class="sidebar-stat"><span>Branch</span><span>Quantum Mechanics</span></div>
+    <div class="sidebar-stat"><span>Topic</span><span>04 / 24</span></div>
+    <div class="sidebar-stat"><span>Simulation</span><span>Yes ✓</span></div>
+  </div>
+  <div class="sidebar-card">
+    <h4>// All 24 Topics</h4>
+    <ul style="list-style:none;display:flex;flex-direction:column;gap:5px">
+      <li><a href="wave-particle-duality.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">01. Wave-Particle Duality</a></li>
+      <li><a href="schrodinger-equation.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">02. Schrödinger Equation</a></li>
+      <li><a href="uncertainty-principle.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">03. Uncertainty Principle</a></li>
+      <li><a href="quantum-tunnelling.html" style="font-size:0.8rem;color:var(--accent-nova);font-weight:600;text-decoration:none">04. Quantum Tunnelling ←</a></li>
+      <li><a href="superposition.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">05. Quantum Superposition</a></li>
+      <li><a href="quantum-entanglement.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">06. Quantum Entanglement</a></li>
+      <li><a href="quantum-operators.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">07. Quantum Operators</a></li>
+      <li><a href="spin-and-angular-momentum.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">08. Spin & Angular Momentum</a></li>
+      <li><a href="hydrogen-atom.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">09. The Hydrogen Atom</a></li>
+      <li><a href="perturbation-theory.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">10. Perturbation Theory</a></li>
+      <li><a href="variational-methods.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">11. Variational Methods</a></li>
+      <li><a href="identical-particles.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">12. Identical Particles</a></li>
+      <li><a href="quantum-statistics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">13. Quantum Statistics</a></li>
+      <li><a href="path-integrals.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">14. Path Integrals</a></li>
+      <li><a href="measurement-problem.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">15. The Measurement Problem</a></li>
+      <li><a href="bells-theorem.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">16. Bell's Theorem</a></li>
+      <li><a href="quantum-cryptography.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">17. Quantum Cryptography</a></li>
+      <li><a href="density-matrix.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">18. Density Matrix</a></li>
+      <li><a href="quantum-harmonic-oscillator.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">19. Quantum Harmonic Oscillator</a></li>
+      <li><a href="many-body-quantum-systems.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">20. Many-Body Systems</a></li>
+      <li><a href="decoherence.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">21. Decoherence</a></li>
+      <li><a href="relativistic-quantum-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">22. Relativistic QM</a></li>
+      <li><a href="quantum-field-basics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">23. Quantum Field Theory</a></li>
+      <li><a href="standard-model-preview.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">24. Standard Model</a></li>
+    </ul>
+  </div>
+  <div class="ad-container" style="min-height:250px;flex-direction:column"><span class="ad-label">Advertisement</span><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div>
+</aside>
+</div>
+</main>
+<div id="footer-placeholder"></div>
+<script src="../../js/components.js"></script>
+</body>
+</html>

@@ -176,37 +176,64 @@
       navbar.classList.toggle('scrolled', window.scrollY > 40);
     }, { passive: true });
 
-    // Mobile toggle
-    toggle && toggle.addEventListener('click', () => {
-      toggle.classList.toggle('open');
-      links.classList.toggle('open');
-      document.body.style.overflow = links.classList.contains('open') ? 'hidden' : '';
+    function openMenu() {
+      toggle.classList.add('open');
+      links.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMenu() {
+      toggle.classList.remove('open');
+      links.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    // Mobile hamburger toggle
+    toggle && toggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      links.classList.contains('open') ? closeMenu() : openMenu();
     });
 
-    // Dropdown: tap on mobile
+    // Dropdown: tap on mobile only
     document.querySelectorAll('.has-dropdown').forEach(a => {
       a.addEventListener('click', e => {
         if (window.innerWidth <= 900) {
           e.preventDefault();
-          a.closest('li').classList.toggle('dd-open');
+          e.stopPropagation();
+          const li = a.closest('li');
+          // Close other open dropdowns
+          document.querySelectorAll('.dd-open').forEach(el => {
+            if (el !== li) el.classList.remove('dd-open');
+          });
+          li.classList.toggle('dd-open');
         }
       });
     });
 
-    // Active link
-    const cur = window.location.pathname.split('/').pop() || 'index.html';
-    document.querySelectorAll('#nav-links a').forEach(a => {
-      const href = a.getAttribute('href').split('/').pop();
-      if (href === cur) a.classList.add('active');
+    // Close menu when any non-dropdown nav link clicked
+    document.querySelectorAll('#nav-links a:not(.has-dropdown)').forEach(a => {
+      a.addEventListener('click', () => {
+        if (window.innerWidth <= 900) closeMenu();
+      });
     });
 
-    // Close on outside click
+    // Close when clicking backdrop (outside sidebar)
     document.addEventListener('click', e => {
-      if (links && !navbar.contains(e.target) && links.classList.contains('open')) {
-        toggle.classList.remove('open');
-        links.classList.remove('open');
-        document.body.style.overflow = '';
+      if (links && links.classList.contains('open') && !links.contains(e.target) && !toggle.contains(e.target)) {
+        closeMenu();
       }
+    });
+
+    // Escape key closes menu
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && links && links.classList.contains('open')) closeMenu();
+    });
+
+    // Active link highlight
+    const cur = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('#nav-links a').forEach(a => {
+      const href = (a.getAttribute('href') || '').split('/').pop();
+      if (href === cur) a.classList.add('active');
     });
   }
 

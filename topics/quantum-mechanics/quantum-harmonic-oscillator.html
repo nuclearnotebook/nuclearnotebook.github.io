@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quantum Harmonic Oscillator &#8212; Quantum Mechanics | QuantumAtlas</title>
+  <meta name="description" content="Ladder Operators, Zero-Point Energy, Coherent States, and Quantum Field Theory. Complete scientific treatment with derivations, equations, and real-world applications in quantum physics."/>
+  <link rel="canonical" href="https://yourdomain.com/topics/quantum-mechanics/quantum-harmonic-oscillator.html"/>
+  <meta property="og:title" content="Quantum Harmonic Oscillator | QuantumAtlas"/><meta property="og:image" content="https://images.unsplash.com/photo-1606761568499-6d2451b23c66?w=1400&q=80&auto=format"/>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4X0M6RM0F6"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4X0M6RM0F6',{page_title:document.title,page_location:window.location.href});</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2633513915753897" crossorigin="anonymous"></script>
+  <meta name="google-adsense-account" content="ca-pub-2633513915753897">
+  <link rel="stylesheet" href="../../css/global.css"/><link rel="stylesheet" href="../../css/nav.css"/><link rel="stylesheet" href="../../css/topic-qm.css"/>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+<main>
+<section class="topic-hero">
+  <img src="https://images.unsplash.com/photo-1606761568499-6d2451b23c66?w=1400&q=80&auto=format" alt="Harmonic oscillator wave functions — equally-spaced quantum energy levels" class="topic-hero-bg-img" loading="eager"/>
+  <div class="topic-hero-overlay"></div>
+  <div class="container topic-hero-content">
+    <nav class="breadcrumb">
+      <a href="../../index.html">Home</a><span class="sep">&#8250;</span>
+      <a href="../../branches/quantum-mechanics.html">Quantum Mechanics</a><span class="sep">&#8250;</span>
+      <span class="current">Quantum Harmonic Oscillator</span>
+    </nav>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px">
+      <span class="badge badge-nova">Quantum Mechanics</span><span class="badge badge-green">Interactive Simulation</span>
+      <span class="badge badge-plasma">Topic 19 / 24</span>
+    </div>
+    <h1 class="topic-hero-title">&#8767; Quantum Harmonic Oscillator</h1>
+    <p class="topic-hero-sub">Ladder Operators, Zero-Point Energy, Coherent States, and Quantum Field Theory</p>
+  </div>
+</section>
+<div class="container topic-layout">
+<article class="topic-article">
+<div class="ad-container"><div style="text-align:center;width:100%"><span class="ad-label">Advertisement</span><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div>
+<h2 id="simulation" style="margin-top:0;border-top:none;padding-top:0">&#127918; Interactive Simulation</h2>
+<div class="simulation-wrapper">
+  <div class="simulation-toolbar">
+    <span class="simulation-title">&#8764; Quantum Harmonic Oscillator &#8212; Wave Functions</span>
+    <div class="sim-control"><label>Quantum number n</label><input type="range" id="qo-n" min="0" max="7" value="0" step="1"/><span id="qo-nv">n = 0 (ground state)</span></div>
+    <div class="sim-control"><label>Display</label>
+      <select id="qo-disp" style="background:var(--bg-deep);color:var(--text-primary);border:1px solid var(--border-dim);padding:4px 8px;border-radius:6px;font-size:0.78rem">
+        <option value="psi">&#968;_n(x) wave function</option>
+        <option value="prob">|&#968;_n|&#178; probability density</option>
+        <option value="both">Both overlaid</option>
+      </select>
+    </div>
+    <button id="qo-anim" class="btn btn-primary" style="padding:7px 18px;font-size:0.78rem;background:linear-gradient(135deg,#7b2fff,#00d4ff)">Animate</button>
+    <button id="qo-stop" class="btn btn-outline" style="padding:7px 14px;font-size:0.78rem">Stop</button>
+  </div>
+  <div class="sim-canvas-wrap"><canvas id="qo-cv" height="360"></canvas></div>
+  <div style="padding:12px 20px;display:flex;gap:24px;flex-wrap:wrap;font-family:var(--font-mono);font-size:0.78rem;color:var(--text-muted);background:rgba(0,0,0,0.25);border-top:1px solid var(--border-dim)">
+    <span>n: <strong id="qo-no" style="color:var(--accent-nova)">0</strong></span>
+    <span>E_n: <strong id="qo-E" style="color:var(--accent-green)">&#189;&#8463;&#969;</strong></span>
+    <span>Nodes: <strong id="qo-nd" style="color:var(--accent-gold)">0</strong></span>
+    <span>ZPE: <strong id="qo-zpe" style="color:#a078ff">&#189;&#8463;&#969; (always)</strong></span>
+  </div>
+</div>
+<script>
+(function(){
+  var cv=document.getElementById('qo-cv'),cx=cv.getContext('2d');
+  var nSl=document.getElementById('qo-n'),dSel=document.getElementById('qo-disp');
+  nSl.oninput=function(){document.getElementById('qo-nv').textContent='n = '+nSl.value+(nSl.value==='0'?' (ground state)':nSl.value==='1'?' (1st excited)':'');draw(0);};
+  dSel.onchange=function(){draw(0);};
+  var raf=null,running=false;
+  function W(){cv.width=cv.offsetWidth||700;}W();window.addEventListener('resize',function(){W();if(!running)draw(0);});
+  function Hp(n,x){if(n===0)return 1;if(n===1)return 2*x;return 2*x*Hp(n-1,x)-2*(n-1)*Hp(n-2,x);}
+  function fact(n){return n<=1?1:n*fact(n-1);}
+  function psi(n,x){var N=Math.pow(2,-n/2)/Math.sqrt(fact(n)*Math.sqrt(Math.PI));return N*Hp(n,x)*Math.exp(-x*x/2);}
+  function draw(t){
+    var W2=cv.width,H=360,n=parseInt(nSl.value),mode=dSel.value,PAD=55,plotW=W2-2*PAD;
+    var cY=H*0.52;
+    cx.clearRect(0,0,W2,H);
+    var bg=cx.createLinearGradient(0,0,0,H);bg.addColorStop(0,'#050810');bg.addColorStop(1,'#0a0e22');cx.fillStyle=bg;cx.fillRect(0,0,W2,H);
+    // Potential V=x^2/2
+    cx.beginPath();cx.strokeStyle='rgba(255,200,0,0.2)';cx.lineWidth=1.5;
+    for(var i=0;i<=200;i++){var x=-4+8*i/200;var v=0.5*x*x;var py=cY-(v/8)*110;var px=PAD+((x+4)/8)*plotW;i===0?cx.moveTo(px,py):cx.lineTo(px,py);}cx.stroke();
+    // Energy levels (faint, up to n+2)
+    for(var k=0;k<=Math.min(n+2,7);k++){
+      var ek=k+0.5,ley=cY-(ek/8)*110;
+      cx.strokeStyle=k===n?'rgba(123,47,255,0.5)':'rgba(255,255,255,0.05)';cx.lineWidth=k===n?1.5:0.5;
+      cx.setLineDash(k===n?[]:[3,5]);cx.beginPath();cx.moveTo(PAD,ley);cx.lineTo(W2-PAD,ley);cx.stroke();cx.setLineDash([]);
+    }
+    var En=n+0.5,ey=cY-(En/8)*110;
+    // Classical turning points
+    var xtp=Math.sqrt(2*En),ptpL=PAD+((-xtp+4)/8)*plotW,ptpR=PAD+((xtp+4)/8)*plotW;
+    cx.strokeStyle='rgba(255,100,50,0.25)';cx.lineWidth=1;cx.setLineDash([2,5]);
+    cx.beginPath();cx.moveTo(ptpL,ey-40);cx.lineTo(ptpL,ey+40);cx.stroke();
+    cx.beginPath();cx.moveTo(ptpR,ey-40);cx.lineTo(ptpR,ey+40);cx.stroke();cx.setLineDash([]);
+    cx.fillStyle='rgba(255,100,50,0.4)';cx.font='8px JetBrains Mono,monospace';cx.textAlign='center';
+    cx.fillText('classical',ptpL,ey+52);cx.fillText('turning pts',ptpR,ey+52);
+    // Wave function
+    var amp=50,phase=t*2;
+    if(mode==='psi'||mode==='both'){
+      cx.beginPath();cx.strokeStyle='rgba(123,47,255,0.9)';cx.lineWidth=2.5;cx.shadowColor='#7b2fff';cx.shadowBlur=8;
+      for(var i=0;i<=300;i++){var x=-4+8*i/300;var p=psi(n,x)*Math.cos(phase);var px=PAD+((x+4)/8)*plotW,py=ey-p*amp;i===0?cx.moveTo(px,py):cx.lineTo(px,py);}
+      cx.stroke();cx.shadowBlur=0;
+    }
+    if(mode==='prob'||mode==='both'){
+      cx.beginPath();cx.strokeStyle='rgba(0,212,255,0.75)';cx.lineWidth=2;cx.shadowColor='#00d4ff';cx.shadowBlur=5;
+      for(var i=0;i<=300;i++){var x=-4+8*i/300;var p=Math.pow(psi(n,x),2);var px=PAD+((x+4)/8)*plotW,py=ey-p*amp*1.4;i===0?cx.moveTo(px,py):cx.lineTo(px,py);}
+      cx.stroke();cx.shadowBlur=0;
+      // Tunnelling region highlight (shaded forbidden zones)
+      cx.fillStyle='rgba(255,80,50,0.07)';
+      cx.fillRect(PAD,PAD,ptpL-PAD,H-PAD-PAD);
+      cx.fillRect(ptpR,PAD,W2-PAD-ptpR,H-PAD-PAD);
+    }
+    // Energy level labels
+    cx.fillStyle='rgba(123,47,255,0.8)';cx.font='10px JetBrains Mono,monospace';cx.textAlign='right';
+    cx.fillText('E='+En.toFixed(1)+'&#8463;&#969;',W2-PAD-3,ey-4);
+    // Axis
+    cx.strokeStyle='rgba(255,255,255,0.08)';cx.lineWidth=1;cx.beginPath();cx.moveTo(PAD,cY);cx.lineTo(W2-PAD,cY);cx.stroke();
+    cx.fillStyle='rgba(255,255,255,0.25)';cx.font='9px JetBrains Mono,monospace';cx.textAlign='center';cx.fillText('x',W2/2,H-5);
+    // Readouts
+    document.getElementById('qo-no').textContent=n;
+    document.getElementById('qo-E').textContent=(n+0.5).toFixed(1)+'&#8463;&#969;';
+    document.getElementById('qo-nd').textContent=n;
+    document.getElementById('qo-zpe').textContent='0.5&#8463;&#969;';
+    cx.textAlign='left';
+  }
+  document.getElementById('qo-anim').onclick=function(){if(running)return;running=true;var last=null;(function step(ts){if(!last)last=ts;draw((ts-last)/800);if(running)raf=requestAnimationFrame(step);})();};
+  document.getElementById('qo-stop').onclick=function(){cancelAnimationFrame(raf);running=false;draw(0);};
+  draw(0);
+})();
+</script>
+<div class="topic-body">
+<figure style="margin:0 0 36px">
+  <img src="https://images.unsplash.com/photo-1606761568499-6d2451b23c66?w=1400&q=80&auto=format" alt="Harmonic oscillator wave functions — equally-spaced quantum energy levels" class="img-frame"/>
+  <figcaption>The quantum harmonic oscillator (QHO) is the most important exactly-solvable system in quantum mechanics. Its energy levels are equally spaced: E_n = ℏω(n+½), separated by ℏω (one quantum). The ground state has non-zero zero-point energy E₀ = ½ℏω — a purely quantum effect arising from the uncertainty principle. In quantum field theory, every mode of every quantum field is a QHO; the quanta of these oscillators are the fundamental particles.</figcaption>
+</figure>
+<h2>The Universal Oscillator</h2>
+<p>The quantum harmonic oscillator — a particle in a parabolic potential V(x) = ½mω²x² — is not merely one solvable system among many. It is the <em>universal</em> model for small oscillations near stable equilibrium. Near any local energy minimum, any potential can be expanded as V(x) = V₀ + ½V''x² + ... — the first non-constant term is always parabolic. Therefore the QHO describes: atomic and molecular vibrations, phonons in crystals, quantised electromagnetic field modes (photons), quasiparticles in condensed matter, and every fundamental particle in quantum field theory.</p>
+
+<h2>The Ladder Operator Method</h2>
+<p>The most elegant approach to the QHO uses dimensionless creation (â†) and annihilation (â) operators constructed from x̂ and p̂:</p>
+
+<div class="formula-block"><span class="formula-label">Creation and Annihilation Operators</span>â = √(mω/2ℏ)·x̂ + ip̂/√(2mℏω) &nbsp;&nbsp;&nbsp; â† = (â)†</div>
+<div class="formula-block"><span class="formula-label">Commutation Relation</span>[â, â†] = ââ† − â†â = 1 &nbsp;&nbsp;&nbsp; (canonical bosonic commutator)</div>
+
+<p>In terms of these operators, the Hamiltonian becomes beautifully simple:</p>
+<div class="formula-block"><span class="formula-label">QHO Hamiltonian (ladder operators)</span>Ĥ = ℏω(â†â + ½) = ℏω(N̂ + ½) &nbsp;&nbsp;&nbsp; N̂ = â†â (number operator)</div>
+
+<p>The number operator N̂ has non-negative integer eigenvalues n = 0, 1, 2, ... (proved from [â, â†] = 1 and positivity of â†â). The energy spectrum follows immediately:</p>
+<div class="formula-block"><span class="formula-label">Energy Eigenvalues</span>E_n = ℏω(n + ½) &nbsp;&nbsp;&nbsp; n = 0, 1, 2, ... (equally spaced by ℏω)</div>
+
+<figure style="margin:32px 0">
+  <img src="https://images.unsplash.com/photo-1509228468518-180dd4864904?w=900&q=80&auto=format" alt="Laser field coherent state quantum optics" class="img-frame"/>
+  <figcaption>Laser light — a coherent state of the electromagnetic field. A laser oscillating in a single longitudinal mode produces photons in the coherent state |α⟩ (eigenstate of â with eigenvalue α), with a Poissonian photon number distribution P(n) = e^{−|α|²}|α|^{2n}/n!. Coherent states are the most "classical" quantum states: they are minimum-uncertainty states (Δx·Δp = ℏ/2) that oscillate without spreading, unlike Fock states |n⟩ (definite photon number but completely random phase). Glauber developed this theory and received the 2005 Nobel Prize in Physics.</figcaption>
+</figure>
+
+<h2>Ladder Operator Action on States</h2>
+<p>The annihilation operator â lowers the quantum number by 1; the creation operator â† raises it by 1:</p>
+
+<div class="formula-block"><span class="formula-label">Ladder Relations</span>â|n⟩ = √n |n−1⟩ &nbsp;&nbsp;&nbsp; â†|n⟩ = √(n+1)|n+1⟩</div>
+
+<p>The ground state |0⟩ satisfies â|0⟩ = 0 (cannot be lowered further). All excited states are built from the ground state: |n⟩ = (â†)ⁿ/√n! |0⟩. The position and momentum operators are expressed as: x̂ = √(ℏ/2mω)(â + â†) and p̂ = i√(mℏω/2)(â† − â).</p>
+
+<h2>Zero-Point Energy — A Purely Quantum Effect</h2>
+<p>The ground state energy E₀ = ½ℏω > 0 has no classical counterpart. Classically, a particle at the bottom of a potential well at rest has zero energy. In quantum mechanics, the uncertainty principle forbids simultaneous rest at the minimum:</p>
+
+<p style="color:var(--text-secondary)">Setting Δx·Δp = ℏ/2 and minimising E = ⟨KE⟩ + ⟨PE⟩ = (Δp)²/(2m) + ½mω²(Δx)² over Δx: dE/d(Δx) = −ℏ²/(4m(Δx)³) + mω²Δx = 0, giving Δx_min = √(ℏ/2mω) and E_min = ½ℏω.</p>
+
+<p>The sum of zero-point energies over all modes of the quantum electromagnetic field gives the "vacuum energy" — the energy density of empty space. This contributes to the cosmological constant (the energy driving the accelerating expansion of the universe). The discrepancy between the naive QFT estimate (10¹¹³ J/m³) and the observed cosmological constant (~10⁻⁹ J/m³) — a factor of 10¹²² — is the largest known discrepancy between theory and observation in all of physics.</p>
+
+<h2>Coherent States — The Most Classical Quantum States</h2>
+<p>Coherent states |α⟩ (where α is any complex number) are defined as eigenstates of the annihilation operator:</p>
+
+<div class="formula-block"><span class="formula-label">Coherent State Definition</span>â|α⟩ = α|α⟩ &nbsp;&nbsp;&nbsp; |α⟩ = e^{−|α|²/2} Σₙ (αⁿ/√n!) |n⟩</div>
+
+<p>Coherent states have several remarkable properties: minimum uncertainty (Δx·Δp = ℏ/2); Poissonian photon number distribution ⟨n⟩ = |α|², Δn = |α|; they oscillate as ⟨x⟩ = √(2ℏ/mω)|α|cos(ωt − arg α) — exactly classical! For this reason, laser light in a single mode is a coherent state — the closest quantum optical state to a classical electromagnetic wave.</p>
+
+<div class="info-box info-box--fact">
+  <div class="info-box-title" style="color:#a078ff">&#127758; QHO in Quantum Field Theory</div>
+  <p style="margin:0">In quantum field theory, each momentum mode k of a quantum field is a harmonic oscillator. The electromagnetic field Â(x,t) = Σ_k √(ℏ/2ε₀ωV)[â_k e^{ikx−iωt} + â_k† e^{−ikx+iωt}]. The creation operator â_k† creates a photon of momentum ℏk; â_k destroys one. The Hamiltonian: Ĥ = Σ_k ℏω_k(N̂_k + ½). Every particle type in the Standard Model (electrons, quarks, W and Z bosons, Higgs) is a quantum excitation of its corresponding quantum field — a quantum harmonic oscillator. The "particles" of physics are the quanta of oscillating fields, and particle creation/annihilation is simply ladder operator action on the quantum field vacuum state.</p>
+</div>
+</div>
+<div class="ad-container"><div style="text-align:center;width:100%"><span class="ad-label">Advertisement</span><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div>
+<div style="display:flex;justify-content:space-between;margin-top:40px;gap:16px;flex-wrap:wrap">
+  <a href="density-matrix.html" class="btn btn-outline">&#8592; Density Matrix</a>
+  <a href="many-body-quantum-systems.html" class="btn btn-primary" style="background:var(--gradient-plasma)">Next: Many-Body Systems &#8594;</a>
+</div>
+</article>
+<aside class="topic-sidebar">
+  <div class="sidebar-card"><h4>// Key Equations</h4><div class="formula-block" style="margin:0 0 8px;font-size:0.82rem"><span class="formula-label">QHO Hamiltonian</span>Ĥ = ℏω(â†â + ½)</div><div class="formula-block" style="margin:0 0 8px;font-size:0.82rem"><span class="formula-label">Annihilation operator action</span>â|n⟩ = √n|n−1⟩</div><div class="formula-block" style="margin:0 0 8px;font-size:0.82rem"><span class="formula-label">Creation operator action</span>â†|n⟩ = √(n+1)|n+1⟩</div><div class="formula-block" style="margin:0 0 8px;font-size:0.82rem"><span class="formula-label">Energy spectrum</span>E_n = ℏω(n+½)</div></div>
+  <div class="sidebar-card">
+    <h4>// Topic Info</h4>
+    <div class="sidebar-stat"><span>Branch</span><span>Quantum Mechanics</span></div>
+    <div class="sidebar-stat"><span>Topic</span><span>19 / 24</span></div>
+    <div class="sidebar-stat"><span>Simulation</span><span>Yes &#10003;</span></div>
+    <div class="sidebar-stat"><span>Level</span><span>Advanced</span></div>
+  </div>
+  <div class="sidebar-card"><h4>// All 24 Topics</h4><ul style='list-style:none;display:flex;flex-direction:column;gap:5px'><li><a href="wave-particle-duality.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">01. Wave-Particle Duality</a></li><li><a href="schrodinger-equation.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">02. Schrödinger Equation</a></li><li><a href="uncertainty-principle.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">03. Uncertainty Principle</a></li><li><a href="quantum-tunnelling.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">04. Quantum Tunnelling</a></li><li><a href="superposition.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">05. Quantum Superposition</a></li><li><a href="quantum-entanglement.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">06. Quantum Entanglement</a></li><li><a href="quantum-operators.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">07. Quantum Operators</a></li><li><a href="spin-and-angular-momentum.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">08. Spin & Angular Momentum</a></li><li><a href="hydrogen-atom.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">09. The Hydrogen Atom</a></li><li><a href="perturbation-theory.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">10. Perturbation Theory</a></li><li><a href="variational-methods.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">11. Variational Methods</a></li><li><a href="identical-particles.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">12. Identical Particles</a></li><li><a href="quantum-statistics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">13. Quantum Statistics</a></li><li><a href="path-integrals.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">14. Path Integrals</a></li><li><a href="measurement-problem.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">15. The Measurement Problem</a></li><li><a href="bells-theorem.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">16. Bell's Theorem</a></li><li><a href="quantum-cryptography.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">17. Quantum Cryptography</a></li><li><a href="density-matrix.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">18. Density Matrix</a></li><li><a href="quantum-harmonic-oscillator.html" style="font-size:0.8rem;color:var(--accent-nova);font-weight:600;text-decoration:none">19. Quantum Harmonic Oscillator &#8592;</a></li><li><a href="many-body-quantum-systems.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">20. Many-Body Systems</a></li><li><a href="decoherence.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">21. Decoherence</a></li><li><a href="relativistic-quantum-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">22. Relativistic QM</a></li><li><a href="quantum-field-basics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">23. Quantum Field Theory</a></li><li><a href="standard-model-preview.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">24. Standard Model</a></li></ul></div>
+  <div class="ad-container" style="min-height:250px;flex-direction:column">
+    <span class="ad-label">Advertisement</span>
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+  </div>
+</aside>
+</div>
+</main>
+<div id="footer-placeholder"></div>
+<script src="../../js/components.js"></script>
+</body>
+</html>

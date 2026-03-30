@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quantum Entanglement &#8212; Quantum Mechanics | QuantumAtlas</title>
+  <meta name="description" content="Bell's Theorem, EPR Paradox, Non-Local Correlations, and the 2022 Nobel Prize. Complete scientific treatment with derivations, diagrams, equations, and real-world applications in quantum physics."/>
+  <meta name="keywords" content="quantum entanglement, quantum mechanics, bell's theorem, epr paradox, non-local correlations, and the 2022 nobel prize"/>
+  <link rel="canonical" href="https://yourdomain.com/topics/quantum-mechanics/quantum-entanglement.html"/>
+  <meta property="og:title" content="Quantum Entanglement | QuantumAtlas"/>
+  <meta property="og:image" content="https://images.unsplash.com/photo-1629904853893-c2c8981a1dc5?w=1400&q=80&auto=format"/><meta property="og:type" content="article"/>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Quantum Entanglement","description":"Bell's Theorem, EPR Paradox, Non-Local Correlations, and the 2022 Nobel Prize","image":"https://images.unsplash.com/photo-1629904853893-c2c8981a1dc5?w=1400&q=80&auto=format","author":{"@type":"Organization","name":"QuantumAtlas"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://yourdomain.com/"},{"@type":"ListItem","position":2,"name":"Quantum Mechanics","item":"https://yourdomain.com/branches/quantum-mechanics.html"},{"@type":"ListItem","position":3,"name":"Quantum Entanglement"}]}}</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4X0M6RM0F6"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4X0M6RM0F6',{page_title:document.title,page_location:window.location.href});</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2633513915753897" crossorigin="anonymous"></script>
+  <meta name="google-adsense-account" content="ca-pub-2633513915753897">
+  <link rel="stylesheet" href="../../css/global.css"/>
+  <link rel="stylesheet" href="../../css/nav.css"/>
+  <link rel="stylesheet" href="../../css/topic-qm.css"/>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+<main>
+<section class="topic-hero">
+  <img src="https://images.unsplash.com/photo-1629904853893-c2c8981a1dc5?w=1400&q=80&auto=format" alt="Abstract representation of quantum entanglement — connected quantum states" class="topic-hero-bg-img" loading="eager"/>
+  <div class="topic-hero-overlay"></div>
+  <div class="container topic-hero-content">
+    <nav class="breadcrumb">
+      <a href="../../index.html">Home</a><span class="sep">&#8250;</span>
+      <a href="../../branches/quantum-mechanics.html">Quantum Mechanics</a><span class="sep">&#8250;</span>
+      <span class="current">Quantum Entanglement</span>
+    </nav>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px">
+      <span class="badge badge-nova">Quantum Mechanics</span>
+      <span class="badge badge-green">Interactive Simulation</span>
+      <span class="badge badge-plasma">Topic 06 / 24</span>
+    </div>
+    <h1 class="topic-hero-title">&#128279; Quantum Entanglement</h1>
+    <p class="topic-hero-sub">Bell's Theorem, EPR Paradox, Non-Local Correlations, and the 2022 Nobel Prize</p>
+  </div>
+</section>
+
+<div class="container topic-layout">
+<article class="topic-article">
+<div class="ad-container"><div style="text-align:center;width:100%"><span class="ad-label">Advertisement</span><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div>
+<h2 id="simulation" style="margin-top:0;border-top:none;padding-top:0">&#127918; Interactive Simulation</h2>
+<div class="simulation-wrapper">
+  <div class="simulation-toolbar">
+    <span class="simulation-title">&#128279; CHSH Bell Inequality Test</span>
+    <div class="sim-control"><label>Angle a (Alice)</label><input type="range" id="be-a" min="0" max="180" value="0" step="5"/><span id="be-av">0°</span></div>
+    <div class="sim-control"><label>Angle b (Bob)</label><input type="range" id="be-b" min="0" max="180" value="22" step="5"/><span id="be-bv">22°</span></div>
+    <div class="sim-control"><label>N pairs</label><input type="range" id="be-N" min="100" max="3000" value="1000" step="100"/><span id="be-Nv">1000</span></div>
+    <div class="sim-control"><label>Theory</label>
+      <select id="be-mode" style="background:var(--bg-deep);color:var(--text-primary);border:1px solid var(--border-dim);padding:4px 8px;border-radius:6px;font-size:0.78rem">
+        <option value="qm">Quantum (entangled)</option><option value="lhv">Classical (hidden var)</option>
+      </select>
+    </div>
+    <button id="be-run" class="btn btn-primary" style="padding:7px 18px;font-size:0.78rem;background:linear-gradient(135deg,#7b2fff,#00d4ff)">Run Test</button>
+    <button id="be-reset" class="btn btn-outline" style="padding:7px 14px;font-size:0.78rem">Clear</button>
+  </div>
+  <div class="sim-canvas-wrap"><canvas id="be-cv" height="320"></canvas></div>
+  <div style="padding:12px 20px;display:flex;gap:24px;flex-wrap:wrap;font-family:var(--font-mono);font-size:0.78rem;color:var(--text-muted);background:rgba(0,0,0,0.25);border-top:1px solid var(--border-dim)">
+    <span>E(a,b): <strong id="be-Eab" style="color:var(--accent-nova)">--</strong></span>
+    <span>QM prediction: <strong id="be-qmpred" style="color:var(--accent-green)">--</strong></span>
+    <span>S_CHSH: <strong id="be-S" style="color:var(--accent-gold)">--</strong></span>
+    <span>Verdict: <strong id="be-verd" style="color:var(--accent-solar)">--</strong></span>
+  </div>
+</div>
+<script>
+(function(){
+  var cv=document.getElementById('be-cv'),cx=cv.getContext('2d');
+  var aSl=document.getElementById('be-a'),bSl=document.getElementById('be-b'),nSl=document.getElementById('be-N'),modeSel=document.getElementById('be-mode');
+  aSl.oninput=function(){document.getElementById('be-av').textContent=aSl.value+'°';};
+  bSl.oninput=function(){document.getElementById('be-bv').textContent=bSl.value+'°';};
+  nSl.oninput=function(){document.getElementById('be-Nv').textContent=nSl.value;};
+  var history=[];
+  function W(){cv.width=cv.offsetWidth||700;}W();window.addEventListener('resize',function(){W();draw();});
+  function corrQM(a,b){return -Math.cos((a-b)*Math.PI/180);}
+  function corrLHV(a,b,N){
+    var c=0;for(var i=0;i<N;i++){
+      var h=Math.random()*360;
+      var A=Math.cos((h-a)*Math.PI/180)>=0?1:-1;
+      var B=Math.cos((h-b)*Math.PI/180)>=0?1:-1;
+      c+=A*B;
+    }return c/N;
+  }
+  function draw(){
+    var W2=cv.width,H=320;
+    cx.clearRect(0,0,W2,H);
+    var bg=cx.createLinearGradient(0,0,0,H);bg.addColorStop(0,'#050810');bg.addColorStop(1,'#0a0e22');cx.fillStyle=bg;cx.fillRect(0,0,W2,H);
+    // Correlation diagram
+    var cx0=W2*0.35,cy0=H/2,r=100;
+    cx.beginPath();cx.arc(cx0,cy0,r,0,2*Math.PI);cx.strokeStyle='rgba(255,255,255,0.06)';cx.lineWidth=2;cx.stroke();
+    // Alice detector
+    var a=parseFloat(aSl.value)*Math.PI/180,b=parseFloat(bSl.value)*Math.PI/180;
+    cx.beginPath();cx.strokeStyle='rgba(0,212,255,0.8)';cx.lineWidth=2.5;cx.moveTo(cx0,cy0);cx.lineTo(cx0+r*Math.cos(a),cy0-r*Math.sin(a));cx.stroke();
+    cx.beginPath();cx.strokeStyle='rgba(0,212,255,0.3)';cx.lineWidth=1;cx.moveTo(cx0,cy0);cx.lineTo(cx0-r*Math.cos(a),cy0+r*Math.sin(a));cx.stroke();
+    cx.fillStyle='rgba(0,212,255,0.9)';cx.font='10px JetBrains Mono,monospace';cx.fillText('Alice (a='+aSl.value+'°)',cx0+r*Math.cos(a)+4,cy0-r*Math.sin(a)-6);
+    // Bob detector
+    cx.beginPath();cx.strokeStyle='rgba(255,107,26,0.8)';cx.lineWidth=2.5;cx.moveTo(cx0,cy0);cx.lineTo(cx0+r*Math.cos(b),cy0-r*Math.sin(b));cx.stroke();
+    cx.fillStyle='rgba(255,107,26,0.9)';cx.fillText('Bob (b='+bSl.value+'°)',cx0+r*Math.cos(b)+4,cy0-r*Math.sin(b)+12);
+    // Angle between
+    cx.strokeStyle='rgba(255,200,0,0.4)';cx.lineWidth=1;cx.beginPath();cx.arc(cx0,cy0,40,- a,-b,a>b);cx.stroke();
+    cx.fillStyle='rgba(255,200,0,0.6)';cx.fillText('Δ='+(Math.abs(parseFloat(aSl.value)-parseFloat(bSl.value)))+'°',cx0+45,cy0-10);
+    // CHSH S gauge (right side)
+    var gx=W2*0.75,gy=H/2,gr=75;
+    cx.beginPath();cx.arc(gx,gy,gr,Math.PI,0,false);cx.strokeStyle='rgba(255,255,255,0.06)';cx.lineWidth=18;cx.stroke();
+    cx.beginPath();cx.arc(gx,gy,gr,Math.PI,Math.PI*(1+2/2.828),false);cx.strokeStyle='rgba(0,212,255,0.25)';cx.lineWidth=18;cx.stroke();
+    cx.beginPath();cx.arc(gx,gy,gr,Math.PI*(1+2/2.828),0,false);cx.strokeStyle='rgba(123,47,255,0.25)';cx.lineWidth=18;cx.stroke();
+    // S=2 marker
+    var ang2=Math.PI*(1+2/2.828);
+    cx.beginPath();cx.arc(gx+gr*Math.cos(ang2),gy+gr*Math.sin(ang2),5,0,2*Math.PI);cx.fillStyle='rgba(255,200,0,0.7)';cx.fill();
+    cx.fillStyle='rgba(255,200,0,0.6)';cx.font='9px JetBrains Mono,monospace';cx.textAlign='center';cx.fillText('S=2',gx+gr*Math.cos(ang2),gy+gr*Math.sin(ang2)-12);
+    if(history.length>0){
+      var S=history[history.length-1];var frac=Math.min(S/2.828,1);var ang=Math.PI*(1+frac);
+      var nx=gx+gr*0.7*Math.cos(ang),ny=gy+gr*0.7*Math.sin(ang);
+      var col=S>2?'rgba(255,80,80,0.9)':'rgba(0,212,255,0.9)';
+      cx.beginPath();cx.moveTo(gx,gy);cx.lineTo(nx,ny);cx.strokeStyle=col;cx.lineWidth=3;cx.shadowColor=col;cx.shadowBlur=8;cx.stroke();cx.shadowBlur=0;
+      cx.fillStyle='rgba(255,255,255,0.7)';cx.font='bold 15px JetBrains Mono,monospace';cx.fillText('S='+S.toFixed(3),gx,gy+25);
+    }
+    cx.textAlign='left';
+    cx.fillStyle='rgba(0,212,255,0.4)';cx.font='9px JetBrains Mono,monospace';cx.fillText('Classical S≤2',gx-55,H-40);
+    cx.fillStyle='rgba(123,47,255,0.4)';cx.fillText('Quantum S≤2√2',gx-55,H-26);
+  }
+  document.getElementById('be-run').onclick=function(){
+    var a=parseFloat(aSl.value),b=parseFloat(bSl.value),N=parseInt(nSl.value),mode=modeSel.value;
+    var Eab=mode==='qm'?corrQM(a,b):corrLHV(a,b,500);
+    var S=Math.abs(corrQM(0,22.5)-corrQM(0,67.5)+corrQM(45,22.5)+corrQM(45,67.5));
+    if(mode==='lhv')S=Math.abs(corrLHV(0,22.5,500)-corrLHV(0,67.5,500)+corrLHV(45,22.5,500)+corrLHV(45,67.5,500));
+    history.push(S);if(history.length>1)history.shift();
+    document.getElementById('be-Eab').textContent=Eab.toFixed(3);
+    document.getElementById('be-qmpred').textContent=(-Math.cos((a-b)*Math.PI/180)).toFixed(3);
+    document.getElementById('be-S').textContent=S.toFixed(3);
+    document.getElementById('be-verd').textContent=S>2?'Bell violated! (Quantum)':'S≤2 (Classical OK)';
+    draw();
+  };
+  document.getElementById('be-reset').onclick=function(){history=[];draw();['be-Eab','be-qmpred','be-S','be-verd'].forEach(function(id){document.getElementById(id).textContent='--';});};
+  draw();
+})();
+</script>
+<div class="topic-body">
+
+<figure style="margin:0 0 36px">
+  <img src="https://images.unsplash.com/photo-1629904853893-c2c8981a1dc5?w=1400&q=80&auto=format" alt="Abstract representation of quantum entanglement — connected quantum states" class="img-frame"/>
+  <figcaption>Entanglement visualised: two particles in a singlet state share quantum correlations that cannot be explained by any local hidden variable theory. When Alice measures her particle along angle a and Bob measures his along angle b, their results are correlated as E(a,b) = −cos(θ_ab). The strength of these correlations — violating the CHSH inequality S ≤ 2 with S_QM = 2√2 ≈ 2.828 — proves that nature is fundamentally non-local. The 2022 Nobel Prize in Physics was awarded for establishing this experimentally beyond all doubt.</figcaption>
+</figure>
+
+<h2>The Einstein-Podolsky-Rosen Paradox (1935)</h2>
+<p>Albert Einstein, Boris Podolsky, and Nathan Rosen published a landmark paper in 1935 arguing that quantum mechanics is <em>incomplete</em>. Their thought experiment: two particles interact and then separate. Measuring the position of particle A instantly determines the position of particle B (by conservation of momentum). But in quantum mechanics, before measurement, neither particle has a definite position. This "spooky action at a distance" — faster-than-light influence — seemed to Einstein to prove that quantum mechanics must be missing "elements of physical reality" — hidden variables that predetermine all outcomes. For decades this remained a philosophical debate. In 1964, John Bell proved it was experimentally testable.</p>
+
+<h2>The Entangled State</h2>
+<p>The spin-singlet state of two spin-½ particles is the canonical entangled state:</p>
+
+<div class="formula-block"><span class="formula-label">Singlet State — Maximally Entangled</span>|ψ⁻⟩ = (1/√2)(|↑_A↓_B⟩ − |↓_A↑_B⟩)</div>
+
+<p>This state cannot be written as a product |ψ_A⟩⊗|ψ_B⟩ — the two particles are <em>inseparable</em>, regardless of spatial separation. If Alice measures spin-up along z, Bob's particle is instantly in spin-down along z, anywhere in the universe. The correlations hold for measurement along any axis: E(a,b) = −cos(θ_ab) where θ_ab is the angle between Alice's and Bob's measurement directions.</p>
+
+<figure style="margin:32px 0">
+  <img src="https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=900&q=80&auto=format" alt="Optical Bell test apparatus with entangled photons" class="img-frame"/>
+  <figcaption>A Bell test experiment using entangled photon pairs. A parametric down-conversion crystal converts one ultraviolet photon into two entangled infrared photons, sent to Alice and Bob's detectors. Random polariser angles are chosen independently at each detector. The measured correlations consistently violate the CHSH inequality, confirming quantum non-locality. The 2015 Delft "loophole-free" experiment (Hensen et al.) closed both the locality and detection loopholes simultaneously, achieving definitive proof with statistical significance > 10 sigma.</figcaption>
+</figure>
+
+<h2>Bell's Theorem and the CHSH Inequality</h2>
+<p>John Bell (1964) proved that any local hidden variable (LHV) theory — one where measurement outcomes are predetermined by local variables carried by each particle — must satisfy a mathematical inequality. The experimentally accessible form (Clauser, Horne, Shimony, Holt, 1969):</p>
+
+<div class="formula-block"><span class="formula-label">CHSH Bell Inequality (any LHV theory)</span>S = |E(a,b) − E(a,b') + E(a',b) + E(a',b')| ≤ 2</div>
+
+<p>Quantum mechanics predicts S = 2√2 ≈ 2.828 for the optimal measurement angles (a=0°, a'=45°, b=22.5°, b'=67.5°). Every experiment finds S > 2, with the best measurements giving S ≈ 2.4–2.7 — definitively ruling out local realism.</p>
+
+<h2>Quantum Teleportation</h2>
+<p>Bennett et al. (1993) proved that entanglement enables quantum teleportation: faithful transmission of an unknown quantum state |ψ⟩ from Alice to Bob using a pre-shared entangled pair plus two classical bits. The protocol: Alice performs a Bell measurement on |ψ⟩ and her half of the entangled pair, sends the 2-bit result to Bob, who applies one of four unitary corrections to recover |ψ⟩ exactly. The original state at Alice is destroyed (no-cloning theorem). Demonstrated at distances >1,400 km via China's Micius satellite (2020).</p>
+
+<h2>Applications of Entanglement</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Application</th><th>How entanglement is used</th><th>Status</th></tr></thead>
+<tbody>
+<tr><td>Quantum Key Distribution (E91)</td><td>Bell violation certifies key security</td><td>Commercial (ID Quantique, Toshiba)</td></tr>
+<tr><td>Quantum teleportation</td><td>State transfer without classical description</td><td>Demonstrated (1,400 km satellite)</td></tr>
+<tr><td>Quantum computing (2-qubit gates)</td><td>Entangling gates create computational advantage</td><td>IBM, Google, IonQ etc.</td></tr>
+<tr><td>Quantum sensing</td><td>Entangled sensors beat standard quantum limit</td><td>Research (LIGO, atomic clocks)</td></tr>
+<tr><td>Quantum repeater networks</td><td>Entanglement swapping for long-distance QKD</td><td>Active development</td></tr>
+</tbody></table></div>
+
+<div class="info-box info-box--fact">
+  <div class="info-box-title" style="color:#a078ff">&#127942; Nobel Prize in Physics 2022</div>
+  <p style="margin:0">Alain Aspect, John Clauser, and Anton Zeilinger shared the 2022 Nobel Prize in Physics "for experiments with entangled photons, establishing the violation of Bell inequalities and pioneering quantum information science." The Nobel Committee stated the work "settled an almost 90-year debate about the foundations of quantum mechanics, definitively proving that quantum mechanics is non-local." Their experiments launched the entire field of quantum information technology, which now commands global investments exceeding $35 billion annually.</p>
+</div>
+
+</div>
+<div class="ad-container"><div style="text-align:center;width:100%"><span class="ad-label">Advertisement</span><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div>
+<div style="display:flex;justify-content:space-between;margin-top:40px;gap:16px;flex-wrap:wrap">
+  <a href="superposition.html" class="btn btn-outline">&#8592; Quantum Superposition</a>
+  <a href="quantum-operators.html" class="btn btn-primary" style="background:var(--gradient-plasma)">Next: Quantum Operators &#8594;</a>
+</div>
+</article>
+
+<aside class="topic-sidebar">
+  <div class="sidebar-card">
+    <h4>// Key Equations</h4>
+    <div class="formula-block" style="margin:0 0 8px;font-size:0.82rem"><span class="formula-label">Singlet (maximally entangled)</span>|ψ⁻⟩ = (|↑↓⟩ − |↓↑⟩)/√2</div><div class="formula-block" style="margin:0 0 8px;font-size:0.82rem"><span class="formula-label">Correlation function</span>E(a,b) = −cos(θ_ab)</div><div class="formula-block" style="margin:0 0 8px;font-size:0.82rem"><span class="formula-label">Bell inequality bound</span>S_CHSH ≤ 2 (local hidden vars)</div><div class="formula-block" style="margin:0 0 8px;font-size:0.82rem"><span class="formula-label">Quantum maximum (Tsirelson)</span>S_QM = 2√2 ≈ 2.828 (quantum)</div>
+  </div>
+  <div class="sidebar-card">
+    <h4>// Topic Info</h4>
+    <div class="sidebar-stat"><span>Branch</span><span>Quantum Mechanics</span></div>
+    <div class="sidebar-stat"><span>Topic</span><span>06 / 24</span></div>
+    <div class="sidebar-stat"><span>Simulation</span><span>Yes &#10003;</span></div>
+    <div class="sidebar-stat"><span>Level</span><span>Advanced</span></div>
+  </div>
+  <div class="sidebar-card">
+    <h4>// All 24 Topics</h4>
+    <ul style='list-style:none;display:flex;flex-direction:column;gap:5px'><li><a href="wave-particle-duality.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">01. Wave-Particle Duality</a></li><li><a href="schrodinger-equation.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">02. Schrödinger Equation</a></li><li><a href="uncertainty-principle.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">03. Uncertainty Principle</a></li><li><a href="quantum-tunnelling.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">04. Quantum Tunnelling</a></li><li><a href="superposition.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">05. Quantum Superposition</a></li><li><a href="quantum-entanglement.html" style="font-size:0.8rem;color:var(--accent-nova);font-weight:600;text-decoration:none">06. Quantum Entanglement &#8592;</a></li><li><a href="quantum-operators.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">07. Quantum Operators</a></li><li><a href="spin-and-angular-momentum.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">08. Spin & Angular Momentum</a></li><li><a href="hydrogen-atom.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">09. The Hydrogen Atom</a></li><li><a href="perturbation-theory.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">10. Perturbation Theory</a></li><li><a href="variational-methods.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">11. Variational Methods</a></li><li><a href="identical-particles.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">12. Identical Particles</a></li><li><a href="quantum-statistics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">13. Quantum Statistics</a></li><li><a href="path-integrals.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">14. Path Integrals</a></li><li><a href="measurement-problem.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">15. The Measurement Problem</a></li><li><a href="bells-theorem.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">16. Bell's Theorem</a></li><li><a href="quantum-cryptography.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">17. Quantum Cryptography</a></li><li><a href="density-matrix.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">18. Density Matrix</a></li><li><a href="quantum-harmonic-oscillator.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">19. Quantum Harmonic Oscillator</a></li><li><a href="many-body-quantum-systems.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">20. Many-Body Systems</a></li><li><a href="decoherence.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">21. Decoherence</a></li><li><a href="relativistic-quantum-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">22. Relativistic QM</a></li><li><a href="quantum-field-basics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">23. Quantum Field Theory</a></li><li><a href="standard-model-preview.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">24. Standard Model</a></li></ul>
+  </div>
+  <div class="ad-container" style="min-height:250px;flex-direction:column">
+    <span class="ad-label">Advertisement</span>
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+  </div>
+</aside>
+</div>
+</main>
+<div id="footer-placeholder"></div>
+<script src="../../js/components.js"></script>
+</body>
+</html>

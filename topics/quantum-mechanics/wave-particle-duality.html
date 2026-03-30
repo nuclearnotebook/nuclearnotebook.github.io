@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Wave-Particle Duality — Quantum Mechanics | QuantumAtlas</title>
+  <meta name="description" content="The Double-Slit Experiment, de Broglie Hypothesis, and the Quantum Nature of Reality. Comprehensive quantum mechanics treatment with derivations, equations, and applications."/>
+  <meta name="keywords" content="wave-particle duality, double slit experiment, de Broglie wavelength, photon, wave function, quantum mechanics, matter waves, Davisson-Germer, photoelectric effect"/>
+  <link rel="canonical" href="https://yourdomain.com/topics/quantum-mechanics/wave-particle-duality.html"/>
+  <meta property="og:title" content="Wave-Particle Duality | QuantumAtlas — Quantum Mechanics"/>
+  <meta property="og:image" content="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=1400&q=80&auto=format"/>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Wave-Particle Duality","description":"The Double-Slit Experiment, de Broglie Hypothesis, and the Quantum Nature of Reality","author":{"@type":"Organization","name":"QuantumAtlas"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://yourdomain.com/"},{"@type":"ListItem","position":2,"name":"Quantum Mechanics","item":"https://yourdomain.com/branches/quantum-mechanics.html"},{"@type":"ListItem","position":3,"name":"Wave-Particle Duality"}]}}</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4X0M6RM0F6"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4X0M6RM0F6',{page_title:document.title,page_location:window.location.href});</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2633513915753897" crossorigin="anonymous"></script>
+  <meta name="google-adsense-account" content="ca-pub-2633513915753897">
+  <link rel="stylesheet" href="../../css/global.css"/>
+  <link rel="stylesheet" href="../../css/nav.css"/>
+  <link rel="stylesheet" href="../../css/topic-qm.css"/>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+<main>
+<section class="topic-hero">
+  <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=1400&q=80&auto=format" alt="Wave-particle duality shown in quantum diffraction pattern" class="topic-hero-bg-img" loading="eager"/>
+  <div class="topic-hero-overlay"></div>
+  <div class="container topic-hero-content">
+    <nav class="breadcrumb">
+      <a href="../../index.html">Home</a><span class="sep">›</span>
+      <a href="../../branches/quantum-mechanics.html">Quantum Mechanics</a><span class="sep">›</span>
+      <span class="current">Wave-Particle Duality</span>
+    </nav>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px">
+      <span class="badge badge-nova">Quantum Mechanics</span>
+      <span class="badge badge-green">Interactive Simulation</span>
+      <span class="badge badge-plasma">Topic 01 / 24</span>
+    </div>
+    <h1 class="topic-hero-title">〰 Wave-Particle Duality</h1>
+    <p class="topic-hero-sub">The Double-Slit Experiment, de Broglie Hypothesis, and the Quantum Nature of Reality</p>
+  </div>
+</section>
+
+<div class="container topic-layout">
+<article class="topic-article">
+<div class="ad-container"><div style="text-align:center;width:100%"><span class="ad-label">Advertisement</span><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div>
+<h2 id="simulation" style="margin-top:0;border-top:none;padding-top:0">Interactive Simulation</h2>
+<div class="simulation-wrapper">
+  <div class="simulation-toolbar">
+    <span class="simulation-title">〰 Double-Slit Interference Simulator</span>
+    <div class="sim-control"><label>Slit separation (d)</label><input type="range" id="ds-d" min="5" max="30" value="15" step="1"/><span id="ds-dv">15 px</span></div>
+    <div class="sim-control"><label>Wavelength (λ)</label><input type="range" id="ds-lam" min="4" max="20" value="10" step="1"/><span id="ds-lamv">10 px</span></div>
+    <div class="sim-control"><label>Particles</label><input type="range" id="ds-N" min="50" max="2000" value="500" step="50"/><span id="ds-Nv">500</span></div>
+    <div class="sim-control"><label>Mode</label>
+      <select id="ds-mode" style="background:var(--bg-deep);color:var(--text-primary);border:1px solid var(--border-dim);padding:4px 8px;border-radius:6px;font-size:0.78rem">
+        <option value="wave">Wave (interference ON)</option>
+        <option value="particle">Particle (which-path known)</option>
+      </select>
+    </div>
+    <button id="ds-run" class="btn btn-primary" style="padding:7px 18px;font-size:0.78rem;background:linear-gradient(135deg,#7b2fff,#00d4ff)">Run Experiment</button>
+    <button id="ds-clear" class="btn btn-outline" style="padding:7px 14px;font-size:0.78rem">Clear</button>
+  </div>
+  <div class="sim-canvas-wrap"><canvas id="ds-canvas" height="380"></canvas></div>
+  <div style="padding:12px 20px;display:flex;gap:24px;flex-wrap:wrap;font-family:var(--font-mono);font-size:0.78rem;color:var(--text-muted);background:rgba(0,0,0,0.25);border-top:1px solid var(--border-dim)">
+    <span>Particles fired: <strong id="ds-count" style="color:var(--accent-nova)">0</strong></span>
+    <span>Mode: <strong id="ds-mode-disp" style="color:var(--accent-green)">Wave</strong></span>
+    <span>Fringe spacing: <strong id="ds-fringe" style="color:var(--accent-gold)">—</strong></span>
+  </div>
+</div>
+<script>
+(function(){
+  const cv=document.getElementById('ds-canvas'),cx=cv.getContext('2d');
+  const dSl=document.getElementById('ds-d'),lSl=document.getElementById('ds-lam'),nSl=document.getElementById('ds-N'),modeSel=document.getElementById('ds-mode');
+  dSl.oninput=()=>document.getElementById('ds-dv').textContent=dSl.value+' px';
+  lSl.oninput=()=>document.getElementById('ds-lamv').textContent=lSl.value+' px';
+  nSl.oninput=()=>document.getElementById('ds-Nv').textContent=nSl.value;
+  let dots=[],running=false,raf=null,cnt=0;
+  function W(){cv.width=cv.offsetWidth||800;}W();window.addEventListener('resize',()=>{W();drawScene();});
+  function drawScene(){
+    const W2=cv.width,H=380,d=parseInt(dSl.value),lam=parseInt(lSl.value);
+    const L=W2*0.5; // slit-to-screen distance in px
+    cx.clearRect(0,0,W2,H);
+    // Background
+    const bg=cx.createLinearGradient(0,0,0,H);bg.addColorStop(0,'#050810');bg.addColorStop(1,'#0a0e22');
+    cx.fillStyle=bg;cx.fillRect(0,0,W2,H);
+    // Barrier
+    const bx=W2*0.35;
+    cx.fillStyle='rgba(0,212,255,0.15)';cx.fillRect(bx-3,0,6,H/2-d/2);cx.fillRect(bx-3,H/2+d/2,6,H/2-d/2);
+    cx.strokeStyle='rgba(0,212,255,0.4)';cx.lineWidth=2;
+    cx.beginPath();cx.moveTo(bx,0);cx.lineTo(bx,H/2-d/2);cx.stroke();
+    cx.beginPath();cx.moveTo(bx,H/2+d/2);cx.lineTo(bx,H);cx.stroke();
+    // Slit labels
+    cx.fillStyle='rgba(0,212,255,0.6)';cx.font='10px JetBrains Mono,monospace';cx.textAlign='center';
+    cx.fillText('S₁',bx,H/2-d/2-6);cx.fillText('S₂',bx,H/2+d/2+14);cx.textAlign='left';
+    // Screen
+    cx.strokeStyle='rgba(123,47,255,0.3)';cx.lineWidth=2;cx.beginPath();cx.moveTo(W2-40,0);cx.lineTo(W2-40,H);cx.stroke();
+    // Dots
+    dots.forEach(([y,alpha,col])=>{
+      cx.beginPath();cx.arc(W2-40,y,2,0,Math.PI*2);
+      cx.fillStyle=col||`rgba(123,47,255,${alpha})`;cx.shadowColor=col||'#7b2fff';cx.shadowBlur=4;cx.fill();cx.shadowBlur=0;
+    });
+    // Fringe overlay (wave mode)
+    if(modeSel.value==='wave'){
+      cx.fillStyle='rgba(123,47,255,0.03)';
+      for(let y=0;y<H;y++){
+        const r1=Math.sqrt(L*L+(y-H/2+d/2)*(y-H/2+d/2));
+        const r2=Math.sqrt(L*L+(y-H/2-d/2)*(y-H/2-d/2));
+        const phase=(r1-r2)/lam*2*Math.PI;
+        const I=(Math.cos(phase/2))**2;
+        cx.globalAlpha=I*0.08;
+        cx.fillRect(W2-42,y,4,1);
+      }
+      cx.globalAlpha=1;
+    }
+    document.getElementById('ds-count').textContent=cnt;
+    document.getElementById('ds-mode-disp').textContent=modeSel.value==='wave'?'Wave (interference)':'Particle (no interference)';
+    const fringe=lam*L/d;
+    document.getElementById('ds-fringe').textContent=fringe.toFixed(0)+' px';
+  }
+  function addParticle(){
+    const H=380,d=parseInt(dSl.value),lam=parseInt(lSl.value),L=cv.width*0.5;
+    const mode=modeSel.value;
+    let y;
+    if(mode==='wave'){
+      // Sample from double-slit intensity distribution
+      let found=false;
+      while(!found){
+        const yT=Math.random()*H;
+        const r1=Math.sqrt(L*L+(yT-H/2+d/2)**2);
+        const r2=Math.sqrt(L*L+(yT-H/2-d/2)**2);
+        const phase=(r1-r2)/lam*2*Math.PI;
+        const I=Math.cos(phase/2)**2;
+        if(Math.random()<I){y=yT;found=true;}
+      }
+      dots.push([y,0.8+Math.random()*0.2,'rgba(123,47,255,0.9)']);
+    } else {
+      // Single slit distribution (Gaussian around center of each slit)
+      const slit=Math.random()<0.5?-d/2:d/2;
+      y=H/2+slit+(Math.random()-0.5)*d*3;
+      dots.push([y,0.7,'rgba(255,107,26,0.8)']);
+    }
+    cnt++;
+  }
+  function run(){
+    if(running)return;running=true;cnt=0;
+    const N=parseInt(nSl.value);
+    let i=0;
+    function step(){
+      for(let j=0;j<10&&i<N;j++,i++)addParticle();
+      drawScene();
+      if(i<N)raf=requestAnimationFrame(step);else running=false;
+    }
+    raf=requestAnimationFrame(step);
+  }
+  document.getElementById('ds-run').onclick=run;
+  document.getElementById('ds-clear').onclick=()=>{cancelAnimationFrame(raf);running=false;dots=[];cnt=0;drawScene();};
+  drawScene();
+})();
+</script>
+
+<div class="topic-body">
+<figure style="margin:0 0 32px"><img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=900&q=80&auto=format" alt="Diffraction pattern demonstrating wave nature of particles" class="img-frame"/><figcaption>An electron diffraction pattern — one of the most direct experimental confirmations of wave-particle duality. Individual electrons, fired one at a time through a double slit, gradually build up an interference pattern identical to that produced by waves of light. Each electron apparently "interferes with itself," passing through both slits simultaneously as a wave, yet always detected as a localised particle. This contradiction defines the quantum world.</figcaption></figure>
+
+<h2>The Crisis at the Turn of the 20th Century</h2>
+<p>By 1900, classical physics faced two profound experimental puzzles that its equations could not resolve. The first was blackbody radiation — the spectrum of light emitted by a hot object. Classical theory (the Rayleigh-Jeans law) predicted that the radiated power at high frequencies should diverge to infinity — the "ultraviolet catastrophe." The second was the photoelectric effect: ultraviolet light striking a metal surface ejects electrons, but only if the frequency exceeds a threshold value, regardless of intensity — directly contradicting classical wave theory.</p>
+
+<p>Max Planck resolved the first in 1900 by postulating that electromagnetic energy is emitted in discrete quanta: E = hf, where h = 6.626 × 10⁻³⁴ J·s is Planck's constant. Albert Einstein resolved the second in 1905 — his Nobel Prize work — by taking Planck's quanta literally: light consists of discrete photons, each carrying energy E = hf. If hf is less than the metal's work function, no individual photon has enough energy to eject an electron, regardless of how many photons (intensity) arrive.</p>
+
+<h2>The Photoelectric Effect — Light as Particles</h2>
+<p>Einstein's analysis of the photoelectric effect provided the first compelling evidence that light behaves as particles (photons) in certain circumstances:</p>
+<div class="formula-block"><span class="formula-label">Photoelectric Equation</span>KE<sub>max</sub> = hf − φ &nbsp;&nbsp;&nbsp; [φ = work function of metal, in eV]</div>
+<p>Maximum kinetic energy of ejected electrons is determined solely by the photon frequency f, not the light intensity. Increasing intensity increases the number of ejected electrons (more photons) but not their energy. The threshold frequency f₀ = φ/h: below this, no electrons are ejected no matter how intense the light.</p>
+<p>This directly contradicted the classical wave model, in which energy delivery rate (intensity) should determine ejection energy. Millikan spent a decade trying to disprove Einstein's equation — and confirmed it perfectly by 1916. The photon was real.</p>
+
+<h2>de Broglie's Hypothesis — Matter as Waves</h2>
+<p>If light (thought to be a wave) can behave as particles, Louis de Broglie proposed in 1924 the converse: if the energy-momentum relation E = hf = pc holds for photons, perhaps all matter has an associated wavelength:</p>
+<div class="formula-block"><span class="formula-label">de Broglie Wavelength</span>λ = h/p = h/(mv) = ℏ/p &nbsp;&nbsp;&nbsp; [for any particle of momentum p]</div>
+<p>For a 100 eV electron (v ≈ 5.9 × 10⁶ m/s, m = 9.11 × 10⁻³¹ kg): λ = 6.63×10⁻³⁴/(9.11×10⁻³¹ × 5.9×10⁶) ≈ 1.23 × 10⁻¹⁰ m = 0.123 nm — precisely the spacing between atoms in crystals. This meant electrons should diffract from crystal planes just like X-rays.</p>
+
+<figure style="margin:32px 0"><img src="https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=900&q=80&auto=format" alt="Electron beam and quantum interference" class="img-frame"/><figcaption>The Davisson-Germer experiment (1927) scattered electrons from a nickel crystal and observed diffraction peaks at exactly the angles predicted by de Broglie's wavelength formula. This provided definitive experimental confirmation that matter has wave properties. The Nobel Prize in Physics 1937 was awarded for this discovery.</figcaption></figure>
+
+<h2>The Double-Slit Experiment — The Heart of Quantum Mechanics</h2>
+<p>Richard Feynman called the double-slit experiment "the only mystery" of quantum mechanics — it contains all the strangeness of the quantum world in a single setup. The experiment proceeds as follows:</p>
+<ol style="color:var(--text-secondary);line-height:2">
+<li>Fire electrons (or photons, or atoms) one at a time through a barrier with two narrow slits.</li>
+<li>Detect each particle at a screen on the other side — each always arrives as a single localised point.</li>
+<li>Accumulate many such detections — an interference pattern of alternating bright and dark bands gradually emerges.</li>
+<li>When a detector is placed at the slits to determine which slit each electron passes through, the interference pattern disappears — replaced by two single-slit distributions.</li>
+</ol>
+
+<p>The conclusions are inescapable and revolutionary: (1) Each electron, by itself, passes through both slits simultaneously — interfering with itself. (2) The electron has no definite trajectory — only a probability amplitude (wave function) that evolves through space. (3) The act of measurement (observing which slit) irrevocably disturbs the electron, destroying the interference. Knowledge of the path destroys the interference pattern.</p>
+
+<div class="formula-block"><span class="formula-label">Double-Slit Fringe Positions</span>Bright fringes: y_m = mλL/d &nbsp;&nbsp;&nbsp; Dark fringes: y_m = (m+½)λL/d<br/>[L = slit-to-screen distance, d = slit separation]</div>
+
+<h2>Wave-Particle Duality — Complementarity</h2>
+<p>Niels Bohr formalised this apparent contradiction in his <em>complementarity principle</em>: wave-like and particle-like behaviour are complementary aspects of quantum objects. Experimental conditions that reveal wave behaviour (interference, diffraction) necessarily preclude the simultaneous determination of particle-like properties (definite trajectory, which-slit information), and vice versa. The two aspects complement rather than contradict each other — together they provide a complete description, but neither alone is sufficient.</p>
+
+<p>The mathematical resolution is the wave function ψ(x,t): a complex-valued field whose squared modulus |ψ|² gives the probability density for finding the particle at position x at time t. The wave function obeys the superposition principle (waves add), producing interference. But measurement collapses the wave function to a single outcome (particle detected at a specific location).</p>
+
+<div class="table-wrap"><table>
+<thead><tr><th>System</th><th>de Broglie Wavelength</th><th>Comparison</th></tr></thead>
+<tbody>
+<tr><td>Thermal neutron (25 meV)</td><td>~1.8 Å</td><td>≈ crystal lattice spacing — used in neutron diffraction</td></tr>
+<tr><td>100 eV electron</td><td>~1.2 Å</td><td>≈ atomic spacing — electron microscopy</td></tr>
+<tr><td>C₆₀ buckyball molecule (v≈200 m/s)</td><td>~2.5 pm</td><td>Still shows interference in 1999 experiment!</td></tr>
+<tr><td>Running person (70 kg, 5 m/s)</td><td>~1.9 × 10⁻³⁶ m</td><td>~10²⁰ times smaller than a proton — completely unobservable</td></tr>
+</tbody></table></div>
+
+<div class="info-box info-box--fact"><div class="info-box-title" style="color:#a078ff">🔬 Modern Applications of Wave-Particle Duality</div><p style="margin:0">Electron microscopes exploit de Broglie wavelengths (~0.001 nm for 100 kV electrons) to image individual atoms — resolution ~100× better than optical microscopes. The scanning tunnelling microscope uses electron tunnelling (a pure wave effect) to image atomic surfaces with sub-Ångström precision, achieving the first images of individual atoms. X-ray crystallography uses the wave nature of X-rays to determine protein structures — determining the structures of DNA, haemoglobin, and thousands of pharmaceuticals.</p></div>
+</div>
+<div class="ad-container"><div style="text-align:center;width:100%"><span class="ad-label">Advertisement</span><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div>
+<div style="display:flex;justify-content:space-between;margin-top:40px;gap:16px;flex-wrap:wrap">
+  <a href="../../branches/quantum-mechanics.html.html" class="btn btn-outline">← Back to Quantum Mechanics</a>
+  <a href="schrodinger-equation.html" class="btn btn-primary" style="background:var(--gradient-plasma)">Next: Schrödinger Equation →</a>
+</div>
+</article>
+
+<aside class="topic-sidebar">
+  <div class="sidebar-card">
+    <h4>// Key Equations</h4>
+    <div class="formula-block" style="margin:0 0 8px;font-size:0.82rem">λ = h/(mv) — de Broglie</div><div class="formula-block" style="margin:0 0 8px;font-size:0.82rem">E = hf = ℏω — photon energy</div><div class="formula-block" style="margin:0 0 8px;font-size:0.82rem">p = ℏk — photon momentum</div><div class="formula-block" style="margin:0 0 8px;font-size:0.82rem">Δx·Δp ≥ ℏ/2</div>
+  </div>
+  <div class="sidebar-card">
+    <h4>// Topic Info</h4>
+    <div class="sidebar-stat"><span>Branch</span><span>Quantum Mechanics</span></div>
+    <div class="sidebar-stat"><span>Topic</span><span>01 / 24</span></div>
+    <div class="sidebar-stat"><span>Simulation</span><span>Yes ✓</span></div>
+    <div class="sidebar-stat"><span>Level</span><span>Advanced</span></div>
+  </div>
+  <div class="sidebar-card">
+    <h4>// All 24 Topics</h4>
+    <ul style="list-style:none;display:flex;flex-direction:column;gap:5px"><li><a href="wave-particle-duality.html" style="font-size:0.8rem;color:var(--accent-nova);font-weight:600;text-decoration:none">01. Wave-Particle Duality ←</a></li>
+<li><a href="schrodinger-equation.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">02. Schrödinger Equation</a></li>
+<li><a href="uncertainty-principle.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">03. Uncertainty Principle</a></li>
+<li><a href="quantum-tunnelling.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">04. Quantum Tunnelling</a></li>
+<li><a href="superposition.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">05. Quantum Superposition</a></li>
+<li><a href="quantum-entanglement.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">06. Quantum Entanglement</a></li>
+<li><a href="quantum-operators.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">07. Quantum Operators</a></li>
+<li><a href="spin-and-angular-momentum.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">08. Spin & Angular Momentum</a></li>
+<li><a href="hydrogen-atom.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">09. The Hydrogen Atom</a></li>
+<li><a href="perturbation-theory.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">10. Perturbation Theory</a></li>
+<li><a href="variational-methods.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">11. Variational Methods</a></li>
+<li><a href="identical-particles.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">12. Identical Particles</a></li>
+<li><a href="quantum-statistics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">13. Quantum Statistics</a></li>
+<li><a href="path-integrals.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">14. Path Integrals</a></li>
+<li><a href="measurement-problem.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">15. The Measurement Problem</a></li>
+<li><a href="bells-theorem.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">16. Bell's Theorem</a></li>
+<li><a href="quantum-cryptography.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">17. Quantum Cryptography</a></li>
+<li><a href="density-matrix.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">18. Density Matrix</a></li>
+<li><a href="quantum-harmonic-oscillator.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">19. Quantum Harmonic Oscillator</a></li>
+<li><a href="many-body-quantum-systems.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">20. Many-Body Quantum Systems</a></li>
+<li><a href="decoherence.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">21. Decoherence</a></li>
+<li><a href="relativistic-quantum-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">22. Relativistic Quantum Mechanics</a></li>
+<li><a href="quantum-field-basics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">23. Quantum Field Theory Basics</a></li>
+<li><a href="standard-model-preview.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">24. Standard Model Preview</a></li>
+</ul>
+  </div>
+  <div class="ad-container" style="min-height:250px;flex-direction:column"><span class="ad-label">Advertisement</span><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div>
+</aside>
+</div>
+</main>
+<div id="footer-placeholder"></div>
+<script src="../../js/components.js"></script>
+</body>
+</html>

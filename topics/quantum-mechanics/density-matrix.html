@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Density Matrix & Mixed States &#8212; Quantum Mechanics | QuantumAtlas</title>
+  <meta name="description" content="The Density Operator, von Neumann Entropy, Open Quantum Systems, and the Lindblad Equation. Complete scientific treatment with derivations, equations, and real-world applications in quantum physics."/>
+  <link rel="canonical" href="https://yourdomain.com/topics/quantum-mechanics/density-matrix.html"/>
+  <meta property="og:title" content="Density Matrix & Mixed States | QuantumAtlas"/><meta property="og:image" content="https://images.unsplash.com/photo-1509228468518-180dd4864904?w=1400&q=80&auto=format"/>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4X0M6RM0F6"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4X0M6RM0F6',{page_title:document.title,page_location:window.location.href});</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2633513915753897" crossorigin="anonymous"></script>
+  <meta name="google-adsense-account" content="ca-pub-2633513915753897">
+  <link rel="stylesheet" href="../../css/global.css"/><link rel="stylesheet" href="../../css/nav.css"/><link rel="stylesheet" href="../../css/topic-qm.css"/>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+<main>
+<section class="topic-hero">
+  <img src="https://images.unsplash.com/photo-1509228468518-180dd4864904?w=1400&q=80&auto=format" alt="Quantum information and the Bloch sphere — pure and mixed qubit states" class="topic-hero-bg-img" loading="eager"/>
+  <div class="topic-hero-overlay"></div>
+  <div class="container topic-hero-content">
+    <nav class="breadcrumb">
+      <a href="../../index.html">Home</a><span class="sep">&#8250;</span>
+      <a href="../../branches/quantum-mechanics.html">Quantum Mechanics</a><span class="sep">&#8250;</span>
+      <span class="current">Density Matrix & Mixed States</span>
+    </nav>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px">
+      <span class="badge badge-nova">Quantum Mechanics</span>
+      <span class="badge badge-plasma">Topic 18 / 24</span>
+    </div>
+    <h1 class="topic-hero-title">&#961; Density Matrix & Mixed States</h1>
+    <p class="topic-hero-sub">The Density Operator, von Neumann Entropy, Open Quantum Systems, and the Lindblad Equation</p>
+  </div>
+</section>
+<div class="container topic-layout">
+<article class="topic-article">
+<div class="ad-container"><div style="text-align:center;width:100%"><span class="ad-label">Advertisement</span><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div>
+
+<div class="topic-body">
+<figure style="margin:0 0 36px">
+  <img src="https://images.unsplash.com/photo-1509228468518-180dd4864904?w=1400&q=80&auto=format" alt="Quantum information and the Bloch sphere — pure and mixed qubit states" class="img-frame"/>
+  <figcaption>The Bloch sphere representation of qubit states: pure states lie on the sphere surface (|r|=1, Tr(ρ²)=1); mixed states lie inside the sphere (|r|<1, Tr(ρ²)<1). The completely mixed state (maximally uncertain) is at the centre (r=0, ρ = I/2). Every quantum gate is a rotation of the Bloch vector; decoherence shrinks the vector toward the centre. The density matrix formalism captures both quantum superposition (coherences, off-diagonal ρ elements) and classical statistical uncertainty (populations, diagonal elements) in a single unified description.</figcaption>
+</figure>
+<h2>Beyond Pure States — The Need for the Density Matrix</h2>
+<p>The wave function |ψ⟩ provides a complete description of a quantum system in a pure state. But many physically important situations require more:</p>
+
+<ul style="color:var(--text-secondary)">
+  <li><strong>Statistical mixtures:</strong> A source that emits spin-up electrons 30% of the time and spin-down electrons 70% of the time cannot be described by any single wave function. It requires a statistical distribution over states.</li>
+  <li><strong>Open quantum systems:</strong> A qubit coupled to its thermal environment becomes entangled with the environment. Its reduced state (obtained by ignoring environmental degrees of freedom) is a mixed state.</li>
+  <li><strong>Subsystems of entangled states:</strong> The reduced state of one party of an entangled bipartite system is always mixed if the particles are entangled.</li>
+  <li><strong>Finite temperature:</strong> At temperature T, a system is in a statistical mixture of energy eigenstates with probabilities pₙ = e^{−Eₙ/kT}/Z (the Boltzmann distribution).</li>
+</ul>
+
+<h2>The Density Operator</h2>
+<p>The density operator (density matrix) ρ provides the most general description of a quantum state:</p>
+
+<div class="formula-block"><span class="formula-label">Pure State: ρ = |ψ⟩⟨ψ| &nbsp;&nbsp; Tr(ρ²) = 1</span></div>
+<div class="formula-block"><span class="formula-label">Mixed State: ρ = Σₙ pₙ|n⟩⟨n| &nbsp;&nbsp; 0 ≤ Tr(ρ²) < 1</span></div>
+
+<p>All valid density matrices satisfy: Hermitian (ρ = ρ†), positive semidefinite (all eigenvalues ≥ 0), unit trace (Tr(ρ) = 1). Expectation values: ⟨A⟩ = Tr(ρÂ).</p>
+
+<p><strong>Key distinction between pure and mixed states:</strong> Tr(ρ²) = 1 iff ρ is a pure state; Tr(ρ²) < 1 for all mixed states. For a qubit: ρ = (I + r⃗·σ⃗)/2 where r⃗ is the Bloch vector. Pure states: |r| = 1 (on the Bloch sphere surface). Mixed states: |r| < 1 (inside the sphere).</p>
+
+<figure style="margin:32px 0">
+  <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=900&q=80&auto=format" alt="Quantum information entropy and mixed states" class="img-frame"/>
+  <figcaption>Quantum decoherence viewed through the density matrix: a pure qubit state starts on the Bloch sphere surface (Tr(ρ²)=1, S=0). Environmental coupling entangles the qubit with the environment, and tracing out environmental degrees of freedom shrinks the Bloch vector toward the centre. The von Neumann entropy S(ρ) = −Tr(ρ log₂ρ) increases from 0 (pure state) toward 1 bit (maximally mixed state). This entropy increase quantifies information lost to the environment — the quantum-to-classical transition as viewed through the density matrix.</figcaption>
+</figure>
+
+<h2>von Neumann Entropy</h2>
+<div class="formula-block"><span class="formula-label">von Neumann Entropy</span>S(ρ) = −Tr(ρ log₂ρ) = −Σₙ λₙ log₂λₙ &nbsp;&nbsp;&nbsp; [bits]</div>
+
+<p>Where λₙ are the eigenvalues of ρ. Properties:</p>
+<ul style="color:var(--text-secondary)">
+  <li>S = 0 for pure states (one eigenvalue = 1, rest = 0)</li>
+  <li>S = log₂ d for the maximally mixed state ρ = I/d in d dimensions (all eigenvalues = 1/d)</li>
+  <li>S is concave: S(Σ_i p_i ρᵢ) ≥ Σ_i p_i S(ρᵢ) — mixing increases entropy</li>
+  <li>Subadditivity: S(ρ_AB) ≤ S(ρ_A) + S(ρ_B) — total entropy ≤ sum of parts</li>
+</ul>
+
+<p>Entanglement entropy: for a bipartite pure state |ψ_AB⟩, S(ρ_A) = S(ρ_B) where ρ_A = Tr_B(|ψ_AB⟩⟨ψ_AB|). This equals zero for product states and equals log₂ d for maximally entangled states — quantifying the entanglement in |ψ_AB⟩.</p>
+
+<h2>Open Quantum Systems — The Lindblad Equation</h2>
+<p>For a quantum system coupled to a Markovian (memoryless) environment, the time evolution of ρ is governed by the Lindblad master equation:</p>
+
+<div class="formula-block"><span class="formula-label">Lindblad Master Equation</span>dρ/dt = −(i/ℏ)[Ĥ,ρ] + Σₖ γₖ(LₖρLₖ† − ½{Lₖ†Lₖ, ρ})</div>
+
+<p>The first term is unitary Schrödinger evolution. The second term (the Lindblad dissipator) describes decoherence and relaxation: Lₖ are jump operators (e.g., σ₋ for qubit relaxation from |1⟩ to |0⟩, σ_z for dephasing), and γₖ are the corresponding rates. The Lindblad equation is the most general completely positive, trace-preserving (CPTP) evolution for the density matrix, preserving all physical requirements (positivity, trace).</p>
+
+<div class="table-wrap"><table>
+<thead><tr><th>Process</th><th>Jump operator Lₖ</th><th>Effect on qubit ρ</th></tr></thead>
+<tbody>
+<tr><td>Amplitude damping (T₁ decay)</td><td>σ₋ = [[0,1],[0,0]]</td><td>|1⟩⟨1| → |0⟩⟨0|; coherences decay at γ/2</td></tr>
+<tr><td>Pure dephasing (T₂* decay)</td><td>σ_z = [[1,0],[0,-1]]</td><td>Off-diagonal ρ₀₁ → 0; populations unchanged</td></tr>
+<tr><td>Depolarising noise</td><td>σ_x, σ_y, σ_z (equal)</td><td>Any state → I/2 (maximally mixed)</td></tr>
+</tbody></table></div>
+
+<div class="info-box info-box--fact">
+  <div class="info-box-title" style="color:#a078ff">&#128187; Quantum Error Correction</div>
+  <p style="margin:0">Quantum error correction encodes one logical qubit in multiple physical qubits, protecting against decoherence. The 3-qubit bit-flip code encodes |0⟩_L = |000⟩, |1⟩_L = |111⟩ — a bit flip error on any one qubit can be detected and corrected by majority vote without measuring the logical qubit state (which would collapse it). The 9-qubit Shor code corrects arbitrary single-qubit errors. The threshold theorem: if physical error rates are below ~1% (surface code threshold), fault-tolerant quantum computation is possible — errors can be suppressed to arbitrarily low levels by encoding in more physical qubits. IBM's 2024 133-qubit Heron processor achieves ~0.1% two-qubit gate error rate — approaching the fault-tolerance threshold for topological codes.</p>
+</div>
+</div>
+<div class="ad-container"><div style="text-align:center;width:100%"><span class="ad-label">Advertisement</span><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div>
+<div style="display:flex;justify-content:space-between;margin-top:40px;gap:16px;flex-wrap:wrap">
+  <a href="quantum-cryptography.html" class="btn btn-outline">&#8592; Quantum Cryptography</a>
+  <a href="quantum-harmonic-oscillator.html" class="btn btn-primary" style="background:var(--gradient-plasma)">Next: Quantum Harmonic Oscillator &#8594;</a>
+</div>
+</article>
+<aside class="topic-sidebar">
+  <div class="sidebar-card"><h4>// Key Equations</h4><div class="formula-block" style="margin:0 0 8px;font-size:0.82rem"><span class="formula-label">Pure state density matrix</span>ρ = |ψ⟩⟨ψ| (pure)</div><div class="formula-block" style="margin:0 0 8px;font-size:0.82rem"><span class="formula-label">Mixed state density matrix</span>ρ = Σpₙ|n⟩⟨n| (mixed)</div><div class="formula-block" style="margin:0 0 8px;font-size:0.82rem"><span class="formula-label">von Neumann entropy</span>S(ρ) = −Tr(ρ log₂ρ)</div><div class="formula-block" style="margin:0 0 8px;font-size:0.82rem"><span class="formula-label">Lindblad master equation</span>dρ/dt = −(i/ℏ)[Ĥ,ρ] + Lindblad</div></div>
+  <div class="sidebar-card">
+    <h4>// Topic Info</h4>
+    <div class="sidebar-stat"><span>Branch</span><span>Quantum Mechanics</span></div>
+    <div class="sidebar-stat"><span>Topic</span><span>18 / 24</span></div>
+    <div class="sidebar-stat"><span>Simulation</span><span>No</span></div>
+    <div class="sidebar-stat"><span>Level</span><span>Advanced</span></div>
+  </div>
+  <div class="sidebar-card"><h4>// All 24 Topics</h4><ul style='list-style:none;display:flex;flex-direction:column;gap:5px'><li><a href="wave-particle-duality.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">01. Wave-Particle Duality</a></li><li><a href="schrodinger-equation.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">02. Schrödinger Equation</a></li><li><a href="uncertainty-principle.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">03. Uncertainty Principle</a></li><li><a href="quantum-tunnelling.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">04. Quantum Tunnelling</a></li><li><a href="superposition.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">05. Quantum Superposition</a></li><li><a href="quantum-entanglement.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">06. Quantum Entanglement</a></li><li><a href="quantum-operators.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">07. Quantum Operators</a></li><li><a href="spin-and-angular-momentum.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">08. Spin & Angular Momentum</a></li><li><a href="hydrogen-atom.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">09. The Hydrogen Atom</a></li><li><a href="perturbation-theory.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">10. Perturbation Theory</a></li><li><a href="variational-methods.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">11. Variational Methods</a></li><li><a href="identical-particles.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">12. Identical Particles</a></li><li><a href="quantum-statistics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">13. Quantum Statistics</a></li><li><a href="path-integrals.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">14. Path Integrals</a></li><li><a href="measurement-problem.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">15. The Measurement Problem</a></li><li><a href="bells-theorem.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">16. Bell's Theorem</a></li><li><a href="quantum-cryptography.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">17. Quantum Cryptography</a></li><li><a href="density-matrix.html" style="font-size:0.8rem;color:var(--accent-nova);font-weight:600;text-decoration:none">18. Density Matrix &#8592;</a></li><li><a href="quantum-harmonic-oscillator.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">19. Quantum Harmonic Oscillator</a></li><li><a href="many-body-quantum-systems.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">20. Many-Body Systems</a></li><li><a href="decoherence.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">21. Decoherence</a></li><li><a href="relativistic-quantum-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">22. Relativistic QM</a></li><li><a href="quantum-field-basics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">23. Quantum Field Theory</a></li><li><a href="standard-model-preview.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">24. Standard Model</a></li></ul></div>
+  <div class="ad-container" style="min-height:250px;flex-direction:column">
+    <span class="ad-label">Advertisement</span>
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+  </div>
+</aside>
+</div>
+</main>
+<div id="footer-placeholder"></div>
+<script src="../../js/components.js"></script>
+</body>
+</html>

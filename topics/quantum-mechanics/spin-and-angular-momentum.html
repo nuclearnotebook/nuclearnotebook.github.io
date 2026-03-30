@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Spin & Angular Momentum &#8212; Quantum Mechanics | QuantumAtlas</title>
+  <meta name="description" content="Intrinsic Spin, Pauli Matrices, the Stern-Gerlach Experiment, and Addition of Angular Momenta. Complete scientific treatment with derivations, diagrams, equations, and real-world applications in quantum physics."/>
+  <meta name="keywords" content="spin & angular momentum, quantum mechanics, intrinsic spin, pauli matrices, the stern-gerlach experiment, and addition of an"/>
+  <link rel="canonical" href="https://yourdomain.com/topics/quantum-mechanics/spin-and-angular-momentum.html"/>
+  <meta property="og:title" content="Spin & Angular Momentum | QuantumAtlas"/>
+  <meta property="og:image" content="https://images.unsplash.com/photo-1614642264762-d0a3b8bf3700?w=1400&q=80&auto=format"/><meta property="og:type" content="article"/>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Spin & Angular Momentum","description":"Intrinsic Spin, Pauli Matrices, the Stern-Gerlach Experiment, and Addition of Angular Momenta","image":"https://images.unsplash.com/photo-1614642264762-d0a3b8bf3700?w=1400&q=80&auto=format","author":{"@type":"Organization","name":"QuantumAtlas"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://yourdomain.com/"},{"@type":"ListItem","position":2,"name":"Quantum Mechanics","item":"https://yourdomain.com/branches/quantum-mechanics.html"},{"@type":"ListItem","position":3,"name":"Spin & Angular Momentum"}]}}</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4X0M6RM0F6"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4X0M6RM0F6',{page_title:document.title,page_location:window.location.href});</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2633513915753897" crossorigin="anonymous"></script>
+  <meta name="google-adsense-account" content="ca-pub-2633513915753897">
+  <link rel="stylesheet" href="../../css/global.css"/>
+  <link rel="stylesheet" href="../../css/nav.css"/>
+  <link rel="stylesheet" href="../../css/topic-qm.css"/>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+<main>
+<section class="topic-hero">
+  <img src="https://images.unsplash.com/photo-1614642264762-d0a3b8bf3700?w=1400&q=80&auto=format" alt="MRI scanner — direct application of nuclear spin quantum mechanics" class="topic-hero-bg-img" loading="eager"/>
+  <div class="topic-hero-overlay"></div>
+  <div class="container topic-hero-content">
+    <nav class="breadcrumb">
+      <a href="../../index.html">Home</a><span class="sep">&#8250;</span>
+      <a href="../../branches/quantum-mechanics.html">Quantum Mechanics</a><span class="sep">&#8250;</span>
+      <span class="current">Spin & Angular Momentum</span>
+    </nav>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px">
+      <span class="badge badge-nova">Quantum Mechanics</span>
+      <span class="badge badge-green">Interactive Simulation</span>
+      <span class="badge badge-plasma">Topic 08 / 24</span>
+    </div>
+    <h1 class="topic-hero-title">&#8679; Spin & Angular Momentum</h1>
+    <p class="topic-hero-sub">Intrinsic Spin, Pauli Matrices, the Stern-Gerlach Experiment, and Addition of Angular Momenta</p>
+  </div>
+</section>
+
+<div class="container topic-layout">
+<article class="topic-article">
+<div class="ad-container"><div style="text-align:center;width:100%"><span class="ad-label">Advertisement</span><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div>
+<h2 id="simulation" style="margin-top:0;border-top:none;padding-top:0">&#127918; Interactive Simulation</h2>
+<div class="simulation-wrapper">
+  <div class="simulation-toolbar">
+    <span class="simulation-title">&#8593;&#8595; Stern-Gerlach Spin Measurement</span>
+    <div class="sim-control"><label>Spin state &#952;</label><input type="range" id="sg-t" min="0" max="180" value="90" step="5"/><span id="sg-tv">90°</span></div>
+    <div class="sim-control"><label>Measurement axis</label>
+      <select id="sg-ax" style="background:var(--bg-deep);color:var(--text-primary);border:1px solid var(--border-dim);padding:4px 8px;border-radius:6px;font-size:0.78rem">
+        <option value="z">Z-axis</option><option value="x">X-axis</option><option value="y">Y-axis</option>
+      </select>
+    </div>
+    <div class="sim-control"><label>N atoms</label><input type="range" id="sg-N" min="50" max="600" value="250" step="50"/><span id="sg-Nv">250</span></div>
+    <button id="sg-fire" class="btn btn-primary" style="padding:7px 18px;font-size:0.78rem;background:linear-gradient(135deg,#7b2fff,#00d4ff)">Fire</button>
+    <button id="sg-clr" class="btn btn-outline" style="padding:7px 14px;font-size:0.78rem">Clear</button>
+  </div>
+  <div class="sim-canvas-wrap"><canvas id="sg-cv" height="290"></canvas></div>
+  <div style="padding:12px 20px;display:flex;gap:24px;flex-wrap:wrap;font-family:var(--font-mono);font-size:0.78rem;color:var(--text-muted);background:rgba(0,0,0,0.25);border-top:1px solid var(--border-dim)">
+    <span>P(&#8593;): <strong id="sg-pu" style="color:var(--accent-nova)">50%</strong></span>
+    <span>P(&#8595;): <strong id="sg-pd" style="color:var(--accent-solar)">50%</strong></span>
+    <span>Measured &#8593;: <strong id="sg-cu" style="color:var(--accent-green)">0</strong></span>
+    <span>Measured &#8595;: <strong id="sg-cd" style="color:var(--accent-solar)">0</strong></span>
+  </div>
+</div>
+<script>
+(function(){
+  var cv=document.getElementById('sg-cv'),cx=cv.getContext('2d');
+  var tSl=document.getElementById('sg-t'),axSel=document.getElementById('sg-ax'),nSl=document.getElementById('sg-N');
+  var dots=[],cu=0,cd=0,raf=null,running=false;
+  function W(){cv.width=cv.offsetWidth||700;}W();window.addEventListener('resize',function(){W();draw();});
+  function getP(){
+    var th=parseFloat(tSl.value)*Math.PI/180,ax=axSel.value;
+    var pu=ax==='z'?Math.pow(Math.cos(th/2),2):ax==='x'?0.5*(1+Math.sin(th)):0.5;
+    tSl.oninput=upd;document.getElementById('sg-tv').textContent=tSl.value+'°';
+    document.getElementById('sg-pu').textContent=(pu*100).toFixed(1)+'%';
+    document.getElementById('sg-pd').textContent=((1-pu)*100).toFixed(1)+'%';
+    return pu;
+  }
+  function upd(){getP();}
+  tSl.oninput=upd;axSel.onchange=upd;nSl.oninput=function(){document.getElementById('sg-Nv').textContent=nSl.value;};
+  function draw(){
+    var W2=cv.width,H=290,mx=W2*0.42,mw=65,mh=50;
+    cx.clearRect(0,0,W2,H);
+    var bg=cx.createLinearGradient(0,0,0,H);bg.addColorStop(0,'#050810');bg.addColorStop(1,'#0a0e22');cx.fillStyle=bg;cx.fillRect(0,0,W2,H);
+    // Magnet poles
+    cx.fillStyle='rgba(123,47,255,0.18)';cx.fillRect(mx,H/2-mh-22,mw,mh);cx.fillRect(mx,H/2+22,mw,mh);
+    cx.strokeStyle='rgba(123,47,255,0.5)';cx.lineWidth=2;cx.strokeRect(mx,H/2-mh-22,mw,mh);cx.strokeRect(mx,H/2+22,mw,mh);
+    cx.fillStyle='rgba(123,47,255,0.8)';cx.font='11px JetBrains Mono,monospace';cx.textAlign='center';
+    cx.fillText('N',mx+mw/2,H/2-mh-22+mh/2+4);cx.fillText('S',mx+mw/2,H/2+22+mh/2+4);
+    // Beam
+    cx.strokeStyle='rgba(0,212,255,0.15)';cx.setLineDash([4,4]);cx.lineWidth=1;
+    cx.beginPath();cx.moveTo(30,H/2);cx.lineTo(mx,H/2);cx.stroke();cx.setLineDash([]);
+    // Screen
+    cx.fillStyle='rgba(0,212,255,0.1)';cx.fillRect(W2-65,H/2-105,10,210);
+    cx.strokeStyle='rgba(0,212,255,0.3)';cx.lineWidth=2;cx.strokeRect(W2-65,H/2-105,10,210);
+    cx.textAlign='center';cx.fillStyle='rgba(0,212,255,0.5)';cx.font='9px JetBrains Mono,monospace';
+    cx.fillText('|↑⟩',W2-60,H/2-112);cx.fillStyle='rgba(255,107,26,0.5)';cx.fillText('|↓⟩',W2-60,H/2+120);
+    // Dots
+    dots.forEach(function(d){
+      cx.beginPath();cx.arc(W2-60,d[0],3,0,2*Math.PI);
+      cx.fillStyle=d[1]?'rgba(0,212,255,0.9)':'rgba(255,107,26,0.9)';
+      cx.shadowColor=d[1]?'#00d4ff':'#ff6b1a';cx.shadowBlur=5;cx.fill();cx.shadowBlur=0;
+    });
+    cx.textAlign='left';
+    document.getElementById('sg-cu').textContent=cu;document.getElementById('sg-cd').textContent=cd;
+  }
+  function fire(){
+    if(running)return;running=true;var pu=getP(),N=parseInt(nSl.value),H=290,i=0;
+    function step(){
+      for(var j=0;j<8&&i<N;j++,i++){
+        var up=Math.random()<pu;
+        var y=up?(H/2-72+Math.random()*22):(H/2+50+Math.random()*22);
+        dots.push([y,up]);if(up)cu++;else cd++;
+      }
+      draw();if(i<N)raf=requestAnimationFrame(step);else running=false;
+    }
+    raf=requestAnimationFrame(step);
+  }
+  document.getElementById('sg-fire').onclick=fire;
+  document.getElementById('sg-clr').onclick=function(){cancelAnimationFrame(raf);running=false;dots=[];cu=0;cd=0;draw();};
+  getP();draw();
+})();
+</script>
+<div class="topic-body">
+
+<figure style="margin:0 0 36px">
+  <img src="https://images.unsplash.com/photo-1614642264762-d0a3b8bf3700?w=1400&q=80&auto=format" alt="MRI scanner — direct application of nuclear spin quantum mechanics" class="img-frame"/>
+  <figcaption>Magnetic Resonance Imaging exploits nuclear spin physics directly. Hydrogen nuclei (protons) in the body, each carrying spin-½, precess at the Larmor frequency ω₀ = γB₀ in the scanner's magnetic field. Radiofrequency pulses flip spin populations, and the detected relaxation signal — encoding both spatial information and tissue-specific T₁, T₂ times — is reconstructed into high-resolution anatomical images. This is quantum spin mechanics operating at clinical scale, providing ~100 million scans annually worldwide.</figcaption>
+</figure>
+
+<h2>The Discovery of Spin</h2>
+<p>In 1922, Otto Stern and Walther Gerlach passed a beam of silver atoms through a non-uniform magnetic field. Classical physics predicted the atoms would be deflected into a continuous smear (the magnetic moment could point in any direction). Instead, they observed exactly two spots on the detector — two discrete deflection values. This was the first direct measurement of quantised angular momentum, and specifically of a property that has no classical analogue: intrinsic spin.</p>
+
+<p>Spin cannot be visualised as physical rotation — an electron has no measurable spatial extent, and the spin angular momentum ℏ/2 cannot be produced by any classical spinning motion consistent with special relativity. Spin is a purely quantum mechanical, relativistic property. Paul Dirac showed in 1928 that spin-½ emerges automatically from combining quantum mechanics with special relativity — it is not an additional assumption but a mathematical consequence.</p>
+
+<h2>Spin-½ Operators and Pauli Matrices</h2>
+<p>For a spin-½ particle, the spin operator is Ŝ = (ℏ/2)σ⃗, where σ⃗ are the Pauli matrices:</p>
+
+<div class="formula-block"><span class="formula-label">Pauli Matrices (2×2)</span>σ_x = [[0,1],[1,0]] &nbsp;&nbsp; σ_y = [[0,−i],[i,0]] &nbsp;&nbsp; σ_z = [[1,0],[0,−1]]</div>
+
+<p>The Pauli matrices satisfy σᵢ² = I (identity), σ_xσ_y = iσ_z (cyclic), and anticommutation {σᵢ,σⱼ} = 2δᵢⱼ. The spin eigenstates are: |↑⟩ = [1,0] (eigenvalue +ℏ/2 for Ŝ_z) and |↓⟩ = [0,1] (eigenvalue −ℏ/2). Any spin state can be written: |ψ⟩ = α|↑⟩ + β|↓⟩ — a qubit, the basic unit of quantum computing.</p>
+
+<div class="formula-block"><span class="formula-label">Spin Eigenstates</span>Ŝ_z|↑⟩ = +(ℏ/2)|↑⟩ &nbsp;&nbsp;&nbsp; Ŝ_z|↓⟩ = −(ℏ/2)|↓⟩</div>
+
+<h2>The Stern-Gerlach Experiment in Detail</h2>
+<p>A magnetic dipole in a non-uniform field experiences force F_z = μ_z (∂B_z/∂z). For an electron: μ_z = −gₑ(e/2mₑ)Ŝ_z = ∓gₑμ_B/2. The g-factor gₑ ≈ 2 means the force is F_z = ∓gₑμ_B(∂B_z/∂z)/2, deflecting atoms to two discrete positions. The experiment beautifully demonstrates key quantum principles:</p>
+
+<ul style="color:var(--text-secondary)">
+  <li>Angular momentum is quantised in units of ℏ/2</li>
+  <li>Measurement is irreversible: measuring S_z places the atom in a definite spin eigenstate</li>
+  <li>Measuring a different component (S_x) after measuring S_z gives random results — S_x measurement has "erased" the S_z information</li>
+  <li>Two consecutive S_z measurements always agree — eigenstate collapses are stable</li>
+</ul>
+
+<figure style="margin:32px 0">
+  <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=900&q=80&auto=format" alt="Atomic spectroscopy showing fine structure from spin-orbit coupling" class="img-frame"/>
+  <figcaption>The sodium D-line doublet (589.0 and 589.6 nm) — one of the most famous spectral features in astronomy, responsible for the yellow colour of sodium vapour lamps and the absorption lines in stellar spectra. The doublet splitting arises from spin-orbit coupling: the electron's spin magnetic moment interacts with the magnetic field generated by the nucleus's motion relative to the electron, splitting each l>0 level into two (j = l±½). This fine structure was the first evidence for electron spin, before its explicit theoretical formulation.</figcaption>
+</figure>
+
+<h2>Spinors — The Strange Transformation of Spin-½</h2>
+<p>Spin-½ states (spinors) have a remarkable and counterintuitive transformation property: a rotation by 2π (360°) about any axis transforms |ψ⟩ → −|ψ⟩. The spinor requires a 4π (720°) rotation to return to its original state. This behaviour — with no classical analogue — was confirmed experimentally by neutron interferometry (Rauch et al., 1975; Werner et al., 1975). A neutron beam split and sent through a magnetic field that rotates its spin by 2π produces an interference pattern shifted by π (destructive interference) relative to the unrotated beam — direct observation of the spinor's 4π periodicity.</p>
+
+<h2>Addition of Angular Momenta</h2>
+<p>When combining angular momenta j₁ and j₂, the total J can take values |j₁−j₂| ≤ J ≤ j₁+j₂ in integer steps. For two spin-½ electrons:</p>
+
+<div class="formula-block"><span class="formula-label">Combining Two Spin-½ Particles</span>J = 0 (singlet): |S⟩ = (|↑↓⟩ − |↓↑⟩)/√2 &nbsp; (antisymmetric)<br/>J = 1 (triplet): |T,+1⟩ = |↑↑⟩, |T,0⟩ = (|↑↓⟩+|↓↑⟩)/√2, |T,-1⟩ = |↓↓⟩</div>
+
+<p>The singlet state is the maximally entangled Bell state used in quantum cryptography and Bell tests. The Clebsch-Gordan coefficients ⟨j₁m₁j₂m₂|JM⟩ give the decomposition between product states and total angular momentum states — essential for atomic spectroscopy selection rules, nuclear level coupling schemes, and the classification of composite particles in particle physics.</p>
+
+<div class="info-box info-box--fact">
+  <div class="info-box-title" style="color:#a078ff">&#129504; Spin in Quantum Computing</div>
+  <p style="margin:0">The electron spin is a natural qubit: |↑⟩ = |0⟩, |↓⟩ = |1⟩. Quantum computers based on spin qubits include: silicon spin qubits (Intel, UNSW) exploiting electron spins in gate-defined quantum dots; trapped ion qubits (IonQ, Quantinuum) using nuclear spins of ions; nitrogen-vacancy (NV) centre qubits in diamond using the electronic spin of the NV defect. Spin qubits in silicon have the advantage of compatibility with existing CMOS fabrication — potentially enabling millions of qubits on a single chip using conventional semiconductor manufacturing.</p>
+</div>
+
+</div>
+<div class="ad-container"><div style="text-align:center;width:100%"><span class="ad-label">Advertisement</span><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div>
+<div style="display:flex;justify-content:space-between;margin-top:40px;gap:16px;flex-wrap:wrap">
+  <a href="quantum-operators.html" class="btn btn-outline">&#8592; Quantum Operators</a>
+  <a href="hydrogen-atom.html" class="btn btn-primary" style="background:var(--gradient-plasma)">Next: The Hydrogen Atom &#8594;</a>
+</div>
+</article>
+
+<aside class="topic-sidebar">
+  <div class="sidebar-card">
+    <h4>// Key Equations</h4>
+    <div class="formula-block" style="margin:0 0 8px;font-size:0.82rem"><span class="formula-label">Spin magnitude operator</span>Ŝ² = ℏ²s(s+1)</div><div class="formula-block" style="margin:0 0 8px;font-size:0.82rem"><span class="formula-label">Spin z-projection</span>Ŝ_z = mₛℏ (mₛ = ±½)</div><div class="formula-block" style="margin:0 0 8px;font-size:0.82rem"><span class="formula-label">Angular momentum commutator</span>[Ŝ_x, Ŝ_y] = iℏŜ_z</div><div class="formula-block" style="margin:0 0 8px;font-size:0.82rem"><span class="formula-label">Pauli sigma_x matrix</span>σ_x = [[0,1],[1,0]]</div>
+  </div>
+  <div class="sidebar-card">
+    <h4>// Topic Info</h4>
+    <div class="sidebar-stat"><span>Branch</span><span>Quantum Mechanics</span></div>
+    <div class="sidebar-stat"><span>Topic</span><span>08 / 24</span></div>
+    <div class="sidebar-stat"><span>Simulation</span><span>Yes &#10003;</span></div>
+    <div class="sidebar-stat"><span>Level</span><span>Advanced</span></div>
+  </div>
+  <div class="sidebar-card">
+    <h4>// All 24 Topics</h4>
+    <ul style='list-style:none;display:flex;flex-direction:column;gap:5px'><li><a href="wave-particle-duality.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">01. Wave-Particle Duality</a></li><li><a href="schrodinger-equation.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">02. Schrödinger Equation</a></li><li><a href="uncertainty-principle.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">03. Uncertainty Principle</a></li><li><a href="quantum-tunnelling.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">04. Quantum Tunnelling</a></li><li><a href="superposition.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">05. Quantum Superposition</a></li><li><a href="quantum-entanglement.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">06. Quantum Entanglement</a></li><li><a href="quantum-operators.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">07. Quantum Operators</a></li><li><a href="spin-and-angular-momentum.html" style="font-size:0.8rem;color:var(--accent-nova);font-weight:600;text-decoration:none">08. Spin & Angular Momentum &#8592;</a></li><li><a href="hydrogen-atom.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">09. The Hydrogen Atom</a></li><li><a href="perturbation-theory.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">10. Perturbation Theory</a></li><li><a href="variational-methods.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">11. Variational Methods</a></li><li><a href="identical-particles.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">12. Identical Particles</a></li><li><a href="quantum-statistics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">13. Quantum Statistics</a></li><li><a href="path-integrals.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">14. Path Integrals</a></li><li><a href="measurement-problem.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">15. The Measurement Problem</a></li><li><a href="bells-theorem.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">16. Bell's Theorem</a></li><li><a href="quantum-cryptography.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">17. Quantum Cryptography</a></li><li><a href="density-matrix.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">18. Density Matrix</a></li><li><a href="quantum-harmonic-oscillator.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">19. Quantum Harmonic Oscillator</a></li><li><a href="many-body-quantum-systems.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">20. Many-Body Systems</a></li><li><a href="decoherence.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">21. Decoherence</a></li><li><a href="relativistic-quantum-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">22. Relativistic QM</a></li><li><a href="quantum-field-basics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">23. Quantum Field Theory</a></li><li><a href="standard-model-preview.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">24. Standard Model</a></li></ul>
+  </div>
+  <div class="ad-container" style="min-height:250px;flex-direction:column">
+    <span class="ad-label">Advertisement</span>
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+  </div>
+</aside>
+</div>
+</main>
+<div id="footer-placeholder"></div>
+<script src="../../js/components.js"></script>
+</body>
+</html>

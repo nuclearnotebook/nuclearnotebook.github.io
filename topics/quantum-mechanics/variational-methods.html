@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Variational Methods &#8212; Quantum Mechanics | QuantumAtlas</title>
+  <meta name="description" content="The Variational Principle, Trial Wave Functions, Helium, and Density Functional Theory. Complete scientific treatment with derivations, equations, and real-world applications in quantum physics."/>
+  <link rel="canonical" href="https://yourdomain.com/topics/quantum-mechanics/variational-methods.html"/>
+  <meta property="og:title" content="Variational Methods | QuantumAtlas"/><meta property="og:image" content="https://images.unsplash.com/photo-1629904853893-c2c8981a1dc5?w=1400&q=80&auto=format"/>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4X0M6RM0F6"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4X0M6RM0F6',{page_title:document.title,page_location:window.location.href});</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2633513915753897" crossorigin="anonymous"></script>
+  <meta name="google-adsense-account" content="ca-pub-2633513915753897">
+  <link rel="stylesheet" href="../../css/global.css"/>
+  <link rel="stylesheet" href="../../css/nav.css"/>
+  <link rel="stylesheet" href="../../css/topic-qm.css"/>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+<main>
+<section class="topic-hero">
+  <img src="https://images.unsplash.com/photo-1629904853893-c2c8981a1dc5?w=1400&q=80&auto=format" alt="Molecular orbital computation — variational DFT calculation of electron density" class="topic-hero-bg-img" loading="eager"/>
+  <div class="topic-hero-overlay"></div>
+  <div class="container topic-hero-content">
+    <nav class="breadcrumb">
+      <a href="../../index.html">Home</a><span class="sep">&#8250;</span>
+      <a href="../../branches/quantum-mechanics.html">Quantum Mechanics</a><span class="sep">&#8250;</span>
+      <span class="current">Variational Methods</span>
+    </nav>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px">
+      <span class="badge badge-nova">Quantum Mechanics</span>
+      <span class="badge badge-plasma">Topic 11 / 24</span>
+    </div>
+    <h1 class="topic-hero-title">&#8747; Variational Methods</h1>
+    <p class="topic-hero-sub">The Variational Principle, Trial Wave Functions, Helium, and Density Functional Theory</p>
+  </div>
+</section>
+<div class="container topic-layout">
+<article class="topic-article">
+<div class="ad-container"><div style="text-align:center;width:100%"><span class="ad-label">Advertisement</span><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div>
+
+<div class="topic-body">
+<figure style="margin:0 0 36px">
+  <img src="https://images.unsplash.com/photo-1629904853893-c2c8981a1dc5?w=1400&q=80&auto=format" alt="Molecular orbital computation — variational DFT calculation of electron density" class="img-frame"/>
+  <figcaption>A density functional theory calculation showing electron density around a biomolecule. DFT — built on the variational principle — is the dominant computational method in chemistry and materials science, enabling calculation of molecular geometry, reaction barriers, spectroscopic properties, and material behaviour for systems with thousands of atoms. Walter Kohn received the 1998 Nobel Prize in Chemistry for showing that the ground state energy of any many-electron system is a unique functional of the electron density alone.</figcaption>
+</figure>
+<h2>The Power of the Variational Principle</h2>
+<p>The variational principle provides a rigorous upper bound on the ground state energy without requiring exact solution. Its statement is deceptively simple: for any normalised trial wave function ψ_trial, the expectation value of the Hamiltonian is always ≥ the true ground state energy E₀:</p>
+
+<div class="formula-block"><span class="formula-label">Variational Principle (Ritz Method)</span>E[ψ_trial] = ⟨ψ_trial|Ĥ|ψ_trial⟩ / ⟨ψ_trial|ψ_trial⟩ ≥ E₀ &nbsp;&nbsp;&nbsp; (equality iff ψ_trial = ψ₀)</div>
+
+<p>Proof: expand ψ_trial = Σ cₙ|n⟩ in energy eigenstates. Then E[ψ_trial] = Σ |cₙ|² Eₙ ≥ E₀ Σ |cₙ|² = E₀. The inequality follows because each Eₙ ≥ E₀. The variational approach: choose a parameterised trial function, compute E as a function of parameters, minimise over parameters. Better trial functions → tighter upper bounds → more accurate energies.</p>
+
+<h2>Hydrogen Atom — Variational Benchmark</h2>
+<p>Using Gaussian trial function ψ_G = A·e^{−αr²} for hydrogen: computing ⟨T⟩ = 3ℏ²α/(2m) and ⟨V⟩ = −e²√(8α/π)/(4πε₀), minimising E(α) gives α_min = 8/(9πa₀²). The variational energy: E_var = −(8/3π)²·(13.6 eV) ≈ −11.5 eV vs exact −13.6 eV. Agreement to 85% with a single parameter. Using the exact 1s function ψ = e^{−r/a₀} (which is the exact solution), the variational calculation gives E = −13.6 eV exactly — the trial function is exact, so the bound is tight.</p>
+
+<h2>The Helium Atom — Two-Electron Problem</h2>
+<p>Helium has two electrons and the electron-electron repulsion e²/(4πε₀r₁₂) destroys exact solubility. Using a product of hydrogen-like 1s orbitals with effective nuclear charge Z* as the variational parameter:</p>
+
+<div class="formula-block"><span class="formula-label">Helium Trial Function</span>ψ(r₁,r₂) = (Z*³/πa₀³) · e^{−Z*(r₁+r₂)/a₀} &nbsp;&nbsp;&nbsp; (product of screened 1s orbitals)</div>
+
+<p>Computing ⟨Ĥ⟩ and minimising: Z*_min = Z − 5/16 = 2 − 5/16 = 27/16 = 1.6875. Physical interpretation: each electron "screens" the nucleus from the other by an effective charge of 5/16 ≈ 0.31. Variational energy: E_var = −(Z*)² × 2 × 13.6 + (5/4)Z* × 13.6 = −77.5 eV. Experimental value: −79.0 eV. Error: 1.9% with just one variational parameter — a remarkable agreement for such a simple trial function.</p>
+
+<figure style="margin:32px 0">
+  <img src="https://images.unsplash.com/photo-1532187643603-ba119ca4109e?w=900&q=80&auto=format" alt="Crystal structure computed by DFT variational methods" class="img-frame"/>
+  <figcaption>Silicon crystal structure — one of billions of systems computed by density functional theory. DFT uses the variational principle to find the electron density n(r) that minimises the total energy functional E[n]. The Kohn-Sham equations replace the intractable N-electron problem with N independent single-particle equations in an effective potential V_eff[n] — solvable self-consistently. Modern DFT codes (VASP, Quantum ESPRESSO, Gaussian) run on supercomputers to predict material properties, drug binding, catalyst reactivity, and battery electrode performance before any experiment is performed.</figcaption>
+</figure>
+
+<h2>Density Functional Theory — Variational at Scale</h2>
+<p>Walter Kohn and Lu Jeu Sham (1965) reformulated the many-body problem using the variational principle with electron density n(r) as the fundamental variable:</p>
+
+<div class="formula-block"><span class="formula-label">Kohn-Sham DFT Energy Functional</span>E[n] = T_s[n] + ∫V_ext(r)n(r)d³r + E_Hartree[n] + E_xc[n]</div>
+
+<p>Where T_s[n] is the non-interacting kinetic energy, E_Hartree is the classical Coulomb repulsion, and E_xc[n] is the exchange-correlation energy (the quantum many-body correction, approximated as a functional of n(r)). Minimising δE/δn = 0 subject to ∫n(r)d³r = N yields the Kohn-Sham equations — N coupled single-particle Schrödinger equations with an effective potential V_KS[n].</p>
+
+<div class="table-wrap"><table>
+<thead><tr><th>Method</th><th>Accuracy</th><th>System size</th><th>Scaling</th></tr></thead>
+<tbody>
+<tr><td>Exact diagonalisation</td><td>Exact</td><td>~20 electrons</td><td>O(exp(N))</td></tr>
+<tr><td>CCSD(T) (gold standard)</td><td>~1 kJ/mol</td><td>~100 electrons</td><td>O(N⁷)</td></tr>
+<tr><td>DFT (GGA/hybrid)</td><td>~10–20 kJ/mol</td><td>~10,000 electrons</td><td>O(N³)</td></tr>
+<tr><td>Linear-scaling DFT</td><td>~20–50 kJ/mol</td><td>~1,000,000 atoms</td><td>O(N)</td></tr>
+</tbody></table></div>
+
+<div class="info-box info-box--fact">
+  <div class="info-box-title" style="color:#a078ff">&#129513; Quantum Chemistry in Drug Discovery</div>
+  <p style="margin:0">Modern drug discovery uses variational quantum chemistry at every stage: DFT computes binding affinities between drug candidates and protein targets, identifies likely metabolic pathways (CYP450 reactions), predicts NMR chemical shifts for structure verification, and optimises molecular geometry for ADMET (absorption, distribution, metabolism, excretion, toxicity) properties. Machine learning potentials trained on DFT data (like ANI, DeePMD, MACE) extend first-principles accuracy to million-atom simulations of protein folding and membrane dynamics. AlphaFold2's energy function incorporates DFT-derived bonding terms calibrated variationally on crystallographic data.</p>
+</div>
+</div>
+<div class="ad-container"><div style="text-align:center;width:100%"><span class="ad-label">Advertisement</span><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div>
+<div style="display:flex;justify-content:space-between;margin-top:40px;gap:16px;flex-wrap:wrap">
+  <a href="perturbation-theory.html" class="btn btn-outline">&#8592; Perturbation Theory</a>
+  <a href="identical-particles.html" class="btn btn-primary" style="background:var(--gradient-plasma)">Next: Identical Particles &#8594;</a>
+</div>
+</article>
+<aside class="topic-sidebar">
+  <div class="sidebar-card"><h4>// Key Equations</h4><div class="formula-block" style="margin:0 0 8px;font-size:0.82rem"><span class="formula-label">Variational principle (upper bound)</span>E[ψ] = ⟨ψ|Ĥ|ψ⟩/⟨ψ|ψ⟩ ≥ E₀</div><div class="formula-block" style="margin:0 0 8px;font-size:0.82rem"><span class="formula-label">Euler-Lagrange condition</span>δE[ψ]/δψ = 0</div><div class="formula-block" style="margin:0 0 8px;font-size:0.82rem"><span class="formula-label">Helium variational result</span>E_He^var ≈ −77.5 eV (Z*=27/16)</div><div class="formula-block" style="margin:0 0 8px;font-size:0.82rem"><span class="formula-label">Hohenberg-Kohn theorem</span>E = E[n(r)] — DFT theorem</div></div>
+  <div class="sidebar-card">
+    <h4>// Topic Info</h4>
+    <div class="sidebar-stat"><span>Branch</span><span>Quantum Mechanics</span></div>
+    <div class="sidebar-stat"><span>Topic</span><span>11 / 24</span></div>
+    <div class="sidebar-stat"><span>Simulation</span><span>No</span></div>
+    <div class="sidebar-stat"><span>Level</span><span>Advanced</span></div>
+  </div>
+  <div class="sidebar-card"><h4>// All 24 Topics</h4><ul style='list-style:none;display:flex;flex-direction:column;gap:5px'><li><a href="wave-particle-duality.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">01. Wave-Particle Duality</a></li><li><a href="schrodinger-equation.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">02. Schrödinger Equation</a></li><li><a href="uncertainty-principle.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">03. Uncertainty Principle</a></li><li><a href="quantum-tunnelling.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">04. Quantum Tunnelling</a></li><li><a href="superposition.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">05. Quantum Superposition</a></li><li><a href="quantum-entanglement.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">06. Quantum Entanglement</a></li><li><a href="quantum-operators.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">07. Quantum Operators</a></li><li><a href="spin-and-angular-momentum.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">08. Spin & Angular Momentum</a></li><li><a href="hydrogen-atom.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">09. The Hydrogen Atom</a></li><li><a href="perturbation-theory.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">10. Perturbation Theory</a></li><li><a href="variational-methods.html" style="font-size:0.8rem;color:var(--accent-nova);font-weight:600;text-decoration:none">11. Variational Methods &#8592;</a></li><li><a href="identical-particles.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">12. Identical Particles</a></li><li><a href="quantum-statistics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">13. Quantum Statistics</a></li><li><a href="path-integrals.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">14. Path Integrals</a></li><li><a href="measurement-problem.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">15. The Measurement Problem</a></li><li><a href="bells-theorem.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">16. Bell's Theorem</a></li><li><a href="quantum-cryptography.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">17. Quantum Cryptography</a></li><li><a href="density-matrix.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">18. Density Matrix</a></li><li><a href="quantum-harmonic-oscillator.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">19. Quantum Harmonic Oscillator</a></li><li><a href="many-body-quantum-systems.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">20. Many-Body Systems</a></li><li><a href="decoherence.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">21. Decoherence</a></li><li><a href="relativistic-quantum-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">22. Relativistic QM</a></li><li><a href="quantum-field-basics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">23. Quantum Field Theory</a></li><li><a href="standard-model-preview.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">24. Standard Model</a></li></ul></div>
+  <div class="ad-container" style="min-height:250px;flex-direction:column">
+    <span class="ad-label">Advertisement</span>
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+  </div>
+</aside>
+</div>
+</main>
+<div id="footer-placeholder"></div>
+<script src="../../js/components.js"></script>
+</body>
+</html>

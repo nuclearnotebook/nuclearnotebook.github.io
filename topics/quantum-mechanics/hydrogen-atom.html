@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Hydrogen Atom &#8212; Quantum Mechanics | QuantumAtlas</title>
+  <meta name="description" content="Quantum Numbers, Orbitals, Spectral Series, and the Exact Solution of the Coulomb Problem. Complete scientific treatment with derivations, diagrams, equations, and real-world applications in quantum physics."/>
+  <meta name="keywords" content="the hydrogen atom, quantum mechanics, quantum numbers, orbitals, spectral series, and the exact solution of the coulom"/>
+  <link rel="canonical" href="https://yourdomain.com/topics/quantum-mechanics/hydrogen-atom.html"/>
+  <meta property="og:title" content="The Hydrogen Atom | QuantumAtlas"/>
+  <meta property="og:image" content="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=1400&q=80&auto=format"/><meta property="og:type" content="article"/>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"The Hydrogen Atom","description":"Quantum Numbers, Orbitals, Spectral Series, and the Exact Solution of the Coulomb Problem","image":"https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=1400&q=80&auto=format","author":{"@type":"Organization","name":"QuantumAtlas"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://yourdomain.com/"},{"@type":"ListItem","position":2,"name":"Quantum Mechanics","item":"https://yourdomain.com/branches/quantum-mechanics.html"},{"@type":"ListItem","position":3,"name":"The Hydrogen Atom"}]}}</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4X0M6RM0F6"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4X0M6RM0F6',{page_title:document.title,page_location:window.location.href});</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2633513915753897" crossorigin="anonymous"></script>
+  <meta name="google-adsense-account" content="ca-pub-2633513915753897">
+  <link rel="stylesheet" href="../../css/global.css"/>
+  <link rel="stylesheet" href="../../css/nav.css"/>
+  <link rel="stylesheet" href="../../css/topic-qm.css"/>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+<main>
+<section class="topic-hero">
+  <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=1400&q=80&auto=format" alt="Hydrogen nebula — the universe's most abundant element radiating spectral lines" class="topic-hero-bg-img" loading="eager"/>
+  <div class="topic-hero-overlay"></div>
+  <div class="container topic-hero-content">
+    <nav class="breadcrumb">
+      <a href="../../index.html">Home</a><span class="sep">&#8250;</span>
+      <a href="../../branches/quantum-mechanics.html">Quantum Mechanics</a><span class="sep">&#8250;</span>
+      <span class="current">The Hydrogen Atom</span>
+    </nav>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px">
+      <span class="badge badge-nova">Quantum Mechanics</span>
+      <span class="badge badge-green">Interactive Simulation</span>
+      <span class="badge badge-plasma">Topic 09 / 24</span>
+    </div>
+    <h1 class="topic-hero-title">H The Hydrogen Atom</h1>
+    <p class="topic-hero-sub">Quantum Numbers, Orbitals, Spectral Series, and the Exact Solution of the Coulomb Problem</p>
+  </div>
+</section>
+
+<div class="container topic-layout">
+<article class="topic-article">
+<div class="ad-container"><div style="text-align:center;width:100%"><span class="ad-label">Advertisement</span><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div>
+<h2 id="simulation" style="margin-top:0;border-top:none;padding-top:0">&#127918; Interactive Simulation</h2>
+<div class="simulation-wrapper">
+  <div class="simulation-toolbar">
+    <span class="simulation-title">H Hydrogen Atom Energy Level Transitions</span>
+    <div class="sim-control"><label>From level n</label><input type="range" id="ha-nf" min="2" max="7" value="4" step="1"/><span id="ha-nfv">n=4</span></div>
+    <div class="sim-control"><label>To level n</label><input type="range" id="ha-ni" min="1" max="6" value="2" step="1"/><span id="ha-niv">n=2</span></div>
+    <button id="ha-emit" class="btn btn-primary" style="padding:7px 18px;font-size:0.78rem;background:linear-gradient(135deg,#7b2fff,#00d4ff)">Emit Photon</button>
+    <button id="ha-rst" class="btn btn-outline" style="padding:7px 14px;font-size:0.78rem">Reset</button>
+  </div>
+  <div class="sim-canvas-wrap"><canvas id="ha-cv" height="370"></canvas></div>
+  <div style="padding:12px 20px;display:flex;gap:24px;flex-wrap:wrap;font-family:var(--font-mono);font-size:0.78rem;color:var(--text-muted);background:rgba(0,0,0,0.25);border-top:1px solid var(--border-dim)">
+    <span>&#916;E: <strong id="ha-de" style="color:var(--accent-nova)">--</strong></span>
+    <span>&#955;: <strong id="ha-lam" style="color:var(--accent-green)">--</strong></span>
+    <span>Series: <strong id="ha-ser" style="color:var(--accent-gold)">--</strong></span>
+    <span>Region: <strong id="ha-reg" style="color:#a078ff">--</strong></span>
+  </div>
+</div>
+<script>
+(function(){
+  var cv=document.getElementById('ha-cv'),cx=cv.getContext('2d');
+  var nfSl=document.getElementById('ha-nf'),niSl=document.getElementById('ha-ni');
+  nfSl.oninput=function(){document.getElementById('ha-nfv').textContent='n='+nfSl.value;};
+  niSl.oninput=function(){document.getElementById('ha-niv').textContent='n='+niSl.value;};
+  var photons=[],raf=null,running=false;
+  function W(){cv.width=cv.offsetWidth||700;}W();window.addEventListener('resize',function(){W();draw();});
+  function En(n){return -13.6/(n*n);}
+  function lamColor(nm){
+    if(nm<380)return 'rgba(160,60,255,0.95)';
+    if(nm<450)return 'rgba(80,0,255,0.95)';
+    if(nm<495)return 'rgba(0,100,255,0.95)';
+    if(nm<570)return 'rgba(0,220,60,0.95)';
+    if(nm<590)return 'rgba(255,230,0,0.95)';
+    if(nm<620)return 'rgba(255,160,0,0.95)';
+    if(nm<700)return 'rgba(255,30,0,0.95)';
+    return 'rgba(180,50,50,0.7)';
+  }
+  function draw(){
+    var W2=cv.width,H=370,PAD=60;
+    cx.clearRect(0,0,W2,H);
+    var bg=cx.createLinearGradient(0,0,0,H);bg.addColorStop(0,'#050810');bg.addColorStop(1,'#0a0e22');cx.fillStyle=bg;cx.fillRect(0,0,W2,H);
+    var maxE=1,minE=-15,sY=(H-80)/(maxE-minE);
+    for(var n=1;n<=7;n++){
+      var e=En(n),y=PAD+(maxE-e)*sY;if(y>H-20)continue;
+      var isNf=n===parseInt(nfSl.value),isNi=n===parseInt(niSl.value);
+      cx.strokeStyle=isNf?'rgba(0,212,255,0.9)':isNi?'rgba(255,107,26,0.9)':'rgba(0,212,255,0.28)';
+      cx.lineWidth=isNf||isNi?2.5:1;
+      cx.beginPath();cx.moveTo(PAD,y);cx.lineTo(W2*0.6,y);cx.stroke();
+      cx.fillStyle=isNf?'rgba(0,212,255,0.9)':isNi?'rgba(255,107,26,0.9)':'rgba(0,212,255,0.65)';
+      cx.font=(isNf||isNi?'bold ':'')+' 10px JetBrains Mono,monospace';
+      cx.fillText('n='+n+': '+e.toFixed(2)+' eV',W2*0.61,y+3);
+    }
+    // Transition arrow
+    var nf=parseInt(nfSl.value),ni=parseInt(niSl.value);
+    if(nf>ni){
+      var y2=PAD+(maxE-En(nf))*sY,y1=PAD+(maxE-En(ni))*sY,ax=W2*0.28;
+      cx.strokeStyle='rgba(255,200,0,0.6)';cx.lineWidth=2.5;
+      cx.beginPath();cx.moveTo(ax,y2);cx.lineTo(ax,y1);cx.stroke();
+      cx.fillStyle='rgba(255,200,0,0.8)';cx.beginPath();cx.moveTo(ax,y1);cx.lineTo(ax-7,y1+12);cx.lineTo(ax+7,y1+12);cx.closePath();cx.fill();
+      var dE=En(ni)-En(nf),lam=1240/dE;
+      cx.fillStyle=lamColor(lam);cx.font='9px JetBrains Mono,monospace';cx.textAlign='center';
+      cx.fillText(lam.toFixed(0)+' nm',ax,Math.min(y1,y2)+(Math.abs(y1-y2))/2+4);cx.textAlign='left';
+    }
+    // Photon particles
+    photons.forEach(function(p){
+      cx.beginPath();cx.arc(p.x,p.y,5,0,2*Math.PI);
+      cx.fillStyle=p.col;cx.shadowColor=p.col;cx.shadowBlur=12;cx.fill();cx.shadowBlur=0;
+    });
+    // Axis label
+    cx.fillStyle='rgba(255,255,255,0.2)';cx.font='9px JetBrains Mono,monospace';cx.fillText('E(eV)',2,PAD-6);
+  }
+  function emit(){
+    var nf=parseInt(nfSl.value),ni=parseInt(niSl.value);
+    if(nf<=ni){alert('Upper level must be greater than lower.');return;}
+    var dE=En(ni)-En(nf),lam=1240/dE,col=lamColor(lam);
+    var PAD=60,sY=(370-80)/16,y2=PAD+(1-En(nf))*sY;
+    photons.push({x:cv.width*0.28,y:y2,vx:4,vy:-1,col:col});
+    document.getElementById('ha-de').textContent=dE.toFixed(3)+' eV';
+    document.getElementById('ha-lam').textContent=lam.toFixed(1)+' nm';
+    document.getElementById('ha-ser').textContent=ni===1?'Lyman (UV)':ni===2?'Balmer (visible)':ni===3?'Paschen (IR)':'Brackett+';
+    document.getElementById('ha-reg').textContent=lam<380?'Ultraviolet':lam<700?'Visible':lam<2500?'Near-IR':'Mid-IR';
+    if(!running){running=true;(function step(){
+      photons.forEach(function(p){p.x+=p.vx;p.y+=p.vy;});
+      photons=photons.filter(function(p){return p.x<cv.width+20;});
+      draw();if(running)raf=requestAnimationFrame(step);
+    })();}
+  }
+  document.getElementById('ha-emit').onclick=emit;
+  document.getElementById('ha-rst').onclick=function(){cancelAnimationFrame(raf);running=false;photons=[];draw();['ha-de','ha-lam','ha-ser','ha-reg'].forEach(function(id){document.getElementById(id).textContent='--';});};
+  draw();
+})();
+</script>
+<div class="topic-body">
+
+<figure style="margin:0 0 36px">
+  <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=1400&q=80&auto=format" alt="Hydrogen nebula — the universe's most abundant element radiating spectral lines" class="img-frame"/>
+  <figcaption>The Orion Nebula glowing in hydrogen light: the red colour comes from hydrogen's Balmer series H-alpha line at 656.3 nm (n=3→2 transition). Hydrogen is the most abundant element in the universe (~75% of all baryonic matter) and its spectral lines are the most widely observed in astronomy — from stellar classifications to mapping the structure of galaxies with the 21-cm radio line. The exact quantum mechanical solution of the hydrogen atom is the foundation of all atomic physics.</figcaption>
+</figure>
+
+<h2>The Only Exactly Solvable Atom</h2>
+<p>The hydrogen atom — one proton bound to one electron by the Coulomb force — is the only atom for which the Schrödinger equation has an exact analytic solution. Every other atom requires approximation methods (perturbation theory, variational methods, Hartree-Fock). The exact hydrogen solution provides the starting point for all of atomic physics and the framework for understanding the periodic table through the aufbau principle and shell structure.</p>
+
+<p>Applying the Schrödinger equation with V(r) = −e²/(4πε₀r) in spherical coordinates and separating variables ψ(r,θ,φ) = R_nl(r)·Y_l^m(θ,φ) yields two differential equations: the angular equation (giving spherical harmonics Y_l^m) and the radial equation (giving the associated Laguerre polynomial solutions R_nl). The energy eigenvalues depend only on n:</p>
+
+<div class="formula-block"><span class="formula-label">Hydrogen Energy Levels (exact)</span>E_n = −μe⁴/(8ε₀²h²) · 1/n² = −13.6056 eV/n² &nbsp;&nbsp;&nbsp; n = 1, 2, 3, ...</div>
+
+<h2>Quantum Numbers</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Quantum Number</th><th>Symbol</th><th>Allowed Values</th><th>Physical Meaning</th><th>States per n</th></tr></thead>
+<tbody>
+<tr><td>Principal</td><td>n</td><td>1, 2, 3, ...</td><td>Energy, shell size</td><td>—</td></tr>
+<tr><td>Azimuthal (orbital)</td><td>l</td><td>0, 1, ..., n−1</td><td>Orbital shape (s,p,d,f)</td><td>—</td></tr>
+<tr><td>Magnetic</td><td>m_l</td><td>−l, −l+1, ..., +l</td><td>Orbital orientation</td><td>2l+1</td></tr>
+<tr><td>Spin magnetic</td><td>m_s</td><td>±½</td><td>Spin direction</td><td>2</td></tr>
+<tr><td colspan="4"><em>Total states per shell n (including spin):</em></td><td><strong>2n²</strong></td></tr>
+</tbody></table></div>
+
+<figure style="margin:32px 0">
+  <img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=900&q=80&auto=format" alt="Astronomical nebula showing hydrogen emission lines" class="img-frame"/>
+  <figcaption>The Crab Nebula supernova remnant — a plasma of hydrogen and helium whose spectral line emissions map the quantum transitions of excited atoms. The bright filaments radiate primarily in the Balmer series (visible hydrogen lines): H-alpha 656 nm (red), H-beta 486 nm (blue-green), H-gamma 434 nm (violet). Astronomers use these spectral fingerprints to determine the chemical composition, temperature, density, and velocity (via Doppler shift) of gas clouds throughout the universe — all based on the quantum mechanical energy levels of the hydrogen atom.</figcaption>
+</figure>
+
+<h2>Atomic Orbitals — Shapes of the Wave Functions</h2>
+<p>The orbital angular momentum quantum number l determines the shape of the probability distribution |ψ_nlm|²:</p>
+
+<ul style="color:var(--text-secondary)">
+  <li><strong>s orbitals (l=0):</strong> Spherically symmetric. The 1s orbital (ground state) has ψ_1s = (1/√π a₀³/²) e^(−r/a₀). Maximum probability at r = a₀ (Bohr radius). Higher s orbitals (2s, 3s) have radial nodes.</li>
+  <li><strong>p orbitals (l=1):</strong> Dumbbell-shaped with nodal plane through origin. Three orientations: p_x, p_y, p_z (real combinations of m_l = 0, ±1 states). Two lobes of high probability along the orbital axis.</li>
+  <li><strong>d orbitals (l=2):</strong> More complex shapes — cloverleaf for m_l = ±2, and combinations for m_l = 0, ±1. Essential for transition metal chemistry and colour.</li>
+  <li><strong>f orbitals (l=3):</strong> Seven orientations. Responsible for lanthanide and actinide chemistry.</li>
+</ul>
+
+<h2>The Bohr Radius — The Scale of Atomic Physics</h2>
+<div class="formula-block"><span class="formula-label">Bohr Radius</span>a₀ = 4πε₀ℏ²/(mₑe²) = ℏ/(mₑαc) = 0.52918 Å = 52.918 pm</div>
+
+<p>The Bohr radius a₀ is the most probable electron-proton distance in the ground state (1s orbital) and sets the fundamental scale of atomic physics. All orbital sizes scale as n²a₀/Z for a hydrogenic ion of nuclear charge Z. For hydrogen-like ions: He⁺ (Z=2) has orbitals 2× smaller; Li²⁺ (Z=3) has orbitals 3× smaller.</p>
+
+<h2>Spectral Series and the Rydberg Formula</h2>
+<p>Photon emission from level n₂ → n₁ (n₂ > n₁) gives photon wavelength:</p>
+
+<div class="formula-block"><span class="formula-label">Rydberg Formula</span>1/λ = R_∞(1/n₁² − 1/n₂²) &nbsp;&nbsp;&nbsp; R_∞ = 1.09737 × 10⁷ m⁻¹</div>
+
+<div class="table-wrap"><table>
+<thead><tr><th>Series</th><th>n₁</th><th>Spectral Region</th><th>Notable line</th><th>Astrophysical importance</th></tr></thead>
+<tbody>
+<tr><td>Lyman</td><td>1</td><td>Far UV (91–122 nm)</td><td>Lyα: 121.6 nm (n=2→1)</td><td>IGM absorption; cosmological H reionisation</td></tr>
+<tr><td>Balmer</td><td>2</td><td>Visible + near UV</td><td>Hα: 656.3 nm (n=3→2)</td><td>Stellar classification; emission nebulae colour</td></tr>
+<tr><td>Paschen</td><td>3</td><td>Near infrared</td><td>Pα: 1875 nm (n=4→3)</td><td>IR spectroscopy of cool stars</td></tr>
+<tr><td>Brackett</td><td>4</td><td>Mid infrared</td><td>Brγ: 2166 nm</td><td>Starburst galaxy diagnostics</td></tr>
+</tbody></table></div>
+
+<h2>Fine Structure and Beyond</h2>
+<p>The "exact" solution above ignores several corrections that become important for precision:</p>
+
+<ul style="color:var(--text-secondary)">
+  <li><strong>Relativistic correction:</strong> Electron velocity ~αc in ground state gives ΔE_rel ~ −α²E_n/4. Splits energy levels by n and l.</li>
+  <li><strong>Spin-orbit coupling:</strong> Electron's spin magnetic moment interacts with magnetic field seen in electron's rest frame. Splits levels with l > 0 into doublets (j = l ± ½). Size: ΔE_SO ~ α²E_n.</li>
+  <li><strong>Lamb shift:</strong> Quantum electrodynamic correction from electron interaction with vacuum fluctuations. Splits 2s₁/₂ and 2p₁/₂ (which are degenerate at the previous level) by 1057.8 MHz.</li>
+  <li><strong>Hyperfine structure:</strong> Interaction of electron and proton magnetic moments. Splits 1s ground state by 1420.4 MHz — the famous 21-cm radio wavelength.</li>
+</ul>
+
+<div class="info-box info-box--fact">
+  <div class="info-box-title" style="color:#a078ff">&#128225; The 21-cm Hydrogen Line</div>
+  <p style="margin:0">The hydrogen ground state (1s) is split by the hyperfine interaction (electron spin-proton spin coupling) into two states separated by ΔE = 5.87 μeV, corresponding to radiation at 1420.4 MHz (λ = 21.1 cm). Despite a natural transition lifetime of ~10⁷ years, the cosmic abundance of hydrogen (10⁵⁷ atoms in a typical galaxy) makes 21-cm the brightest radio line in the sky. It maps the Milky Way's spiral arms (photons penetrate dust that blocks visible light), measures galactic rotation curves (revealing dark matter), and traces the large-scale structure of hydrogen in the universe from z=0 to the epoch of reionisation at z~10. The Square Kilometre Array will use 21-cm intensity mapping to probe dark energy across cosmic time.</p>
+</div>
+
+</div>
+<div class="ad-container"><div style="text-align:center;width:100%"><span class="ad-label">Advertisement</span><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div>
+<div style="display:flex;justify-content:space-between;margin-top:40px;gap:16px;flex-wrap:wrap">
+  <a href="spin-and-angular-momentum.html" class="btn btn-outline">&#8592; Spin & Angular Momentum</a>
+  <a href="perturbation-theory.html" class="btn btn-primary" style="background:var(--gradient-plasma)">Next: Perturbation Theory &#8594;</a>
+</div>
+</article>
+
+<aside class="topic-sidebar">
+  <div class="sidebar-card">
+    <h4>// Key Equations</h4>
+    <div class="formula-block" style="margin:0 0 8px;font-size:0.82rem"><span class="formula-label">Energy levels (exact)</span>E_n = −13.6 eV/n²</div><div class="formula-block" style="margin:0 0 8px;font-size:0.82rem"><span class="formula-label">Bohr radius</span>a₀ = ℏ²/(mₑe²) = 0.529 Å</div><div class="formula-block" style="margin:0 0 8px;font-size:0.82rem"><span class="formula-label">Full wave function</span>ψ_nlm = R_nl(r)·Y_l^m(θ,φ)</div><div class="formula-block" style="margin:0 0 8px;font-size:0.82rem"><span class="formula-label">Rydberg formula</span>1/λ = R_∞(1/n₁² − 1/n₂²)</div>
+  </div>
+  <div class="sidebar-card">
+    <h4>// Topic Info</h4>
+    <div class="sidebar-stat"><span>Branch</span><span>Quantum Mechanics</span></div>
+    <div class="sidebar-stat"><span>Topic</span><span>09 / 24</span></div>
+    <div class="sidebar-stat"><span>Simulation</span><span>Yes &#10003;</span></div>
+    <div class="sidebar-stat"><span>Level</span><span>Advanced</span></div>
+  </div>
+  <div class="sidebar-card">
+    <h4>// All 24 Topics</h4>
+    <ul style='list-style:none;display:flex;flex-direction:column;gap:5px'><li><a href="wave-particle-duality.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">01. Wave-Particle Duality</a></li><li><a href="schrodinger-equation.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">02. Schrödinger Equation</a></li><li><a href="uncertainty-principle.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">03. Uncertainty Principle</a></li><li><a href="quantum-tunnelling.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">04. Quantum Tunnelling</a></li><li><a href="superposition.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">05. Quantum Superposition</a></li><li><a href="quantum-entanglement.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">06. Quantum Entanglement</a></li><li><a href="quantum-operators.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">07. Quantum Operators</a></li><li><a href="spin-and-angular-momentum.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">08. Spin & Angular Momentum</a></li><li><a href="hydrogen-atom.html" style="font-size:0.8rem;color:var(--accent-nova);font-weight:600;text-decoration:none">09. The Hydrogen Atom &#8592;</a></li><li><a href="perturbation-theory.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">10. Perturbation Theory</a></li><li><a href="variational-methods.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">11. Variational Methods</a></li><li><a href="identical-particles.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">12. Identical Particles</a></li><li><a href="quantum-statistics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">13. Quantum Statistics</a></li><li><a href="path-integrals.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">14. Path Integrals</a></li><li><a href="measurement-problem.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">15. The Measurement Problem</a></li><li><a href="bells-theorem.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">16. Bell's Theorem</a></li><li><a href="quantum-cryptography.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">17. Quantum Cryptography</a></li><li><a href="density-matrix.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">18. Density Matrix</a></li><li><a href="quantum-harmonic-oscillator.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">19. Quantum Harmonic Oscillator</a></li><li><a href="many-body-quantum-systems.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">20. Many-Body Systems</a></li><li><a href="decoherence.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">21. Decoherence</a></li><li><a href="relativistic-quantum-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">22. Relativistic QM</a></li><li><a href="quantum-field-basics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">23. Quantum Field Theory</a></li><li><a href="standard-model-preview.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">24. Standard Model</a></li></ul>
+  </div>
+  <div class="ad-container" style="min-height:250px;flex-direction:column">
+    <span class="ad-label">Advertisement</span>
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+  </div>
+</aside>
+</div>
+</main>
+<div id="footer-placeholder"></div>
+<script src="../../js/components.js"></script>
+</body>
+</html>

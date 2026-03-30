@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Perturbation Theory &#8212; Quantum Mechanics | QuantumAtlas</title>
+  <meta name="description" content="Time-Independent and Time-Dependent Perturbations, Fermi's Golden Rule, and Selection Rules. Complete scientific treatment with derivations, equations, and real-world applications in quantum physics."/>
+  <link rel="canonical" href="https://yourdomain.com/topics/quantum-mechanics/perturbation-theory.html"/>
+  <meta property="og:title" content="Perturbation Theory | QuantumAtlas"/><meta property="og:image" content="https://images.unsplash.com/photo-1507413245164-6160d8298b31?w=1400&q=80&auto=format"/>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4X0M6RM0F6"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4X0M6RM0F6',{page_title:document.title,page_location:window.location.href});</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2633513915753897" crossorigin="anonymous"></script>
+  <meta name="google-adsense-account" content="ca-pub-2633513915753897">
+  <link rel="stylesheet" href="../../css/global.css"/>
+  <link rel="stylesheet" href="../../css/nav.css"/>
+  <link rel="stylesheet" href="../../css/topic-qm.css"/>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+<main>
+<section class="topic-hero">
+  <img src="https://images.unsplash.com/photo-1507413245164-6160d8298b31?w=1400&q=80&auto=format" alt="Spectral lines of sodium showing the D-line doublet from spin-orbit perturbation" class="topic-hero-bg-img" loading="eager"/>
+  <div class="topic-hero-overlay"></div>
+  <div class="container topic-hero-content">
+    <nav class="breadcrumb">
+      <a href="../../index.html">Home</a><span class="sep">&#8250;</span>
+      <a href="../../branches/quantum-mechanics.html">Quantum Mechanics</a><span class="sep">&#8250;</span>
+      <span class="current">Perturbation Theory</span>
+    </nav>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px">
+      <span class="badge badge-nova">Quantum Mechanics</span><span class="badge badge-green">Interactive Simulation</span>
+      <span class="badge badge-plasma">Topic 10 / 24</span>
+    </div>
+    <h1 class="topic-hero-title">&#120014; Perturbation Theory</h1>
+    <p class="topic-hero-sub">Time-Independent and Time-Dependent Perturbations, Fermi's Golden Rule, and Selection Rules</p>
+  </div>
+</section>
+<div class="container topic-layout">
+<article class="topic-article">
+<div class="ad-container"><div style="text-align:center;width:100%"><span class="ad-label">Advertisement</span><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div>
+<h2 id="simulation" style="margin-top:0;border-top:none;padding-top:0">&#127918; Interactive Simulation</h2>
+<div class="simulation-wrapper">
+  <div class="simulation-toolbar">
+    <span class="simulation-title">&#9889; Zeeman Effect &#8212; Perturbation Splits Energy Levels</span>
+    <div class="sim-control"><label>B field strength</label><input type="range" id="ze-B" min="0" max="100" value="40" step="5"/><span id="ze-Bv">40 units</span></div>
+    <div class="sim-control"><label>Level l</label>
+      <select id="ze-l" style="background:var(--bg-deep);color:var(--text-primary);border:1px solid var(--border-dim);padding:4px 8px;border-radius:6px;font-size:0.78rem">
+        <option value="0">l=0 (s orbital)</option>
+        <option value="1" selected>l=1 (p orbital)</option>
+        <option value="2">l=2 (d orbital)</option>
+      </select>
+    </div>
+  </div>
+  <div class="sim-canvas-wrap"><canvas id="ze-cv" height="320"></canvas></div>
+  <div style="padding:12px 20px;font-family:var(--font-mono);font-size:0.78rem;color:var(--text-muted);background:rgba(0,0,0,0.25);border-top:1px solid var(--border-dim)">
+    Each m_l sublevel splits by &#916;E = m_l &middot; &#956;<sub>B</sub> &middot; B &mdash; first-order perturbation theory. Drag sliders to see splitting.
+  </div>
+</div>
+<script>
+(function(){
+  var cv=document.getElementById('ze-cv'),cx=cv.getContext('2d');
+  var BSl=document.getElementById('ze-B'),lSel=document.getElementById('ze-l');
+  function W(){cv.width=cv.offsetWidth||700;}W();window.addEventListener('resize',function(){W();draw();});
+  function draw(){
+    var W2=cv.width,H=320,B=parseInt(BSl.value),l=parseInt(lSel.value);
+    cx.clearRect(0,0,W2,H);
+    var bg=cx.createLinearGradient(0,0,0,H);bg.addColorStop(0,'#050810');bg.addColorStop(1,'#0a0e22');cx.fillStyle=bg;cx.fillRect(0,0,W2,H);
+    var cx0=W2*0.3,cx1=W2*0.7,cy=H/2,scale=1.5;
+    // Unperturbed level
+    cx.strokeStyle='rgba(0,212,255,0.6)';cx.lineWidth=2.5;
+    cx.beginPath();cx.moveTo(cx0-50,cy);cx.lineTo(cx0+50,cy);cx.stroke();
+    cx.fillStyle='rgba(0,212,255,0.7)';cx.font='10px JetBrains Mono,monospace';cx.textAlign='center';
+    cx.fillText('l='+l+' (degenerate)',cx0,cy+18);
+    // Arrow
+    cx.strokeStyle='rgba(255,200,0,0.4)';cx.lineWidth=1;cx.setLineDash([3,4]);
+    cx.beginPath();cx.moveTo(cx0+55,cy);cx.lineTo(cx1-55,cy);cx.stroke();cx.setLineDash([]);
+    cx.fillStyle='rgba(255,200,0,0.5)';cx.font='9px JetBrains Mono,monospace';cx.fillText('B = '+B+' (H' = -&#956;&#183;B)',W2/2,cy-12);
+    // Split levels
+    var mvals=[];for(var m=-l;m<=l;m++)mvals.push(m);
+    var maxSplit=l*B*scale;
+    mvals.forEach(function(m){
+      var dy=-m*B*scale;
+      var col=m>0?'rgba(255,80,80,0.85)':m<0?'rgba(80,160,255,0.85)':'rgba(200,200,200,0.8)';
+      cx.strokeStyle=col;cx.lineWidth=2;
+      cx.beginPath();cx.moveTo(cx1-50,cy+dy);cx.lineTo(cx1+50,cy+dy);cx.stroke();
+      cx.fillStyle=col;cx.font='10px JetBrains Mono,monospace';cx.textAlign='left';
+      cx.fillText('m_l='+m+(m>0?'+':'')+' ΔE='+(m*B).toFixed(0),cx1+55,cy+dy+4);
+    });
+    // B=0 label
+    if(B===0){cx.fillStyle='rgba(255,255,255,0.4)';cx.font='11px JetBrains Mono,monospace';cx.textAlign='center';cx.fillText('No splitting at B=0',cx1,cy+18);}
+    cx.fillStyle='rgba(0,212,255,0.5)';cx.font='9px JetBrains Mono,monospace';cx.textAlign='center';cx.fillText('B=0 (unperturbed)',cx0,cy-18);
+    cx.textAlign='left';
+    document.getElementById('ze-Bv').textContent=B+' units';
+  }
+  BSl.oninput=draw;lSel.onchange=draw;draw();
+})();
+</script>
+<div class="topic-body">
+<figure style="margin:0 0 36px">
+  <img src="https://images.unsplash.com/photo-1507413245164-6160d8298b31?w=1400&q=80&auto=format" alt="Spectral lines of sodium showing the D-line doublet from spin-orbit perturbation" class="img-frame"/>
+  <figcaption>The sodium D-line doublet (589.0 nm and 589.6 nm) — split by the spin-orbit perturbation Ĥ' = ξ(r)L̂·Ŝ. This tiny interaction between the electron's orbital motion and its spin splits the otherwise degenerate 3p level into two components (j=3/2 and j=1/2), separated by just 0.6 nm. Perturbation theory predicts this splitting to first order and explains the relative intensities of the two lines through the Clebsch-Gordan coefficients. The same analysis applies to every non-s level in every atom.</figcaption>
+</figure>
+<h2>The Indispensable Approximation</h2>
+<p>Only a handful of quantum systems have exact analytic solutions: the free particle, particle in a box, harmonic oscillator, hydrogen atom, and a few others. Every real system of interest — multi-electron atoms, molecules, nuclei, solid-state systems, quantum field theories — requires approximation. Perturbation theory is the most widely used approximation in all of quantum physics. It applies when the Hamiltonian can be split as Ĥ = Ĥ₀ + λĤ', where Ĥ₀ has known solutions and λĤ' is "small" compared to level spacings of Ĥ₀.</p>
+
+<h2>Time-Independent Perturbation Theory</h2>
+<p>Expanding energies and states in powers of the coupling λ and collecting terms order by order:</p>
+
+<div class="formula-block"><span class="formula-label">First-Order Energy Correction</span>E_n^(1) = ⟨n⁰|Ĥ'|n⁰⟩ &nbsp;&nbsp;&nbsp; (matrix element of Ĥ' in unperturbed eigenstate)</div>
+
+<div class="formula-block"><span class="formula-label">First-Order State Correction</span>|n^(1)⟩ = Σ_{m≠n} [⟨m⁰|Ĥ'|n⁰⟩/(E_n^(0)−E_m^(0))] |m⁰⟩</div>
+
+<div class="formula-block"><span class="formula-label">Second-Order Energy Correction</span>E_n^(2) = Σ_{m≠n} |⟨m⁰|Ĥ'|n⁰⟩|² / (E_n^(0) − E_m^(0))</div>
+
+<p>The second-order correction is always negative for the ground state (all denominators E₀−E_m < 0 for m > 0), lowering the ground state energy. Physically: the perturbation mixes in excited states, allowing the system to "lower" its effective energy through virtual transitions.</p>
+
+<h2>Physical Examples of First-Order Perturbation</h2>
+
+<p><strong>Zeeman Effect (weak field):</strong> An external magnetic field B adds Ĥ' = −μ⃗·B⃗ = μ_B(L̂_z + 2Ŝ_z)B. First-order correction: ΔE = μ_B B m_j (using good quantum numbers j, m_j with spin-orbit coupling). Each m_j sublevel shifts by a different amount, splitting spectral lines — the simulation above shows this splitting.</p>
+
+<p><strong>Spin-Orbit Coupling:</strong> In the electron's rest frame, the moving nucleus creates a magnetic field that interacts with the electron's spin magnetic moment: Ĥ_SO = ξ(r)L̂·Ŝ where ξ(r) = e²/(8πε₀m²c²r³). This perturbation breaks the l degeneracy, splitting each l>0 level into doublets at j = l±½. For hydrogen: ΔE_SO ~ α²E_n/n (α ≈ 1/137), explaining the fine structure of spectral lines.</p>
+
+<figure style="margin:32px 0">
+  <img src="https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=900&q=80&auto=format" alt="Atomic spectra showing fine structure splitting" class="img-frame"/>
+  <figcaption>The fine structure of atomic spectra — tiny splittings of spectral lines that reveal the spin-orbit interaction, relativistic corrections, and hyperfine structure from nuclear spin coupling. Each splitting is calculated using perturbation theory: first-order for spin-orbit (E_SO ~ α²E_n/n), second-order relativistic correction (E_rel ~ α²E_n/n), and Lamb shift from quantum electrodynamics (E_Lamb ~ α³E_n ln(1/α)). Agreement between theory and experiment to 12 significant figures validates quantum mechanics and QED with extraordinary precision.</figcaption>
+</figure>
+
+<h2>Degenerate Perturbation Theory</h2>
+<p>When multiple unperturbed states share the same energy (degeneracy), the standard denominators E_n^(0)−E_m^(0) vanish and the expansion breaks down. The resolution: diagonalise the perturbation matrix Ĥ'_mn = ⟨m⁰|Ĥ'|n⁰⟩ within the degenerate subspace. The resulting eigenstates are the "good" quantum states that correctly describe the perturbed system to first order.</p>
+
+<p>Physical example: Hydrogen's n=2 level has 4 degenerate states: 2s, 2p₀, 2p₊₁, 2p₋₁. Adding a uniform electric field E (Stark effect): Ĥ' = eEz. The matrix ⟨2s|eEz|2p₀⟩ = −3ea₀E (non-zero!); all other elements vanish by parity or selection rules. Diagonalising this 2×2 subspace: E±^(1) = ±3ea₀E — the linear Stark effect. Two levels split linearly in E, two remain unshifted.</p>
+
+<h2>Time-Dependent Perturbation Theory and Fermi's Golden Rule</h2>
+<p>When a periodic perturbation Ĥ'(t) = V·e^{−iωt} + V†·e^{iωt} is applied, transitions occur between energy eigenstates of Ĥ₀. The first-order transition rate from |i⟩ to |f⟩ is Fermi's Golden Rule:</p>
+
+<div class="formula-block"><span class="formula-label">Fermi's Golden Rule (transition rate)</span>W_{i→f} = (2π/ℏ) |⟨f|V|i⟩|² ρ(E_f) &nbsp;&nbsp;&nbsp; [transitions per second]</div>
+
+<p>Where ρ(E_f) is the density of final states (available states per unit energy) at E_f = E_i ± ℏω. Despite being "first-order," Fermi's Golden Rule gives exact results when ρ(E_f) represents a true continuum. Applications include: atomic absorption cross-sections, nuclear beta decay rates, electron scattering in semiconductors, phonon scattering limiting electrical conductivity, and radioactive decay lifetimes.</p>
+
+<h2>Electric Dipole Selection Rules</h2>
+<p>For electric dipole transitions (the most common radiative transitions), Ĥ' ∝ r⃗. The matrix element ⟨f|r⃗|i⟩ vanishes unless:</p>
+
+<div class="table-wrap"><table>
+<thead><tr><th>Selection rule</th><th>Physical origin</th><th>Effect</th></tr></thead>
+<tbody>
+<tr><td>Δl = ±1</td><td>Photon carries angular momentum ℏ</td><td>s↔p, p↔d, d↔f transitions only</td></tr>
+<tr><td>Δm_l = 0, ±1</td><td>Conservation of angular momentum z-component</td><td>3 polarisation components</td></tr>
+<tr><td>Parity changes</td><td>Electric dipole has odd parity; Δl=±1 ensures this</td><td>s→s, p→p etc. forbidden</td></tr>
+<tr><td>ΔS = 0 (light atoms)</td><td>Spin not flipped by electric field</td><td>Singlet↔triplet very weak</td></tr>
+</tbody></table></div>
+
+<div class="info-box info-box--fact">
+  <div class="info-box-title" style="color:#a078ff">&#127769; The Lamb Shift</div>
+  <p style="margin:0">Standard perturbation theory predicts that hydrogen's 2s₁/₂ and 2p₁/₂ states are exactly degenerate (same n=2, same j=½). Willis Lamb measured in 1947 using microwave spectroscopy that they differ by 1057.8 MHz — the Lamb shift. This arises from the electron's interaction with vacuum fluctuations of the electromagnetic field (self-energy correction at one-loop in QED). Explaining the Lamb shift required the development of renormalised quantum electrodynamics. Lamb received the Nobel Prize in Physics 1955. The theoretical QED calculation of the Lamb shift now agrees with measurement to 12 significant figures — the most precisely tested prediction in physics.</p>
+</div>
+</div>
+<div class="ad-container"><div style="text-align:center;width:100%"><span class="ad-label">Advertisement</span><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div>
+<div style="display:flex;justify-content:space-between;margin-top:40px;gap:16px;flex-wrap:wrap">
+  <a href="hydrogen-atom.html" class="btn btn-outline">&#8592; The Hydrogen Atom</a>
+  <a href="variational-methods.html" class="btn btn-primary" style="background:var(--gradient-plasma)">Next: Variational Methods &#8594;</a>
+</div>
+</article>
+<aside class="topic-sidebar">
+  <div class="sidebar-card"><h4>// Key Equations</h4><div class="formula-block" style="margin:0 0 8px;font-size:0.82rem"><span class="formula-label">1st order energy correction</span>E_n^(1) = ⟨n⁰|Ĥ'|n⁰⟩</div><div class="formula-block" style="margin:0 0 8px;font-size:0.82rem"><span class="formula-label">2nd order energy correction</span>E_n^(2) = Σ_{m≠n}|⟨m|Ĥ'|n⟩|²/(E_n−E_m)</div><div class="formula-block" style="margin:0 0 8px;font-size:0.82rem"><span class="formula-label">Fermi's Golden Rule</span>W_fi = (2π/ℏ)|⟨f|Ĥ'|i⟩|² ρ(E_f)</div><div class="formula-block" style="margin:0 0 8px;font-size:0.82rem"><span class="formula-label">Electric dipole selection rules</span>Δl = ±1, Δm_l = 0,±1 (E1 rules)</div></div>
+  <div class="sidebar-card">
+    <h4>// Topic Info</h4>
+    <div class="sidebar-stat"><span>Branch</span><span>Quantum Mechanics</span></div>
+    <div class="sidebar-stat"><span>Topic</span><span>10 / 24</span></div>
+    <div class="sidebar-stat"><span>Simulation</span><span>Yes &#10003;</span></div>
+    <div class="sidebar-stat"><span>Level</span><span>Advanced</span></div>
+  </div>
+  <div class="sidebar-card"><h4>// All 24 Topics</h4><ul style='list-style:none;display:flex;flex-direction:column;gap:5px'><li><a href="wave-particle-duality.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">01. Wave-Particle Duality</a></li><li><a href="schrodinger-equation.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">02. Schrödinger Equation</a></li><li><a href="uncertainty-principle.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">03. Uncertainty Principle</a></li><li><a href="quantum-tunnelling.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">04. Quantum Tunnelling</a></li><li><a href="superposition.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">05. Quantum Superposition</a></li><li><a href="quantum-entanglement.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">06. Quantum Entanglement</a></li><li><a href="quantum-operators.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">07. Quantum Operators</a></li><li><a href="spin-and-angular-momentum.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">08. Spin & Angular Momentum</a></li><li><a href="hydrogen-atom.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">09. The Hydrogen Atom</a></li><li><a href="perturbation-theory.html" style="font-size:0.8rem;color:var(--accent-nova);font-weight:600;text-decoration:none">10. Perturbation Theory &#8592;</a></li><li><a href="variational-methods.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">11. Variational Methods</a></li><li><a href="identical-particles.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">12. Identical Particles</a></li><li><a href="quantum-statistics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">13. Quantum Statistics</a></li><li><a href="path-integrals.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">14. Path Integrals</a></li><li><a href="measurement-problem.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">15. The Measurement Problem</a></li><li><a href="bells-theorem.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">16. Bell's Theorem</a></li><li><a href="quantum-cryptography.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">17. Quantum Cryptography</a></li><li><a href="density-matrix.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">18. Density Matrix</a></li><li><a href="quantum-harmonic-oscillator.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">19. Quantum Harmonic Oscillator</a></li><li><a href="many-body-quantum-systems.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">20. Many-Body Systems</a></li><li><a href="decoherence.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">21. Decoherence</a></li><li><a href="relativistic-quantum-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">22. Relativistic QM</a></li><li><a href="quantum-field-basics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">23. Quantum Field Theory</a></li><li><a href="standard-model-preview.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">24. Standard Model</a></li></ul></div>
+  <div class="ad-container" style="min-height:250px;flex-direction:column">
+    <span class="ad-label">Advertisement</span>
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+  </div>
+</aside>
+</div>
+</main>
+<div id="footer-placeholder"></div>
+<script src="../../js/components.js"></script>
+</body>
+</html>

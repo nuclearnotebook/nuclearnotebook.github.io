@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Many-Body Quantum Systems &#8212; Quantum Mechanics | QuantumAtlas</title>
+  <meta name="description" content="Second Quantisation, the Hubbard Model, and Quantum Phase Transitions. Complete scientific treatment with derivations, equations, and real-world applications in quantum physics."/>
+  <link rel="canonical" href="https://yourdomain.com/topics/quantum-mechanics/many-body-quantum-systems.html"/>
+  <meta property="og:title" content="Many-Body Quantum Systems | QuantumAtlas"/><meta property="og:image" content="https://images.unsplash.com/photo-1532187643603-ba119ca4109e?w=1400&q=80&auto=format"/>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4X0M6RM0F6"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4X0M6RM0F6',{page_title:document.title,page_location:window.location.href});</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2633513915753897" crossorigin="anonymous"></script>
+  <meta name="google-adsense-account" content="ca-pub-2633513915753897">
+  <link rel="stylesheet" href="../../css/global.css"/><link rel="stylesheet" href="../../css/nav.css"/><link rel="stylesheet" href="../../css/topic-qm.css"/>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+<main>
+<section class="topic-hero">
+  <img src="https://images.unsplash.com/photo-1532187643603-ba119ca4109e?w=1400&q=80&auto=format" alt="Strongly correlated crystal lattice — Mott insulator transition" class="topic-hero-bg-img" loading="eager"/>
+  <div class="topic-hero-overlay"></div>
+  <div class="container topic-hero-content">
+    <nav class="breadcrumb">
+      <a href="../../index.html">Home</a><span class="sep">&#8250;</span>
+      <a href="../../branches/quantum-mechanics.html">Quantum Mechanics</a><span class="sep">&#8250;</span>
+      <span class="current">Many-Body Quantum Systems</span>
+    </nav>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px">
+      <span class="badge badge-nova">Quantum Mechanics</span>
+      <span class="badge badge-plasma">Topic 20 / 24</span>
+    </div>
+    <h1 class="topic-hero-title">&#9618; Many-Body Quantum Systems</h1>
+    <p class="topic-hero-sub">Second Quantisation, the Hubbard Model, and Quantum Phase Transitions</p>
+  </div>
+</section>
+<div class="container topic-layout">
+<article class="topic-article">
+<div class="ad-container"><div style="text-align:center;width:100%"><span class="ad-label">Advertisement</span><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div>
+
+<div class="topic-body">
+<figure style="margin:0 0 36px">
+  <img src="https://images.unsplash.com/photo-1532187643603-ba119ca4109e?w=1400&q=80&auto=format" alt="Strongly correlated crystal lattice — Mott insulator transition" class="img-frame"/>
+  <figcaption>A correlated electron crystal: when the Hubbard repulsion U dominates over the kinetic bandwidth 4t, electrons localise in a Mott insulator (one per site, movement prohibited). When t dominates, electrons delocalise in a metallic band. The Mott transition between these phases is a quantum phase transition driven by quantum fluctuations at T=0 — the paradigmatic strongly-correlated-electron phenomenon. High-temperature superconductors, heavy fermion metals, and quantum spin liquids all arise from this regime.</figcaption>
+</figure>
+<h2>Why We Need Second Quantisation</h2>
+<p>For N identical particles, the antisymmetric N-particle wave function (Slater determinant for fermions) is an N×N determinant — unwieldy for large N and awkward when particle number changes. Second quantisation reformulates quantum mechanics entirely in terms of field operators acting on Fock space, making particle creation, annihilation, and the statistics automatically built in.</p>
+
+<div class="formula-block"><span class="formula-label">Fock Space</span>ℱ = ℋ₀ ⊕ ℋ₁ ⊕ ℋ₂ ⊕ ... &nbsp;&nbsp;&nbsp; (vacuum ⊕ 1-particle ⊕ 2-particle ⊕ ...)</div>
+
+<p>Fermionic creation/annihilation operators {ĉᵢ, ĉⱼ†} = δᵢⱼ automatically enforce Pauli exclusion: (ĉᵢ†)² = 0 (cannot create two fermions in same state). Bosonic operators [âᵢ, âⱼ†] = δᵢⱼ allow unlimited occupation.</p>
+
+<h2>The Hubbard Model</h2>
+<div class="formula-block"><span class="formula-label">Hubbard Hamiltonian</span>Ĥ = −t Σ_{⟨ij⟩,σ} (ĉ†ᵢσĉⱼσ + h.c.) + U Σᵢ n̂ᵢ↑n̂ᵢ↓</div>
+
+<p>The kinetic term (hopping t) favours delocalised, metallic electrons. The interaction term (on-site repulsion U) favours localised, insulating configurations. At half-filling (one electron per site on average), the competition produces the Mott metal-insulator transition at U/t ~ 4-6 (in 3D).</p>
+
+<figure style="margin:32px 0">
+  <img src="https://images.unsplash.com/photo-1629904853893-c2c8981a1dc5?w=900&q=80&auto=format" alt="Quantum phase diagram strongly correlated electrons" class="img-frame"/>
+  <figcaption>Phase diagram of a strongly correlated electron system (Hubbard model at half-filling). At large U/t, the Mott insulator phase has exactly one localised electron per site with a spin (Néel antiferromagnetic ordering at low T). Reducing U/t or doping away from half-filling drives a quantum phase transition to a metallic phase. In cuprate high-temperature superconductors, adding hole doping to the Mott insulator produces the pseudogap phase, d-wave superconductivity, and ultimately a Fermi liquid metal — the route to high-T_c superconductivity whose mechanism remains debated after 38 years.</figcaption>
+</figure>
+
+<h2>Quantum Phase Transitions</h2>
+<p>At T=0, quantum fluctuations (not thermal fluctuations) drive phase transitions as a non-thermal control parameter (U/t, magnetic field B, pressure P) is tuned through a critical value. At the quantum critical point (QCP), the correlation length ξ and correlation time ξ_τ both diverge: ξ ∝ |δ|^{−ν}, ξ_τ ∝ ξ^z, where δ is the distance from criticality and z is the dynamical critical exponent.</p>
+
+<p>The quantum critical point influences physical properties not just at T=0 but in a "quantum critical fan" extending to finite temperature above the QCP. In this region, thermodynamic and transport properties show non-Fermi-liquid behaviour (resistivity ρ ∝ T rather than T²), strongly enhanced effective masses, and anomalous spectral functions — observed in cuprates, heavy fermion metals, and iron-based superconductors.</p>
+
+<div class="table-wrap"><table>
+<thead><tr><th>Method</th><th>System size</th><th>Accuracy</th><th>Limitation</th></tr></thead>
+<tbody>
+<tr><td>Exact diagonalisation</td><td>~20 sites</td><td>Exact</td><td>Exponential scaling</td></tr>
+<tr><td>Quantum Monte Carlo</td><td>~1000 sites</td><td>Exact (if no sign problem)</td><td>Sign problem for fermions</td></tr>
+<tr><td>DMRG (1D systems)</td><td>~1000 sites</td><td>Near-exact (1D)</td><td>Limited to 1D and quasi-1D</td></tr>
+<tr><td>Tensor networks (2D)</td><td>~100 sites</td><td>Good</td><td>2D entanglement growth</td></tr>
+<tr><td>DFT+U / DMFT</td><td>Bulk systems</td><td>Qualitative</td><td>Double counting; U choice</td></tr>
+</tbody></table></div>
+
+<div class="info-box info-box--fact">
+  <div class="info-box-title" style="color:#a078ff">&#127777; High-Temperature Superconductivity</div>
+  <p style="margin:0">Cuprate high-temperature superconductors (discovered 1986, T_c up to 135 K) are doped Mott insulators — start from an antiferromagnetic Mott insulator and add holes by chemical substitution. The resulting phase diagram (pseudogap, strange metal, d-wave superconductor, Fermi liquid) emerges from the Hubbard model at finite doping. The pairing mechanism — phonon exchange (BCS), spin fluctuations (spin-wave glue), or resonating valence bonds (Anderson) — remains actively debated. Understanding high-T_c superconductivity is one of the most important unsolved problems in condensed matter physics, with implications for lossless power transmission, maglev trains, and quantum computing hardware.</p>
+</div>
+</div>
+<div class="ad-container"><div style="text-align:center;width:100%"><span class="ad-label">Advertisement</span><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div>
+<div style="display:flex;justify-content:space-between;margin-top:40px;gap:16px;flex-wrap:wrap">
+  <a href="quantum-harmonic-oscillator.html" class="btn btn-outline">&#8592; Quantum Harmonic Oscillator</a>
+  <a href="decoherence.html" class="btn btn-primary" style="background:var(--gradient-plasma)">Next: Decoherence &#8594;</a>
+</div>
+</article>
+<aside class="topic-sidebar">
+  <div class="sidebar-card"><h4>// Key Equations</h4><div class="formula-block" style="margin:0 0 8px;font-size:0.82rem"><span class="formula-label">Free field Hamiltonian</span>Ĥ = Σ_k E_k â_k†â_k</div><div class="formula-block" style="margin:0 0 8px;font-size:0.82rem"><span class="formula-label">Canonical (anti)commutators</span>[â_i,â_j†]=δᵢⱼ (bosons); {ĉᵢ,ĉⱼ†}=δᵢⱼ (fermions)</div><div class="formula-block" style="margin:0 0 8px;font-size:0.82rem"><span class="formula-label">Hubbard model</span>H_Hub = −t Σ c†c + U Σ n↑n↓</div><div class="formula-block" style="margin:0 0 8px;font-size:0.82rem"><span class="formula-label">Mott gap condition</span>Mott: E_gap ~ U − Wc</div></div>
+  <div class="sidebar-card">
+    <h4>// Topic Info</h4>
+    <div class="sidebar-stat"><span>Branch</span><span>Quantum Mechanics</span></div>
+    <div class="sidebar-stat"><span>Topic</span><span>20 / 24</span></div>
+    <div class="sidebar-stat"><span>Simulation</span><span>No</span></div>
+    <div class="sidebar-stat"><span>Level</span><span>Advanced</span></div>
+  </div>
+  <div class="sidebar-card"><h4>// All 24 Topics</h4><ul style='list-style:none;display:flex;flex-direction:column;gap:5px'><li><a href="wave-particle-duality.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">01. Wave-Particle Duality</a></li><li><a href="schrodinger-equation.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">02. Schrödinger Equation</a></li><li><a href="uncertainty-principle.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">03. Uncertainty Principle</a></li><li><a href="quantum-tunnelling.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">04. Quantum Tunnelling</a></li><li><a href="superposition.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">05. Quantum Superposition</a></li><li><a href="quantum-entanglement.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">06. Quantum Entanglement</a></li><li><a href="quantum-operators.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">07. Quantum Operators</a></li><li><a href="spin-and-angular-momentum.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">08. Spin & Angular Momentum</a></li><li><a href="hydrogen-atom.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">09. The Hydrogen Atom</a></li><li><a href="perturbation-theory.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">10. Perturbation Theory</a></li><li><a href="variational-methods.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">11. Variational Methods</a></li><li><a href="identical-particles.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">12. Identical Particles</a></li><li><a href="quantum-statistics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">13. Quantum Statistics</a></li><li><a href="path-integrals.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">14. Path Integrals</a></li><li><a href="measurement-problem.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">15. The Measurement Problem</a></li><li><a href="bells-theorem.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">16. Bell's Theorem</a></li><li><a href="quantum-cryptography.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">17. Quantum Cryptography</a></li><li><a href="density-matrix.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">18. Density Matrix</a></li><li><a href="quantum-harmonic-oscillator.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">19. Quantum Harmonic Oscillator</a></li><li><a href="many-body-quantum-systems.html" style="font-size:0.8rem;color:var(--accent-nova);font-weight:600;text-decoration:none">20. Many-Body Systems &#8592;</a></li><li><a href="decoherence.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">21. Decoherence</a></li><li><a href="relativistic-quantum-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">22. Relativistic QM</a></li><li><a href="quantum-field-basics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">23. Quantum Field Theory</a></li><li><a href="standard-model-preview.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">24. Standard Model</a></li></ul></div>
+  <div class="ad-container" style="min-height:250px;flex-direction:column">
+    <span class="ad-label">Advertisement</span>
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+  </div>
+</aside>
+</div>
+</main>
+<div id="footer-placeholder"></div>
+<script src="../../js/components.js"></script>
+</body>
+</html>

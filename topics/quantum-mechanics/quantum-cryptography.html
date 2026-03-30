@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quantum Cryptography & QKD &#8212; Quantum Mechanics | QuantumAtlas</title>
+  <meta name="description" content="BB84 Protocol, Quantum Key Distribution, and Unconditionally Secure Communication. Complete scientific treatment with derivations, equations, and real-world applications in quantum physics."/>
+  <link rel="canonical" href="https://yourdomain.com/topics/quantum-mechanics/quantum-cryptography.html"/>
+  <meta property="og:title" content="Quantum Cryptography & QKD | QuantumAtlas"/><meta property="og:image" content="https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=1400&q=80&auto=format"/>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4X0M6RM0F6"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4X0M6RM0F6',{page_title:document.title,page_location:window.location.href});</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2633513915753897" crossorigin="anonymous"></script>
+  <meta name="google-adsense-account" content="ca-pub-2633513915753897">
+  <link rel="stylesheet" href="../../css/global.css"/><link rel="stylesheet" href="../../css/nav.css"/><link rel="stylesheet" href="../../css/topic-qm.css"/>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+<main>
+<section class="topic-hero">
+  <img src="https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=1400&q=80&auto=format" alt="Quantum key distribution via optical fibre — commercially deployed secure networks" class="topic-hero-bg-img" loading="eager"/>
+  <div class="topic-hero-overlay"></div>
+  <div class="container topic-hero-content">
+    <nav class="breadcrumb">
+      <a href="../../index.html">Home</a><span class="sep">&#8250;</span>
+      <a href="../../branches/quantum-mechanics.html">Quantum Mechanics</a><span class="sep">&#8250;</span>
+      <span class="current">Quantum Cryptography & QKD</span>
+    </nav>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px">
+      <span class="badge badge-nova">Quantum Mechanics</span><span class="badge badge-green">Interactive Simulation</span>
+      <span class="badge badge-plasma">Topic 17 / 24</span>
+    </div>
+    <h1 class="topic-hero-title">&#128274; Quantum Cryptography & QKD</h1>
+    <p class="topic-hero-sub">BB84 Protocol, Quantum Key Distribution, and Unconditionally Secure Communication</p>
+  </div>
+</section>
+<div class="container topic-layout">
+<article class="topic-article">
+<div class="ad-container"><div style="text-align:center;width:100%"><span class="ad-label">Advertisement</span><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div>
+<h2 id="simulation" style="margin-top:0;border-top:none;padding-top:0">&#127918; Interactive Simulation</h2>
+<div class="simulation-wrapper">
+  <div class="simulation-toolbar">
+    <span class="simulation-title">&#128274; BB84 Quantum Key Distribution Protocol</span>
+    <div class="sim-control"><label>Photons N</label><input type="range" id="qk-N" min="10" max="40" value="20" step="2"/><span id="qk-Nv">20</span></div>
+    <div class="sim-control"><label>Eve present</label>
+      <select id="qk-eve" style="background:var(--bg-deep);color:var(--text-primary);border:1px solid var(--border-dim);padding:4px 8px;border-radius:6px;font-size:0.78rem">
+        <option value="0">No eavesdropper</option><option value="1">Eve intercepts!</option>
+      </select>
+    </div>
+    <button id="qk-run" class="btn btn-primary" style="padding:7px 18px;font-size:0.78rem;background:linear-gradient(135deg,#7b2fff,#00d4ff)">Run BB84</button>
+    <button id="qk-clear" class="btn btn-outline" style="padding:7px 14px;font-size:0.78rem">Clear</button>
+  </div>
+  <div class="sim-canvas-wrap"><canvas id="qk-cv" height="320"></canvas></div>
+  <div style="padding:12px 20px;display:flex;gap:24px;flex-wrap:wrap;font-family:var(--font-mono);font-size:0.78rem;color:var(--text-muted);background:rgba(0,0,0,0.25);border-top:1px solid var(--border-dim)">
+    <span>Sifted key: <strong id="qk-sift" style="color:var(--accent-nova)">--</strong></span>
+    <span>QBER: <strong id="qk-qber" style="color:var(--accent-solar)">--</strong></span>
+    <span>Eve detected: <strong id="qk-evdet" style="color:var(--accent-green)">--</strong></span>
+  </div>
+</div>
+<script>
+(function(){
+  var cv=document.getElementById('qk-cv'),cx=cv.getContext('2d');
+  var nSl=document.getElementById('qk-N'),eveSel=document.getElementById('qk-eve');
+  nSl.oninput=function(){document.getElementById('qk-Nv').textContent=nSl.value;};
+  var lastResult=null;
+  function W(){cv.width=cv.offsetWidth||700;}W();window.addEventListener('resize',function(){W();if(lastResult)drawResult(lastResult);else drawEmpty();});
+  function drawEmpty(){
+    var W2=cv.width,H=320;cx.clearRect(0,0,W2,H);
+    var bg=cx.createLinearGradient(0,0,0,H);bg.addColorStop(0,'#050810');bg.addColorStop(1,'#0a0e22');cx.fillStyle=bg;cx.fillRect(0,0,W2,H);
+    cx.fillStyle='rgba(0,212,255,0.2)';cx.font='12px JetBrains Mono,monospace';cx.textAlign='center';cx.fillText('Press "Run BB84" to simulate the protocol',W2/2,H/2);cx.textAlign='left';
+  }
+  function drawResult(r){
+    var W2=cv.width,H=320,N=r.N,PAD=20;
+    cx.clearRect(0,0,W2,H);
+    var bg=cx.createLinearGradient(0,0,0,H);bg.addColorStop(0,'#050810');bg.addColorStop(1,'#0a0e22');cx.fillStyle=bg;cx.fillRect(0,0,W2,H);
+    var rowH=28,startY=20,bw=Math.min(Math.floor((W2-PAD*2)/N)-2,30),bpad=2;
+    var rows=['Alice bit','Alice basis','Bob basis','Same basis?','Bob bit','Error?'];
+    rows.forEach(function(label,ri){
+      cx.fillStyle='rgba(255,255,255,0.3)';cx.font='9px JetBrains Mono,monospace';cx.fillText(label,PAD,startY+ri*rowH+rowH/2+3);
+    });
+    var dataX=PAD+90;
+    for(var i=0;i<N;i++){
+      var x=dataX+i*(bw+bpad);
+      var d=r.data[i];
+      // Alice bit
+      cx.fillStyle=d.aBit===0?'rgba(0,212,255,0.8)':'rgba(255,107,26,0.8)';
+      cx.beginPath();cx.roundRect(x,startY+2,bw,rowH-4,3);cx.fill();
+      cx.fillStyle='#fff';cx.font='9px JetBrains Mono,monospace';cx.textAlign='center';cx.fillText(d.aBit,x+bw/2,startY+rowH/2+4);
+      // Alice basis
+      cx.fillStyle=d.aBasis===0?'rgba(123,47,255,0.6)':'rgba(0,180,120,0.6)';
+      cx.beginPath();cx.roundRect(x,startY+rowH+2,bw,rowH-4,3);cx.fill();
+      cx.fillStyle='#fff';cx.fillText(d.aBasis===0?'+':'x',x+bw/2,startY+rowH+rowH/2+4);
+      // Bob basis
+      cx.fillStyle=d.bBasis===0?'rgba(123,47,255,0.6)':'rgba(0,180,120,0.6)';
+      cx.beginPath();cx.roundRect(x,startY+rowH*2+2,bw,rowH-4,3);cx.fill();
+      cx.fillStyle='#fff';cx.fillText(d.bBasis===0?'+':'x',x+bw/2,startY+rowH*2+rowH/2+4);
+      // Same basis?
+      var same=d.aBasis===d.bBasis;
+      cx.fillStyle=same?'rgba(0,255,136,0.5)':'rgba(255,80,80,0.3)';
+      cx.beginPath();cx.roundRect(x,startY+rowH*3+2,bw,rowH-4,3);cx.fill();
+      cx.fillStyle='#fff';cx.fillText(same?'Y':'N',x+bw/2,startY+rowH*3+rowH/2+4);
+      // Bob bit (only if same basis)
+      if(same){
+        cx.fillStyle=d.bBit===0?'rgba(0,212,255,0.8)':'rgba(255,107,26,0.8)';
+        cx.beginPath();cx.roundRect(x,startY+rowH*4+2,bw,rowH-4,3);cx.fill();
+        cx.fillStyle='#fff';cx.fillText(d.bBit,x+bw/2,startY+rowH*4+rowH/2+4);
+        // Error marker
+        if(d.aBit!==d.bBit){
+          cx.fillStyle='rgba(255,50,50,0.9)';cx.beginPath();cx.roundRect(x,startY+rowH*5+2,bw,rowH-4,3);cx.fill();
+          cx.fillStyle='#fff';cx.fillText('ERR',x+bw/2,startY+rowH*5+rowH/2+4);
+        }
+      }
+      cx.textAlign='left';
+    }
+  }
+  document.getElementById('qk-run').onclick=function(){
+    var N=parseInt(nSl.value),eve=parseInt(eveSel.value)===1;
+    var data=[];var siftedA=[],siftedB=[];
+    for(var i=0;i<N;i++){
+      var aBit=Math.random()<0.5?0:1,aBasis=Math.random()<0.5?0:1;
+      var eveBit=aBit,eveBasis=Math.random()<0.5?0:1;
+      var sentBit=eve&&eveBasis!==aBasis?Math.random()<0.5?0:1:aBit;
+      var bBasis=Math.random()<0.5?0:1;
+      var bBit=bBasis===aBasis?(eve?sentBit:aBit):(Math.random()<0.5?0:1);
+      data.push({aBit:aBit,aBasis:aBasis,bBasis:bBasis,bBit:bBit,same:aBasis===bBasis});
+      if(aBasis===bBasis){siftedA.push(aBit);siftedB.push(bBit);}
+    }
+    var errors=0;for(var i=0;i<siftedA.length;i++)if(siftedA[i]!==siftedB[i])errors++;
+    var qber=siftedA.length>0?errors/siftedA.length:0;
+    lastResult={N:N,data:data};
+    drawResult(lastResult);
+    document.getElementById('qk-sift').textContent=siftedA.length+' bits';
+    document.getElementById('qk-qber').textContent=(qber*100).toFixed(1)+'%';
+    document.getElementById('qk-evdet').textContent=eve?(qber>0.1?'YES (QBER>10%)':'Maybe (QBER low)'):'No (QBER~0%)';
+  };
+  document.getElementById('qk-clear').onclick=function(){lastResult=null;drawEmpty();['qk-sift','qk-qber','qk-evdet'].forEach(function(id){document.getElementById(id).textContent='--';});};
+  drawEmpty();
+})();
+</script>
+<div class="topic-body">
+<figure style="margin:0 0 36px">
+  <img src="https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=1400&q=80&auto=format" alt="Quantum key distribution via optical fibre — commercially deployed secure networks" class="img-frame"/>
+  <figcaption>Commercial QKD systems distribute secret cryptographic keys through optical fibre or free space, using single photons as information carriers. The security is guaranteed by the Heisenberg uncertainty principle and the no-cloning theorem — not by computational hardness. Any eavesdropping attempt introduces measurable disturbance (the Quantum Bit Error Rate increases above the noise threshold), alerting the communicating parties. China operates a 2,000 km QKD backbone from Beijing to Shanghai, and ID Quantique (Geneva) sells commercial QKD systems used by banks, government networks, and power grids.</figcaption>
+</figure>
+<h2>The One-Time Pad — Unconditional Security</h2>
+<p>Claude Shannon proved in 1949 that the one-time pad (XOR of plaintext with a truly random key as long as the message, used exactly once and destroyed) is information-theoretically secure — unbreakable regardless of the attacker's computational power, even with unlimited computing resources including quantum computers. The single practical obstacle: how to distribute a long random key secretly to two distant parties. Classical public-key cryptography (RSA, Diffie-Hellman) solves this computationally — but Shor's quantum algorithm breaks these in polynomial time on a quantum computer. Quantum key distribution solves key distribution with security guaranteed by physical law.</p>
+
+<h2>BB84 Protocol — Step by Step</h2>
+<p>Charles Bennett and Gilles Brassard devised BB84 (1984), the first practical quantum cryptographic protocol. It uses four polarisation states in two conjugate bases:</p>
+
+<div class="formula-block"><span class="formula-label">BB84 State Set</span>Basis + (rectilinear): |→⟩ = bit 0, |↑⟩ = bit 1<br/>Basis × (diagonal): |↗⟩ = bit 0, |↖⟩ = bit 1</div>
+
+<p>The protocol proceeds in four phases:</p>
+<ul style="color:var(--text-secondary)">
+  <li><strong>Quantum transmission:</strong> Alice sends N photons, each in a randomly chosen state from the four BB84 states. Bob measures each in a randomly chosen basis (+ or ×).</li>
+  <li><strong>Basis reconciliation:</strong> Alice and Bob publicly compare which basis they used for each photon (but NOT the bit values). They keep only positions where they used the same basis (~50%) — the "sifted key."</li>
+  <li><strong>Error estimation:</strong> They publicly compare a random sample (~10%) of sifted bits to estimate the Quantum Bit Error Rate (QBER). If QBER > ~11%, they abort (Eve detected); otherwise they discard the sample.</li>
+  <li><strong>Key distillation:</strong> Error correction and privacy amplification reduce the remaining sifted key to a shorter, provably secret key, compressing out any information Eve might have gained.</li>
+</ul>
+
+<figure style="margin:32px 0">
+  <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=900&q=80&auto=format" alt="Fibre optic quantum communication network" class="img-frame"/>
+  <figcaption>Optical fibre quantum communication network. Single photons carrying quantum key bits travel through telecom fibre at wavelengths of 1310 nm or 1550 nm (low-loss windows). Practical QKD systems achieve key rates of ~1 Mbps over 50 km and ~1 kbps over 100 km. Quantum repeaters (using entanglement swapping and quantum memories) will extend QKD to intercontinental distances — the emerging "quantum internet." China's Beijing-to-Shanghai QKD link (2017, 2,000 km using 32 trusted nodes) was the first large-scale real-world deployment.</figcaption>
+</figure>
+
+<h2>Why Eavesdropping Is Detectable</h2>
+<p>The physical security of BB84 rests on two quantum mechanical principles:</p>
+
+<p><strong>No-cloning theorem:</strong> An unknown quantum state cannot be perfectly copied. Any eavesdropping strategy that copies Alice's photons to keep information for later must disturb the original — measurement collapses the quantum state.</p>
+
+<p><strong>Heisenberg uncertainty:</strong> Measuring a photon in the wrong basis (which Eve must do ~50% of the time, not knowing Alice's basis) destroys the original state. When Bob measures Eve's re-sent photon in the correct basis, he gets the wrong answer ~25% of the time. This introduces QBER ≈ 25% in Eve's intercept-resend attack — far above the security threshold of ~11%.</p>
+
+<h2>Unconditional Security Proofs</h2>
+<p>The security of BB84 has been proven rigorously: Mayers (1996), Lo-Chau (1999), and Shor-Preskill (2000) proved that after privacy amplification, the final key is secure against any eavesdropping strategy allowed by quantum mechanics — including collective attacks, coherent attacks, and side-channel attacks on the quantum channel. The secret key rate:</p>
+
+<div class="formula-block"><span class="formula-label">Shor-Preskill Secret Key Rate</span>R ≥ 1 − H(e) − H(e) = 1 − 2H(e) &nbsp;&nbsp;&nbsp; [H(e) = binary entropy of bit error rate e]</div>
+
+<p>Positive key rate requires e < 11.0% (the QKD threshold). Above this error rate, Eve could have full information about the sifted key and the protocol is aborted.</p>
+
+<div class="table-wrap"><table>
+<thead><tr><th>QKD System</th><th>Distance</th><th>Key Rate</th><th>Status</th></tr></thead>
+<tbody>
+<tr><td>Fibre QKD (commercial)</td><td>50–80 km</td><td>~1 Mbps</td><td>Commercial (ID Quantique, Toshiba)</td></tr>
+<tr><td>Free-space ground QKD</td><td>~100 km</td><td>~kbps</td><td>Research</td></tr>
+<tr><td>Micius satellite QKD</td><td>~1,200 km</td><td>~kbps</td><td>Demonstrated 2017</td></tr>
+<tr><td>Quantum repeater QKD</td><td>Global</td><td>TBD</td><td>Active research</td></tr>
+</tbody></table></div>
+
+<div class="info-box info-box--tip">
+  <div class="info-box-title" style="color:var(--accent-green)">&#128274; Post-Quantum Cryptography</div>
+  <p style="margin:0">NIST finalised post-quantum cryptographic standards in August 2024: CRYSTALS-Kyber (ML-KEM) for key encapsulation and CRYSTALS-Dilithium (ML-DSA) for digital signatures, both based on lattice problems believed hard for quantum computers. These provide a software solution for "harvest now, decrypt later" attacks — adversaries recording encrypted traffic today to decrypt when quantum computers mature. QKD and post-quantum cryptography are complementary: QKD provides information-theoretic security for high-value real-time communications; post-quantum algorithms protect the broader internet infrastructure. Both are needed for a quantum-secure digital future.</p>
+</div>
+</div>
+<div class="ad-container"><div style="text-align:center;width:100%"><span class="ad-label">Advertisement</span><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div>
+<div style="display:flex;justify-content:space-between;margin-top:40px;gap:16px;flex-wrap:wrap">
+  <a href="bells-theorem.html" class="btn btn-outline">&#8592; Bell's Theorem</a>
+  <a href="density-matrix.html" class="btn btn-primary" style="background:var(--gradient-plasma)">Next: Density Matrix &#8594;</a>
+</div>
+</article>
+<aside class="topic-sidebar">
+  <div class="sidebar-card"><h4>// Key Equations</h4><div class="formula-block" style="margin:0 0 8px;font-size:0.82rem"><span class="formula-label">BB84 protocol setup</span>BB84: 4 states, 2 conjugate bases</div><div class="formula-block" style="margin:0 0 8px;font-size:0.82rem"><span class="formula-label">Physical security guarantee</span>Security from ΔxΔp ≥ ℏ/2 + no-cloning</div><div class="formula-block" style="margin:0 0 8px;font-size:0.82rem"><span class="formula-label">Eavesdropping detection threshold</span>QBER > 11% → Eve detected</div><div class="formula-block" style="margin:0 0 8px;font-size:0.82rem"><span class="formula-label">Secret key rate</span>R_key = I(A;B) − I(A;E) (privacy ampl.)</div></div>
+  <div class="sidebar-card">
+    <h4>// Topic Info</h4>
+    <div class="sidebar-stat"><span>Branch</span><span>Quantum Mechanics</span></div>
+    <div class="sidebar-stat"><span>Topic</span><span>17 / 24</span></div>
+    <div class="sidebar-stat"><span>Simulation</span><span>Yes &#10003;</span></div>
+    <div class="sidebar-stat"><span>Level</span><span>Advanced</span></div>
+  </div>
+  <div class="sidebar-card"><h4>// All 24 Topics</h4><ul style='list-style:none;display:flex;flex-direction:column;gap:5px'><li><a href="wave-particle-duality.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">01. Wave-Particle Duality</a></li><li><a href="schrodinger-equation.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">02. Schrödinger Equation</a></li><li><a href="uncertainty-principle.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">03. Uncertainty Principle</a></li><li><a href="quantum-tunnelling.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">04. Quantum Tunnelling</a></li><li><a href="superposition.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">05. Quantum Superposition</a></li><li><a href="quantum-entanglement.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">06. Quantum Entanglement</a></li><li><a href="quantum-operators.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">07. Quantum Operators</a></li><li><a href="spin-and-angular-momentum.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">08. Spin & Angular Momentum</a></li><li><a href="hydrogen-atom.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">09. The Hydrogen Atom</a></li><li><a href="perturbation-theory.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">10. Perturbation Theory</a></li><li><a href="variational-methods.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">11. Variational Methods</a></li><li><a href="identical-particles.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">12. Identical Particles</a></li><li><a href="quantum-statistics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">13. Quantum Statistics</a></li><li><a href="path-integrals.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">14. Path Integrals</a></li><li><a href="measurement-problem.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">15. The Measurement Problem</a></li><li><a href="bells-theorem.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">16. Bell's Theorem</a></li><li><a href="quantum-cryptography.html" style="font-size:0.8rem;color:var(--accent-nova);font-weight:600;text-decoration:none">17. Quantum Cryptography &#8592;</a></li><li><a href="density-matrix.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">18. Density Matrix</a></li><li><a href="quantum-harmonic-oscillator.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">19. Quantum Harmonic Oscillator</a></li><li><a href="many-body-quantum-systems.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">20. Many-Body Systems</a></li><li><a href="decoherence.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">21. Decoherence</a></li><li><a href="relativistic-quantum-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">22. Relativistic QM</a></li><li><a href="quantum-field-basics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">23. Quantum Field Theory</a></li><li><a href="standard-model-preview.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">24. Standard Model</a></li></ul></div>
+  <div class="ad-container" style="min-height:250px;flex-direction:column">
+    <span class="ad-label">Advertisement</span>
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+  </div>
+</aside>
+</div>
+</main>
+<div id="footer-placeholder"></div>
+<script src="../../js/components.js"></script>
+</body>
+</html>

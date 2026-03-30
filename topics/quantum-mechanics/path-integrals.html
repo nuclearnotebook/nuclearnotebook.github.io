@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Path Integrals &#8212; Quantum Mechanics | QuantumAtlas</title>
+  <meta name="description" content="Feynman's Sum Over Histories, Stationary Phase, and Quantum Field Theory. Complete scientific treatment with derivations, equations, and real-world applications in quantum physics."/>
+  <link rel="canonical" href="https://yourdomain.com/topics/quantum-mechanics/path-integrals.html"/>
+  <meta property="og:title" content="Path Integrals | QuantumAtlas"/><meta property="og:image" content="https://images.unsplash.com/photo-1465101162946-4377e57745c3?w=1400&q=80&auto=format"/>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4X0M6RM0F6"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4X0M6RM0F6',{page_title:document.title,page_location:window.location.href});</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2633513915753897" crossorigin="anonymous"></script>
+  <meta name="google-adsense-account" content="ca-pub-2633513915753897">
+  <link rel="stylesheet" href="../../css/global.css"/>
+  <link rel="stylesheet" href="../../css/nav.css"/>
+  <link rel="stylesheet" href="../../css/topic-qm.css"/>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+<main>
+<section class="topic-hero">
+  <img src="https://images.unsplash.com/photo-1465101162946-4377e57745c3?w=1400&q=80&auto=format" alt="Multiple paths through spacetime — the essence of Feynman's path integral" class="topic-hero-bg-img" loading="eager"/>
+  <div class="topic-hero-overlay"></div>
+  <div class="container topic-hero-content">
+    <nav class="breadcrumb">
+      <a href="../../index.html">Home</a><span class="sep">&#8250;</span>
+      <a href="../../branches/quantum-mechanics.html">Quantum Mechanics</a><span class="sep">&#8250;</span>
+      <span class="current">Path Integrals</span>
+    </nav>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px">
+      <span class="badge badge-nova">Quantum Mechanics</span>
+      <span class="badge badge-plasma">Topic 14 / 24</span>
+    </div>
+    <h1 class="topic-hero-title">&#8734; Path Integrals</h1>
+    <p class="topic-hero-sub">Feynman's Sum Over Histories, Stationary Phase, and Quantum Field Theory</p>
+  </div>
+</section>
+<div class="container topic-layout">
+<article class="topic-article">
+<div class="ad-container"><div style="text-align:center;width:100%"><span class="ad-label">Advertisement</span><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div>
+
+<div class="topic-body">
+<figure style="margin:0 0 36px">
+  <img src="https://images.unsplash.com/photo-1465101162946-4377e57745c3?w=1400&q=80&auto=format" alt="Multiple paths through spacetime — the essence of Feynman's path integral" class="img-frame"/>
+  <figcaption>A visual metaphor for Feynman's path integral: between any two spacetime events, a quantum particle simultaneously traverses all possible paths. Each path contributes complex amplitude e^{iS/ℏ}, where S is the classical action. Paths near the classical trajectory (where δS=0) contribute coherently; all others cancel by destructive interference. In the limit ℏ→0, only the classical path survives — Newtonian mechanics emerges from quantum mechanics as a special case of destructive interference.</figcaption>
+</figure>
+<h2>A Third Way to Do Quantum Mechanics</h2>
+<p>By 1948, quantum mechanics had been formulated in two mathematically equivalent ways: Schrödinger's wave mechanics (differential equations for ψ(x,t)) and Heisenberg's matrix mechanics (operator algebra). Richard Feynman, working from a cryptic 1933 paper by Dirac, developed a third formulation — the path integral — that is physically the most intuitive and mathematically the most powerful for quantum field theory and statistical mechanics.</p>
+
+<p>Feynman's starting point: in quantum mechanics, the amplitude ⟨x_f,t_f|x_i,t_i⟩ for a particle to travel from (x_i,t_i) to (x_f,t_f) is a complex number. Feynman asked: how does this amplitude arise? His answer: it is the coherent sum of contributions from all possible paths connecting the two points, each path contributing phase e^{iS[path]/ℏ} where S is the classical action of that path.</p>
+
+<h2>The Path Integral Formula</h2>
+<div class="formula-block"><span class="formula-label">Feynman Path Integral (Propagator)</span>K(x_f,t_f; x_i,t_i) = ∫𝒟[x(t)] · exp(iS[x(t)]/ℏ)</div>
+
+<p>The integral ∫𝒟[x(t)] is a functional integral — a sum over all paths x(t) satisfying x(t_i) = x_i and x(t_f) = x_f, not just the classical one. The action S[x] = ∫_{t_i}^{t_f} L(x,ẋ,t) dt is the classical action functional. Each path contributes with equal amplitude but different phase e^{iS/ℏ}.</p>
+
+<h2>How the Classical Limit Emerges</h2>
+<p>The stationary phase approximation explains why quantum mechanics reduces to classical mechanics for large objects. For paths near the classical trajectory x_cl(t) (where δS = 0 by the principle of least action), the phase S/ℏ varies slowly — contributions add coherently. For paths far from x_cl(t), the phase oscillates rapidly as the path varies, and contributions cancel by destructive interference.</p>
+
+<p>Quantitatively: the "width" of the coherence band around the classical path is Δx ~ √(ℏτ/m), where τ is the time interval. For an electron (m ~ 10⁻³⁰ kg, τ ~ 1 ns): Δx ~ 10⁻¹¹ m ~ atomic scale — quantum fluctuations matter. For a golf ball (m ~ 0.05 kg, τ ~ 1 s): Δx ~ 10⁻¹⁶ m — far smaller than any relevant physical scale. Classical mechanics is exact for all practical purposes.</p>
+
+<figure style="margin:32px 0">
+  <img src="https://images.unsplash.com/photo-1596495577886-d920f1fb7238?w=900&q=80&auto=format" alt="Quantum field theory Feynman diagrams spacetime paths" class="img-frame"/>
+  <figcaption>Feynman diagrams — the perturbative expansion of the path integral. In quantum field theory, the path integral Z = ∫𝒟[φ]e^{iS[φ]/ℏ} can be evaluated perturbatively by expanding e^{iS_int/ℏ} in powers of the coupling constant. Each term corresponds to a Feynman diagram: external lines are real particles, internal lines are virtual particles (propagators), and vertices carry coupling constants. The diagrams are a bookkeeping device for systematic perturbation theory in the path integral framework.</figcaption>
+</figure>
+
+<h2>Connection to Classical Mechanics</h2>
+<p>The path integral reveals that Feynman's formulation and Hamilton's principle of least action are dual descriptions of the same physics. Hamilton's principle (classical mechanics): the physical path is the one that makes S stationary, δS = 0. Feynman's path integral (quantum mechanics): all paths contribute; the path that makes S stationary is the one where contributions add most coherently. Classical mechanics is the quantum mechanics of zero interference — the saddle-point approximation of the path integral.</p>
+
+<h2>Path Integrals in Quantum Field Theory</h2>
+<p>The path integral's greatest power is in quantum field theory, where it extends naturally to sum over field configurations φ(x,t):</p>
+
+<div class="formula-block"><span class="formula-label">QFT Generating Functional</span>Z[J] = ∫𝒟[φ] exp(i∫[ℒ(φ,∂_μφ) + J(x)φ(x)] d⁴x / ℏ)</div>
+
+<p>All correlation functions, scattering amplitudes, and Green's functions of the quantum field theory follow from derivatives of Z[J] with respect to the source J(x). Perturbation theory in the coupling constant λ corresponds to expanding e^{iS_int/ℏ} and computing Gaussian integrals — producing the Feynman diagram expansion automatically.</p>
+
+<h2>Euclidean Path Integral and Statistical Mechanics</h2>
+<p>Analytic continuation to imaginary time τ = it (Wick rotation) transforms the quantum path integral into the partition function of statistical mechanics:</p>
+
+<div class="formula-block"><span class="formula-label">Euclidean Path Integral = Partition Function</span>Z_E = ∫𝒟[φ] exp(−S_E[φ]/ℏ) = Tr(e^{−βĤ})</div>
+
+<p>This profound connection — quantum field theory at imaginary time equals statistical mechanics at inverse temperature β = 1/(k_BT) — enables lattice QCD (computing hadron masses from first principles), quantum Monte Carlo simulations, and the renormalisation group treatment of critical phenomena in phase transitions.</p>
+
+<div class="info-box info-box--fact">
+  <div class="info-box-title" style="color:#a078ff">&#129518; Lattice QCD — Proton Mass from First Principles</div>
+  <p style="margin:0">Lattice QCD discretises spacetime onto a 4D grid and evaluates the path integral Z = ∫𝒟[A]𝒟[ψ]e^{−S_QCD} numerically using Monte Carlo sampling. Computing the proton mass requires evaluating Grassmann (fermionic) path integrals over quark fields ψ and bosonic path integrals over gluon fields A. The 2010 calculation (Budapest-Marseille-Wuppertal collaboration) computed the proton-to-electron mass ratio m_p/m_e = 1836 from QCD parameters alone, agreeing with experiment to 1.5%. This required ~100 million CPU-core hours on leadership supercomputers — the most ambitious first-principles calculation in physics history.</p>
+</div>
+</div>
+<div class="ad-container"><div style="text-align:center;width:100%"><span class="ad-label">Advertisement</span><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div>
+<div style="display:flex;justify-content:space-between;margin-top:40px;gap:16px;flex-wrap:wrap">
+  <a href="quantum-statistics.html" class="btn btn-outline">&#8592; Quantum Statistics</a>
+  <a href="measurement-problem.html" class="btn btn-primary" style="background:var(--gradient-plasma)">Next: The Measurement Problem &#8594;</a>
+</div>
+</article>
+<aside class="topic-sidebar">
+  <div class="sidebar-card"><h4>// Key Equations</h4><div class="formula-block" style="margin:0 0 8px;font-size:0.82rem"><span class="formula-label">Feynman propagator</span>K = ∫𝒟[x]e^{iS[x]/ℏ}</div><div class="formula-block" style="margin:0 0 8px;font-size:0.82rem"><span class="formula-label">Classical action functional</span>S[x] = ∫L(x,ẋ)dt</div><div class="formula-block" style="margin:0 0 8px;font-size:0.82rem"><span class="formula-label">Principle of stationary action</span>δS = 0 → classical path</div><div class="formula-block" style="margin:0 0 8px;font-size:0.82rem"><span class="formula-label">QFT generating functional</span>Z = ∫𝒟[φ]e^{iS[φ]/ℏ} (QFT)</div></div>
+  <div class="sidebar-card">
+    <h4>// Topic Info</h4>
+    <div class="sidebar-stat"><span>Branch</span><span>Quantum Mechanics</span></div>
+    <div class="sidebar-stat"><span>Topic</span><span>14 / 24</span></div>
+    <div class="sidebar-stat"><span>Simulation</span><span>No</span></div>
+    <div class="sidebar-stat"><span>Level</span><span>Advanced</span></div>
+  </div>
+  <div class="sidebar-card"><h4>// All 24 Topics</h4><ul style='list-style:none;display:flex;flex-direction:column;gap:5px'><li><a href="wave-particle-duality.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">01. Wave-Particle Duality</a></li><li><a href="schrodinger-equation.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">02. Schrödinger Equation</a></li><li><a href="uncertainty-principle.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">03. Uncertainty Principle</a></li><li><a href="quantum-tunnelling.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">04. Quantum Tunnelling</a></li><li><a href="superposition.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">05. Quantum Superposition</a></li><li><a href="quantum-entanglement.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">06. Quantum Entanglement</a></li><li><a href="quantum-operators.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">07. Quantum Operators</a></li><li><a href="spin-and-angular-momentum.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">08. Spin & Angular Momentum</a></li><li><a href="hydrogen-atom.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">09. The Hydrogen Atom</a></li><li><a href="perturbation-theory.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">10. Perturbation Theory</a></li><li><a href="variational-methods.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">11. Variational Methods</a></li><li><a href="identical-particles.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">12. Identical Particles</a></li><li><a href="quantum-statistics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">13. Quantum Statistics</a></li><li><a href="path-integrals.html" style="font-size:0.8rem;color:var(--accent-nova);font-weight:600;text-decoration:none">14. Path Integrals &#8592;</a></li><li><a href="measurement-problem.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">15. The Measurement Problem</a></li><li><a href="bells-theorem.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">16. Bell's Theorem</a></li><li><a href="quantum-cryptography.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">17. Quantum Cryptography</a></li><li><a href="density-matrix.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">18. Density Matrix</a></li><li><a href="quantum-harmonic-oscillator.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">19. Quantum Harmonic Oscillator</a></li><li><a href="many-body-quantum-systems.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">20. Many-Body Systems</a></li><li><a href="decoherence.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">21. Decoherence</a></li><li><a href="relativistic-quantum-mechanics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">22. Relativistic QM</a></li><li><a href="quantum-field-basics.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">23. Quantum Field Theory</a></li><li><a href="standard-model-preview.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none">24. Standard Model</a></li></ul></div>
+  <div class="ad-container" style="min-height:250px;flex-direction:column">
+    <span class="ad-label">Advertisement</span>
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2633513915753897" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+  </div>
+</aside>
+</div>
+</main>
+<div id="footer-placeholder"></div>
+<script src="../../js/components.js"></script>
+</body>
+</html>
